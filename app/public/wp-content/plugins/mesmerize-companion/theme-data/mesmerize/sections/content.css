@@ -1,0 +1,221 @@
+.about-1 {
+	padding-top: 80px;
+}
+
+.about-1 .section-title-col>:last-child:not(.fakeclass) {
+	margin-bottom: 1rem;
+}
+
+.about-1 .button-holder,.clients-1 .spaced-cols>div {
+	text-align: center;
+}
+
+.about-10,.about-9 {
+	overflow-x: hidden;
+}
+
+.about-10 .gridContainer img.shadow-large,.about-9 .gridContainer .img1 {
+	max-width: 100%;
+}
+
+.about-10>div:not(.gridContainer) .overlay-box,.about-9>div:not(.gridContainer) .overlay-box {
+	max-width: 75%;
+}
+
+.about-10 .content-column,.about-9 .content-column {
+	position: relative;
+	z-index: 10;
+}
+
+.about-10 .image-group-2-img.first-xs.last-sm,.about-4 .image-group-2-img.first-xs.last-sm {
+	margin-bottom: 12%;
+}
+
+.blog-section .card {
+	height: 100%;
+	padding: 0;
+}
+
+.blog-section-standard .card.bordered .post-thumbnail img {
+	margin: -1px -1px 0 -1px;
+	width: calc(100% + 2px);
+}
+
+.clients-1 .padding-lr,.clients-4 .padding-lr {
+	padding: 0 15px;
+}
+
+.contact-1 {
+	background-image: url("./images/mockup-863469.jpg");
+	background-position: center top;
+	background-size: cover;
+	position: relative;
+}
+
+.contact-1>div:not([class*="section-separator"]) {
+	position: relative;
+	z-index: 1;
+}
+
+.contact-1:before {
+	background-color: rgba(26, 26, 26, .48);
+	content: ' ';
+	display: inline-block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 0;
+}
+
+.content-2 .bg-image,.content-3 .bg-image {
+	background: url("./images/apple-1838564.jpg") center center / cover scroll transparent;
+	min-height: 514px;
+}
+
+.counters-1 .circle-counter {
+	border: 1px solid #CCCCCC;
+	border-radius: 100%;
+	margin: auto;
+	max-width: 70%;
+	padding: 4.5%;
+}
+
+.counters-1 .circle-counter * {
+	margin-bottom: 0;
+}
+
+.features-16 .read-more {
+	margin-top: 0;
+	padding-bottom: 0;
+}
+
+.features-16-card-bordered .card img.face {
+	margin: -1px -1px 0 -1px;
+	max-width: max-content;
+	width: calc(100% + 2px);
+}
+
+.features-16-card-bordered .read-more-container {
+	border-top: 1px solid #eaeaea;
+	padding-bottom: 0;
+	padding-top: 1rem;
+}
+
+.overlappable-4 .fa.shadow-large-black:not(.round):not(.bordered) {
+	box-shadow: none;
+}
+
+.portfolio-4 .portfolio-icon,.portfolio-5 .portfolio-icon {
+	color: #ffffff;
+	opacity: .9;
+	transition: all .2s linear;
+}
+
+.portfolio-4 a:hover .portfolio-icon,.portfolio-5 a:hover .portfolio-icon {
+	opacity: 1;
+}
+
+.portfolio-4 .contentswap-effect .swap-inner *,.portfolio-5 .contentswap-effect .swap-inner * {
+	text-align: center !important;
+}
+
+.portfolio-5 .card>.space-top {
+	padding-bottom: 1rem;
+}
+
+.portfolio-5 .card>.space-top>*:last-child {
+	margin-bottom: 0;
+}
+
+.team-2 .face {
+	display: block;
+	width: 100%;
+}
+
+.team-2 .card.bordered img.face {
+	margin: -1px -1px 0 -1px;
+	max-width: calc(100% + 2px);
+	width: calc(100% + 2px);
+}
+
+.team-2 .social-icons-group {
+	display: block;
+}
+
+.team-2 .social-icons-group i.fa,.team-5 .social-icons-group i.fa {
+	font-size: 1.4rem;
+	margin: 0 .3rem;
+}
+
+.team-5 .face {
+	margin: .5rem 0;
+	min-width: 80px;
+	width: 25%;
+}
+
+.testimonials-1 .quotation-icon,.testimonials-5 .quotation-icon {
+	display: flex;
+	flex-direction: column;
+}
+
+.testimonials-1 .content-left-sm .quotation-icon,.testimonials-5 .content-left-sm .quotation-icon {
+	align-items: flex-start;
+}
+
+.testimonials-1 .content-center-sm .quotation-icon,.testimonials-5 .content-center-sm .quotation-icon {
+	align-items: center;
+}
+
+.testimonials-1 .content-right-sm .quotation-icon,.testimonials-5 .content-right-sm .quotation-icon {
+	align-items: flex-end;
+}
+
+@media only screen and (min-width: 768px){ 
+
+	.about-10,.about-9 {
+		overflow-x: visible;
+	}
+	
+	.about-10 .flexbox .overlay-box .overlay-box-offset {
+		width: calc(100% - 20px);
+	}
+	
+	.counters-1 .circle-counter {
+		max-width: 85%;
+	}
+	
+	.features-12 .icon-column,.features-12-card-bordered .icon-column {
+		padding-right: 0;
+	}
+	
+	.team-5 .face {
+		width: 37.5%;
+	}
+	
+ }
+@media only screen and (min-width: 1024px){ 
+
+	.about-10 .flexbox .overlay-box .overlay-box-offset {
+		width: 100%;
+	}
+	
+	.about-10 .gridContainer img.shadow-large {
+		max-width: 485px;
+	}
+	
+	.about-9 .gridContainer .img1 {
+		max-width: 600px;
+	}
+	
+	.counters-1 .circle-counter {
+		max-width: 75%;
+	}
+	
+	.features-12 .spaced-cols .col-md-2 .icon-column,.features-12-card-bordered .spaced-cols .col-md-2 .icon-column {
+		padding-right: 15px;
+		width: 100%;
+	}
+	
+ }

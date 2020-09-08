@@ -1,0 +1,21 @@
+.mce-flow-layout-item {
+    margin-top: 1px !important;
+}
+
+.mce-tinymce-inline button, .mce-tinymce-inline .button {
+    background-color: transparent !important;
+    min-width: 0px !important;
+    line-height: 18px !important;
+    letter-spacing: 0px !important;
+}
+
+
+
+.mce-tinymce-inline .mce-container {
+}
+
+
+.mce-btn .mce-txt {
+    vertical-align: middle !important;
+    line-height: 100%;
+}

@@ -1,0 +1,365 @@
+.ocdi-installer {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(193, 193, 193, 0.59);
+    background: repeating-linear-gradient(-45deg, rgba(102, 102, 102, 0.5), rgba(102, 102, 102, 0.5) 10px, rgba(92, 92, 92, 0.5) 10px, rgba(92, 92, 92, 0.5) 20px, rgba(102, 102, 102, 0.5) 20px) top left;
+}
+
+.ocdi-installer-title {
+    line-height: 1.25;
+}
+
+.ocdi-installer-title strong {
+    font-style: italic;
+    line-height: 2;
+}
+
+.ocdi-installer-image-holder {
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.ocdi-installer-text-wrapper {
+    position: absolute;
+    left: 50%;
+    display: inline-block;
+    width: auto;
+    top: 50%;
+    padding: 20px 20px;
+    background-color: #f2f2f2;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    border: 1px solid #c1c0c0;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.ocdi_plugin_required_popup img {
+    max-width: 80%;
+    margin: 2em auto;
+    display: block;
+}
+
+.ocdi_plugin_required_popup {
+    text-align: center;
+}
+
+.ocdi_plugin_required_popup ul li {
+    display: inline-block;
+    padding: 0.5em 0.2em;
+}
+
+.ocdi__gl-item.js-ocdi-gl-item .dev-mode {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    padding: 8px 20px 8px 20px;
+    background: #f50600;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 11px;
+    border-right: none;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    line-height: 1;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid white;
+    text-align: right;
+}
+
+.ocdi__gl-item.js-ocdi-gl-item .dev-mode span {
+    font-size: 9px;
+    font-weight: 300;
+}
+
+#TB_window.extendthemes-import-popup {
+    width: 600px !important;
+    height: auto !important;
+    visibility: visible;
+    top: 60px !important;
+    margin-left: -350px !important;
+    background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+}
+
+#TB_window.extendthemes-import-popup #TB_title {
+    background: transparent;
+    color: #ffffff;
+    border-bottom: none;
+    padding: 0px;
+    height: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+#TB_window.extendthemes-import-popup #TB_closeWindowButton .tb-close-icon {
+    color: #424242;
+    top: -15px;
+    right: -15px;
+    border-radius: 100%;
+    background: #ffffff;
+}
+
+div#TB_ajaxContent.extendthemes-import-popup-content {
+    width: 100%;
+    min-height: 100%;
+    font-size: 1rem;
+    padding: 0;
+}
+
+#TB_window.extendthemes-import-popup .import-popup-left-area h2 {
+    font-size: 30px;
+}
+
+#TB_window.extendthemes-import-popup .import-popup-left-area * {
+    color: #ffffff;
+}
+
+#TB_window.extendthemes-import-popup .import-popup-left-area ul {
+    list-style-type: initial;
+    padding-left: 20px;
+    font-size: 1rem;
+}
+
+#TB_window.extendthemes-import-popup .import-popup-left-area, #TB_window.extendthemes-import-popup .import-popup-right-area {
+    padding: 20px 15px;
+}
+
+#TB_window.extendthemes-import-popup .import-popup-left-area {
+    width: 60%;
+}
+
+#TB_window.extendthemes-import-popup .import-popup-right-area {
+    width: 40%;
+    text-align: center;
+}
+
+#TB_window.extendthemes-import-popup .import-popup-right-area h2 {
+    color: #ffffff;
+    margin-top: 0px;
+    display: inline-block;
+    line-height: 30px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    float: left;
+}
+
+#TB_window.extendthemes-import-popup .import-popup-container {
+    display: flex;
+}
+
+.image-holder img {
+    border-radius: 4px;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.demo-data {
+    padding: 15px;
+    background: #383737;
+    margin-top: -60px;
+    position: relative;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    z-index: 10;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+a.button.button-primary.demo-link {
+    float: right;
+}
+
+.demo-data:after {
+    content: " ";
+    display: table;
+    float: none;
+    width: 100%;
+}
+
+#TB_window.extendthemes-import-popup div#TB_ajaxWindowTitle {
+    display: none;
+}
+
+#TB_window.extendthemes-import-popup .image-container {
+    width: 100%;
+    overflow: hidden;
+    max-height: 300px;
+    height: 50%;
+    margin: 0px;
+    min-height: 300px;
+}
+
+#TB_window.extendthemes-import-popup .image-container img {
+    width: 100%;
+    height: auto;
+    min-width: 100%;
+    display: block;
+    margin: 0px;
+}
+
+#TB_window.extendthemes-import-popup .info {
+    background: #e68c44;
+    padding: 10px 20px;
+    margin: 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+#TB_window.extendthemes-import-popup .info h2 {
+    margin: 12px 0px 4px 0px;
+    line-height: 1;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#TB_window.extendthemes-import-popup .info ul {
+    list-style: disc;
+    display: block !important;
+    padding-left: 20px;
+    margin-bottom: 12px;
+}
+
+#TB_window.extendthemes-import-popup .info ul li {
+    margin-bottom: 0px;
+}
+
+#TB_window.extendthemes-import-popup .plugins {
+    display: block;
+    margin: 0;
+    padding: 20px 20px;
+    background: #ffffff;
+}
+
+#TB_window.extendthemes-import-popup .plugins .plugins-list {
+    margin-bottom: 0px;
+}
+
+#TB_window.extendthemes-import-popup .plugins .plugins-list li {
+    border-bottom: 1px solid #d0d0d0;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+    height: 30px;
+    padding: 4px 0px;
+}
+
+#TB_window.extendthemes-import-popup .plugins .plugins-list li:last-of-type {
+    padding-bottom:0px;
+}
+
+#TB_window.extendthemes-import-popup .plugins .plugins-list li:last-of-type {
+    border-bottom: none;
+}
+
+#TB_window.extendthemes-import-popup .plugins h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#TB_window.extendthemes-import-popup .plugins p {
+    font-size: 1rem;
+}
+
+#TB_window.extendthemes-import-popup .popup-footer {
+    background: #ffffff;
+    padding: 10px;
+    border-top: 1px solid #d0d0d0;
+    text-align: right;
+}
+
+#TB_window.extendthemes-import-popup .popup-footer .button {
+    font-size: 14px;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+
+#TB_window.extendthemes-import-popup .plugin-status {
+    background: #929292;
+    float: right;
+    border-radius: 4px;
+    padding: 4px 20px;
+    min-width: 60px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#TB_window.extendthemes-import-popup .plugin-status.installed {
+    background: #00c398;
+}
+
+#TB_window.extendthemes-import-popup .plugin-status.active {
+    background: #008c00;
+}
+
+#TB_window.extendthemes-import-popup .plugin-status.blink {
+    animation: plugin-status-blink 2s linear infinite;
+}
+
+@keyframes plugin-status-blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#TB_window.extendthemes-import-popup .pro-only .popup-footer {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#TB_window.extendthemes-import-popup .popup-footer,
+#TB_window.extendthemes-import-popup .popup-footer * {
+    display: block;
+}
+
+#TB_window.extendthemes-import-popup .popup-footer a {
+    display: inline-block;
+}
+
+.ocdi__gl-item .pro-icon {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAWdEVYdENyZWF0aW9uIFRpbWUAMDYvMDIvMTYnfI6lAAACq0lEQVRogd3YLVPrQBSA4bf3XtWgg8FQU1WPAUE0/AUMmApApwYDOrjOgK9vDaYedDEYojDRJLZXnNm2KaVNNpvPM9PZ2e20u0/PfqWt+dnZnGbF8E/ZIzAcQ6DfJNQQ6DMez5uCWoAAmoCKgaD+qB8gqDdqIwjgXy7d2TY4DoQhTKdSmo1fQQAt4+eU48DNzbIeReB58PpqqoetIDA9/Y6OBBQEMJlI2W6D60KvZ6KHnSAwjbq8lNJ14elJgL4vbavZ04tEIDCNsu14PQzh/n75Xqej+82JQWAaFQRSXl3F21T797fOt6YCAfy963bvdHoC5Jfv9+HkBL6+4OMDjo/h4EDWUBjCxQV0u/D2Bi8vaXtIDYIsu9/6LhcEsqbW20HWleum3dq1QKB7TqmB+z6MRoKxbcnOdCpAx5G22QzG48JAoIOyrPiamc0Epw5c25a65+mMBzKCQHf6dTrw8CBnUBRJuR6+r7ONZwZBGtT5ubzCEB4fpW0Vdn0t06/Xk2x6XqFTbjWSoW5v4fR0WVeIvb0lTG8zUDEE+q3JZD6fZ7+17T6nFMj3YTCQst2W9fP5KZAogsPD+FpLHguQzoc3xXaUZclgAfb3JQsqE+pAVbD3d7kapQvjIEgy/SxLppjCge4msB4bQcVMvzCUTKiLKcDzc9Z+c8mQimR3v3XYYJD5cpoXCNJcaFdhaqNIH7mDQOfwtSw5r0ajtH0lAplYU+Yf5zdH4gwVs1Fkj0Km3GrkjSocBPmiSgFBfqjSQJAPqlQQmEeVDgKzqEqAwNx/6YsHvNJFmMmUsSdWU5EVVTkQZENVEgT6qMqCQA9VaRCkR1UeBOlQtQBBclRtQJAMVSsQ7EbVDgTbUbUEwe+o2oJgM6rWIPiJqj0I4qhGgGCJagwIBNUoEMB/ucNyXtcjxMkAAAAASUVORK5CYII=');
+    width: 53px;
+    height: 53px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 0px;
+    position: absolute;
+    z-index: 1000;
+    top: 0px;
+}
+
+h2.mesmerize-import-demo-sites.left {
+    text-align: left;
+    padding-left: 18px;
+}
+
+.ocdi__response.js-ocdi-ajax-response .notice.notice-success  p {
+    font-size: 0;
+}
+
+.ocdi__response.js-ocdi-ajax-response .notice.notice-success p strong:first-of-type {
+    font-size: 0.8rem;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.extendthemes-after-import-controls a:first-of-type {
+    margin-right: 8px;
+}

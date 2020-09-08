@@ -1,0 +1,110 @@
+.white-text p,
+.white-text h1,
+.white-text h2,
+.white-text h3,
+.white-text h4,
+.white-text h5,
+.white-text h6 {
+    color: #ffffff;
+}
+
+div#fancybox-overlay {
+    display: none;
+}
+
+.spacer {
+    text-align: center;
+    display: block;
+    font-size: 20px;
+    line-height: 0px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    padding: 0px 5%;
+    white-space: nowrap;
+}
+
+.spacer span {
+    display: inline-block;
+    border-radius: 100%;
+    vertical-align: middle;
+    box-sizing: border-box;
+    font-size: inherit;
+    text-align: center;
+    width: auto;
+    max-width: 20%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.spacer span:before {
+    content: "-----";
+    line-height: 100%;
+    letter-spacing: -0.2em;
+    vertical-align: middle;
+    text-align: center;
+    font-family: Courier New, Courier, monospace;
+    display: inline-block;
+    width: 100%;
+    margin-left: -0.2em;
+    white-space: initial;
+    overflow: hidden;
+    max-height: 1em;
+    max-width: 100%;
+}
+
+.spacer span.before {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-right: -0.2em;
+}
+
+.spacer span.after {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-left: -0.2em;
+}
+
+.spacer i.fa {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.spacer i.fa:before {
+    vertical-align: middle;
+}
+
+[data-reiki-hidden="true"] {
+    display: none !important;
+}
+
+/*CUSTOM SECTION*/
+
+.custom-row {
+    text-align: center;
+}
+
+.clients-grayscale-images img {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    transition: all .2s linear;
+}
+
+.clients-grayscale-images img:hover {
+    -webkit-filter: none; /* Safari 6.0 - 9.0 */
+    filter: none;
+    transition: all .2s linear;
+}
+
+.prepare-ss [data-id] {
+    border-top: 30px solid black !important;
+    border-bottom: 30px solid black !important;
+}
+
+@media screen and (min-width: 768px) {
+    .overlap-first-section.page-template:not(.mesmerize-front-page-with-slider) [data-overlap]:first-of-type {
+        padding-top: 0;
+    }
+}
