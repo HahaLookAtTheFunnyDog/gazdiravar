@@ -56,3 +56,9 @@ if (version_compare(phpversion(), MESMERIZE_THEME_REQUIRED_PHP_VERSION, '>=')) {
 } else {
     add_action('admin_notices', 'mesmerize_php_version_notice');
 }
+
+function mesmerize_register_menu(){
+    register_nav_menu('filter-menu', __('Adoption Filter'));
+}
+
+add_action('init', 'mesmerize_register_menu');
