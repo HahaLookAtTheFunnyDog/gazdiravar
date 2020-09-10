@@ -18,6 +18,26 @@
 		height: 15rem;
 		overflow: scroll;
 	}
+	.paginationSection{
+		width: 100%;
+		margin: 0;
+	}
+	.pagination{
+		text-align: center;
+	}
+	.pagination a {
+		color: black;
+		padding: 8px 16px;
+		text-decoration: none;
+		transition: background-color .4s;
+	}
+	.pagination a.active {
+		background-color: dodgerblue;
+		color: white;
+	}
+	.pagination a:hover:not(.active) {
+		background-color: #ddd;
+	}
 </style>
 <div id='page-content' class="page-content">
 	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
@@ -253,6 +273,18 @@
 							<h6 class="">Pet Name</h6>
 							<p class="small italic">Shelter Name</p>
 						</div> 
+					</div>
+				</div>
+				<div class="row no-gutters paginationSection">
+					<div class="pagination">
+						<a href="#">&laquo;</a>
+						<a class="active" href="#">1</a>
+						<a href="#">2</a>
+						<a href="#">3</a>
+						<a href="#">4</a>
+						<a href="#">5</a>
+						<a href="#">6</a>
+						<a href="#">&raquo;</a>
 					</div>
 				</div>
 			</div>
