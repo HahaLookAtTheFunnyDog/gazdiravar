@@ -1,0 +1,28 @@
+[14-Sep-2020 20:37:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_field() in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php:148
+Stack trace:
+#0 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 148
+[14-Sep-2020 20:37:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_field() in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php:148
+Stack trace:
+#0 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 148
+[14-Sep-2020 20:39:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_field() in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php:225
+Stack trace:
+#0 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 225
+[14-Sep-2020 20:39:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_field() in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php:225
+Stack trace:
+#0 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 225
