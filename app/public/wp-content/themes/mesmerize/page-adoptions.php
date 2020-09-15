@@ -29,7 +29,7 @@
 		color: black;
 		padding: 8px 16px;
 		text-decoration: none;
-		transition: background-color .4s;
+		transition: background-color .5s;
 	}
 	.pagination a.active {
 		background-color: dodgerblue;
@@ -678,39 +678,12 @@
 
 												const buttons = document.querySelectorAll('.featuredButton');
 												const slides = document.querySelectorAll('.slide');
-												const intervalTime = 5000;
+												const intervalTime = 8000;
 												const button1 = document.getElementById('featured1');
 												const button2 = document.getElementById('featured2');
 												const button3 = document.getElementById('featured3');
 
 
-												button1.onclick = function(){
-													const activeSlide = document.querySelector('.activeSlide');
-													activeSlide.classList.remove('activeSlide');
-													slides[0].classList.add('activeSlide');
-
-													const activeBtn = document.querySelector('.activeButton');
-													activeBtn.classList.remove('activeButton');
-													buttons[0].classList.add('activeButton');
-												}
-												button2.onclick = function(){
-													const activeSlide = document.querySelector('.activeSlide');
-													activeSlide.classList.remove('activeSlide');
-													slides[1].classList.add('activeSlide');
-
-													const activeBtn = document.querySelector('.activeButton');
-													activeBtn.classList.remove('activeButton');
-													buttons[1].classList.add('activeButton');
-												}
-												button3.onclick = function(){
-													const activeSlide = document.querySelector('.activeSlide');
-													activeSlide.classList.remove('activeSlide');
-													slides[2].classList.add('activeSlide');
-
-													const activeBtn = document.querySelector('.activeButton');
-													activeBtn.classList.remove('activeButton');
-													buttons[2].classList.add('activeButton');
-												}
 												const nextSlide = () => {
 													const current = document.querySelector('.activeSlide');
 													if (current.nextElementSibling) {
@@ -736,6 +709,44 @@
 													setTimeout(() => current.classList.remove('activeSlide'));
 												};
 												slideInterval = setInterval(nextSlide, intervalTime);
+
+
+												button1.onclick = function(){
+													const activeSlide = document.querySelector('.activeSlide');
+													activeSlide.classList.remove('activeSlide');
+													slides[0].classList.add('activeSlide');
+
+													const activeBtn = document.querySelector('.activeButton');
+													activeBtn.classList.remove('activeButton');
+													buttons[0].classList.add('activeButton');
+													clearInterval(slideInterval);
+													slideInterval = setInterval(nextSlide, intervalTime);
+													
+												}
+												button2.onclick = function(){
+													const activeSlide = document.querySelector('.activeSlide');
+													activeSlide.classList.remove('activeSlide');
+													slides[1].classList.add('activeSlide');
+
+													const activeBtn = document.querySelector('.activeButton');
+													activeBtn.classList.remove('activeButton');
+													buttons[1].classList.add('activeButton');
+
+													clearInterval(slideInterval);
+													slideInterval = setInterval(nextSlide, intervalTime);
+												}
+												button3.onclick = function(){
+													const activeSlide = document.querySelector('.activeSlide');
+													activeSlide.classList.remove('activeSlide');
+													slides[2].classList.add('activeSlide');
+
+													const activeBtn = document.querySelector('.activeButton');
+													activeBtn.classList.remove('activeButton');
+													buttons[2].classList.add('activeButton');
+
+													clearInterval(slideInterval);
+													slideInterval = setInterval(nextSlide, intervalTime);
+												}
 
 
 											</script>
