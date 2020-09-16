@@ -252,7 +252,7 @@
 									Hi I'm Dog1
 								</h2>
 								<p style="color: white;">
-									I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at me, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
+									I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at e, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
 								</p>
 							</div>
 						</div>
