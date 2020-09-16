@@ -171,9 +171,60 @@
 		width: 10px;
 		border-radius: 50%;
 		border: 1px solid dodgerblue;
+		cursor: pointer;
 	}
 	.activeButton{
 		background-color: dodgerblue;
+	}
+
+
+	.quantity{
+		display: inline;
+		float: right;
+		margin: 0;
+		padding: 0;
+		margin-right: 5px;
+	}
+	.filterDivider{
+		margin: 0;
+	}
+
+	.filterChoices{
+		list-style: none;
+		margin: 0;
+		margin-bottom: 20px;
+	}
+	.filterChoices li{
+		display: inline-block;
+	}
+	.filtersli{
+		background-color: dodgerblue;
+		color: white;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 10px;
+		margin-right: 10px;
+	}
+	.filterClose{
+		font-weight: bold;
+		cursor: pointer;
+		margin-left: 10px;
+	}
+	.clearAll{
+		cursor: pointer;
+	}
+	.appliedFiltersHeader{
+		margin-bottom: 5px;
+	}
+	.filterSubmit{
+		width: 100%;
+		color: white;
+		background-color: dodgerblue;
+		border-radius: 2px;
+		border: none;
+		cursor: pointer;
 	}
 
 
@@ -250,153 +301,336 @@
 					</h2>
 					<ul>
 						<li>
-							<hr>
+							<hr class="filterDivider">
 							<h4>Breed</h4>
 							<ul class="scrollRadio">
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Afador</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Affenhuahua</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Affenpinscher</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Akita</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Alaskan Klee Kai</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Bassador</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Beagle</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Bossie</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Cardigan Welsh Corgi</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Daniff</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Dorkie</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Eurasier</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Frengle</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Giant Schnauzer</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Golden Retriever</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Horgi</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 							</ul>
 						</li>
 						<li>
-							<hr>
+							<hr class="filterDivider">
 							<h4>Age</h4>
 							<ul>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Puppy</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Young</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Adult</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Senior</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 							</ul>
 						</li>
 						<li>
-							<hr>
+							<hr class="filterDivider">
 							<h4>Gender</h4>
 							<ul>
 								<li>
+
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Male</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Female</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 							</ul>
 						</li>
 						<li>
-							<hr>
+							<hr class="filterDivider">
 							<h4>Size</h4>
 							<ul>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Small</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Medium</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Large</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 							</ul>
 						</li>
 						<li>
-							<hr>
+							<hr class="filterDivider">
 							<h4>Good With</h4>
 							<Ul>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Kids</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Other Dogs</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label><br>
+									<label for="GoldenRetriever">Cats</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
 								</li>
 							</Ul>
 						</li>
-						<hr>
+						<li>
+							<hr class="filterDivider">
+							<h4>Within</h4>
+							<Ul>
+								<li>
+									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<label for="GoldenRetriever">50 Miles</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
+								</li>
+								<li>
+									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<label for="GoldenRetriever">100 Miles</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
+								</li>
+								<li>
+									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<label for="GoldenRetriever">200 Miles</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
+								</li>
+							</Ul>
+						</li>
+						<hr class="filterDivider">
 					</ul>
-					<button type="button" style="width: 100%;">APPLY</button>
+					<button type="button" class="filterSubmit">APPLY</button>
 				</div>
 			</div>
 			<div class="col-9">
+				<div class="row">
+					<div class="col-sm-12 appliedFiltersHeader" >
+						<h4>
+							Filters Applied
+						</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<ul class="filterChoices">
+							<li class="filtersli">
+								50 Miles
+								<span class="filterClose">
+									x
+								</span>
+							</li>
+							<li class="filtersli">
+								Golden Retriever
+								<span class="filterClose">
+									x
+								</span>
+							</li>
+							<li class="filtersli">
+								Akita
+								<span class="filterClose">
+									x
+								</span>
+							</li>
+							<li class="filtersli">
+								Puppy
+								<span class="filterClose">
+									x
+								</span>
+							</li>
+							<li class="clearAll">
+								Clear All
+							</li>
+						</ul>
+					</div>
+				</div>
 				<div class="row spaced-cols content-center-sm" data-type="row">
 					<div class="col-sm-4">
 						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
