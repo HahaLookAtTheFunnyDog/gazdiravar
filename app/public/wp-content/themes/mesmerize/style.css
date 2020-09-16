@@ -39,6 +39,10 @@ This theme, like WordPress, is licensed under the GPL.
   color: #8c239f;
 }
 
+.name {
+   width: 50
+  }
+
 .color5 {
   color: #ff3369;
 }
@@ -160,6 +164,8 @@ svg {
 }
 
 span.wpcf7-list-item { display: block; }
+
+input.wpcf7-text {width:50}
 
 iframe {
   border: none;
