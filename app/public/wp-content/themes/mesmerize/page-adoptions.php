@@ -63,7 +63,7 @@
 		}
 	}
 	.carousel-container .carousel-inner {
-		overflow: hidden;
+		overflow: auto;
 	}
 	.carousel-container .track {
 		display: inline-flex;
@@ -233,6 +233,10 @@
 		border: none;
 		cursor: pointer;
 	}
+	.iconBig{
+		width: 13rem !important;
+		height: 13rem !important;
+	}
 
 
 </style>
@@ -300,7 +304,7 @@
 			<hr style="margin-top: 10px;">
 		</section>
 		<div class="flexbox">
-			<div class="col-3" style="width: 100%; margin-right: .5rem;">
+			<div class="col-md-3" style="width: 100%; margin-right: .5rem;">
 				<!--<?php wp_nav_menu(array('theme_location' => 'filter-menu')); ?>-->
 				<div class="filters">
 					<h2>
@@ -597,7 +601,7 @@
 					<button type="button" class="filterSubmit">APPLY</button>
 				</div>
 			</div>
-			<div class="col-9">
+			<div class="col-md-9">
 				<div class="row">
 					<div class="col-sm-12 appliedFiltersHeader" >
 						<h4>
@@ -641,78 +645,78 @@
 				<div class="row spaced-cols content-center-sm" data-type="row">
 					<div class="col-sm-4">
 						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-							<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p> 
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
 							<h6 class="">Pet Name</h6> 
 							<p class="small italic">Shelter Name</p>
+							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
 						</div> 
 					</div>
 					<div class="col-sm-4"> 
 						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-							<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p>
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-							<h6 class="">Pet Name</h6>
+							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+							<h6 class="">Pet Name</h6> 
 							<p class="small italic">Shelter Name</p>
+							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
 						</div>
 					</div> 
 					<div class="col-sm-4"> 
 						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;"> 
-							<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p> 
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"> 
-							<h6 class="">Pet Name</h6>
+							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+							<h6 class="">Pet Name</h6> 
 							<p class="small italic">Shelter Name</p>
+							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
 						</div> 
 					</div>
 				</div>
 				<div class="row spaced-cols content-center-sm" data-type="row" >
 					<div class="col-sm-4">
 						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-							<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p> 
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
 							<h6 class="">Pet Name</h6> 
 							<p class="small italic">Shelter Name</p>
+							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
 						</div> 
 					</div>
 					<div class="col-sm-4"> 
 						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-							<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p>
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-							<h6 class="">Pet Name</h6>
+						<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+							<h6 class="">Pet Name</h6> 
 							<p class="small italic">Shelter Name</p>
+							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
 						</div>
 					</div> 
 					<div class="col-sm-4"> 
 						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;"> 
-							<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p> 
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"> 
-							<h6 class="">Pet Name</h6>
+						<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+							<h6 class="">Pet Name</h6> 
 							<p class="small italic">Shelter Name</p>
+							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
 						</div> 
 					</div>
 				</div>
 				<div class="row spaced-cols content-center-sm" data-type="row">
 					<div class="col-sm-4">
 						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-							<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p> 
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
 							<h6 class="">Pet Name</h6> 
 							<p class="small italic">Shelter Name</p>
+							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
 						</div> 
 					</div>
 					<div class="col-sm-4"> 
 						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-							<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p>
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-							<h6 class="">Pet Name</h6>
+						<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+							<h6 class="">Pet Name</h6> 
 							<p class="small italic">Shelter Name</p>
+							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
 						</div>
 					</div> 
 					<div class="col-sm-4"> 
 						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;"> 
-							<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p> 
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"> 
-							<h6 class="">Pet Name</h6>
+							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+							<h6 class="">Pet Name</h6> 
 							<p class="small italic">Shelter Name</p>
+							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
 						</div> 
 					</div>
 				</div>
@@ -900,12 +904,14 @@
 															index++;
 															prev.classList.add('show');
 															track.style.transform = `translateX(-${index * carouselWidth}px)`;
-
 															if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
 																next.classList.add('hide');
 															}
-														})
 
+															else if(track.offsetWidth - (index * carouselWidth)*2 < 100){
+																next.classList.add('hide');
+															}
+														})
 														prev.addEventListener('click', () => {
 															index--;
 															next.classList.remove('hide');
