@@ -18,6 +18,9 @@
 		height: 15rem;
 		overflow: scroll;
 	}
+	.scrollRadio::-webkit-scrollbar {
+  		width: 2px; 
+	}
 	.paginationSection{
 		width: 100%;
 		margin: 0;
@@ -38,6 +41,7 @@
 	.pagination a:hover:not(.active) {
 		background-color: #ddd;
 	}
+
 
 
 
@@ -183,6 +187,9 @@
 		float: right;
 		margin: 0;
 		padding: 0;
+		margin-right: 7px;
+	}
+	.alignMargin{
 		margin-right: 5px;
 	}
 	.filterDivider{
@@ -307,7 +314,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Afador</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
@@ -315,7 +322,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Affenhuahua</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
@@ -323,7 +330,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Affenpinscher</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
@@ -331,7 +338,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Akita</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
@@ -339,7 +346,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Alaskan Klee Kai</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
@@ -347,7 +354,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Bassador</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
@@ -355,7 +362,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Beagle</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
@@ -363,7 +370,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Bossie</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
@@ -371,7 +378,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Cardigan Welsh Corgi</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
@@ -379,7 +386,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Daniff</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
@@ -387,7 +394,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Dorkie</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
@@ -395,7 +402,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Eurasier</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
@@ -403,7 +410,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Frengle</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
@@ -411,7 +418,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Giant Schnauzer</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
@@ -419,7 +426,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Golden Retriever</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
@@ -427,7 +434,7 @@
 								<li>
 									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Horgi</label>
-									<p class="quantity">
+									<p class="quantity alignMargin">
 										(0)
 									</p>
 									<br>
