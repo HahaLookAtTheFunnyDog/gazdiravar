@@ -8,7 +8,7 @@
 		text-align: left;
 	}
 	.filters input{
-		height: 1rem;
+		/*height: 1rem;*/
 	}
 	.filters label{
 		font-size: 1rem;
@@ -19,7 +19,7 @@
 		overflow: scroll;
 	}
 	.scrollRadio::-webkit-scrollbar {
-  		width: 2px; 
+		width: 2px; 
 	}
 	.paginationSection{
 		width: 100%;
@@ -130,10 +130,10 @@
 	
 
 	.slider {
-	  position: relative;
-	  overflow: hidden;
-	  height: 500px;
-	  width: 100%;
+		position: relative;
+		overflow: hidden;
+		height: 500px;
+		width: 100%;
 	}
 	.activeSlide{
 		opacity: 1 !important;
@@ -226,19 +226,21 @@
 		margin-bottom: 5px;
 	}
 	.filterSubmit{
-		width: 100%;
+		display: block;
 		color: white;
 		background-color: dodgerblue;
-		border-radius: 2px;
-		border: none;
-		cursor: pointer;
+		width: 100%;
+	}
+	.hideFilterSubmit{
+		display: none;
 	}
 	.iconBig{
 		width: 13rem !important;
 		height: 13rem !important;
 	}
-
-
+	.boxShadowAnimate:hover{
+		box-shadow: 0 0 11px rgba(33,33,33,.2); 
+	}
 </style>
 
 <div id='page-content' class="page-content">
@@ -250,37 +252,47 @@
 				<div class="row no-gutters" style="margin: auto;">
 					<div class="col-md-12">
 						<div class="slider">
-						<div class="slide  activeSlide" style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredCover.jpg"); ?>'); ">
-							<div class="featuredContent">
-								<h2 style="color: white;">
-									Hi I'm Dog1
-								</h2>
-								<p style="color: white;">
-									I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at e, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
-								</p>
+							<div class="slide  activeSlide" style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredCover.jpg"); ?>'); ">
+								<div class="featuredContent">
+									<h2 style="color: white;">
+										Hi I'm Dog1
+									</h2>
+									<p style="color: white;">
+										I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at e, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
+									</p>
+								</div>
+							</div>
+							<div class="slide " style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredTwo.jpg"); ?>'); ">
+								<div class="featuredContent">
+									<h2 style="color: white;">
+										Hi I'm Dog2
+									</h2>
+									<p style="color: white;">
+										I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at me, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
+									</p>
+								</div>
+							</div>
+							<div class="slide" style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredThree.jpg"); ?>'); ">
+								<div class="featuredContent">
+									<h2 style="color: white;">
+										Hi I'm Dog3
+									</h2>
+									<p style="color: white;">
+										I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at me, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
+									</p>
+								</div>
+							</div>
+							<div class="slide" style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredThree.jpg"); ?>'); ">
+								<div class="featuredContent">
+									<h2 style="color: white;">
+										Hi I'm Dog3
+									</h2>
+									<p style="color: white;">
+										I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at me, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
+									</p>
+								</div>
 							</div>
 						</div>
-						<div class="slide " style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredTwo.jpg"); ?>'); ">
-							<div class="featuredContent">
-								<h2 style="color: white;">
-									Hi I'm Dog2
-								</h2>
-								<p style="color: white;">
-									I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at me, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
-								</p>
-							</div>
-						</div>
-						<div class="slide" style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredThree.jpg"); ?>'); ">
-							<div class="featuredContent">
-								<h2 style="color: white;">
-									Hi I'm Dog3
-								</h2>
-								<p style="color: white;">
-									I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at me, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
-								</p>
-							</div>
-						</div>
-					</div>
 					</div>
 				</div>
 				<div class="row no-gutters" style="margin: auto;">
@@ -295,6 +307,9 @@
 								</li>
 								<li>
 									<button id="featured3" class="featuredButton"></button>
+								</li>
+								<li>
+									<button id="featured4" class="featuredButton"></button>
 								</li>
 							</ul>
 						</div>
@@ -314,143 +329,147 @@
 						<li>
 							<hr class="filterDivider">
 							<h4>Breed</h4>
-							<ul class="scrollRadio">
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Afador</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Affenhuahua</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Affenpinscher</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Akita</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Alaskan Klee Kai</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Bassador</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Beagle</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Bossie</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Cardigan Welsh Corgi</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Daniff</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Dorkie</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Eurasier</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Frengle</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Giant Schnauzer</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Golden Retriever</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Horgi</label>
-									<p class="quantity alignMargin">
-										(0)
-									</p>
-									<br>
-								</li>
-							</ul>
+							<form>
+								<ul class="scrollRadio">
+
+									<li>
+										<input type="radio" id="Afador" name="Afador" value="Afador" class="dogSelection">
+										<label for="GoldenRetriever">Afador</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+									<li>
+										<input type="radio" id="Affenhuahua" name="Affenhuahua" value="Affenhuahua" class="dogSelection">
+										<label for="GoldenRetriever">Affenhuahua</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+									<li>
+										<input type="radio" id="Affenpinscher" name="Affenpinscher" value="Affenpinscher" class="dogSelection">
+										<label for="GoldenRetriever">Affenpinscher</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+									<li>
+										<input type="radio" id="Akita" name="Akita" value="Akita" class="dogSelection">
+										<label for="GoldenRetriever">Akita</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+									<li>
+										<input type="radio" id="AlaskanKleeKair" name="AlaskanKleeKair" value="AlaskanKleeKai" class="dogSelection">
+										<label for="GoldenRetriever">Alaskan Klee Kai</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+									<li>
+										<input type="radio" id="Bassador" name="Bassador" value="Bassador" class="dogSelection">
+										<label for="GoldenRetriever">Bassador</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+									<li>
+										<input type="radio" id="Beagle" name="Beagle" value="Beagle" class="dogSelection">
+										<label for="GoldenRetriever">Beagle</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+									<li>
+										<input type="radio" id="Bossie" name="Bossie" value="Bossie" class="dogSelection">
+										<label for="GoldenRetriever">Bossie</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+									<li>
+										<input type="radio" id="CardiganWelshCorgi" name="CardiganWelshCorgi" value="CardiganWelshCorgi" class="dogSelection">
+										<label for="GoldenRetriever">Cardigan Welsh Corgi</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+									<li>
+										<input type="radio" id="Daniff" name="Daniff" value="Daniff" class="dogSelection">
+										<label for="GoldenRetriever">Daniff</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+									<li>
+										<input type="radio" id="Dorkie" name="Dorkie" value="Dorkie" class="dogSelection">
+										<label for="GoldenRetriever">Dorkie</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+									<li>
+										<input type="radio" id="Eurasier" name="Eurasier" value="Eurasier" class="dogSelection">
+										<label for="GoldenRetriever">Eurasier</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+									<li>
+										<input type="radio" id="Frengle" name="Frengle" value="Frengle" class="dogSelection">
+										<label for="GoldenRetriever">Frengle</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+									<li>
+										<input type="radio" id="GiantSchnauzer" name="GiantSchnauzer" value="GiantSchnauzer" class="dogSelection">
+										<label for="GoldenRetriever">Giant Schnauzer</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+									<li>
+										<input type="radio" id="GoldenRetriever" name="GoldenRetriever" value="GoldenRetriever" class="dogSelection">
+										<label for="GoldenRetriever">Golden Retriever</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+									<li>
+										<input type="radio" id=">Horgi" name="Horgi" value="Horgi" class="dogSelection">
+										<label for="GoldenRetriever">Horgi</label>
+										<p class="quantity alignMargin">
+											(0)
+										</p>
+										<br>
+									</li>
+								</ul>
+								<input type="submit" value="APPLY" class="filterSubmit hideFilterSubmit" id="dogFilterSubmit">
+							</form>
 						</li>
 						<li>
 							<hr class="filterDivider">
 							<h4>Age</h4>
 							<ul>
 								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<input type="radio" id="GoldenRetriever" name="dogSelection" value="GoldenRetriever">
 									<label for="GoldenRetriever">Puppy</label>
 									<p class="quantity">
 										(0)
@@ -458,7 +477,7 @@
 									<br>
 								</li>
 								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<input type="radio" id="GoldenRetriever" name="dogSelection" value="GoldenRetriever">
 									<label for="GoldenRetriever">Young</label>
 									<p class="quantity">
 										(0)
@@ -466,7 +485,7 @@
 									<br>
 								</li>
 								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<input type="radio" id="GoldenRetriever" name="dogSelection" value="GoldenRetriever">
 									<label for="GoldenRetriever">Adult</label>
 									<p class="quantity">
 										(0)
@@ -474,7 +493,7 @@
 									<br>
 								</li>
 								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<input type="radio" id="GoldenRetriever" name="dogSelection" value="GoldenRetriever">
 									<label for="GoldenRetriever">Senior</label>
 									<p class="quantity">
 										(0)
@@ -598,7 +617,6 @@
 						</li>
 						<hr class="filterDivider">
 					</ul>
-					<button type="button" class="filterSubmit">APPLY</button>
 				</div>
 			</div>
 			<div class="col-md-9">
@@ -679,7 +697,7 @@
 					</div>
 					<div class="col-sm-4"> 
 						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-						<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
 							<h6 class="">Pet Name</h6> 
 							<p class="small italic">Shelter Name</p>
 							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
@@ -687,7 +705,7 @@
 					</div> 
 					<div class="col-sm-4"> 
 						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;"> 
-						<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
 							<h6 class="">Pet Name</h6> 
 							<p class="small italic">Shelter Name</p>
 							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
@@ -705,7 +723,7 @@
 					</div>
 					<div class="col-sm-4"> 
 						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-						<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
 							<h6 class="">Pet Name</h6> 
 							<p class="small italic">Shelter Name</p>
 							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
@@ -741,7 +759,7 @@
 				<div class="carousel-inner">
 					<div class="track">
 						<div class="card-container">
-							<div class="card">
+							<div class="card boxShadowAnimate">
 								<div class="img">
 									<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
 								</div>
@@ -751,7 +769,7 @@
 							</div>
 						</div>
 						<div class="card-container">
-							<div class="card">
+							<div class="card boxShadowAnimate">
 								<div class="img">
 									<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 									<div class="info">
@@ -760,7 +778,7 @@
 								</div>
 							</div>
 							<div class="card-container">
-								<div class="card">
+								<div class="card boxShadowAnimate">
 									<div class="img">
 										<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 										<div class="info">
@@ -769,7 +787,7 @@
 									</div>
 								</div>
 								<div class="card-container">
-									<div class="card">
+									<div class="card boxShadowAnimate">
 										<div class="img">
 											<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 											<div class="info">
@@ -778,7 +796,7 @@
 										</div>
 									</div>
 									<div class="card-container">
-										<div class="card">
+										<div class="card boxShadowAnimate">
 											<div class="img">
 												<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 												<div class="info">
@@ -787,7 +805,7 @@
 											</div>
 										</div>
 										<div class="card-container">
-											<div class="card">
+											<div class="card boxShadowAnimate">
 												<div class="img">
 													<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 													<div class="info">
@@ -796,7 +814,7 @@
 												</div>
 											</div>
 											<div class="card-container">
-												<div class="card">
+												<div class="card boxShadowAnimate">
 													<div class="img">
 														<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 														<div class="info">
@@ -805,7 +823,7 @@
 													</div>
 												</div>
 												<div class="card-container">
-													<div class="card">
+													<div class="card boxShadowAnimate">
 														<div class="img">
 															<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 															<div class="info">
@@ -814,7 +832,7 @@
 														</div>
 													</div>
 													<div class="card-container">
-														<div class="card">
+														<div class="card boxShadowAnimate">
 															<div class="img">
 																<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 																<div class="info">
@@ -823,7 +841,7 @@
 															</div>
 														</div>
 														<div class="card-container">
-															<div class="card">
+															<div class="card boxShadowAnimate">
 																<div class="img">
 																	<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 																	<div class="info">
@@ -832,7 +850,7 @@
 																</div>
 															</div>
 															<div class="card-container">
-																<div class="card">
+																<div class="card boxShadowAnimate">
 																	<div class="img">
 																		<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 																		<div class="info">
@@ -841,7 +859,7 @@
 																	</div>
 																</div>
 																<div class="card-container">
-																	<div class="card">
+																	<div class="card boxShadowAnimate">
 																		<div class="img">
 																			<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 																			<div class="info">
@@ -850,7 +868,7 @@
 																		</div>
 																	</div>
 																	<div class="card-container">
-																		<div class="card">
+																		<div class="card boxShadowAnimate">
 																			<div class="img">
 																				<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 																				<div class="info">
@@ -859,7 +877,7 @@
 																			</div>
 																		</div>
 																		<div class="card-container">
-																			<div class="card">
+																			<div class="card boxShadowAnimate">
 																				<div class="img">
 																					<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 																					<div class="info">
@@ -929,6 +947,7 @@
 												const button1 = document.getElementById('featured1');
 												const button2 = document.getElementById('featured2');
 												const button3 = document.getElementById('featured3');
+												const button4 = document.getElementById('featured4');
 
 
 												const nextSlide = () => {
@@ -994,7 +1013,42 @@
 													clearInterval(slideInterval);
 													slideInterval = setInterval(nextSlide, intervalTime);
 												}
+												button4.onclick = function(){
+													const activeSlide = document.querySelector('.activeSlide');
+													activeSlide.classList.remove('activeSlide');
+													slides[3].classList.add('activeSlide');
 
+													const activeBtn = document.querySelector('.activeButton');
+													activeBtn.classList.remove('activeButton');
+													buttons[3].classList.add('activeButton');
 
+													clearInterval(slideInterval);
+													slideInterval = setInterval(nextSlide, intervalTime);
+												}
+
+												//Filters
+												const dogFilters = document.querySelectorAll('.dogSelection');
+												const dogSubmit = document.getElementById('dogFilterSubmit');
+												var k;
+												for(k = 0; k < dogFilters.length; k++){
+													dogFilters[k].onclick = function(){
+														if(dogSubmit.classList.contains('hideFilterSubmit')){
+															dogSubmit.classList.remove('hideFilterSubmit');
+														}
+														if (this.previous) {
+															this.checked = false;
+															var i;
+															for(i = 0; i < dogFilters.length; i++){
+																if(dogFilters[i].checked){
+																	break;
+																}
+																if(i==dogFilters.length-1){
+																	dogSubmit.classList.add('hideFilterSubmit');
+																}
+															}
+														}
+														this.previous = this.checked;
+													}
+												}
 											</script>
 											<?php get_footer(); ?>
