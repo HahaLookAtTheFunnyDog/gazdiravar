@@ -26,3 +26,94 @@ Stack trace:
 #2 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
 #3 {main}
   thrown in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 225
+[21-Sep-2020 17:30:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function dd() in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php:248
+Stack trace:
+#0 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 248
+[21-Sep-2020 17:30:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function dd() in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php:248
+Stack trace:
+#0 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 248
+[21-Sep-2020 17:41:31 UTC] PHP Parse error:  syntax error, unexpected '<', expecting end of file in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 255
+[21-Sep-2020 17:41:56 UTC] PHP Parse error:  syntax error, unexpected '<', expecting end of file in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 255
+[21-Sep-2020 17:41:58 UTC] PHP Parse error:  syntax error, unexpected '<', expecting end of file in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 255
+[21-Sep-2020 17:43:08 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php:258
+Stack trace:
+#0 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 258
+[21-Sep-2020 17:43:08 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php:258
+Stack trace:
+#0 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 258
+[21-Sep-2020 17:46:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function length() in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php:258
+Stack trace:
+#0 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 258
+[21-Sep-2020 17:46:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function length() in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php:258
+Stack trace:
+#0 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 258
+[21-Sep-2020 17:46:09 UTC] PHP Warning:  Use of undefined constant length - assumed 'length' (this will throw an Error in a future version of PHP) in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 258
+[21-Sep-2020 17:46:09 UTC] PHP Stack trace:
+[21-Sep-2020 17:46:09 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:0
+[21-Sep-2020 17:46:09 UTC] PHP   2. require() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:17
+[21-Sep-2020 17:46:09 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php:19
+[21-Sep-2020 17:46:09 UTC] PHP   4. include() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php:106
+[21-Sep-2020 17:46:09 UTC] PHP Warning:  Use of undefined constant length - assumed 'length' (this will throw an Error in a future version of PHP) in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 258
+[21-Sep-2020 17:46:09 UTC] PHP Stack trace:
+[21-Sep-2020 17:46:09 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:0
+[21-Sep-2020 17:46:09 UTC] PHP   2. require() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:17
+[21-Sep-2020 17:46:09 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php:19
+[21-Sep-2020 17:46:09 UTC] PHP   4. include() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php:106
+[21-Sep-2020 17:46:28 UTC] PHP Warning:  count() expects at least 1 parameter, 0 given in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 258
+[21-Sep-2020 17:46:28 UTC] PHP Stack trace:
+[21-Sep-2020 17:46:28 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:0
+[21-Sep-2020 17:46:28 UTC] PHP   2. require() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:17
+[21-Sep-2020 17:46:28 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php:19
+[21-Sep-2020 17:46:28 UTC] PHP   4. include() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php:106
+[21-Sep-2020 17:46:28 UTC] PHP   5. count() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php:258
+[21-Sep-2020 17:46:29 UTC] PHP Warning:  count() expects at least 1 parameter, 0 given in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 258
+[21-Sep-2020 17:46:29 UTC] PHP Stack trace:
+[21-Sep-2020 17:46:29 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:0
+[21-Sep-2020 17:46:29 UTC] PHP   2. require() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:17
+[21-Sep-2020 17:46:29 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php:19
+[21-Sep-2020 17:46:29 UTC] PHP   4. include() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php:106
+[21-Sep-2020 17:46:29 UTC] PHP   5. count() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php:258
+[21-Sep-2020 17:53:08 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 259
+[21-Sep-2020 17:53:08 UTC] PHP Stack trace:
+[21-Sep-2020 17:53:08 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:0
+[21-Sep-2020 17:53:08 UTC] PHP   2. require() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:17
+[21-Sep-2020 17:53:08 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php:19
+[21-Sep-2020 17:53:08 UTC] PHP   4. include() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php:106
+[21-Sep-2020 17:53:09 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 259
+[21-Sep-2020 17:53:09 UTC] PHP Stack trace:
+[21-Sep-2020 17:53:09 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:0
+[21-Sep-2020 17:53:09 UTC] PHP   2. require() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:17
+[21-Sep-2020 17:53:09 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php:19
+[21-Sep-2020 17:53:09 UTC] PHP   4. include() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php:106
+[21-Sep-2020 18:17:30 UTC] WordPress database error Unknown column 'featued.dog_id' in 'on clause' for query SELECT * FROM dogs INNER JOIN featured ON dogs.dog_id = featued.dog_id made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[21-Sep-2020 18:17:30 UTC] WordPress database error Unknown column 'featued.dog_id' in 'on clause' for query SELECT * FROM dogs INNER JOIN featured ON dogs.dog_id = featued.dog_id made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[21-Sep-2020 18:17:50 UTC] WordPress database error Unknown column 'featued.dog_id' in 'on clause' for query SELECT * FROM dogs INNER JOIN featured ON dogs.dog_id = featued.dog_id made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[21-Sep-2020 18:17:50 UTC] WordPress database error Unknown column 'featued.dog_id' in 'on clause' for query SELECT * FROM dogs INNER JOIN featured ON dogs.dog_id = featued.dog_id made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[21-Sep-2020 18:27:09 UTC] PHP Parse error:  syntax error, unexpected end of file in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 1058
+[21-Sep-2020 19:00:43 UTC] PHP Parse error:  syntax error, unexpected end of file in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 948
+[21-Sep-2020 19:02:38 UTC] WordPress database error Table 'local.ages' doesn't exist for query SELECT age_name FROM ages made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[21-Sep-2020 19:02:38 UTC] WordPress database error Table 'local.ages' doesn't exist for query SELECT age_name FROM ages made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')

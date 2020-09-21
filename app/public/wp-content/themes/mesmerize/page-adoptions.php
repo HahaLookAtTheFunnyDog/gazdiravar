@@ -230,6 +230,8 @@
 		color: white;
 		background-color: dodgerblue;
 		width: 100%;
+		border: 0px;
+		margin-bottom: 5px;
 	}
 	.hideFilterSubmit{
 		display: none;
@@ -242,7 +244,6 @@
 		box-shadow: 0 0 11px rgba(33,33,33,.2); 
 	}
 </style>
-
 <div id='page-content' class="page-content">
 	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
 		<section>
@@ -252,65 +253,61 @@
 				<div class="row no-gutters" style="margin: auto;">
 					<div class="col-md-12">
 						<div class="slider">
-							<div class="slide  activeSlide" style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredCover.jpg"); ?>'); ">
+							<?php
+							global $wpdb;
+							$dogs = $wpdb->get_results('SELECT * FROM dogs a INNER JOIN featured b ON a.dog_id = b.dog_id');
+							$featuredCount = 0;
+
+							foreach($dogs as $dog){
+								if($featuredCount==0){
+									?>
+									<div class="slide activeSlide"
+									<?php
+								}
+								else{
+									?>
+									<div class="slide"
+									<?php
+								}
+								?>
+								style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredCover.jpg"); ?>'); ">
 								<div class="featuredContent">
 									<h2 style="color: white;">
-										Hi I'm Dog1
+										Hi I'm <?php echo $dog->name ?>
 									</h2>
 									<p style="color: white;">
-										I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at e, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
+										<?php echo $dog->description ?>
 									</p>
 								</div>
 							</div>
-							<div class="slide " style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredTwo.jpg"); ?>'); ">
-								<div class="featuredContent">
-									<h2 style="color: white;">
-										Hi I'm Dog2
-									</h2>
-									<p style="color: white;">
-										I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at me, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
-									</p>
-								</div>
-							</div>
-							<div class="slide" style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredThree.jpg"); ?>'); ">
-								<div class="featuredContent">
-									<h2 style="color: white;">
-										Hi I'm Dog3
-									</h2>
-									<p style="color: white;">
-										I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at me, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
-									</p>
-								</div>
-							</div>
-							<div class="slide" style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredThree.jpg"); ?>'); ">
-								<div class="featuredContent">
-									<h2 style="color: white;">
-										Hi I'm Dog3
-									</h2>
-									<p style="color: white;">
-										I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at me, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
-									</p>
-								</div>
-							</div>
-						</div>
+							<?php
+							$featuredCount++;
+						}
+						?>
 					</div>
 				</div>
-				<div class="row no-gutters" style="margin: auto;">
-					<div class="col-md-12">
-						<div class="buttonContainer">
-							<ul class="featuredButtons" style="list-style: none;">
+			</div>
+			<div class="row no-gutters" style="margin: auto;">
+				<div class="col-md-12">
+					<div class="buttonContainer">
+						<ul class="featuredButtons" style="list-style: none;">
+							<?php
+							for($i = 1; $i <= count($dogs); $i++){
+								?>
 								<li>
-									<button id="featured1" class="featuredButton activeButton"></button>
-								</li>
-								<li>
-									<button id="featured2" class="featuredButton"></button>
-								</li>
-								<li>
-									<button id="featured3" class="featuredButton"></button>
-								</li>
-								<li>
-									<button id="featured4" class="featuredButton"></button>
-								</li>
+									<button id="featured<?php echo $i; ?>" class="featuredButton
+										<?php
+										if($i == 1){
+											?>
+											activeButton
+											<?php
+										}
+										?>
+										"></button>
+									</li>
+									<?php
+								}
+								?>
 							</ul>
 						</div>
 					</div>
@@ -320,7 +317,6 @@
 		</section>
 		<div class="flexbox">
 			<div class="col-md-3" style="width: 100%; margin-right: .5rem;">
-				<!--<?php wp_nav_menu(array('theme_location' => 'filter-menu')); ?>-->
 				<div class="filters">
 					<h2>
 						Filters
@@ -331,229 +327,90 @@
 							<h4>Breed</h4>
 							<form>
 								<ul class="scrollRadio">
-
-									<li>
-										<input type="radio" id="Afador" name="Afador" value="Afador" class="dogSelection">
-										<label for="GoldenRetriever">Afador</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
-									<li>
-										<input type="radio" id="Affenhuahua" name="Affenhuahua" value="Affenhuahua" class="dogSelection">
-										<label for="GoldenRetriever">Affenhuahua</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
-									<li>
-										<input type="radio" id="Affenpinscher" name="Affenpinscher" value="Affenpinscher" class="dogSelection">
-										<label for="GoldenRetriever">Affenpinscher</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
-									<li>
-										<input type="radio" id="Akita" name="Akita" value="Akita" class="dogSelection">
-										<label for="GoldenRetriever">Akita</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
-									<li>
-										<input type="radio" id="AlaskanKleeKair" name="AlaskanKleeKair" value="AlaskanKleeKai" class="dogSelection">
-										<label for="GoldenRetriever">Alaskan Klee Kai</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
-									<li>
-										<input type="radio" id="Bassador" name="Bassador" value="Bassador" class="dogSelection">
-										<label for="GoldenRetriever">Bassador</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
-									<li>
-										<input type="radio" id="Beagle" name="Beagle" value="Beagle" class="dogSelection">
-										<label for="GoldenRetriever">Beagle</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
-									<li>
-										<input type="radio" id="Bossie" name="Bossie" value="Bossie" class="dogSelection">
-										<label for="GoldenRetriever">Bossie</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
-									<li>
-										<input type="radio" id="CardiganWelshCorgi" name="CardiganWelshCorgi" value="CardiganWelshCorgi" class="dogSelection">
-										<label for="GoldenRetriever">Cardigan Welsh Corgi</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
-									<li>
-										<input type="radio" id="Daniff" name="Daniff" value="Daniff" class="dogSelection">
-										<label for="GoldenRetriever">Daniff</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
-									<li>
-										<input type="radio" id="Dorkie" name="Dorkie" value="Dorkie" class="dogSelection">
-										<label for="GoldenRetriever">Dorkie</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
-									<li>
-										<input type="radio" id="Eurasier" name="Eurasier" value="Eurasier" class="dogSelection">
-										<label for="GoldenRetriever">Eurasier</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
-									<li>
-										<input type="radio" id="Frengle" name="Frengle" value="Frengle" class="dogSelection">
-										<label for="GoldenRetriever">Frengle</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
-									<li>
-										<input type="radio" id="GiantSchnauzer" name="GiantSchnauzer" value="GiantSchnauzer" class="dogSelection">
-										<label for="GoldenRetriever">Giant Schnauzer</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
-									<li>
-										<input type="radio" id="GoldenRetriever" name="GoldenRetriever" value="GoldenRetriever" class="dogSelection">
-										<label for="GoldenRetriever">Golden Retriever</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
-									<li>
-										<input type="radio" id=">Horgi" name="Horgi" value="Horgi" class="dogSelection">
-										<label for="GoldenRetriever">Horgi</label>
-										<p class="quantity alignMargin">
-											(0)
-										</p>
-										<br>
-									</li>
+									<?php
+									$breeds = $wpdb->get_results('SELECT breed_name FROM breeds ORDER BY breed_name ASC');
+									foreach($breeds as $breed){
+										?>
+										<li>
+											<input type="radio" id="<?php echo str_replace(' ', '', $breed->breed_name); ?>" name="<?php echo str_replace(' ', '', $breed->breed_name); ?>" value="<?php echo str_replace(' ', '', $breed->breed_name); ?>" class="dogSelection">
+											<label for="<?php echo str_replace(' ', '', $breed->breed_name); ?>"> <?php echo $breed->breed_name; ?> </label>
+											<p class="quantity alignMargin">
+												(0)
+											</p>
+											<br>
+										</li>
+										<?php
+									}
+									?>
 								</ul>
-								<input type="submit" value="APPLY" class="filterSubmit hideFilterSubmit" id="dogFilterSubmit">
+								<button type="submit" class="filterSubmit hideFilterSubmit" id="breedFilterSubmit">APPLY</button>
 							</form>
 						</li>
 						<li>
 							<hr class="filterDivider">
 							<h4>Age</h4>
 							<ul>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="dogSelection" value="GoldenRetriever">
-									<label for="GoldenRetriever">Puppy</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="dogSelection" value="GoldenRetriever">
-									<label for="GoldenRetriever">Young</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="dogSelection" value="GoldenRetriever">
-									<label for="GoldenRetriever">Adult</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="dogSelection" value="GoldenRetriever">
-									<label for="GoldenRetriever">Senior</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
+								<?php
+								$ages = $wpdb->get_results('SELECT age_name FROM age');
+								foreach($ages as $age){
+									?>
+									<li>
+										<input type="radio" id="<?php echo str_replace(' ', '', $age->age_name); ?>" name="<?php echo str_replace(' ', '', $age->age_name); ?>" value="<?php echo str_replace(' ', '', $age->age_name); ?>" class="ageSelection">
+										<label for="<?php echo str_replace(' ', '', $age->age_name); ?>"> <?php echo $age->age_name ?> </label>
+										<p class="quantity">
+											(0)
+										</p>
+										<br>
+									</li>
+									<?php
+								}
+								?>
 							</ul>
+							<button type="submit" class="filterSubmit hideFilterSubmit" id="ageFilterSubmit">APPLY</button>
 						</li>
 						<li>
 							<hr class="filterDivider">
 							<h4>Gender</h4>
 							<ul>
-								<li>
-
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Male</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Female</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
+								<?php
+								$genders = $wpdb->get_results('SELECT gender FROM genders');
+								foreach($genders as $gender){
+									?>
+									<li>
+										<input type="radio" id="<?php echo str_replace(' ', '', $gender->gender); ?>" name="<?php echo str_replace(' ', '', $gender->gender); ?>" value="<?php echo str_replace(' ', '', $gender->gender); ?>" class="genderSelection">
+										<label for="<?php echo str_replace(' ', '', $gender->gender); ?>"> <?php echo $gender->gender ?> </label>
+										<p class="quantity">
+											(0)
+										</p>
+										<br>
+									</li>
+									<?php
+								}
+								?>
 							</ul>
+							<button type="submit" class="filterSubmit hideFilterSubmit" id="genderFilterSubmit">APPLY</button>
 						</li>
 						<li>
 							<hr class="filterDivider">
 							<h4>Size</h4>
 							<ul>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Small</label>
+								<?php
+									$sizes = $wpdb->get_results('SELECT size FROM sizes');
+									foreach($sizes as $size){
+										?>
+										<li>
+									<input type="radio" id="<?php echo str_replace(' ', '', $size->size); ?>" name="<?php echo str_replace(' ', '', $size->size); ?>" value="<?php echo str_replace(' ', '', $size->size); ?>" class="sizeSelection">
+									<label for="<?php echo str_replace(' ', '', $size->size); ?>"> <?php echo $size->size ?> </label>
 									<p class="quantity">
 										(0)
 									</p>
 									<br>
 								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Medium</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Large</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
+										<?php
+									}
+								?>
 							</ul>
+							<button type="submit" class="filterSubmit hideFilterSubmit" id="sizeFilterSubmit">APPLY</button>
 						</li>
 						<li>
 							<hr class="filterDivider">
@@ -1028,7 +885,7 @@
 
 												//Filters
 												const dogFilters = document.querySelectorAll('.dogSelection');
-												const dogSubmit = document.getElementById('dogFilterSubmit');
+												const dogSubmit = document.getElementById('breedFilterSubmit');
 												var k;
 												for(k = 0; k < dogFilters.length; k++){
 													dogFilters[k].onclick = function(){
@@ -1044,6 +901,75 @@
 																}
 																if(i==dogFilters.length-1){
 																	dogSubmit.classList.add('hideFilterSubmit');
+																}
+															}
+														}
+														this.previous = this.checked;
+													}
+												}
+
+												const ageFilters = document.querySelectorAll('.ageSelection');
+												const ageSubmit = document.getElementById('ageFilterSubmit');
+												for(k = 0; k < ageFilters.length; k++){
+													ageFilters[k].onclick = function(){
+														if(ageSubmit.classList.contains('hideFilterSubmit')){
+															ageSubmit.classList.remove('hideFilterSubmit');
+														}
+														if (this.previous) {
+															this.checked = false;
+															var i;
+															for(i = 0; i < ageFilters.length; i++){
+																if(ageFilters[i].checked){
+																	break;
+																}
+																if(i==ageFilters.length-1){
+																	ageSubmit.classList.add('hideFilterSubmit');
+																}
+															}
+														}
+														this.previous = this.checked;
+													}
+												}
+
+												const genderFilters = document.querySelectorAll('.genderSelection');
+												const genderSubmit = document.getElementById('genderFilterSubmit');
+												for(k = 0; k < genderFilters.length; k++){
+													genderFilters[k].onclick = function(){
+														if(genderSubmit.classList.contains('hideFilterSubmit')){
+															genderSubmit.classList.remove('hideFilterSubmit');
+														}
+														if (this.previous) {
+															this.checked = false;
+															var i;
+															for(i = 0; i < genderFilters.length; i++){
+																if(genderFilters[i].checked){
+																	break;
+																}
+																if(i==genderFilters.length-1){
+																	genderSubmit.classList.add('hideFilterSubmit');
+																}
+															}
+														}
+														this.previous = this.checked;
+													}
+												}
+
+												const sizeFilters = document.querySelectorAll('.sizeSelection');
+												const sizeSubmit = document.getElementById('sizeFilterSubmit');
+												for(k = 0; k < ageFilters.length; k++){
+													sizeFilters[k].onclick = function(){
+														if(sizeSubmit.classList.contains('hideFilterSubmit')){
+															sizeSubmit.classList.remove('hideFilterSubmit');
+														}
+														if (this.previous) {
+															this.checked = false;
+															var i;
+															for(i = 0; i < sizeFilters.length; i++){
+																if(sizeFilters[i].checked){
+																	break;
+																}
+																if(i==sizeFilters.length-1){
+																	sizeSubmit.classList.add('hideFilterSubmit');
 																}
 															}
 														}
