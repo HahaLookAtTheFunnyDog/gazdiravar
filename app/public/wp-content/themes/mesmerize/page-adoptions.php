@@ -8,7 +8,7 @@
 		text-align: left;
 	}
 	.filters input{
-		height: 1rem;
+		/*height: 1rem;*/
 	}
 	.filters label{
 		font-size: 1rem;
@@ -17,6 +17,9 @@
 	.scrollRadio{
 		height: 15rem;
 		overflow: scroll;
+	}
+	.scrollRadio::-webkit-scrollbar {
+		width: 2px; 
 	}
 	.paginationSection{
 		width: 100%;
@@ -29,7 +32,7 @@
 		color: black;
 		padding: 8px 16px;
 		text-decoration: none;
-		transition: background-color .4s;
+		transition: background-color .5s;
 	}
 	.pagination a.active {
 		background-color: dodgerblue;
@@ -56,7 +59,7 @@
 		}
 	}
 	.carousel-container .carousel-inner {
-		overflow: hidden;
+		overflow: auto;
 	}
 	.carousel-container .track {
 		display: inline-flex;
@@ -103,7 +106,6 @@
 	.nav .next.hide {
 		display: none;
 	}
-
 	.card > * {
 		flex: 1;
 	}
@@ -121,43 +123,132 @@
 		padding: 10px;
 		box-sizing: border-box;
 	}
+	
+
+	.slider {
+		position: relative;
+		overflow: hidden;
+		height: 500px;
+		width: 100%;
+	}
+	.activeSlide{
+		opacity: 1 !important;
+	}
+	.slide{
+		position: absolute;
+		transition: opacity 0.4s ease-in-out;
+		opacity: 0;
+		background-size: cover;                      
+		background-repeat: no-repeat;
+		background-position: center center; 
+		height: 100%; 
+		width: 100%;
+		padding: 0;
+	}
 	.featuredContent{
 		position: absolute; 
-		bottom: -200px;
+		bottom: 20px;
 		width: 600px;
 		background-color: rgba(0, 0, 0, 0.7);
 		color: #fff;
 		padding: 35px;
 	}
-	.activeSlide{
-		display: block !important;
-	}
-	.slide{
-		-webkit-transition: visibility 0.2s ease-in-out;
-		transition: background-image 0.2s ease-in-out;
-	}
+
+
 	.buttonContainer{
 		text-align:center;
 	}
 	.featuredButtons{
 		display: inline-block;
-    	width: auto;
+		width: auto;
 	}
 	.featuredButtons li{
 		display: inline;
 	}
 	.featuredButton {
-		background-color: #A6B2BF;
-	  height:10px;
-	  width: 10px;
-	  border-radius: 50%;
-	  border: 1px solid dodgerblue;
+		background-color: #fff;
+		height:10px;
+		width: 10px;
+		border-radius: 50%;
+		border: 1px solid dodgerblue;
+		cursor: pointer;
 	}
 	.activeButton{
-		background-color: #fff;
+		background-color: dodgerblue;
+	}
+
+
+	.quantity{
+		display: inline;
+		float: right;
+		margin: 0;
+		padding: 0;
+		margin-right: 7px;
+	}
+	.alignMargin{
+		margin-right: 5px;
+	}
+	.filterDivider{
+		margin: 0;
+	}
+
+	.filterChoices{
+		list-style: none;
+		margin: 0;
+		margin-bottom: 20px;
+	}
+	.filterChoices li{
+		display: inline-block;
+	}
+	.filtersli{
+		background-color: dodgerblue;
+		color: white;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 10px;
+		margin-right: 10px;
+	}
+	.filterClose{
+		font-weight: bold;
+		cursor: pointer;
+		margin-left: 10px;
+	}
+	.clearAll{
+		cursor: pointer;
+	}
+	.appliedFiltersHeader{
+		margin-bottom: 5px;
+	}
+	.filterSubmit{
+		display: block;
+		color: white;
+		background-color: dodgerblue;
+		width: 100%;
+		border: 0px;
+		margin-bottom: 5px;
+	}
+	.hideFilterSubmit{
+		display: none;
+	}
+	.iconBig{
+		width: 13rem !important;
+		height: 13rem !important;
+	}
+	.boxShadowAnimate:hover{
+		box-shadow: 0 0 11px rgba(33,33,33,.2); 
+	}
+	.activePag{
+		display: block !important;
+	}
+	.pag{
+		display: none;
+	}
+	.paginationButton{
+		cursor:pointer;
 	}
 </style>
-
 <div id='page-content' class="page-content">
 	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
 		<section>
@@ -166,348 +257,373 @@
 			<div class="container-fluid">
 				<div class="row no-gutters" style="margin: auto;">
 					<div class="col-md-12">
-						<div class="slide activeSlide" style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredCover.jpg"); ?>'); background-size:     cover;                      /* <------ */
-						background-repeat:   no-repeat;
-						background-position: center center;  height: 500px; padding: 0; display: none;">
-						<div class="featuredContent">
-							<h2 style="color: white;">
-								Hi I'm Dog1
-							</h2>
-							<p style="color: white;">
-								I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at me, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
-							</p>
-						</div>
-					</div>
-					<div class="slide" style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredTwo.jpg"); ?>'); background-size:     cover;                      /* <------ */
-					background-repeat:   no-repeat;
-					background-position: center center;  height: 500px; padding: 0; display: none;">
-					<div class="featuredContent">
-						<h2 style="color: white;">
-							Hi I'm Dog2
-						</h2>
-						<p style="color: white;">
-							I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at me, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
-						</p>
-					</div>
-				</div>
-				<div class="slide" style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredThree.jpg"); ?>'); background-size:     cover;                      /* <------ */
-				background-repeat:   no-repeat;
-				background-position: center center;  height: 500px; padding: 0; display: none;">
-				<div class="featuredContent">
-					<h2 style="color: white;">
-						Hi I'm Dog3
-					</h2>
-					<p style="color: white;">
-						I really don’t like getting my photo taken. Professional headshots, family photos, and even selfies with friends — it’s not always a natural-feeling experience to be the focus of attention. The pressure of the photographer staring at me, trying to figure out what pose doesn’t make me look 5lbs heavier, holding a smile for what…
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row no-gutters" style="margin: auto;">
-		<div class="col-md-12">
-			<div class="buttonContainer">
-			<ul class="featuredButtons" style="list-style: none;">
-				<li>
-					<button class="featuredButton activeButton"></button>
-				</li>
-				<li>
-					<button class="featuredButton"></button>
-				</li>
-				<li>
-					<button class="featuredButton"></button>
-				</li>
-			</ul>
-		</div>
-	</div>
-	</div>
-</div>
-<hr style="margin-top: 10px;">
-</section>
-<div class="flexbox">
-	<div class="col-3" style="width: 100%; margin-right: .5rem;">
-		<!--<?php wp_nav_menu(array('theme_location' => 'filter-menu')); ?>-->
-		<div class="filters">
-			<h2>
-				Filters
-			</h2>
-			<ul>
-				<li>
-					<hr>
-					<h4>Breed</h4>
-					<ul class="scrollRadio">
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<hr>
-					<h4>Age</h4>
-					<ul>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<hr>
-					<h4>Gender</h4>
-					<ul>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<hr>
-					<h4>Size</h4>
-					<ul>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<hr>
-					<h4>Good With</h4>
-					<Ul>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-						<li>
-							<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-							<label for="GoldenRetriever">Golden Retriever</label><br>
-						</li>
-					</Ul>
-				</li>
-				<hr>
-			</ul>
-			<button type="button" style="width: 100%;">APPLY</button>
-		</div>
-	</div>
-	<div class="col-9">
-		<div class="row spaced-cols content-center-sm" data-type="row">
-			<div class="col-sm-4">
-				<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-					<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p> 
-					<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-					<h6 class="">Pet Name</h6> 
-					<p class="small italic">Shelter Name</p>
-				</div> 
-			</div>
-			<div class="col-sm-4"> 
-				<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-					<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p>
-					<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-					<h6 class="">Pet Name</h6>
-					<p class="small italic">Shelter Name</p>
-				</div>
-			</div> 
-			<div class="col-sm-4"> 
-				<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;"> 
-					<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p> 
-					<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"> 
-					<h6 class="">Pet Name</h6>
-					<p class="small italic">Shelter Name</p>
-				</div> 
-			</div>
-		</div>
-		<div class="row spaced-cols content-center-sm" data-type="row" >
-			<div class="col-sm-4">
-				<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-					<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p> 
-					<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-					<h6 class="">Pet Name</h6> 
-					<p class="small italic">Shelter Name</p>
-				</div> 
-			</div>
-			<div class="col-sm-4"> 
-				<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-					<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p>
-					<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-					<h6 class="">Pet Name</h6>
-					<p class="small italic">Shelter Name</p>
-				</div>
-			</div> 
-			<div class="col-sm-4"> 
-				<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;"> 
-					<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p> 
-					<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"> 
-					<h6 class="">Pet Name</h6>
-					<p class="small italic">Shelter Name</p>
-				</div> 
-			</div>
-		</div>
-		<div class="row spaced-cols content-center-sm" data-type="row">
-			<div class="col-sm-4">
-				<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-					<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p> 
-					<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-					<h6 class="">Pet Name</h6> 
-					<p class="small italic">Shelter Name</p>
-				</div> 
-			</div>
-			<div class="col-sm-4"> 
-				<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-					<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p>
-					<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-					<h6 class="">Pet Name</h6>
-					<p class="small italic">Shelter Name</p>
-				</div>
-			</div> 
-			<div class="col-sm-4"> 
-				<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;"> 
-					<p class="text-center">Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts have the same feel to them, like “Hey, I think I’ve been here before,</p> 
-					<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"> 
-					<h6 class="">Pet Name</h6>
-					<p class="small italic">Shelter Name</p>
-				</div> 
-			</div>
-		</div>
-		<div class="row no-gutters paginationSection">
-			<div class="pagination">
-				<a href="#">&laquo;</a>
-				<a class="active" href="#">1</a>
-				<a href="#">2</a>
-				<a href="#">3</a>
-				<a href="#">4</a>
-				<a href="#">5</a>
-				<a href="#">6</a>
-				<a href="#">&raquo;</a>
-			</div>
-		</div>
-	</div>
-</div>
-<hr style="margin-top: 2.5rem;">
-<section class="recentlyViewed" style="width: 100%;">
-	<h2 style="text-align: center;">Recently Viewed Pets</h2>
-	<div class="carousel-container">
-		<div class="carousel-inner">
-			<div class="track">
-				<div class="card-container">
-					<div class="card">
-						<div class="img">
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-						</div>
-						<div class="info">
-							<h6 class="">Pet Name</h6>
-						</div>
-					</div>
-				</div>
-				<div class="card-container">
-					<div class="card">
-						<div class="img">
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-							<div class="info">
-								<h6 class="">Pet Name</h6>
+						<div class="slider">
+							<?php
+							global $wpdb;
+							$featuredDogs = $wpdb->get_results('SELECT * FROM dogs a INNER JOIN featured b ON a.dog_id = b.dog_id');
+							$featuredCount = 0;
+
+							foreach($featuredDogs as $dog){
+								if($featuredCount==0){
+									?>
+									<div class="slide activeSlide"
+									<?php
+								}
+								else{
+									?>
+									<div class="slide"
+									<?php
+								}
+								?>
+								style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredCover.jpg"); ?>'); ">
+								<div class="featuredContent">
+									<h2 style="color: white;">
+										Hi I'm <?php echo $dog->name ?>
+									</h2>
+									<p style="color: white;">
+										<?php echo $dog->description ?>
+									</p>
+								</div>
 							</div>
+							<?php
+							$featuredCount++;
+						}
+						?>
+					</div>
+				</div>
+			</div>
+			<div class="row no-gutters" style="margin: auto;">
+				<div class="col-md-12">
+					<div class="buttonContainer">
+						<ul class="featuredButtons" style="list-style: none;">
+							<?php
+							for($i = 1; $i <= count($featuredDogs); $i++){
+								?>
+								<li>
+									<button id="featured<?php echo $i; ?>" class="featuredButton
+										<?php
+										if($i == 1){
+											?>
+											activeButton
+											<?php
+										}
+										?>
+										"></button>
+									</li>
+									<?php
+								}
+								?>
+							</ul>
 						</div>
 					</div>
-					<div class="card-container">
-						<div class="card">
-							<div class="img">
-								<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
+				</div>
+			</div>
+			<hr style="margin-top: 10px;">
+		</section>
+		<div class="flexbox">
+			<div class="col-md-3" style="width: 100%; margin-right: .5rem;">
+				<div class="filters">
+					<h2>
+						Filters
+					</h2>
+					<ul>
+						<li>
+							<hr class="filterDivider">
+							<h4>Breed</h4>
+							<form>
+								<ul class="scrollRadio">
+									<?php
+									$breeds = $wpdb->get_results('SELECT breed_name FROM breeds ORDER BY breed_name ASC');
+									foreach($breeds as $breed){
+										?>
+										<li>
+											<input type="radio" id="<?php echo str_replace(' ', '', $breed->breed_name); ?>" name="<?php echo str_replace(' ', '', $breed->breed_name); ?>" value="<?php echo str_replace(' ', '', $breed->breed_name); ?>" class="dogSelection">
+											<label for="<?php echo str_replace(' ', '', $breed->breed_name); ?>"> <?php echo $breed->breed_name; ?> </label>
+											<p class="quantity alignMargin">
+												(0)
+											</p>
+											<br>
+										</li>
+										<?php
+									}
+									?>
+								</ul>
+								<button type="submit" class="filterSubmit hideFilterSubmit" id="breedFilterSubmit">APPLY</button>
+							</form>
+						</li>
+						<li>
+							<hr class="filterDivider">
+							<h4>Age</h4>
+							<ul>
+								<?php
+								$ages = $wpdb->get_results('SELECT age_name FROM age');
+								foreach($ages as $age){
+									?>
+									<li>
+										<input type="radio" id="<?php echo str_replace(' ', '', $age->age_name); ?>" name="<?php echo str_replace(' ', '', $age->age_name); ?>" value="<?php echo str_replace(' ', '', $age->age_name); ?>" class="ageSelection">
+										<label for="<?php echo str_replace(' ', '', $age->age_name); ?>"> <?php echo $age->age_name ?> </label>
+										<p class="quantity">
+											(0)
+										</p>
+										<br>
+									</li>
+									<?php
+								}
+								?>
+							</ul>
+							<button type="submit" class="filterSubmit hideFilterSubmit" id="ageFilterSubmit">APPLY</button>
+						</li>
+						<li>
+							<hr class="filterDivider">
+							<h4>Gender</h4>
+							<ul>
+								<?php
+								$genders = $wpdb->get_results('SELECT gender FROM genders');
+								foreach($genders as $gender){
+									?>
+									<li>
+										<input type="radio" id="<?php echo str_replace(' ', '', $gender->gender); ?>" name="<?php echo str_replace(' ', '', $gender->gender); ?>" value="<?php echo str_replace(' ', '', $gender->gender); ?>" class="genderSelection">
+										<label for="<?php echo str_replace(' ', '', $gender->gender); ?>"> <?php echo $gender->gender ?> </label>
+										<p class="quantity">
+											(0)
+										</p>
+										<br>
+									</li>
+									<?php
+								}
+								?>
+							</ul>
+							<button type="submit" class="filterSubmit hideFilterSubmit" id="genderFilterSubmit">APPLY</button>
+						</li>
+						<li>
+							<hr class="filterDivider">
+							<h4>Size</h4>
+							<ul>
+								<?php
+								$sizes = $wpdb->get_results('SELECT size FROM sizes');
+								foreach($sizes as $size){
+									?>
+									<li>
+										<input type="radio" id="<?php echo str_replace(' ', '', $size->size); ?>" name="<?php echo str_replace(' ', '', $size->size); ?>" value="<?php echo str_replace(' ', '', $size->size); ?>" class="sizeSelection">
+										<label for="<?php echo str_replace(' ', '', $size->size); ?>"> <?php echo $size->size ?> </label>
+										<p class="quantity">
+											(0)
+										</p>
+										<br>
+									</li>
+									<?php
+								}
+								?>
+							</ul>
+							<button type="submit" class="filterSubmit hideFilterSubmit" id="sizeFilterSubmit">APPLY</button>
+						</li>
+						<li>
+							<hr class="filterDivider">
+							<h4>Good With</h4>
+							<Ul>
+								<li>
+									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<label for="GoldenRetriever">Kids</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
+								</li>
+								<li>
+									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<label for="GoldenRetriever">Other Dogs</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
+								</li>
+								<li>
+									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<label for="GoldenRetriever">Cats</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
+								</li>
+							</Ul>
+						</li>
+						<li>
+							<hr class="filterDivider">
+							<h4>Within</h4>
+							<Ul>
+								<li>
+									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<label for="GoldenRetriever">50 Miles</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
+								</li>
+								<li>
+									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<label for="GoldenRetriever">100 Miles</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
+								</li>
+								<li>
+									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<label for="GoldenRetriever">200 Miles</label>
+									<p class="quantity">
+										(0)
+									</p>
+									<br>
+								</li>
+							</Ul>
+						</li>
+						<hr class="filterDivider">
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="row">
+					<div class="col-sm-12 appliedFiltersHeader" >
+						<h4>
+							Filters Applied
+						</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<ul class="filterChoices">
+							<li class="filtersli">
+								50 Miles
+								<span class="filterClose">
+									x
+								</span>
+							</li>
+							<li class="filtersli">
+								Golden Retriever
+								<span class="filterClose">
+									x
+								</span>
+							</li>
+							<li class="filtersli">
+								Akita
+								<span class="filterClose">
+									x
+								</span>
+							</li>
+							<li class="filtersli">
+								Puppy
+								<span class="filterClose">
+									x
+								</span>
+							</li>
+							<li class="clearAll">
+								Clear All
+							</li>
+						</ul>
+					</div>
+				</div>
+				<?php 
+				$dogs = $wpdb->get_results('SELECT * FROM dogs');
+				$cardCount = 0;
+				$pageNumber = 1;
+				$rowCount = 0;
+				foreach($dogs as $dog){
+					if($cardCount == 0){
+						if($pageNumber == 1){
+							?>
+							<div id="page<?php echo $pageNumber?>" class="pag activePag">
+							<?php
+						}
+						else{
+							?>
+							<div id="page<?php echo $pageNumber?>" class="pag">
+							<?php
+						}
+					}
+					if($rowCount == 0){
+						?>
+							<div class="row spaced-cols content-center-sm" data-type="row">
+						<?php	
+					}
+					?>
+					<div class="col-sm-4">
+						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
+							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+							<h6 class=""><?php echo $dog->name ?></h6> 
+							<p class="small italic">Shelter Name</p>
+							<p class="text-center"><?php echo $dog->description ?></p> 
+						</div> 
+					</div>
+					<?php
+
+					if($rowCount == 2){
+						?>
+						</div>
+						<?php
+					}
+
+					if($cardCount == 8){
+						?>
+						</div>
+						<?php
+					}
+					$rowCount++;
+					$cardCount++;
+					if($cardCount > 8){
+						$cardCount = 0;
+						$pageNumber++;
+					}
+					if($rowCount > 2){
+						$rowCount = 0;
+					}
+				}
+				if($cardCount != 0){
+					?>
+				</div>
+				</div>
+					<?php
+				}
+				?>
+				<div class="row no-gutters paginationSection">
+					<div class="pagination">
+						<a id="paginationFirst">&laquo;</a>
+						<?php
+							for($i = 1; $i <= $pageNumber; $i++){
+								if($i == 1){
+									?>
+									<a class="active paginationButton"><?php echo $i ?></a>
+									<?php
+								}
+								else{
+									?>
+									<a class="paginationButton"><?php echo $i ?></a>
+									<?php
+								}
+							}
+						?>
+						<a id="paginationLast">&raquo;</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr style="margin-top: 2.5rem;">
+		<section class="recentlyViewed" style="width: 100%;">
+			<h2 style="text-align: center;">Recently Viewed Pets</h2>
+			<div class="carousel-container">
+				<div class="carousel-inner">
+					<div class="track">
+						<div class="card-container">
+							<div class="card boxShadowAnimate">
+								<div class="img">
+									<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+								</div>
 								<div class="info">
 									<h6 class="">Pet Name</h6>
 								</div>
 							</div>
 						</div>
 						<div class="card-container">
-							<div class="card">
+							<div class="card boxShadowAnimate">
 								<div class="img">
 									<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 									<div class="info">
@@ -516,7 +632,7 @@
 								</div>
 							</div>
 							<div class="card-container">
-								<div class="card">
+								<div class="card boxShadowAnimate">
 									<div class="img">
 										<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 										<div class="info">
@@ -525,7 +641,7 @@
 									</div>
 								</div>
 								<div class="card-container">
-									<div class="card">
+									<div class="card boxShadowAnimate">
 										<div class="img">
 											<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 											<div class="info">
@@ -534,7 +650,7 @@
 										</div>
 									</div>
 									<div class="card-container">
-										<div class="card">
+										<div class="card boxShadowAnimate">
 											<div class="img">
 												<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 												<div class="info">
@@ -543,7 +659,7 @@
 											</div>
 										</div>
 										<div class="card-container">
-											<div class="card">
+											<div class="card boxShadowAnimate">
 												<div class="img">
 													<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 													<div class="info">
@@ -552,7 +668,7 @@
 												</div>
 											</div>
 											<div class="card-container">
-												<div class="card">
+												<div class="card boxShadowAnimate">
 													<div class="img">
 														<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 														<div class="info">
@@ -561,7 +677,7 @@
 													</div>
 												</div>
 												<div class="card-container">
-													<div class="card">
+													<div class="card boxShadowAnimate">
 														<div class="img">
 															<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 															<div class="info">
@@ -570,7 +686,7 @@
 														</div>
 													</div>
 													<div class="card-container">
-														<div class="card">
+														<div class="card boxShadowAnimate">
 															<div class="img">
 																<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 																<div class="info">
@@ -579,7 +695,7 @@
 															</div>
 														</div>
 														<div class="card-container">
-															<div class="card">
+															<div class="card boxShadowAnimate">
 																<div class="img">
 																	<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 																	<div class="info">
@@ -588,7 +704,7 @@
 																</div>
 															</div>
 															<div class="card-container">
-																<div class="card">
+																<div class="card boxShadowAnimate">
 																	<div class="img">
 																		<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 																		<div class="info">
@@ -597,7 +713,7 @@
 																	</div>
 																</div>
 																<div class="card-container">
-																	<div class="card">
+																	<div class="card boxShadowAnimate">
 																		<div class="img">
 																			<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 																			<div class="info">
@@ -605,63 +721,126 @@
 																			</div>
 																		</div>
 																	</div>
+																	<div class="card-container">
+																		<div class="card boxShadowAnimate">
+																			<div class="img">
+																				<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
+																				<div class="info">
+																					<h6 class="">Pet Name</h6>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="card-container">
+																			<div class="card boxShadowAnimate">
+																				<div class="img">
+																					<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
+																					<div class="info">
+																						<h6 class="">Pet Name</h6>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="nav">
+																		<button class="prev">
+																			<i class="material-icons">
+																				<
+																			</i>
+																		</button>
+																		<button class="next">
+																			<i class="material-icons">
+																				>
+																			</i>
+																		</button>
+																	</div>
 																</div>
-															</div>
-															<div class="nav">
-																<button class="prev">
-																	<i class="material-icons">
-																		<
-																	</i>
-																</button>
-																<button class="next">
-																	<i class="material-icons">
-																		>
-																	</i>
-																</button>
-															</div>
+
+															</section>
 														</div>
+													</div>
+													<script>
+														const paginationButtons = document.querySelectorAll('.paginationButton');
+														const pages = document.querySelectorAll('.pag');
+														var j;
+														for(j = 0; j < paginationButtons.length; j++){
+															paginationButtons[j].onclick = function(){
+																const activePage = document.querySelector('.activePag');
+																const activeButton = document.querySelector('.active');
+																activeButton.classList.remove('active');
+																activePage.classList.remove('activePag');
 
-													</section>
-												</div>
-											</div>
-											<script>
-												const prev  = document.querySelector('.prev');
-												const next = document.querySelector('.next');
+																this.classList.add('active');
+																pages[this.innerText-1].classList.add('activePag');
+															}
+															
+														}
+														const paginationFirst = document.getElementById('paginationFirst');
+														const paginationLast = document.getElementById('paginationLast');
+														paginationFirst.onclick = function(){
+															const activePage = document.querySelector('.activePag');
+															const activeButton = document.querySelector('.active');
+															activeButton.classList.remove('active');
+															activePage.classList.remove('activePag');
 
-												const track = document.querySelector('.track');
+															paginationButtons[0].classList.add('active');
+															pages[0].classList.add('activePag');
+														}
+														paginationLast.onclick = function(){
+															const activePage = document.querySelector('.activePag');
+															const activeButton = document.querySelector('.active');
+															activeButton.classList.remove('active');
+															activePage.classList.remove('activePag');
 
-												let carouselWidth = document.querySelector('.carousel-container').offsetWidth;
+															paginationButtons[paginationButtons.length-1].classList.add('active');
+															pages[pages.length-1].classList.add('activePag');
+														}
+						
 
-												window.addEventListener('resize', () => {
-													carouselWidth = document.querySelector('.carousel-container').offsetWidth;
-												})
+														const prev  = document.querySelector('.prev');
+														const next = document.querySelector('.next');
 
-												let index = 0;
+														const track = document.querySelector('.track');
 
-												next.addEventListener('click', () => {
-													index++;
-													prev.classList.add('show');
-													track.style.transform = `translateX(-${index * carouselWidth}px)`;
+														let carouselWidth = document.querySelector('.carousel-container').offsetWidth;
 
-													if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
-														next.classList.add('hide');
-													}
-												})
+														window.addEventListener('resize', () => {
+															carouselWidth = document.querySelector('.carousel-container').offsetWidth;
+														})
 
-												prev.addEventListener('click', () => {
-													index--;
-													next.classList.remove('hide');
-													if (index === 0) {
-														prev.classList.remove('show');
-													}
-													track.style.transform = `translateX(-${index * carouselWidth}px)`;
-												})
+														let index = 0;
+
+														next.addEventListener('click', () => {
+															index++;
+															prev.classList.add('show');
+															track.style.transform = `translateX(-${index * carouselWidth}px)`;
+															if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
+																next.classList.add('hide');
+															}
+
+															else if(track.offsetWidth - (index * carouselWidth)*2 < 100){
+																next.classList.add('hide');
+															}
+														})
+														prev.addEventListener('click', () => {
+															index--;
+															next.classList.remove('hide');
+															if (index === 0) {
+																prev.classList.remove('show');
+															}
+															track.style.transform = `translateX(-${index * carouselWidth}px)`;
+														})
 
 												//slides
-							
+
 												const buttons = document.querySelectorAll('.featuredButton');
 												const slides = document.querySelectorAll('.slide');
-												const intervalTime = 5000;
+												const intervalTime = 8000;
+												const button1 = document.getElementById('featured1');
+												const button2 = document.getElementById('featured2');
+												const button3 = document.getElementById('featured3');
+												const button4 = document.getElementById('featured4');
+
+
 												const nextSlide = () => {
 													const current = document.querySelector('.activeSlide');
 													if (current.nextElementSibling) {
@@ -676,11 +855,9 @@
 															buttons[i].classList.remove('activeButton');
 															if(i+1<buttons.length){
 																buttons[i+1].classList.add('activeButton');
-																console.log('add + 1');
 																break;
 															}
 															else{
-																console.log('adding to 0');
 																buttons[0].classList.add('activeButton');
 																break;
 															}
@@ -691,5 +868,150 @@
 												slideInterval = setInterval(nextSlide, intervalTime);
 
 
+												button1.onclick = function(){
+													const activeSlide = document.querySelector('.activeSlide');
+													activeSlide.classList.remove('activeSlide');
+													slides[0].classList.add('activeSlide');
+
+													const activeBtn = document.querySelector('.activeButton');
+													activeBtn.classList.remove('activeButton');
+													buttons[0].classList.add('activeButton');
+													clearInterval(slideInterval);
+													slideInterval = setInterval(nextSlide, intervalTime);
+													
+												}
+												button2.onclick = function(){
+													const activeSlide = document.querySelector('.activeSlide');
+													activeSlide.classList.remove('activeSlide');
+													slides[1].classList.add('activeSlide');
+
+													const activeBtn = document.querySelector('.activeButton');
+													activeBtn.classList.remove('activeButton');
+													buttons[1].classList.add('activeButton');
+
+													clearInterval(slideInterval);
+													slideInterval = setInterval(nextSlide, intervalTime);
+												}
+												button3.onclick = function(){
+													const activeSlide = document.querySelector('.activeSlide');
+													activeSlide.classList.remove('activeSlide');
+													slides[2].classList.add('activeSlide');
+
+													const activeBtn = document.querySelector('.activeButton');
+													activeBtn.classList.remove('activeButton');
+													buttons[2].classList.add('activeButton');
+
+													clearInterval(slideInterval);
+													slideInterval = setInterval(nextSlide, intervalTime);
+												}
+												button4.onclick = function(){
+													const activeSlide = document.querySelector('.activeSlide');
+													activeSlide.classList.remove('activeSlide');
+													slides[3].classList.add('activeSlide');
+
+													const activeBtn = document.querySelector('.activeButton');
+													activeBtn.classList.remove('activeButton');
+													buttons[3].classList.add('activeButton');
+
+													clearInterval(slideInterval);
+													slideInterval = setInterval(nextSlide, intervalTime);
+												}
+										
+												//Filters
+												const dogFilters = document.querySelectorAll('.dogSelection');
+												const dogSubmit = document.getElementById('breedFilterSubmit');
+												var k;
+												for(k = 0; k < dogFilters.length; k++){
+													dogFilters[k].onclick = function(){
+														if(dogSubmit.classList.contains('hideFilterSubmit')){
+															dogSubmit.classList.remove('hideFilterSubmit');
+														}
+														if (this.previous) {
+															this.checked = false;
+															var i;
+															for(i = 0; i < dogFilters.length; i++){
+																if(dogFilters[i].checked){
+																	break;
+																}
+																if(i==dogFilters.length-1){
+																	dogSubmit.classList.add('hideFilterSubmit');
+																}
+															}
+														}
+														this.previous = this.checked;
+													}
+												}
+
+												const ageFilters = document.querySelectorAll('.ageSelection');
+												const ageSubmit = document.getElementById('ageFilterSubmit');
+												for(k = 0; k < ageFilters.length; k++){
+													ageFilters[k].onclick = function(){
+														if(ageSubmit.classList.contains('hideFilterSubmit')){
+															ageSubmit.classList.remove('hideFilterSubmit');
+														}
+														if (this.previous) {
+															this.checked = false;
+															var i;
+															for(i = 0; i < ageFilters.length; i++){
+																if(ageFilters[i].checked){
+																	break;
+																}
+																if(i==ageFilters.length-1){
+																	ageSubmit.classList.add('hideFilterSubmit');
+																}
+															}
+														}
+														this.previous = this.checked;
+													}
+												}
+
+												const genderFilters = document.querySelectorAll('.genderSelection');
+												const genderSubmit = document.getElementById('genderFilterSubmit');
+												for(k = 0; k < genderFilters.length; k++){
+													genderFilters[k].onclick = function(){
+														if(genderSubmit.classList.contains('hideFilterSubmit')){
+															genderSubmit.classList.remove('hideFilterSubmit');
+														}
+														if (this.previous) {
+															this.checked = false;
+															var i;
+															for(i = 0; i < genderFilters.length; i++){
+																if(genderFilters[i].checked){
+																	break;
+																}
+																if(i==genderFilters.length-1){
+																	genderSubmit.classList.add('hideFilterSubmit');
+																}
+															}
+														}
+														this.previous = this.checked;
+													}
+												}
+
+												const sizeFilters = document.querySelectorAll('.sizeSelection');
+												const sizeSubmit = document.getElementById('sizeFilterSubmit');
+												for(k = 0; k < ageFilters.length; k++){
+													sizeFilters[k].onclick = function(){
+														if(sizeSubmit.classList.contains('hideFilterSubmit')){
+															sizeSubmit.classList.remove('hideFilterSubmit');
+														}
+														if (this.previous) {
+															this.checked = false;
+															var i;
+															for(i = 0; i < sizeFilters.length; i++){
+																if(sizeFilters[i].checked){
+																	break;
+																}
+																if(i==sizeFilters.length-1){
+																	sizeSubmit.classList.add('hideFilterSubmit');
+																}
+															}
+														}
+														this.previous = this.checked;
+													}
+												}
+
+
 											</script>
+
 											<?php get_footer(); ?>
