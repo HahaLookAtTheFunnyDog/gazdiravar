@@ -208,7 +208,8 @@
 		padding-left: 10px;
 		padding-right: 10px;
 		border-radius: 10px;
-		margin-right: 10px;
+		margin: 10px;
+		margin-left: 0;
 	}
 	.filterClose{
 		font-weight: bold;
@@ -249,6 +250,25 @@
 		cursor:pointer;
 	}
 </style>
+<?php 
+	function appendForms(){
+		if(is_array($_GET["breed"]) || is_object($_GET["breed"])){
+			foreach($_GET["breed"] as $breed){
+				?>
+				<input type="hidden" name="breed[]" value="<?php echo $breed ?>">
+				<?php
+			}
+		}
+		if(is_array($_GET["age"]) || is_object($_GET["age"])){
+			foreach($_GET["age"] as $age){
+				?>
+				<input type="hidden" name="age[]" value="<?php echo $age ?>">
+				<?php
+			}
+		}
+	}
+?>
+
 <div id='page-content' class="page-content">
 	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
 		<section>
@@ -320,6 +340,8 @@
 			</div>
 			<hr style="margin-top: 10px;">
 		</section>
+		<?php
+		?>
 		<div class="flexbox">
 			<div class="col-md-3" style="width: 100%; margin-right: .5rem;">
 				<div class="filters">
@@ -330,14 +352,27 @@
 						<li>
 							<hr class="filterDivider">
 							<h4>Breed</h4>
-							<form>
+							<form method="get">
 								<ul class="scrollRadio">
 									<?php
 									$breeds = $wpdb->get_results('SELECT breed_name FROM breeds ORDER BY breed_name ASC');
+
 									foreach($breeds as $breed){
 										?>
 										<li>
-											<input type="radio" id="<?php echo str_replace(' ', '', $breed->breed_name); ?>" name="<?php echo str_replace(' ', '', $breed->breed_name); ?>" value="<?php echo str_replace(' ', '', $breed->breed_name); ?>" class="dogSelection">
+											<input type="checkbox" id="<?php echo str_replace(' ', '', $breed->breed_name); ?>" name="breed[]" value="<?php echo $breed->breed_name ?>" class="dogSelection"
+											<?php 
+												if(is_array($_GET["breed"]) || is_object($_GET["breed"])){
+													foreach($_GET["breed"] as $alreadySubmittedBreed){
+														if($alreadySubmittedBreed == $breed->breed_name){
+															?>
+															disabled="disabled"
+															<?php
+														}
+													}
+												}
+											?>
+											>
 											<label for="<?php echo str_replace(' ', '', $breed->breed_name); ?>"> <?php echo $breed->breed_name; ?> </label>
 											<p class="quantity alignMargin">
 												(0)
@@ -348,19 +383,35 @@
 									}
 									?>
 								</ul>
-								<button type="submit" class="filterSubmit hideFilterSubmit" id="breedFilterSubmit">APPLY</button>
+								<?php
+									appendForms();
+								?>
+								<button type="submit" class="filterSubmit hideFilterSubmit" name="breedSubmit" id="breedFilterSubmit">APPLY</button>
 							</form>
 						</li>
 						<li>
 							<hr class="filterDivider">
 							<h4>Age</h4>
+							<form method="get">
 							<ul>
 								<?php
 								$ages = $wpdb->get_results('SELECT age_name FROM age');
 								foreach($ages as $age){
 									?>
 									<li>
-										<input type="radio" id="<?php echo str_replace(' ', '', $age->age_name); ?>" name="<?php echo str_replace(' ', '', $age->age_name); ?>" value="<?php echo str_replace(' ', '', $age->age_name); ?>" class="ageSelection">
+										<input type="checkbox" id="<?php echo str_replace(' ', '', $age->age_name); ?>" name="age[]" value="<?php echo $age->age_name ?>" class="ageSelection"
+										<?php 
+											if(is_array($_GET["age"]) || is_object($_GET["age"])){
+												foreach($_GET["age"] as $alreadySubmittedAge){
+													if($alreadySubmittedAge == $age->age_name){
+														?>
+														disabled="disabled"
+														<?php
+													}
+												}
+											}
+										?>
+										>
 										<label for="<?php echo str_replace(' ', '', $age->age_name); ?>"> <?php echo $age->age_name ?> </label>
 										<p class="quantity">
 											(0)
@@ -370,8 +421,13 @@
 									<?php
 								}
 								?>
+								<?php
+									appendForms();
+								?>
+							
 							</ul>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="ageFilterSubmit">APPLY</button>
+							</form>
 						</li>
 						<li>
 							<hr class="filterDivider">
@@ -382,7 +438,7 @@
 								foreach($genders as $gender){
 									?>
 									<li>
-										<input type="radio" id="<?php echo str_replace(' ', '', $gender->gender); ?>" name="<?php echo str_replace(' ', '', $gender->gender); ?>" value="<?php echo str_replace(' ', '', $gender->gender); ?>" class="genderSelection">
+										<input type="checkbox" id="<?php echo str_replace(' ', '', $gender->gender); ?>" name="<?php echo str_replace(' ', '', $gender->gender); ?>" value="<?php echo str_replace(' ', '', $gender->gender); ?>" class="genderSelection">
 										<label for="<?php echo str_replace(' ', '', $gender->gender); ?>"> <?php echo $gender->gender ?> </label>
 										<p class="quantity">
 											(0)
@@ -404,7 +460,7 @@
 								foreach($sizes as $size){
 									?>
 									<li>
-										<input type="radio" id="<?php echo str_replace(' ', '', $size->size); ?>" name="<?php echo str_replace(' ', '', $size->size); ?>" value="<?php echo str_replace(' ', '', $size->size); ?>" class="sizeSelection">
+										<input type="checkbox" id="<?php echo str_replace(' ', '', $size->size); ?>" name="<?php echo str_replace(' ', '', $size->size); ?>" value="<?php echo str_replace(' ', '', $size->size); ?>" class="sizeSelection">
 										<label for="<?php echo str_replace(' ', '', $size->size); ?>"> <?php echo $size->size ?> </label>
 										<p class="quantity">
 											(0)
@@ -422,7 +478,7 @@
 							<h4>Good With</h4>
 							<Ul>
 								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Kids</label>
 									<p class="quantity">
 										(0)
@@ -430,7 +486,7 @@
 									<br>
 								</li>
 								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Other Dogs</label>
 									<p class="quantity">
 										(0)
@@ -438,7 +494,7 @@
 									<br>
 								</li>
 								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">Cats</label>
 									<p class="quantity">
 										(0)
@@ -452,7 +508,7 @@
 							<h4>Within</h4>
 							<Ul>
 								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">50 Miles</label>
 									<p class="quantity">
 										(0)
@@ -460,7 +516,7 @@
 									<br>
 								</li>
 								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">100 Miles</label>
 									<p class="quantity">
 										(0)
@@ -468,7 +524,7 @@
 									<br>
 								</li>
 								<li>
-									<input type="radio" id="GoldenRetriever" name="gender" value="GoldenRetriever">
+									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
 									<label for="GoldenRetriever">200 Miles</label>
 									<p class="quantity">
 										(0)
@@ -484,41 +540,46 @@
 			<div class="col-md-9">
 				<div class="row">
 					<div class="col-sm-12 appliedFiltersHeader" >
-						<h4>
-							Filters Applied
-						</h4>
+						<?php
+						if(is_array($_GET["breed"]) || is_object($_GET["breed"]) || is_array($_GET["age"]) || is_object($_GET["age"])){
+							?>
+							<h4>
+								Filters Applied
+							</h4>
+							<?php
+						}
+						?>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
 						<ul class="filterChoices">
-							<li class="filtersli">
-								50 Miles
-								<span class="filterClose">
-									x
-								</span>
-							</li>
-							<li class="filtersli">
-								Golden Retriever
-								<span class="filterClose">
-									x
-								</span>
-							</li>
-							<li class="filtersli">
-								Akita
-								<span class="filterClose">
-									x
-								</span>
-							</li>
-							<li class="filtersli">
-								Puppy
-								<span class="filterClose">
-									x
-								</span>
-							</li>
-							<li class="clearAll">
-								Clear All
-							</li>
+							<?php
+								if(is_array($_GET["breed"]) || is_object($_GET["breed"])){
+									foreach($_GET["breed"] as $breed){
+										?>
+										<li class="filtersli">
+											<?php echo $breed ?>
+											<span class="filterClose" onclick='resubmit(<?php echo json_encode($_GET["breed"]); ?> , <?php echo json_encode($_GET["age"]); ?>, "<?php echo $breed ?>");'>
+												x
+											</span>
+										</li>
+										<?php
+									}
+								}
+								if(is_array($_GET["age"]) || is_object($_GET["age"])){
+									foreach($_GET["age"] as $age){
+										?>
+										<li class="filtersli">
+											<?php echo $age ?>
+											<span class="filterClose"  onclick='resubmit(<?php echo json_encode($_GET["breed"]); ?> , <?php echo json_encode($_GET["age"]); ?>, "<?php echo $age ?>");'>
+												x
+											</span>
+										</li>
+										<?php
+									}
+								}
+							?>
 						</ul>
 					</div>
 				</div>
@@ -759,6 +820,45 @@
 														</div>
 													</div>
 													<script>
+														function resubmit(breed, age, remove){
+															breed = breed || 0;
+															age = age || 0;
+															var myjson = JSON.stringify(breed);
+															var breeds = JSON.parse(myjson);
+
+															myjson = JSON.stringify(age);
+															ages = JSON.parse(myjson);
+
+															console.log(breeds[0]);
+															console.log(ages[0]);
+
+															var form = document.createElement("form");
+															form.method = "GET";
+															var i;
+															for(i = 0; i < breeds.length; i++){
+																if(!(breeds[i] === remove)){
+																	var elementInput = document.createElement("input");
+																	elementInput.value = breeds[i];
+																	elementInput.name = "breed[]";
+
+																	form.appendChild(elementInput);
+																}
+															}
+															for(i = 0; i < ages.length; i++){
+																if(!(ages[i] === remove)){
+																	var elementInput = document.createElement("input");
+																	elementInput.value = ages[i];
+																	elementInput.name = "age[]";
+
+																	form.appendChild(elementInput);
+																}
+															}
+															document.body.appendChild(form);
+															form.submit();
+														}
+
+
+
 														const paginationButtons = document.querySelectorAll('.paginationButton');
 														const pages = document.querySelectorAll('.pag');
 														var j;
