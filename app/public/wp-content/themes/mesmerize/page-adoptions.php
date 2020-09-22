@@ -41,10 +41,6 @@
 	.pagination a:hover:not(.active) {
 		background-color: #ddd;
 	}
-
-
-
-
 	@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 	.carousel-container {
 		width: 100%;
@@ -243,6 +239,15 @@
 	.boxShadowAnimate:hover{
 		box-shadow: 0 0 11px rgba(33,33,33,.2); 
 	}
+	.activePag{
+		display: block !important;
+	}
+	.pag{
+		display: none;
+	}
+	.paginationButton{
+		cursor:pointer;
+	}
 </style>
 <div id='page-content' class="page-content">
 	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
@@ -255,10 +260,10 @@
 						<div class="slider">
 							<?php
 							global $wpdb;
-							$dogs = $wpdb->get_results('SELECT * FROM dogs a INNER JOIN featured b ON a.dog_id = b.dog_id');
+							$featuredDogs = $wpdb->get_results('SELECT * FROM dogs a INNER JOIN featured b ON a.dog_id = b.dog_id');
 							$featuredCount = 0;
 
-							foreach($dogs as $dog){
+							foreach($featuredDogs as $dog){
 								if($featuredCount==0){
 									?>
 									<div class="slide activeSlide"
@@ -292,7 +297,7 @@
 					<div class="buttonContainer">
 						<ul class="featuredButtons" style="list-style: none;">
 							<?php
-							for($i = 1; $i <= count($dogs); $i++){
+							for($i = 1; $i <= count($featuredDogs); $i++){
 								?>
 								<li>
 									<button id="featured<?php echo $i; ?>" class="featuredButton
@@ -395,19 +400,19 @@
 							<h4>Size</h4>
 							<ul>
 								<?php
-									$sizes = $wpdb->get_results('SELECT size FROM sizes');
-									foreach($sizes as $size){
-										?>
-										<li>
-									<input type="radio" id="<?php echo str_replace(' ', '', $size->size); ?>" name="<?php echo str_replace(' ', '', $size->size); ?>" value="<?php echo str_replace(' ', '', $size->size); ?>" class="sizeSelection">
-									<label for="<?php echo str_replace(' ', '', $size->size); ?>"> <?php echo $size->size ?> </label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-										<?php
-									}
+								$sizes = $wpdb->get_results('SELECT size FROM sizes');
+								foreach($sizes as $size){
+									?>
+									<li>
+										<input type="radio" id="<?php echo str_replace(' ', '', $size->size); ?>" name="<?php echo str_replace(' ', '', $size->size); ?>" value="<?php echo str_replace(' ', '', $size->size); ?>" class="sizeSelection">
+										<label for="<?php echo str_replace(' ', '', $size->size); ?>"> <?php echo $size->size ?> </label>
+										<p class="quantity">
+											(0)
+										</p>
+										<br>
+									</li>
+									<?php
+								}
 								?>
 							</ul>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="sizeFilterSubmit">APPLY</button>
@@ -517,94 +522,86 @@
 						</ul>
 					</div>
 				</div>
-				<div class="row spaced-cols content-center-sm" data-type="row">
+				<?php 
+				$dogs = $wpdb->get_results('SELECT * FROM dogs');
+				$cardCount = 0;
+				$pageNumber = 1;
+				$rowCount = 0;
+				foreach($dogs as $dog){
+					if($cardCount == 0){
+						if($pageNumber == 1){
+							?>
+							<div id="page<?php echo $pageNumber?>" class="pag activePag">
+							<?php
+						}
+						else{
+							?>
+							<div id="page<?php echo $pageNumber?>" class="pag">
+							<?php
+						}
+					}
+					if($rowCount == 0){
+						?>
+							<div class="row spaced-cols content-center-sm" data-type="row">
+						<?php	
+					}
+					?>
 					<div class="col-sm-4">
 						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
 							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-							<h6 class="">Pet Name</h6> 
+							<h6 class=""><?php echo $dog->name ?></h6> 
 							<p class="small italic">Shelter Name</p>
-							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
+							<p class="text-center"><?php echo $dog->description ?></p> 
 						</div> 
 					</div>
-					<div class="col-sm-4"> 
-						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-							<h6 class="">Pet Name</h6> 
-							<p class="small italic">Shelter Name</p>
-							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
+					<?php
+
+					if($rowCount == 2){
+						?>
 						</div>
-					</div> 
-					<div class="col-sm-4"> 
-						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;"> 
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-							<h6 class="">Pet Name</h6> 
-							<p class="small italic">Shelter Name</p>
-							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
-						</div> 
-					</div>
-				</div>
-				<div class="row spaced-cols content-center-sm" data-type="row" >
-					<div class="col-sm-4">
-						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-							<h6 class="">Pet Name</h6> 
-							<p class="small italic">Shelter Name</p>
-							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
-						</div> 
-					</div>
-					<div class="col-sm-4"> 
-						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-							<h6 class="">Pet Name</h6> 
-							<p class="small italic">Shelter Name</p>
-							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
+						<?php
+					}
+
+					if($cardCount == 8){
+						?>
 						</div>
-					</div> 
-					<div class="col-sm-4"> 
-						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;"> 
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-							<h6 class="">Pet Name</h6> 
-							<p class="small italic">Shelter Name</p>
-							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
-						</div> 
-					</div>
+						<?php
+					}
+					$rowCount++;
+					$cardCount++;
+					if($cardCount > 8){
+						$cardCount = 0;
+						$pageNumber++;
+					}
+					if($rowCount > 2){
+						$rowCount = 0;
+					}
+				}
+				if($cardCount != 0){
+					?>
 				</div>
-				<div class="row spaced-cols content-center-sm" data-type="row">
-					<div class="col-sm-4">
-						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-							<h6 class="">Pet Name</h6> 
-							<p class="small italic">Shelter Name</p>
-							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
-						</div> 
-					</div>
-					<div class="col-sm-4"> 
-						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-							<h6 class="">Pet Name</h6> 
-							<p class="small italic">Shelter Name</p>
-							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
-						</div>
-					</div> 
-					<div class="col-sm-4"> 
-						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;"> 
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-							<h6 class="">Pet Name</h6> 
-							<p class="small italic">Shelter Name</p>
-							<p class="text-center">My name's pet, I like going for long walks in the sun and to bark at mail men</p> 
-						</div> 
-					</div>
 				</div>
+					<?php
+				}
+				?>
 				<div class="row no-gutters paginationSection">
 					<div class="pagination">
-						<a href="#">&laquo;</a>
-						<a class="active" href="#">1</a>
-						<a href="#">2</a>
-						<a href="#">3</a>
-						<a href="#">4</a>
-						<a href="#">5</a>
-						<a href="#">6</a>
-						<a href="#">&raquo;</a>
+						<a id="paginationFirst">&laquo;</a>
+						<?php
+							for($i = 1; $i <= $pageNumber; $i++){
+								if($i == 1){
+									?>
+									<a class="active paginationButton"><?php echo $i ?></a>
+									<?php
+								}
+								else{
+									?>
+									<a class="paginationButton"><?php echo $i ?></a>
+									<?php
+								}
+							}
+						?>
+						<a id="paginationLast">&raquo;</a>
 					</div>
 				</div>
 			</div>
@@ -762,6 +759,43 @@
 														</div>
 													</div>
 													<script>
+														const paginationButtons = document.querySelectorAll('.paginationButton');
+														const pages = document.querySelectorAll('.pag');
+														var j;
+														for(j = 0; j < paginationButtons.length; j++){
+															paginationButtons[j].onclick = function(){
+																const activePage = document.querySelector('.activePag');
+																const activeButton = document.querySelector('.active');
+																activeButton.classList.remove('active');
+																activePage.classList.remove('activePag');
+
+																this.classList.add('active');
+																pages[this.innerText-1].classList.add('activePag');
+															}
+															
+														}
+														const paginationFirst = document.getElementById('paginationFirst');
+														const paginationLast = document.getElementById('paginationLast');
+														paginationFirst.onclick = function(){
+															const activePage = document.querySelector('.activePag');
+															const activeButton = document.querySelector('.active');
+															activeButton.classList.remove('active');
+															activePage.classList.remove('activePag');
+
+															paginationButtons[0].classList.add('active');
+															pages[0].classList.add('activePag');
+														}
+														paginationLast.onclick = function(){
+															const activePage = document.querySelector('.activePag');
+															const activeButton = document.querySelector('.active');
+															activeButton.classList.remove('active');
+															activePage.classList.remove('activePag');
+
+															paginationButtons[paginationButtons.length-1].classList.add('active');
+															pages[pages.length-1].classList.add('activePag');
+														}
+						
+
 														const prev  = document.querySelector('.prev');
 														const next = document.querySelector('.next');
 
@@ -882,7 +916,7 @@
 													clearInterval(slideInterval);
 													slideInterval = setInterval(nextSlide, intervalTime);
 												}
-
+										
 												//Filters
 												const dogFilters = document.querySelectorAll('.dogSelection');
 												const dogSubmit = document.getElementById('breedFilterSubmit');
@@ -976,5 +1010,8 @@
 														this.previous = this.checked;
 													}
 												}
+
+
 											</script>
+
 											<?php get_footer(); ?>

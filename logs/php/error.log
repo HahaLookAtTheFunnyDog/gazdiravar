@@ -117,3 +117,31 @@ Stack trace:
 [21-Sep-2020 19:00:43 UTC] PHP Parse error:  syntax error, unexpected end of file in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 948
 [21-Sep-2020 19:02:38 UTC] WordPress database error Table 'local.ages' doesn't exist for query SELECT age_name FROM ages made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
 [21-Sep-2020 19:02:38 UTC] WordPress database error Table 'local.ages' doesn't exist for query SELECT age_name FROM ages made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[21-Sep-2020 20:05:22 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 295
+[21-Sep-2020 20:05:22 UTC] PHP Stack trace:
+[21-Sep-2020 20:05:22 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:0
+[21-Sep-2020 20:05:22 UTC] PHP   2. require() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:17
+[21-Sep-2020 20:05:22 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php:19
+[21-Sep-2020 20:05:22 UTC] PHP   4. include() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php:106
+[21-Sep-2020 20:05:22 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 295
+[21-Sep-2020 20:05:22 UTC] PHP Stack trace:
+[21-Sep-2020 20:05:22 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:0
+[21-Sep-2020 20:05:22 UTC] PHP   2. require() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:17
+[21-Sep-2020 20:05:22 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php:19
+[21-Sep-2020 20:05:22 UTC] PHP   4. include() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php:106
+[21-Sep-2020 21:33:20 UTC] PHP Warning:  Use of undefined constant php - assumed 'php' (this will throw an Error in a future version of PHP) in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 520
+[21-Sep-2020 21:33:20 UTC] PHP Stack trace:
+[21-Sep-2020 21:33:20 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:0
+[21-Sep-2020 21:33:20 UTC] PHP   2. require() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:17
+[21-Sep-2020 21:33:20 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php:19
+[21-Sep-2020 21:33:20 UTC] PHP   4. include() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php:106
+[21-Sep-2020 21:33:21 UTC] PHP Warning:  Use of undefined constant php - assumed 'php' (this will throw an Error in a future version of PHP) in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 520
+[21-Sep-2020 21:33:21 UTC] PHP Stack trace:
+[21-Sep-2020 21:33:21 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:0
+[21-Sep-2020 21:33:21 UTC] PHP   2. require() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\index.php:17
+[21-Sep-2020 21:33:21 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-blog-header.php:19
+[21-Sep-2020 21:33:21 UTC] PHP   4. include() C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-includes\template-loader.php:106
+[22-Sep-2020 01:19:02 UTC] PHP Parse error:  syntax error, unexpected '++' (T_INC), expecting ')' in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 592
+[22-Sep-2020 01:19:11 UTC] PHP Parse error:  syntax error, unexpected '++' (T_INC), expecting ')' in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 592
+[22-Sep-2020 01:19:12 UTC] PHP Parse error:  syntax error, unexpected '++' (T_INC), expecting ')' in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 592
+[22-Sep-2020 01:19:23 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in C:\Users\Kian\Local Sites\gazdiravarmaster\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 592
