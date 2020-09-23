@@ -251,22 +251,36 @@
 	}
 </style>
 <?php 
-	function appendForms(){
-		if(is_array($_GET["breed"]) || is_object($_GET["breed"])){
-			foreach($_GET["breed"] as $breed){
-				?>
-				<input type="hidden" name="breed[]" value="<?php echo $breed ?>">
-				<?php
-			}
-		}
-		if(is_array($_GET["age"]) || is_object($_GET["age"])){
-			foreach($_GET["age"] as $age){
-				?>
-				<input type="hidden" name="age[]" value="<?php echo $age ?>">
-				<?php
-			}
+function appendForms(){
+	if(is_array($_GET["breed"]) || is_object($_GET["breed"])){
+		foreach($_GET["breed"] as $breed){
+			?>
+			<input type="hidden" name="breed[]" value="<?php echo $breed ?>">
+			<?php
 		}
 	}
+	if(is_array($_GET["age"]) || is_object($_GET["age"])){
+		foreach($_GET["age"] as $age){
+			?>
+			<input type="hidden" name="age[]" value="<?php echo $age ?>">
+			<?php
+		}
+	}
+	if(is_array($_GET["gender"]) || is_object($_GET["gender"])){
+		foreach($_GET["gender"] as $gender){
+			?>
+			<input type="hidden" name="gender[]" value="<?php echo $gender ?>">
+			<?php
+		}
+	}
+	if(is_array($_GET["size"]) || is_object($_GET["size"])){
+		foreach($_GET["size"] as $size){
+			?>
+			<input type="hidden" name="size[]" value="<?php echo $size ?>">
+			<?php
+		}
+	}
+}
 ?>
 
 <div id='page-content' class="page-content">
@@ -362,24 +376,24 @@
 										<li>
 											<input type="checkbox" id="<?php echo str_replace(' ', '', $breed->breed_name); ?>" name="breed[]" value="<?php echo $breed->breed_name ?>" class="dogSelection"
 											<?php 
-												if(is_array($_GET["breed"]) || is_object($_GET["breed"])){
-													foreach($_GET["breed"] as $alreadySubmittedBreed){
-														if($alreadySubmittedBreed == $breed->breed_name){
-															?>
-															disabled="disabled"
-															<?php
-														}
+											if(is_array($_GET["breed"]) || is_object($_GET["breed"])){
+												foreach($_GET["breed"] as $alreadySubmittedBreed){
+													if($alreadySubmittedBreed == $breed->breed_name){
+														?>
+														disabled="disabled"
+														<?php
 													}
 												}
+											}
 											?>
 											>
 											<label for="<?php echo str_replace(' ', '', $breed->breed_name); ?>"> <?php echo $breed->breed_name; ?> </label>
 											<p class="quantity alignMargin">
 												<?php
-													$breedUpper = strtoupper($breed->breed_name);
-													$queryPrepare = $wpdb->prepare("SELECT COUNT(breed_name) AS breedCount FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id WHERE UPPER(breed_name) = %s", "$breedUpper");
-													$queryResult = $wpdb->get_results($queryPrepare);
-													echo "(" . $queryResult[0]->breedCount . ")";
+												$breedUpper = strtoupper($breed->breed_name);
+												$queryPrepare = $wpdb->prepare("SELECT COUNT(breed_name) AS breedCount FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id WHERE UPPER(breed_name) = %s", "$breedUpper");
+												$queryResult = $wpdb->get_results($queryPrepare);
+												echo "(" . $queryResult[0]->breedCount . ")";
 												?>
 											</p>
 											<br>
@@ -389,7 +403,7 @@
 									?>
 								</ul>
 								<?php
-									appendForms();
+								appendForms();
 								?>
 								<button type="submit" class="filterSubmit hideFilterSubmit" name="breedSubmit" id="breedFilterSubmit">APPLY</button>
 							</form>
@@ -398,14 +412,14 @@
 							<hr class="filterDivider">
 							<h4>Age</h4>
 							<form method="get">
-							<ul>
-								<?php
-								$ages = $wpdb->get_results('SELECT age_name FROM age');
-								foreach($ages as $age){
-									?>
-									<li>
-										<input type="checkbox" id="<?php echo str_replace(' ', '', $age->age_name); ?>" name="age[]" value="<?php echo $age->age_name ?>" class="ageSelection"
-										<?php 
+								<ul>
+									<?php
+									$ages = $wpdb->get_results('SELECT age_name FROM age');
+									foreach($ages as $age){
+										?>
+										<li>
+											<input type="checkbox" id="<?php echo str_replace(' ', '', $age->age_name); ?>" name="age[]" value="<?php echo $age->age_name ?>" class="ageSelection"
+											<?php 
 											if(is_array($_GET["age"]) || is_object($_GET["age"])){
 												foreach($_GET["age"] as $alreadySubmittedAge){
 													if($alreadySubmittedAge == $age->age_name){
@@ -415,83 +429,117 @@
 													}
 												}
 											}
-										?>
-										>
-										<label for="<?php echo str_replace(' ', '', $age->age_name); ?>"> <?php echo $age->age_name ?> </label>
-										<p class="quantity">
-											<?php
+											?>
+											>
+											<label for="<?php echo str_replace(' ', '', $age->age_name); ?>"> <?php echo $age->age_name ?> </label>
+											<p class="quantity">
+												<?php
 												$ageUpper = strtoupper($age->age_name);
 												$queryPrepare = $wpdb->prepare("SELECT COUNT(age_name) AS ageCount FROM dogs a INNER JOIN age b ON a.age_id = b.age_id WHERE UPPER(age_name) = %s", "$ageUpper");
 												$queryResult = $wpdb->get_results($queryPrepare);
 												echo "(" . $queryResult[0]->ageCount . ")";
-											?>
-										</p>
-										<br>
-									</li>
+												?>
+											</p>
+											<br>
+										</li>
+										<?php
+									}
+									?>
 									<?php
-								}
-								?>
-								<?php
 									appendForms();
-								?>
-							
-							</ul>
-							<button type="submit" class="filterSubmit hideFilterSubmit" id="ageFilterSubmit">APPLY</button>
+									?>
+
+								</ul>
+								<button type="submit" class="filterSubmit hideFilterSubmit" id="ageFilterSubmit">APPLY</button>
 							</form>
 						</li>
 						<li>
 							<hr class="filterDivider">
 							<h4>Gender</h4>
-							<ul>
-								<?php
-								$genders = $wpdb->get_results('SELECT gender FROM genders');
-								foreach($genders as $gender){
-									?>
-									<li>
-										<input type="checkbox" id="<?php echo str_replace(' ', '', $gender->gender); ?>" name="<?php echo str_replace(' ', '', $gender->gender); ?>" value="<?php echo str_replace(' ', '', $gender->gender); ?>" class="genderSelection">
-										<label for="<?php echo str_replace(' ', '', $gender->gender); ?>"> <?php echo $gender->gender ?> </label>
-										<p class="quantity">
-											<?php 
-											$genderUpper = strtoupper($gender->gender);
-											$queryPrepare = $wpdb->prepare("SELECT COUNT(gender) AS genderCount FROM dogs a INNER JOIN genders b ON a.gender_id = b.gender_id WHERE UPPER(gender) = %s", "$genderUpper");
-											$queryResult = $wpdb->get_results($queryPrepare);
-											echo "(" . $queryResult[0]->genderCount . ")";
-											?>
-										</p>
-										<br>
-									</li>
+							<form method="get">
+								<ul>
 									<?php
-								}
+									$genders = $wpdb->get_results('SELECT gender FROM genders');
+									foreach($genders as $gender){
+										?>
+										<li>
+											<input type="checkbox" id="<?php echo str_replace(' ', '', $gender->gender); ?>" name="gender[]" value="<?php echo str_replace(' ', '', $gender->gender); ?>" class="genderSelection"
+											<?php 
+											if(is_array($_GET["gender"]) || is_object($_GET["gender"])){
+												foreach($_GET["gender"] as $alreadySubmittedgender){
+													if($alreadySubmittedgender == $gender->gender){
+														?>
+														disabled="disabled"
+														<?php
+													}
+												}
+											}
+											?>
+											>
+											<label for="<?php echo str_replace(' ', '', $gender->gender); ?>"> <?php echo $gender->gender ?> </label>
+											<p class="quantity">
+												<?php 
+												$genderUpper = strtoupper($gender->gender);
+												$queryPrepare = $wpdb->prepare("SELECT COUNT(gender) AS genderCount FROM dogs a INNER JOIN genders b ON a.gender_id = b.gender_id WHERE UPPER(gender) = %s", "$genderUpper");
+												$queryResult = $wpdb->get_results($queryPrepare);
+												echo "(" . $queryResult[0]->genderCount . ")";
+												?>
+											</p>
+											<br>
+										</li>
+										<?php
+									}
+									?>
+								</ul>
+								<?php
+								appendForms();
 								?>
-							</ul>
-							<button type="submit" class="filterSubmit hideFilterSubmit" id="genderFilterSubmit">APPLY</button>
+								<button type="submit" class="filterSubmit hideFilterSubmit" id="genderFilterSubmit">APPLY</button>
+							</form>
 						</li>
 						<li>
 							<hr class="filterDivider">
 							<h4>Size</h4>
-							<ul>
-								<?php
-								$sizes = $wpdb->get_results('SELECT size FROM sizes');
-								foreach($sizes as $size){
-									?>
-									<li>
-										<input type="checkbox" id="<?php echo str_replace(' ', '', $size->size); ?>" name="<?php echo str_replace(' ', '', $size->size); ?>" value="<?php echo str_replace(' ', '', $size->size); ?>" class="sizeSelection">
-										<label for="<?php echo str_replace(' ', '', $size->size); ?>"> <?php echo $size->size ?> </label>
-										<p class="quantity">
-											<?php
+							<form method="get">
+								<ul>
+									<?php
+									$sizes = $wpdb->get_results('SELECT size FROM sizes');
+									foreach($sizes as $size){
+										?>
+										<li>
+											<input type="checkbox" id="<?php echo str_replace(' ', '', $size->size); ?>" name="size[]" value="<?php echo str_replace(' ', '', $size->size); ?>" class="sizeSelection"
+											<?php 
+											if(is_array($_GET["size"]) || is_object($_GET["size"])){
+												foreach($_GET["size"] as $alreadySubmittedsize){
+													if($alreadySubmittedsize == $size->size){
+														?>
+														disabled="disabled"
+														<?php
+													}
+												}
+											}
+											?>
+											>
+											<label for="<?php echo str_replace(' ', '', $size->size); ?>"> <?php echo $size->size ?> </label>
+											<p class="quantity">
+												<?php
 												$sizeUpper = strtoupper($size->size);
 												$queryPrepare = $wpdb->prepare("SELECT COUNT(size) AS sizeCount FROM dogs a INNER JOIN sizes b ON a.size_id = b.size_id WHERE UPPER(size) = %s", "$sizeUpper");
 												$queryResult = $wpdb->get_results($queryPrepare);
 												echo "(" . $queryResult[0]->sizeCount . ")";
-											?>
-										</p>
-										<br>
-									</li>
-									<?php
-								}
+												?>
+											</p>
+											<br>
+										</li>
+										<?php
+									}
+									?>
+								</ul>
+								<?php
+								appendForms();
 								?>
-							</ul>
-							<button type="submit" class="filterSubmit hideFilterSubmit" id="sizeFilterSubmit">APPLY</button>
+								<button type="submit" class="filterSubmit hideFilterSubmit" id="sizeFilterSubmit">APPLY</button>
+							</form>
 						</li>
 						<li>
 							<hr class="filterDivider">
@@ -575,30 +623,78 @@
 					<div class="col-sm-12">
 						<ul class="filterChoices">
 							<?php
-								if(is_array($_GET["breed"]) || is_object($_GET["breed"])){
-									foreach($_GET["breed"] as $breed){
-										?>
-										<li class="filtersli">
-											<?php echo $breed ?>
-											<span class="filterClose" onclick='resubmit(<?php echo json_encode($_GET["breed"]); ?> , <?php echo json_encode($_GET["age"]); ?>, "<?php echo $breed ?>");'>
-												x
-											</span>
-										</li>
-										<?php
-									}
+							if(is_array($_GET["breed"]) || is_object($_GET["breed"])){
+								foreach($_GET["breed"] as $breed){
+									?>
+									<li class="filtersli">
+										<?php echo $breed ?>
+										<span class="filterClose" onclick='resubmit(
+											<?php echo json_encode($_GET["breed"]); ?> ,
+											<?php echo json_encode($_GET["age"]); ?>,
+											<?php echo json_encode($_GET["gender"]); ?>,
+											<?php echo json_encode($_GET["size"]); ?>,
+											"<?php echo $breed ?>"
+											);'>
+											x
+										</span>
+									</li>
+									<?php
 								}
-								if(is_array($_GET["age"]) || is_object($_GET["age"])){
-									foreach($_GET["age"] as $age){
-										?>
-										<li class="filtersli">
-											<?php echo $age ?>
-											<span class="filterClose"  onclick='resubmit(<?php echo json_encode($_GET["breed"]); ?> , <?php echo json_encode($_GET["age"]); ?>, "<?php echo $age ?>");'>
-												x
-											</span>
-										</li>
-										<?php
-									}
+							}
+							if(is_array($_GET["age"]) || is_object($_GET["age"])){
+								foreach($_GET["age"] as $age){
+									?>
+									<li class="filtersli">
+										<?php echo $age ?>
+										<span class="filterClose"  onclick='resubmit(
+											<?php echo json_encode($_GET["breed"]); ?>,
+											<?php echo json_encode($_GET["age"]); ?>,
+											<?php echo json_encode($_GET["gender"]); ?>,
+											<?php echo json_encode($_GET["size"]); ?>,
+											"<?php echo $age ?>"
+											);'>
+											x
+										</span>
+									</li>
+									<?php
 								}
+							}
+							if(is_array($_GET["gender"]) || is_object($_GET["gender"])){
+								foreach($_GET["gender"] as $gender){
+									?>
+									<li class="filtersli">
+										<?php echo $gender ?>
+										<span class="filterClose"  onclick='resubmit(
+											<?php echo json_encode($_GET["breed"]); ?>,
+											<?php echo json_encode($_GET["age"]); ?>,
+											<?php echo json_encode($_GET["gender"]); ?>,
+											<?php echo json_encode($_GET["size"]); ?>,
+											"<?php echo $gender ?>"
+											);'>
+											x
+										</span>
+									</li>
+									<?php
+								}
+							}
+							if(is_array($_GET["size"]) || is_object($_GET["size"])){
+								foreach($_GET["size"] as $size){
+									?>
+									<li class="filtersli">
+										<?php echo $size ?>
+										<span class="filterClose"  onclick='resubmit(
+											<?php echo json_encode($_GET["breed"]); ?>,
+											<?php echo json_encode($_GET["age"]); ?>,
+											<?php echo json_encode($_GET["gender"]); ?>,
+											<?php echo json_encode($_GET["size"]); ?>,
+											"<?php echo $size ?>"
+											);'>
+											x
+										</span>
+									</li>
+									<?php
+								}
+							}
 							?>
 						</ul>
 					</div>
@@ -613,91 +709,100 @@
 						if($pageNumber == 1){
 							?>
 							<div id="page<?php echo $pageNumber?>" class="pag activePag">
+								<?php
+							}
+							else{
+								?>
+								<div id="page<?php echo $pageNumber?>" class="pag">
+									<?php
+								}
+							}
+							if($rowCount == 0){
+								?>
+								<div class="row spaced-cols content-center-sm" data-type="row">
+									<?php	
+								}
+								?>
+								<div class="col-sm-4">
+									<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
+										<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+										<h6 class=""><?php echo $dog->name ?></h6> 
+										<p class="small italic">Shelter Name</p>
+										<p class="text-center"><?php echo $dog->description ?></p> 
+									</div> 
+								</div>
+								<?php
+
+								if($rowCount == 2){
+									?>
+								</div>
+								<?php
+							}
+
+							if($cardCount == 8){
+								?>
+							</div>
+							<?php
+						}
+						$rowCount++;
+						$cardCount++;
+						if($cardCount > 8){
+							$cardCount = 0;
+							$pageNumber++;
+						}
+						if($rowCount > 2){
+							$rowCount = 0;
+						}
+					}
+					if($cardCount != 0){
+						?>
+					</div>
+				</div>
+				<?php
+			}
+			?>
+			<div class="row no-gutters paginationSection">
+				<div class="pagination">
+					<a id="paginationFirst">&laquo;</a>
+					<?php
+					for($i = 1; $i <= $pageNumber; $i++){
+						if($i == 1){
+							?>
+							<a class="active paginationButton"><?php echo $i ?></a>
 							<?php
 						}
 						else{
 							?>
-							<div id="page<?php echo $pageNumber?>" class="pag">
+							<a class="paginationButton"><?php echo $i ?></a>
 							<?php
 						}
 					}
-					if($rowCount == 0){
-						?>
-							<div class="row spaced-cols content-center-sm" data-type="row">
-						<?php	
-					}
 					?>
-					<div class="col-sm-4">
-						<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-							<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-							<h6 class=""><?php echo $dog->name ?></h6> 
-							<p class="small italic">Shelter Name</p>
-							<p class="text-center"><?php echo $dog->description ?></p> 
-						</div> 
-					</div>
-					<?php
-
-					if($rowCount == 2){
-						?>
-						</div>
-						<?php
-					}
-
-					if($cardCount == 8){
-						?>
-						</div>
-						<?php
-					}
-					$rowCount++;
-					$cardCount++;
-					if($cardCount > 8){
-						$cardCount = 0;
-						$pageNumber++;
-					}
-					if($rowCount > 2){
-						$rowCount = 0;
-					}
-				}
-				if($cardCount != 0){
-					?>
-				</div>
-				</div>
-					<?php
-				}
-				?>
-				<div class="row no-gutters paginationSection">
-					<div class="pagination">
-						<a id="paginationFirst">&laquo;</a>
-						<?php
-							for($i = 1; $i <= $pageNumber; $i++){
-								if($i == 1){
-									?>
-									<a class="active paginationButton"><?php echo $i ?></a>
-									<?php
-								}
-								else{
-									?>
-									<a class="paginationButton"><?php echo $i ?></a>
-									<?php
-								}
-							}
-						?>
-						<a id="paginationLast">&raquo;</a>
-					</div>
+					<a id="paginationLast">&raquo;</a>
 				</div>
 			</div>
 		</div>
-		<hr style="margin-top: 2.5rem;">
-		<section class="recentlyViewed" style="width: 100%;">
-			<h2 style="text-align: center;">Recently Viewed Pets</h2>
-			<div class="carousel-container">
-				<div class="carousel-inner">
-					<div class="track">
-						<div class="card-container">
-							<div class="card boxShadowAnimate">
-								<div class="img">
-									<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-								</div>
+	</div>
+	<hr style="margin-top: 2.5rem;">
+	<section class="recentlyViewed" style="width: 100%;">
+		<h2 style="text-align: center;">Recently Viewed Pets</h2>
+		<div class="carousel-container">
+			<div class="carousel-inner">
+				<div class="track">
+					<div class="card-container">
+						<div class="card boxShadowAnimate">
+							<div class="img">
+								<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+							</div>
+							<div class="info">
+								<h6 class="">Pet Name</h6>
+							</div>
+						</div>
+					</div>
+					<div class="card-container">
+						<div class="card boxShadowAnimate">
+							<div class="img">
+								<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
 								<div class="info">
 									<h6 class="">Pet Name</h6>
 								</div>
@@ -811,144 +916,159 @@
 																				</div>
 																			</div>
 																		</div>
-																		<div class="card-container">
-																			<div class="card boxShadowAnimate">
-																				<div class="img">
-																					<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-																					<div class="info">
-																						<h6 class="">Pet Name</h6>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="nav">
-																		<button class="prev">
-																			<i class="material-icons">
-																				<
-																			</i>
-																		</button>
-																		<button class="next">
-																			<i class="material-icons">
-																				>
-																			</i>
-																		</button>
 																	</div>
 																</div>
+																<div class="nav">
+																	<button class="prev">
+																		<i class="material-icons">
+																			<
+																		</i>
+																	</button>
+																	<button class="next">
+																		<i class="material-icons">
+																			>
+																		</i>
+																	</button>
+																</div>
+															</div>
 
-															</section>
-														</div>
+														</section>
 													</div>
-													<script>
-														function resubmit(breed, age, remove){
-															breed = breed || 0;
-															age = age || 0;
-															var myjson = JSON.stringify(breed);
-															var breeds = JSON.parse(myjson);
+												</div>
+												<script>
+													function resubmit(breed, age, gender, size, remove){
+														breed = breed || 0;
+														age = age || 0;
+														gender = gender || 0;
+														size = size || 0;
 
-															myjson = JSON.stringify(age);
-															ages = JSON.parse(myjson);
+														var myjson = JSON.stringify(breed);
+														var breeds = JSON.parse(myjson);
 
-															console.log(breeds[0]);
-															console.log(ages[0]);
+														myjson = JSON.stringify(age);
+														ages = JSON.parse(myjson);
 
-															var form = document.createElement("form");
-															form.method = "GET";
-															var i;
-															for(i = 0; i < breeds.length; i++){
-																if(!(breeds[i] === remove)){
-																	var elementInput = document.createElement("input");
-																	elementInput.value = breeds[i];
-																	elementInput.name = "breed[]";
+														myjson = JSON.stringify(gender);
+														genders = JSON.parse(myjson);
 
-																	form.appendChild(elementInput);
-																}
+														myjson = JSON.stringify(size);
+														sizes = JSON.parse(myjson);
+
+														var form = document.createElement("form");
+														form.method = "GET";
+														var i;
+														for(i = 0; i < breeds.length; i++){
+															if(!(breeds[i] === remove)){
+																var elementInput = document.createElement("input");
+																elementInput.value = breeds[i];
+																elementInput.name = "breed[]";
+
+																form.appendChild(elementInput);
 															}
-															for(i = 0; i < ages.length; i++){
-																if(!(ages[i] === remove)){
-																	var elementInput = document.createElement("input");
-																	elementInput.value = ages[i];
-																	elementInput.name = "age[]";
-
-																	form.appendChild(elementInput);
-																}
-															}
-															document.body.appendChild(form);
-															form.submit();
 														}
+														for(i = 0; i < ages.length; i++){
+															if(!(ages[i] === remove)){
+																var elementInput = document.createElement("input");
+																elementInput.value = ages[i];
+																elementInput.name = "age[]";
 
-
-
-														const paginationButtons = document.querySelectorAll('.paginationButton');
-														const pages = document.querySelectorAll('.pag');
-														var j;
-														for(j = 0; j < paginationButtons.length; j++){
-															paginationButtons[j].onclick = function(){
-																const activePage = document.querySelector('.activePag');
-																const activeButton = document.querySelector('.active');
-																activeButton.classList.remove('active');
-																activePage.classList.remove('activePag');
-
-																this.classList.add('active');
-																pages[this.innerText-1].classList.add('activePag');
+																form.appendChild(elementInput);
 															}
-															
 														}
-														const paginationFirst = document.getElementById('paginationFirst');
-														const paginationLast = document.getElementById('paginationLast');
-														paginationFirst.onclick = function(){
+														for(i = 0; i < genders.length; i++){
+															if(!(genders[i] === remove)){
+																var elementInput = document.createElement("input");
+																elementInput.value = genders[i];
+																elementInput.name = "gender[]";
+
+																form.appendChild(elementInput);
+															}
+														}
+														for(i = 0; i < sizes.length; i++){
+															if(!(sizes[i] === remove)){
+																var elementInput = document.createElement("input");
+																elementInput.value = sizes[i];
+																elementInput.name = "size[]";
+
+																form.appendChild(elementInput);
+															}
+														}
+														document.body.appendChild(form);
+														form.submit();
+													}
+
+
+
+													const paginationButtons = document.querySelectorAll('.paginationButton');
+													const pages = document.querySelectorAll('.pag');
+													var j;
+													for(j = 0; j < paginationButtons.length; j++){
+														paginationButtons[j].onclick = function(){
 															const activePage = document.querySelector('.activePag');
 															const activeButton = document.querySelector('.active');
 															activeButton.classList.remove('active');
 															activePage.classList.remove('activePag');
 
-															paginationButtons[0].classList.add('active');
-															pages[0].classList.add('activePag');
+															this.classList.add('active');
+															pages[this.innerText-1].classList.add('activePag');
 														}
-														paginationLast.onclick = function(){
-															const activePage = document.querySelector('.activePag');
-															const activeButton = document.querySelector('.active');
-															activeButton.classList.remove('active');
-															activePage.classList.remove('activePag');
 
-															paginationButtons[paginationButtons.length-1].classList.add('active');
-															pages[pages.length-1].classList.add('activePag');
+													}
+													const paginationFirst = document.getElementById('paginationFirst');
+													const paginationLast = document.getElementById('paginationLast');
+													paginationFirst.onclick = function(){
+														const activePage = document.querySelector('.activePag');
+														const activeButton = document.querySelector('.active');
+														activeButton.classList.remove('active');
+														activePage.classList.remove('activePag');
+
+														paginationButtons[0].classList.add('active');
+														pages[0].classList.add('activePag');
+													}
+													paginationLast.onclick = function(){
+														const activePage = document.querySelector('.activePag');
+														const activeButton = document.querySelector('.active');
+														activeButton.classList.remove('active');
+														activePage.classList.remove('activePag');
+
+														paginationButtons[paginationButtons.length-1].classList.add('active');
+														pages[pages.length-1].classList.add('activePag');
+													}
+
+
+													const prev  = document.querySelector('.prev');
+													const next = document.querySelector('.next');
+
+													const track = document.querySelector('.track');
+
+													let carouselWidth = document.querySelector('.carousel-container').offsetWidth;
+
+													window.addEventListener('resize', () => {
+														carouselWidth = document.querySelector('.carousel-container').offsetWidth;
+													})
+
+													let index = 0;
+
+													next.addEventListener('click', () => {
+														index++;
+														prev.classList.add('show');
+														track.style.transform = `translateX(-${index * carouselWidth}px)`;
+														if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
+															next.classList.add('hide');
 														}
-						
 
-														const prev  = document.querySelector('.prev');
-														const next = document.querySelector('.next');
-
-														const track = document.querySelector('.track');
-
-														let carouselWidth = document.querySelector('.carousel-container').offsetWidth;
-
-														window.addEventListener('resize', () => {
-															carouselWidth = document.querySelector('.carousel-container').offsetWidth;
-														})
-
-														let index = 0;
-
-														next.addEventListener('click', () => {
-															index++;
-															prev.classList.add('show');
-															track.style.transform = `translateX(-${index * carouselWidth}px)`;
-															if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
-																next.classList.add('hide');
-															}
-
-															else if(track.offsetWidth - (index * carouselWidth)*2 < 100){
-																next.classList.add('hide');
-															}
-														})
-														prev.addEventListener('click', () => {
-															index--;
-															next.classList.remove('hide');
-															if (index === 0) {
-																prev.classList.remove('show');
-															}
-															track.style.transform = `translateX(-${index * carouselWidth}px)`;
-														})
+														else if(track.offsetWidth - (index * carouselWidth)*2 < 100){
+															next.classList.add('hide');
+														}
+													})
+													prev.addEventListener('click', () => {
+														index--;
+														next.classList.remove('hide');
+														if (index === 0) {
+															prev.classList.remove('show');
+														}
+														track.style.transform = `translateX(-${index * carouselWidth}px)`;
+													})
 
 												//slides
 
@@ -1036,7 +1156,7 @@
 													clearInterval(slideInterval);
 													slideInterval = setInterval(nextSlide, intervalTime);
 												}
-										
+
 												//Filters
 												const dogFilters = document.querySelectorAll('.dogSelection');
 												const dogSubmit = document.getElementById('breedFilterSubmit');
