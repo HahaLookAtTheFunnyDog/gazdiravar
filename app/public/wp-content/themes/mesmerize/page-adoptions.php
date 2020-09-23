@@ -375,7 +375,12 @@
 											>
 											<label for="<?php echo str_replace(' ', '', $breed->breed_name); ?>"> <?php echo $breed->breed_name; ?> </label>
 											<p class="quantity alignMargin">
-												(0)
+												<?php
+													$breedUpper = strtoupper($breed->breed_name);
+													$queryPrepare = $wpdb->prepare("SELECT COUNT(breed_name) AS breedCount FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id WHERE UPPER(breed_name) = %s", "$breedUpper");
+													$queryResult = $wpdb->get_results($queryPrepare);
+													echo "(" . $queryResult[0]->breedCount . ")";
+												?>
 											</p>
 											<br>
 										</li>
@@ -414,7 +419,12 @@
 										>
 										<label for="<?php echo str_replace(' ', '', $age->age_name); ?>"> <?php echo $age->age_name ?> </label>
 										<p class="quantity">
-											(0)
+											<?php
+												$ageUpper = strtoupper($age->age_name);
+												$queryPrepare = $wpdb->prepare("SELECT COUNT(age_name) AS ageCount FROM dogs a INNER JOIN age b ON a.age_id = b.age_id WHERE UPPER(age_name) = %s", "$ageUpper");
+												$queryResult = $wpdb->get_results($queryPrepare);
+												echo "(" . $queryResult[0]->ageCount . ")";
+											?>
 										</p>
 										<br>
 									</li>
@@ -441,7 +451,12 @@
 										<input type="checkbox" id="<?php echo str_replace(' ', '', $gender->gender); ?>" name="<?php echo str_replace(' ', '', $gender->gender); ?>" value="<?php echo str_replace(' ', '', $gender->gender); ?>" class="genderSelection">
 										<label for="<?php echo str_replace(' ', '', $gender->gender); ?>"> <?php echo $gender->gender ?> </label>
 										<p class="quantity">
-											(0)
+											<?php 
+											$genderUpper = strtoupper($gender->gender);
+											$queryPrepare = $wpdb->prepare("SELECT COUNT(gender) AS genderCount FROM dogs a INNER JOIN genders b ON a.gender_id = b.gender_id WHERE UPPER(gender) = %s", "$genderUpper");
+											$queryResult = $wpdb->get_results($queryPrepare);
+											echo "(" . $queryResult[0]->genderCount . ")";
+											?>
 										</p>
 										<br>
 									</li>
@@ -463,7 +478,12 @@
 										<input type="checkbox" id="<?php echo str_replace(' ', '', $size->size); ?>" name="<?php echo str_replace(' ', '', $size->size); ?>" value="<?php echo str_replace(' ', '', $size->size); ?>" class="sizeSelection">
 										<label for="<?php echo str_replace(' ', '', $size->size); ?>"> <?php echo $size->size ?> </label>
 										<p class="quantity">
-											(0)
+											<?php
+												$sizeUpper = strtoupper($size->size);
+												$queryPrepare = $wpdb->prepare("SELECT COUNT(size) AS sizeCount FROM dogs a INNER JOIN sizes b ON a.size_id = b.size_id WHERE UPPER(size) = %s", "$sizeUpper");
+												$queryResult = $wpdb->get_results($queryPrepare);
+												echo "(" . $queryResult[0]->sizeCount . ")";
+											?>
 										</p>
 										<br>
 									</li>
