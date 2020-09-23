@@ -610,7 +610,7 @@ function appendForms(){
 				<div class="row">
 					<div class="col-sm-12 appliedFiltersHeader" >
 						<?php
-						if(is_array($_GET["breed"]) || is_object($_GET["breed"]) || is_array($_GET["age"]) || is_object($_GET["age"])){
+						if(is_array($_GET["breed"]) || is_array($_GET["age"]) || is_array($_GET["gender"]) || is_array($_GET["size"])){
 							?>
 							<h4>
 								Filters Applied
@@ -695,6 +695,15 @@ function appendForms(){
 									</li>
 									<?php
 								}
+							}
+							?>
+							<?php
+							if(is_array($_GET["breed"]) || is_array($_GET["age"]) || is_array($_GET["gender"]) || is_array($_GET["size"])){
+								?>
+								<li class="clearAll" onclick="clearAll()">
+									Clear All
+								</li>		
+								<?php
 							}
 							?>
 						</ul>
@@ -1140,6 +1149,11 @@ function appendForms(){
 																form.appendChild(elementInput);
 															}
 														}
+														document.body.appendChild(form);
+														form.submit();
+													}
+													function clearAll(){
+														var form = document.createElement("form");
 														document.body.appendChild(form);
 														form.submit();
 													}
