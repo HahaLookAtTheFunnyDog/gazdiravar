@@ -541,67 +541,6 @@ function appendForms(){
 								<button type="submit" class="filterSubmit hideFilterSubmit" id="sizeFilterSubmit">APPLY</button>
 							</form>
 						</li>
-						<!-- Nope not for now, maybe one day
-						<li>
-							<hr class="filterDivider">
-							<h4>Good With</h4>
-							<Ul>
-								<li>
-									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Kids</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Other Dogs</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Cats</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-							</Ul>
-						</li>
-						<li>
-							<hr class="filterDivider">
-							<h4>Within</h4>
-							<Ul>
-								<li>
-									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">50 Miles</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">100 Miles</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">200 Miles</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-							</Ul>
-						</li>-->
 						<hr class="filterDivider">
 					</ul>
 				</div>
@@ -709,710 +648,690 @@ function appendForms(){
 						</ul>
 					</div>
 				</div>
-				<?php 
-				$dogs;
-				$filteredList = [];
+				<div class="row">
+					<?php 
+					$dogs;
+					$filteredList = [];
 				//Down the rabbit hole of filtering
-				if(!empty($_GET)){
-					$dogs = $wpdb->get_results('SELECT a.name,a.description,b.breed_name,c.age_name,d.gender,e.size FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id INNER JOIN age c ON a.age_id = c.age_id INNER JOIN genders d ON a.gender_id = d.gender_id INNER JOIN sizes e ON a.size_id = e.size_id');
-					foreach($dogs as $dog){
+					if(!empty($_GET)){
+						$dogs = $wpdb->get_results('SELECT a.name,a.description,b.breed_name,c.age_name,d.gender,e.size FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id INNER JOIN age c ON a.age_id = c.age_id INNER JOIN genders d ON a.gender_id = d.gender_id INNER JOIN sizes e ON a.size_id = e.size_id');
+						foreach($dogs as $dog){
 						//Filtering if breed is selected
-						if(is_array($_GET["breed"])){
-							foreach($_GET["breed"] as $breed){
-								if($breed === $dog->breed_name){
+							if(is_array($_GET["breed"])){
+								foreach($_GET["breed"] as $breed){
+									if($breed === $dog->breed_name){
 									//Checks if there's any age filters as well
-									if(is_array($_GET["age"])){
-										foreach($_GET["age"] as $age){
-											if($age === $dog->age_name){
+										if(is_array($_GET["age"])){
+											foreach($_GET["age"] as $age){
+												if($age === $dog->age_name){
 												//Back to checking
-												if(is_array($_GET["gender"])){
-													foreach($_GET["gender"] as $gender){
-														if($gender === $dog->gender){
+													if(is_array($_GET["gender"])){
+														foreach($_GET["gender"] as $gender){
+															if($gender === $dog->gender){
 															//This means that breed, gender, age and size were all selected
-															if(is_array($_GET["size"])){
-																foreach($_GET["size"] as $size){
-																	if($size === $dog->size){
-																		array_push($filteredList, $dog);
+																if(is_array($_GET["size"])){
+																	foreach($_GET["size"] as $size){
+																		if($size === $dog->size){
+																			array_push($filteredList, $dog);
+																		}
 																	}
 																}
-															}
 															//Means that breed, age, gender were selected
-															else{
+																else{
+																	array_push($filteredList, $dog);
+																}
+															}
+														}
+													}
+													elseif(is_array($_GET["size"])){
+														foreach($_GET["size"] as $size){
+															if($size === $dog->size){
 																array_push($filteredList, $dog);
 															}
 														}
 													}
-												}
-												elseif(is_array($_GET["size"])){
-													foreach($_GET["size"] as $size){
-														if($size === $dog->size){
-															array_push($filteredList, $dog);
-														}
-													}
-												}
 												//No other filters applied besides breed and age, can add to filtered list
-												else{
-													array_push($filteredList, $dog);
+													else{
+														array_push($filteredList, $dog);
+													}
 												}
 											}
 										}
-									}
 									//if gender is not selected checks if gender is selected
-									elseif(is_array($_GET["gender"])){
-										foreach($_GET["gender"] as $gender){
-											if($gender === $dog->gender){
-												if(is_array($_GET["size"])){
-													foreach($_GET["size"] as $size){
-														if($size === $dog->size){
-															array_push($filteredList, $dog);
+										elseif(is_array($_GET["gender"])){
+											foreach($_GET["gender"] as $gender){
+												if($gender === $dog->gender){
+													if(is_array($_GET["size"])){
+														foreach($_GET["size"] as $size){
+															if($size === $dog->size){
+																array_push($filteredList, $dog);
+															}
 														}
 													}
-												}
-												else{
-													array_push($filteredList, $dog);
+													else{
+														array_push($filteredList, $dog);
+													}
 												}
 											}
 										}
-									}
 									//if neither of the first two is selected checks if size is selected
-									elseif(is_array($_GET["size"])){
-										foreach($_GET["size"] as $size){
-											if($size === $dog->size){
-												array_push($filteredList, $dog);
-											}
-										}
-									}
-									//if it made it this far, means no filters besides breed was applied so it can just add it to the filtered list
-									else{
-										array_push($filteredList,$dog);
-									}
-								}
-							}
-						}
-						//filtering if age is selected but not breed
-						elseif(is_array($_GET["age"])){
-							foreach($_GET["age"] as $age){
-								if($age === $dog->age_name){
-									//if age and gender are selected
-									if(is_array($_GET["gender"])){
-										foreach($_GET["gender"] as $gender){
-											if($gender === $dog->gender){
-												//if age gender and size are selected
-												if(is_array($_GET["size"])){
-													foreach($_GET["size"] as $size){
-														if($size === $dog->size){
-															array_push($filteredList, $dog);
-														}
-													}
-												}
-												//if age and gender are selected
-												else{
+										elseif(is_array($_GET["size"])){
+											foreach($_GET["size"] as $size){
+												if($size === $dog->size){
 													array_push($filteredList, $dog);
 												}
 											}
 										}
+									//if it made it this far, means no filters besides breed was applied so it can just add it to the filtered list
+										else{
+											array_push($filteredList,$dog);
+										}
 									}
+								}
+							}
+						//filtering if age is selected but not breed
+							elseif(is_array($_GET["age"])){
+								foreach($_GET["age"] as $age){
+									if($age === $dog->age_name){
+									//if age and gender are selected
+										if(is_array($_GET["gender"])){
+											foreach($_GET["gender"] as $gender){
+												if($gender === $dog->gender){
+												//if age gender and size are selected
+													if(is_array($_GET["size"])){
+														foreach($_GET["size"] as $size){
+															if($size === $dog->size){
+																array_push($filteredList, $dog);
+															}
+														}
+													}
+												//if age and gender are selected
+													else{
+														array_push($filteredList, $dog);
+													}
+												}
+											}
+										}
 									//if age and size are selected only
-									elseif(is_array($_GET["size"])){
-										foreach($_GET["size"] as $size){
-											if($size === $dog->size){
-												array_push($filteredList, $dog);
+										elseif(is_array($_GET["size"])){
+											foreach($_GET["size"] as $size){
+												if($size === $dog->size){
+													array_push($filteredList, $dog);
+												}
 											}
 										}
-									}
-									else{
-										array_push($filteredList, $dog);
+										else{
+											array_push($filteredList, $dog);
+										}
 									}
 								}
 							}
-						}
 						//filtering if gender is selected
-						elseif(is_array($_GET["gender"])){
-							foreach($_GET["gender"] as $gender){
-								if($gender === $dog->gender){
-									if($_GET["size"]){
-										foreach($_GET["size"] as $size){
-											if($size === $dog->size){
-												array_push($filteredList, $dog);
+							elseif(is_array($_GET["gender"])){
+								foreach($_GET["gender"] as $gender){
+									if($gender === $dog->gender){
+										if($_GET["size"]){
+											foreach($_GET["size"] as $size){
+												if($size === $dog->size){
+													array_push($filteredList, $dog);
+												}
 											}
 										}
+										else{
+											array_push($filteredList, $dog);
+										}
 									}
-									else{
+								}
+							}
+						//filtering if size is selected
+							elseif(is_array($_GET["size"])){
+								foreach($_GET["size"] as $size){
+									if($size === $dog->size){
 										array_push($filteredList, $dog);
 									}
 								}
 							}
 						}
-						//filtering if size is selected
-						elseif(is_array($_GET["size"])){
-							foreach($_GET["size"] as $size){
-								if($size === $dog->size){
-									array_push($filteredList, $dog);
-								}
-							}
-						}
+						$dogs = $filteredList;
 					}
-					$dogs = $filteredList;
-				}
-				else{
-					$dogs = $wpdb->get_results('SELECT a.name,a.description,b.breed_name,c.age_name,d.gender FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id INNER JOIN age c ON a.age_id = c.age_id INNER JOIN genders d ON a.gender_id = d.gender_id');
-				}
-				$cardCount = 0;
-				$pageNumber = 1;
-				$rowCount = 0;
-				foreach($dogs as $dog){
-					if($cardCount == 0){
-						if($pageNumber == 1){
-							?>
-							<div id="page<?php echo $pageNumber?>" class="pag activePag">
-								<?php
-							}
-							else{
+					else{
+						$dogs = $wpdb->get_results('SELECT a.name,a.description,b.breed_name,c.age_name,d.gender FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id INNER JOIN age c ON a.age_id = c.age_id INNER JOIN genders d ON a.gender_id = d.gender_id');
+					}
+					$cardCount = 0;
+					$pageNumber = 1;
+					$rowCount = 0;
+					foreach($dogs as $dog){
+						if($cardCount == 0){
+							if($pageNumber == 1){
 								?>
-								<div id="page<?php echo $pageNumber?>" class="pag">
+								<div id="page<?php echo $pageNumber?>" class="pag activePag">
 									<?php
 								}
-							}
-							if($rowCount == 0){
-								?>
-								<div class="row spaced-cols content-center-sm" data-type="row">
-									<?php	
+								else{
+									?>
+									<div id="page<?php echo $pageNumber?>" class="pag">
+										<?php
+									}
 								}
-								?>
-								<div class="col-sm-4">
-									<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-										<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-										<h6 class=""><?php echo $dog->name ?></h6> 
-										<p class="small italic">Shelter Name</p>
-										<p class="text-center"><?php echo $dog->description ?></p> 
-									</div> 
-								</div>
-								<?php
+								if($rowCount == 0){
+									?>
+									<div class="row spaced-cols content-center-sm" data-type="row">
+										<?php	
+									}
+									?>
+									<div class="col-sm-4">
+										<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
+											<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+											<h6 class=""><?php echo $dog->name ?></h6> 
+											<p class="small italic">Shelter Name</p>
+											<p class="text-center"><?php echo $dog->description ?></p> 
+										</div> 
+									</div>
+									<?php
 
-								if($rowCount == 2){
+									if($rowCount == 2){
+										?>
+									</div>
+									<?php
+								}
+
+								if($cardCount == 8){
 									?>
 								</div>
 								<?php
 							}
-
-							if($cardCount == 8){
-								?>
-							</div>
-							<?php
+							$rowCount++;
+							$cardCount++;
+							if($cardCount > 8){
+								$cardCount = 0;
+								$pageNumber++;
+							}
+							if($rowCount > 2){
+								$rowCount = 0;
+							}
 						}
-						$rowCount++;
-						$cardCount++;
-						if($cardCount > 8){
-							$cardCount = 0;
-							$pageNumber++;
-						}
-						if($rowCount > 2){
-							$rowCount = 0;
-						}
+						if($rowCount == 0){
+							?>
+						</div>
+						<?php
 					}
-					if($cardCount != 0){
+					elseif($cardCount != 0){
 						?>
 					</div>
 				</div>
 				<?php
 			}
 			?>
-			<div class="row no-gutters paginationSection">
-				<div class="pagination">
-					<a id="paginationFirst">&laquo;</a>
-					<?php
-					for($i = 1; $i <= $pageNumber; $i++){
-						if($i == 1){
-							?>
-							<a class="active paginationButton"><?php echo $i ?></a>
-							<?php
+			<div class="row paginationSection">
+				<div class="col-sm-12">
+					<div class="pagination">
+						<a id="paginationFirst">&laquo;</a>
+						<?php
+						for($i = 1; $i <= $pageNumber; $i++){
+							if($i == 1){
+								?>
+								<a class="active paginationButton"><?php echo $i ?></a>
+								<?php
+							}
+							else{
+								?>
+								<a class="paginationButton"><?php echo $i ?></a>
+								<?php
+							}
 						}
-						else{
-							?>
-							<a class="paginationButton"><?php echo $i ?></a>
-							<?php
-						}
-					}
-					?>
-					<a id="paginationLast">&raquo;</a>
+						?>
+						<a id="paginationLast">&raquo;</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<hr style="margin-top: 2.5rem;">
-	<section class="recentlyViewed" style="width: 100%;">
-		<h2 style="text-align: center;">Recently Viewed Pets</h2>
-		<div class="carousel-container">
-			<div class="carousel-inner">
-				<div class="track">
-					<div class="card-container">
-						<div class="card boxShadowAnimate">
-							<div class="img">
-								<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-							</div>
-							<div class="info">
-								<h6 class="">Pet Name</h6>
-							</div>
-						</div>
+</div>
+<hr style="margin-top: 2.5rem;">
+<section class="recentlyViewed" style="width: 100%;">
+	<h2 style="text-align: center;">Recently Viewed Pets</h2>
+	<div class="carousel-container">
+		<div class="carousel-inner">
+			<div class="track">
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
 					</div>
-					<div class="card-container">
-						<div class="card boxShadowAnimate">
-							<div class="img">
-								<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-								<div class="info">
-									<h6 class="">Pet Name</h6>
-								</div>
-							</div>
-						</div>
-						<div class="card-container">
-							<div class="card boxShadowAnimate">
-								<div class="img">
-									<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-									<div class="info">
-										<h6 class="">Pet Name</h6>
-									</div>
-								</div>
-							</div>
-							<div class="card-container">
-								<div class="card boxShadowAnimate">
-									<div class="img">
-										<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-										<div class="info">
-											<h6 class="">Pet Name</h6>
-										</div>
-									</div>
-								</div>
-								<div class="card-container">
-									<div class="card boxShadowAnimate">
-										<div class="img">
-											<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-											<div class="info">
-												<h6 class="">Pet Name</h6>
-											</div>
-										</div>
-									</div>
-									<div class="card-container">
-										<div class="card boxShadowAnimate">
-											<div class="img">
-												<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-												<div class="info">
-													<h6 class="">Pet Name</h6>
-												</div>
-											</div>
-										</div>
-										<div class="card-container">
-											<div class="card boxShadowAnimate">
-												<div class="img">
-													<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-													<div class="info">
-														<h6 class="">Pet Name</h6>
-													</div>
-												</div>
-											</div>
-											<div class="card-container">
-												<div class="card boxShadowAnimate">
-													<div class="img">
-														<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-														<div class="info">
-															<h6 class="">Pet Name</h6>
-														</div>
-													</div>
-												</div>
-												<div class="card-container">
-													<div class="card boxShadowAnimate">
-														<div class="img">
-															<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-															<div class="info">
-																<h6 class="">Pet Name</h6>
-															</div>
-														</div>
-													</div>
-													<div class="card-container">
-														<div class="card boxShadowAnimate">
-															<div class="img">
-																<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-																<div class="info">
-																	<h6 class="">Pet Name</h6>
-																</div>
-															</div>
-														</div>
-														<div class="card-container">
-															<div class="card boxShadowAnimate">
-																<div class="img">
-																	<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-																	<div class="info">
-																		<h6 class="">Pet Name</h6>
-																	</div>
-																</div>
-															</div>
-															<div class="card-container">
-																<div class="card boxShadowAnimate">
-																	<div class="img">
-																		<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-																		<div class="info">
-																			<h6 class="">Pet Name</h6>
-																		</div>
-																	</div>
-																</div>
-																<div class="card-container">
-																	<div class="card boxShadowAnimate">
-																		<div class="img">
-																			<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-																			<div class="info">
-																				<h6 class="">Pet Name</h6>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="card-container">
-																		<div class="card boxShadowAnimate">
-																			<div class="img">
-																				<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-																				<div class="info">
-																					<h6 class="">Pet Name</h6>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																<div class="nav">
-																	<button class="prev">
-																		<i class="material-icons">
-																			<
-																		</i>
-																	</button>
-																	<button class="next">
-																		<i class="material-icons">
-																			>
-																		</i>
-																	</button>
-																</div>
-															</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+					<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="nav">
+			<button class="prev">
+				<i class="material-icons">
+					<
+				</i>
+			</button>
+			<button class="next">
+				<i class="material-icons">
+					>
+				</i>
+			</button>
+		</div>
+	</div>
+</section>
 
-														</section>
-													</div>
-												</div>
-												<script>
-													function resubmit(breed, age, gender, size, remove){
-														breed = breed || 0;
-														age = age || 0;
-														gender = gender || 0;
-														size = size || 0;
+</div>
+</div>
+<script>
+	function resubmit(breed, age, gender, size, remove){
+		breed = breed || 0;
+		age = age || 0;
+		gender = gender || 0;
+		size = size || 0;
 
-														var myjson = JSON.stringify(breed);
-														var breeds = JSON.parse(myjson);
+		var myjson = JSON.stringify(breed);
+		var breeds = JSON.parse(myjson);
 
-														myjson = JSON.stringify(age);
-														ages = JSON.parse(myjson);
+		myjson = JSON.stringify(age);
+		ages = JSON.parse(myjson);
 
-														myjson = JSON.stringify(gender);
-														genders = JSON.parse(myjson);
+		myjson = JSON.stringify(gender);
+		genders = JSON.parse(myjson);
 
-														myjson = JSON.stringify(size);
-														sizes = JSON.parse(myjson);
+		myjson = JSON.stringify(size);
+		sizes = JSON.parse(myjson);
 
-														var form = document.createElement("form");
-														form.method = "GET";
-														var i;
-														for(i = 0; i < breeds.length; i++){
-															if(!(breeds[i] === remove)){
-																var elementInput = document.createElement("input");
-																elementInput.value = breeds[i];
-																elementInput.name = "breed[]";
+		var form = document.createElement("form");
+		form.method = "GET";
+		var i;
+		for(i = 0; i < breeds.length; i++){
+			if(!(breeds[i] === remove)){
+				var elementInput = document.createElement("input");
+				elementInput.value = breeds[i];
+				elementInput.name = "breed[]";
 
-																form.appendChild(elementInput);
-															}
-														}
-														for(i = 0; i < ages.length; i++){
-															if(!(ages[i] === remove)){
-																var elementInput = document.createElement("input");
-																elementInput.value = ages[i];
-																elementInput.name = "age[]";
+				form.appendChild(elementInput);
+			}
+		}
+		for(i = 0; i < ages.length; i++){
+			if(!(ages[i] === remove)){
+				var elementInput = document.createElement("input");
+				elementInput.value = ages[i];
+				elementInput.name = "age[]";
 
-																form.appendChild(elementInput);
-															}
-														}
-														for(i = 0; i < genders.length; i++){
-															if(!(genders[i] === remove)){
-																var elementInput = document.createElement("input");
-																elementInput.value = genders[i];
-																elementInput.name = "gender[]";
+				form.appendChild(elementInput);
+			}
+		}
+		for(i = 0; i < genders.length; i++){
+			if(!(genders[i] === remove)){
+				var elementInput = document.createElement("input");
+				elementInput.value = genders[i];
+				elementInput.name = "gender[]";
 
-																form.appendChild(elementInput);
-															}
-														}
-														for(i = 0; i < sizes.length; i++){
-															if(!(sizes[i] === remove)){
-																var elementInput = document.createElement("input");
-																elementInput.value = sizes[i];
-																elementInput.name = "size[]";
+				form.appendChild(elementInput);
+			}
+		}
+		for(i = 0; i < sizes.length; i++){
+			if(!(sizes[i] === remove)){
+				var elementInput = document.createElement("input");
+				elementInput.value = sizes[i];
+				elementInput.name = "size[]";
 
-																form.appendChild(elementInput);
-															}
-														}
-														document.body.appendChild(form);
-														form.submit();
-													}
-													function clearAll(){
-														var form = document.createElement("form");
-														document.body.appendChild(form);
-														form.submit();
-													}
+				form.appendChild(elementInput);
+			}
+		}
+		document.body.appendChild(form);
+		form.submit();
+	}
+	function clearAll(){
+		var form = document.createElement("form");
+		document.body.appendChild(form);
+		form.submit();
+	}
 
 
 
-													const paginationButtons = document.querySelectorAll('.paginationButton');
-													const pages = document.querySelectorAll('.pag');
-													var j;
-													for(j = 0; j < paginationButtons.length; j++){
-														paginationButtons[j].onclick = function(){
-															const activePage = document.querySelector('.activePag');
-															const activeButton = document.querySelector('.active');
-															activeButton.classList.remove('active');
-															activePage.classList.remove('activePag');
+	const paginationButtons = document.querySelectorAll('.paginationButton');
+	const pages = document.querySelectorAll('.pag');
+	var j;
+	for(j = 0; j < paginationButtons.length; j++){
+		paginationButtons[j].onclick = function(){
+			const activePage = document.querySelector('.activePag');
+			const activeButton = document.querySelector('.active');
+			activeButton.classList.remove('active');
+			activePage.classList.remove('activePag');
 
-															this.classList.add('active');
-															pages[this.innerText-1].classList.add('activePag');
-														}
+			this.classList.add('active');
+			pages[this.innerText-1].classList.add('activePag');
+		}
 
-													}
-													const paginationFirst = document.getElementById('paginationFirst');
-													const paginationLast = document.getElementById('paginationLast');
-													paginationFirst.onclick = function(){
-														const activePage = document.querySelector('.activePag');
-														const activeButton = document.querySelector('.active');
-														activeButton.classList.remove('active');
-														activePage.classList.remove('activePag');
+	}
+	const paginationFirst = document.getElementById('paginationFirst');
+	const paginationLast = document.getElementById('paginationLast');
+	paginationFirst.onclick = function(){
+		const activePage = document.querySelector('.activePag');
+		const activeButton = document.querySelector('.active');
+		activeButton.classList.remove('active');
+		activePage.classList.remove('activePag');
 
-														paginationButtons[0].classList.add('active');
-														pages[0].classList.add('activePag');
-													}
-													paginationLast.onclick = function(){
-														const activePage = document.querySelector('.activePag');
-														const activeButton = document.querySelector('.active');
-														activeButton.classList.remove('active');
-														activePage.classList.remove('activePag');
+		paginationButtons[0].classList.add('active');
+		pages[0].classList.add('activePag');
+	}
+	paginationLast.onclick = function(){
+		const activePage = document.querySelector('.activePag');
+		const activeButton = document.querySelector('.active');
+		activeButton.classList.remove('active');
+		activePage.classList.remove('activePag');
 
-														paginationButtons[paginationButtons.length-1].classList.add('active');
-														pages[pages.length-1].classList.add('activePag');
-													}
+		paginationButtons[paginationButtons.length-1].classList.add('active');
+		pages[pages.length-1].classList.add('activePag');
+	}
 
 
-													const prev  = document.querySelector('.prev');
-													const next = document.querySelector('.next');
+	const prev  = document.querySelector('.prev');
+	const next = document.querySelector('.next');
 
-													const track = document.querySelector('.track');
+	const track = document.querySelector('.track');
 
-													let carouselWidth = document.querySelector('.carousel-container').offsetWidth;
+	let carouselWidth = document.querySelector('.carousel-container').offsetWidth;
 
-													window.addEventListener('resize', () => {
-														carouselWidth = document.querySelector('.carousel-container').offsetWidth;
-													})
+	window.addEventListener('resize', () => {
+		carouselWidth = document.querySelector('.carousel-container').offsetWidth;
+	})
 
-													let index = 0;
+	let index = 0;
 
-													next.addEventListener('click', () => {
-														index++;
-														prev.classList.add('show');
-														track.style.transform = `translateX(-${index * carouselWidth}px)`;
-														if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
-															next.classList.add('hide');
-														}
+	next.addEventListener('click', () => {
+		index++;
+		prev.classList.add('show');
+		track.style.transform = `translateX(-${index * carouselWidth}px)`;
+		if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
+			next.classList.add('hide');
+		}
 
-														else if(track.offsetWidth - (index * carouselWidth)*2 < 100){
-															next.classList.add('hide');
-														}
-													})
-													prev.addEventListener('click', () => {
-														index--;
-														next.classList.remove('hide');
-														if (index === 0) {
-															prev.classList.remove('show');
-														}
-														track.style.transform = `translateX(-${index * carouselWidth}px)`;
-													})
+		else if(track.offsetWidth - (index * carouselWidth)*2 < 100){
+			next.classList.add('hide');
+		}
+	})
+	prev.addEventListener('click', () => {
+		index--;
+		next.classList.remove('hide');
+		if (index === 0) {
+			prev.classList.remove('show');
+		}
+		track.style.transform = `translateX(-${index * carouselWidth}px)`;
+	})
 
 												//slides
 
-												const buttons = document.querySelectorAll('.featuredButton');
-												const slides = document.querySelectorAll('.slide');
-												const intervalTime = 8000;
-												const button1 = document.getElementById('featured1');
-												const button2 = document.getElementById('featured2');
-												const button3 = document.getElementById('featured3');
-												const button4 = document.getElementById('featured4');
+	const buttons = document.querySelectorAll('.featuredButton');
+	const slides = document.querySelectorAll('.slide');
+	const intervalTime = 8000;
+	const button1 = document.getElementById('featured1');
+	const button2 = document.getElementById('featured2');
+	const button3 = document.getElementById('featured3');
+	const button4 = document.getElementById('featured4');
 
 
-												const nextSlide = () => {
-													const current = document.querySelector('.activeSlide');
-													if (current.nextElementSibling) {
-														current.nextElementSibling.classList.add('activeSlide');
-													} 
-													else {
-														slides[0].classList.add('activeSlide');
-													}
-													var i;
-													for (i = 0; i < buttons.length; i++) {
-														if(buttons[i].classList.contains('activeButton')){
-															buttons[i].classList.remove('activeButton');
-															if(i+1<buttons.length){
-																buttons[i+1].classList.add('activeButton');
-																break;
-															}
-															else{
-																buttons[0].classList.add('activeButton');
-																break;
-															}
-														}
-													}
-													setTimeout(() => current.classList.remove('activeSlide'));
-												};
-												slideInterval = setInterval(nextSlide, intervalTime);
+	const nextSlide = () => {
+		const current = document.querySelector('.activeSlide');
+		if (current.nextElementSibling) {
+			current.nextElementSibling.classList.add('activeSlide');
+		} 
+		else {
+			slides[0].classList.add('activeSlide');
+		}
+		var i;
+		for (i = 0; i < buttons.length; i++) {
+			if(buttons[i].classList.contains('activeButton')){
+				buttons[i].classList.remove('activeButton');
+				if(i+1<buttons.length){
+					buttons[i+1].classList.add('activeButton');
+					break;
+				}
+				else{
+					buttons[0].classList.add('activeButton');
+					break;
+				}
+			}
+		}
+		setTimeout(() => current.classList.remove('activeSlide'));
+	};
+	slideInterval = setInterval(nextSlide, intervalTime);
 
 
-												button1.onclick = function(){
-													const activeSlide = document.querySelector('.activeSlide');
-													activeSlide.classList.remove('activeSlide');
-													slides[0].classList.add('activeSlide');
+	button1.onclick = function(){
+		const activeSlide = document.querySelector('.activeSlide');
+		activeSlide.classList.remove('activeSlide');
+		slides[0].classList.add('activeSlide');
 
-													const activeBtn = document.querySelector('.activeButton');
-													activeBtn.classList.remove('activeButton');
-													buttons[0].classList.add('activeButton');
-													clearInterval(slideInterval);
-													slideInterval = setInterval(nextSlide, intervalTime);
-													
-												}
-												button2.onclick = function(){
-													const activeSlide = document.querySelector('.activeSlide');
-													activeSlide.classList.remove('activeSlide');
-													slides[1].classList.add('activeSlide');
+		const activeBtn = document.querySelector('.activeButton');
+		activeBtn.classList.remove('activeButton');
+		buttons[0].classList.add('activeButton');
+		clearInterval(slideInterval);
+		slideInterval = setInterval(nextSlide, intervalTime);
+		
+	}
+	button2.onclick = function(){
+		const activeSlide = document.querySelector('.activeSlide');
+		activeSlide.classList.remove('activeSlide');
+		slides[1].classList.add('activeSlide');
 
-													const activeBtn = document.querySelector('.activeButton');
-													activeBtn.classList.remove('activeButton');
-													buttons[1].classList.add('activeButton');
+		const activeBtn = document.querySelector('.activeButton');
+		activeBtn.classList.remove('activeButton');
+		buttons[1].classList.add('activeButton');
 
-													clearInterval(slideInterval);
-													slideInterval = setInterval(nextSlide, intervalTime);
-												}
-												button3.onclick = function(){
-													const activeSlide = document.querySelector('.activeSlide');
-													activeSlide.classList.remove('activeSlide');
-													slides[2].classList.add('activeSlide');
+		clearInterval(slideInterval);
+		slideInterval = setInterval(nextSlide, intervalTime);
+	}
+	button3.onclick = function(){
+		const activeSlide = document.querySelector('.activeSlide');
+		activeSlide.classList.remove('activeSlide');
+		slides[2].classList.add('activeSlide');
 
-													const activeBtn = document.querySelector('.activeButton');
-													activeBtn.classList.remove('activeButton');
-													buttons[2].classList.add('activeButton');
+		const activeBtn = document.querySelector('.activeButton');
+		activeBtn.classList.remove('activeButton');
+		buttons[2].classList.add('activeButton');
 
-													clearInterval(slideInterval);
-													slideInterval = setInterval(nextSlide, intervalTime);
-												}
-												button4.onclick = function(){
-													const activeSlide = document.querySelector('.activeSlide');
-													activeSlide.classList.remove('activeSlide');
-													slides[3].classList.add('activeSlide');
+		clearInterval(slideInterval);
+		slideInterval = setInterval(nextSlide, intervalTime);
+	}
+	button4.onclick = function(){
+		const activeSlide = document.querySelector('.activeSlide');
+		activeSlide.classList.remove('activeSlide');
+		slides[3].classList.add('activeSlide');
 
-													const activeBtn = document.querySelector('.activeButton');
-													activeBtn.classList.remove('activeButton');
-													buttons[3].classList.add('activeButton');
+		const activeBtn = document.querySelector('.activeButton');
+		activeBtn.classList.remove('activeButton');
+		buttons[3].classList.add('activeButton');
 
-													clearInterval(slideInterval);
-													slideInterval = setInterval(nextSlide, intervalTime);
-												}
+		clearInterval(slideInterval);
+		slideInterval = setInterval(nextSlide, intervalTime);
+	}
 
-												//Filters
-												const dogFilters = document.querySelectorAll('.dogSelection');
-												const dogSubmit = document.getElementById('breedFilterSubmit');
-												var k;
-												for(k = 0; k < dogFilters.length; k++){
-													dogFilters[k].onclick = function(){
-														if(dogSubmit.classList.contains('hideFilterSubmit')){
-															dogSubmit.classList.remove('hideFilterSubmit');
-														}
-														if (this.previous) {
-															this.checked = false;
-															var i;
-															for(i = 0; i < dogFilters.length; i++){
-																if(dogFilters[i].checked){
-																	break;
-																}
-																if(i==dogFilters.length-1){
-																	dogSubmit.classList.add('hideFilterSubmit');
-																}
-															}
-														}
-														this.previous = this.checked;
-													}
-												}
+	//Filters
+	const dogFilters = document.querySelectorAll('.dogSelection');
+	const dogSubmit = document.getElementById('breedFilterSubmit');
+	var k;
+	for(k = 0; k < dogFilters.length; k++){
+		dogFilters[k].onclick = function(){
+			if(dogSubmit.classList.contains('hideFilterSubmit')){
+				dogSubmit.classList.remove('hideFilterSubmit');
+			}
+			if (this.previous) {
+				this.checked = false;
+				var i;
+				for(i = 0; i < dogFilters.length; i++){
+					if(dogFilters[i].checked){
+						break;
+					}
+					if(i==dogFilters.length-1){
+						dogSubmit.classList.add('hideFilterSubmit');
+					}
+				}
+			}
+			this.previous = this.checked;
+		}
+	}
 
-												const ageFilters = document.querySelectorAll('.ageSelection');
-												const ageSubmit = document.getElementById('ageFilterSubmit');
-												for(k = 0; k < ageFilters.length; k++){
-													ageFilters[k].onclick = function(){
-														if(ageSubmit.classList.contains('hideFilterSubmit')){
-															ageSubmit.classList.remove('hideFilterSubmit');
-														}
-														if (this.previous) {
-															this.checked = false;
-															var i;
-															for(i = 0; i < ageFilters.length; i++){
-																if(ageFilters[i].checked){
-																	break;
-																}
-																if(i==ageFilters.length-1){
-																	ageSubmit.classList.add('hideFilterSubmit');
-																}
-															}
-														}
-														this.previous = this.checked;
-													}
-												}
+	const ageFilters = document.querySelectorAll('.ageSelection');
+	const ageSubmit = document.getElementById('ageFilterSubmit');
+	for(k = 0; k < ageFilters.length; k++){
+		ageFilters[k].onclick = function(){
+			if(ageSubmit.classList.contains('hideFilterSubmit')){
+				ageSubmit.classList.remove('hideFilterSubmit');
+			}
+			if (this.previous) {
+				this.checked = false;
+				var i;
+				for(i = 0; i < ageFilters.length; i++){
+					if(ageFilters[i].checked){
+						break;
+					}
+					if(i==ageFilters.length-1){
+						ageSubmit.classList.add('hideFilterSubmit');
+					}
+				}
+			}
+			this.previous = this.checked;
+		}
+	}
 
-												const genderFilters = document.querySelectorAll('.genderSelection');
-												const genderSubmit = document.getElementById('genderFilterSubmit');
-												for(k = 0; k < genderFilters.length; k++){
-													genderFilters[k].onclick = function(){
-														if(genderSubmit.classList.contains('hideFilterSubmit')){
-															genderSubmit.classList.remove('hideFilterSubmit');
-														}
-														if (this.previous) {
-															this.checked = false;
-															var i;
-															for(i = 0; i < genderFilters.length; i++){
-																if(genderFilters[i].checked){
-																	break;
-																}
-																if(i==genderFilters.length-1){
-																	genderSubmit.classList.add('hideFilterSubmit');
-																}
-															}
-														}
-														this.previous = this.checked;
-													}
-												}
+	const genderFilters = document.querySelectorAll('.genderSelection');
+	const genderSubmit = document.getElementById('genderFilterSubmit');
+	for(k = 0; k < genderFilters.length; k++){
+		genderFilters[k].onclick = function(){
+			if(genderSubmit.classList.contains('hideFilterSubmit')){
+				genderSubmit.classList.remove('hideFilterSubmit');
+			}
+			if (this.previous) {
+				this.checked = false;
+				var i;
+				for(i = 0; i < genderFilters.length; i++){
+					if(genderFilters[i].checked){
+						break;
+					}
+					if(i==genderFilters.length-1){
+						genderSubmit.classList.add('hideFilterSubmit');
+					}
+				}
+			}
+			this.previous = this.checked;
+		}
+	}
 
-												const sizeFilters = document.querySelectorAll('.sizeSelection');
-												const sizeSubmit = document.getElementById('sizeFilterSubmit');
-												for(k = 0; k < ageFilters.length; k++){
-													sizeFilters[k].onclick = function(){
-														if(sizeSubmit.classList.contains('hideFilterSubmit')){
-															sizeSubmit.classList.remove('hideFilterSubmit');
-														}
-														if (this.previous) {
-															this.checked = false;
-															var i;
-															for(i = 0; i < sizeFilters.length; i++){
-																if(sizeFilters[i].checked){
-																	break;
-																}
-																if(i==sizeFilters.length-1){
-																	sizeSubmit.classList.add('hideFilterSubmit');
-																}
-															}
-														}
-														this.previous = this.checked;
-													}
-												}
+	const sizeFilters = document.querySelectorAll('.sizeSelection');
+	const sizeSubmit = document.getElementById('sizeFilterSubmit');
+	for(k = 0; k < ageFilters.length; k++){
+		sizeFilters[k].onclick = function(){
+			if(sizeSubmit.classList.contains('hideFilterSubmit')){
+				sizeSubmit.classList.remove('hideFilterSubmit');
+			}
+			if (this.previous) {
+				this.checked = false;
+				var i;
+				for(i = 0; i < sizeFilters.length; i++){
+					if(sizeFilters[i].checked){
+						break;
+					}
+					if(i==sizeFilters.length-1){
+						sizeSubmit.classList.add('hideFilterSubmit');
+					}
+				}
+			}
+			this.previous = this.checked;
+		}
+	}
 
 
-											</script>
+</script>
 
-											<?php get_footer(); ?>
+<?php get_footer(); ?>
