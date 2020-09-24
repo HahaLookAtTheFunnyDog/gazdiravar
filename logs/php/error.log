@@ -622,3 +622,7 @@
 [23-Sep-2020 21:25:45 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 848
 [23-Sep-2020 21:26:20 UTC] PHP Parse error:  syntax error, unexpected '*', expecting end of file in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 909
 [24-Sep-2020 00:29:53 UTC] PHP Parse error:  syntax error, unexpected '$rowCount' (T_VARIABLE), expecting '(' in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 914
+[24-Sep-2020 19:26:36 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-dogs.php on line 6
+[24-Sep-2020 19:28:52 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-dogs.php on line 7
+[24-Sep-2020 19:29:48 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-dogs.php on line 7
+[24-Sep-2020 19:29:49 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-dogs.php on line 7

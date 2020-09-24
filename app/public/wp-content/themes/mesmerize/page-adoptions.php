@@ -324,7 +324,7 @@
 							for($i = 1; $i <= count($featuredDogs); $i++){
 								?>
 								<li>
-									<button id="featured<?php echo $i; ?>" class="featuredButton
+									<button id="featured<?php echo $i; ?>" onclick="featuredButton(<?php echo $i ?>)" class="featuredButton
 										<?php
 										if($i == 1){
 											?>
@@ -1006,6 +1006,20 @@
 </div>
 </div>
 <script>
+	//------------------------------------------------------------------------
+	//FILTER TAGS
+	//------------------------------------------------------------------------
+	function resubmitHelper(arr,remove,form,str){
+		var i;
+		for(i = 0; i < arr.length; i++){
+			if(!(arr[i] === remove)){
+				var elementInput = document.createElement("input");
+				elementInput.value = arr[i];
+				elementInput.name = str + "[]";
+				form.appendChild(elementInput);
+			}
+		}
+	}
 	function resubmit(breed, age, gender, size, remove){
 		breed = breed || 0;
 		age = age || 0;
@@ -1013,7 +1027,7 @@
 		size = size || 0;
 
 		var myjson = JSON.stringify(breed);
-		var breeds = JSON.parse(myjson);
+		breed = JSON.parse(myjson);
 
 		myjson = JSON.stringify(age);
 		ages = JSON.parse(myjson);
@@ -1026,43 +1040,10 @@
 
 		var form = document.createElement("form");
 		form.method = "GET";
-		var i;
-		for(i = 0; i < breeds.length; i++){
-			if(!(breeds[i] === remove)){
-				var elementInput = document.createElement("input");
-				elementInput.value = breeds[i];
-				elementInput.name = "breed[]";
-
-				form.appendChild(elementInput);
-			}
-		}
-		for(i = 0; i < ages.length; i++){
-			if(!(ages[i] === remove)){
-				var elementInput = document.createElement("input");
-				elementInput.value = ages[i];
-				elementInput.name = "age[]";
-
-				form.appendChild(elementInput);
-			}
-		}
-		for(i = 0; i < genders.length; i++){
-			if(!(genders[i] === remove)){
-				var elementInput = document.createElement("input");
-				elementInput.value = genders[i];
-				elementInput.name = "gender[]";
-
-				form.appendChild(elementInput);
-			}
-		}
-		for(i = 0; i < sizes.length; i++){
-			if(!(sizes[i] === remove)){
-				var elementInput = document.createElement("input");
-				elementInput.value = sizes[i];
-				elementInput.name = "size[]";
-
-				form.appendChild(elementInput);
-			}
-		}
+		resubmitHelper(breed,remove,form,"breed");
+		resubmitHelper(ages,remove,form,"age");
+		resubmitHelper(genders,remove,form,"gender");
+		resubmitHelper(sizes,remove,form,"size");
 		document.body.appendChild(form);
 		form.submit();
 	}
@@ -1071,9 +1052,49 @@
 		document.body.appendChild(form);
 		form.submit();
 	}
+	//------------------------------------------------------------------------
+	//FILTER FUNCTIONALITY
+	//------------------------------------------------------------------------
+	function filterFunctionalityHelper(selection,btn){
+		var k;
+		for(k = 0; k < selection.length; k++){
+			selection[k].onclick = function(){
+				if(btn.classList.contains('hideFilterSubmit')){
+					btn.classList.remove('hideFilterSubmit');
+				}
+				if (this.previous) {
+					this.checked = false;
+					var i;
+					for(i = 0; i < selection.length; i++){
+						if(selection[i].checked){
+							break;
+						}
+						if(i==selection.length-1){
+							btn.classList.add('hideFilterSubmit');
+						}
+					}
+				}
+				this.previous = this.checked;
+			}
+		}
+	}
+	const dogFilters = document.querySelectorAll('.dogSelection');
+	const dogSubmit = document.getElementById('breedFilterSubmit');
+	const ageFilters = document.querySelectorAll('.ageSelection');
+	const ageSubmit = document.getElementById('ageFilterSubmit');
+	const genderFilters = document.querySelectorAll('.genderSelection');
+	const genderSubmit = document.getElementById('genderFilterSubmit');
+	const sizeFilters = document.querySelectorAll('.sizeSelection');
+	const sizeSubmit = document.getElementById('sizeFilterSubmit');
+	var k;
+	filterFunctionalityHelper(dogFilters,dogSubmit);
+	filterFunctionalityHelper(ageFilters,ageSubmit);
+	filterFunctionalityHelper(genderFilters,genderSubmit);
+	filterFunctionalityHelper(sizeFilters,sizeSubmit);
 
-
-
+	//------------------------------------------------------------------------
+	//PAGINATION
+	//------------------------------------------------------------------------
 	const paginationButtons = document.querySelectorAll('.paginationButton');
 	const pages = document.querySelectorAll('.pag');
 	var j;
@@ -1110,20 +1131,18 @@
 		pages[pages.length-1].classList.add('activePag');
 	}
 
-
+	//------------------------------------------------------------------------
+	//RECENTLY VIEWED
+	//------------------------------------------------------------------------
 	const prev  = document.querySelector('.prev');
 	const next = document.querySelector('.next');
-
 	const track = document.querySelector('.track');
-
 	let carouselWidth = document.querySelector('.carousel-container').offsetWidth;
-
 	window.addEventListener('resize', () => {
-		carouselWidth = document.querySelector('.carousel-container').offsetWidth;
+	carouselWidth = document.querySelector('.carousel-container').offsetWidth;
 	})
 
 	let index = 0;
-
 	next.addEventListener('click', () => {
 		index++;
 		prev.classList.add('show');
@@ -1144,17 +1163,12 @@
 		}
 		track.style.transform = `translateX(-${index * carouselWidth}px)`;
 	})
-
-												//slides
-
+	//------------------------------------------------------------------------
+	//SLIDES
+	//------------------------------------------------------------------------
 	const buttons = document.querySelectorAll('.featuredButton');
 	const slides = document.querySelectorAll('.slide');
 	const intervalTime = 8000;
-	const button1 = document.getElementById('featured1');
-	const button2 = document.getElementById('featured2');
-	const button3 = document.getElementById('featured3');
-	const button4 = document.getElementById('featured4');
-
 
 	const nextSlide = () => {
 		const current = document.querySelector('.activeSlide');
@@ -1182,151 +1196,15 @@
 	};
 	slideInterval = setInterval(nextSlide, intervalTime);
 
-
-	button1.onclick = function(){
+	function featuredButton(index){
 		const activeSlide = document.querySelector('.activeSlide');
 		activeSlide.classList.remove('activeSlide');
-		slides[0].classList.add('activeSlide');
+		slides[index-1].classList.add('activeSlide');
 
 		const activeBtn = document.querySelector('.activeButton');
 		activeBtn.classList.remove('activeButton');
-		buttons[0].classList.add('activeButton');
-		clearInterval(slideInterval);
-		slideInterval = setInterval(nextSlide, intervalTime);
-		
+		buttons[index-1].classList.add('activeButton');
 	}
-	button2.onclick = function(){
-		const activeSlide = document.querySelector('.activeSlide');
-		activeSlide.classList.remove('activeSlide');
-		slides[1].classList.add('activeSlide');
-
-		const activeBtn = document.querySelector('.activeButton');
-		activeBtn.classList.remove('activeButton');
-		buttons[1].classList.add('activeButton');
-
-		clearInterval(slideInterval);
-		slideInterval = setInterval(nextSlide, intervalTime);
-	}
-	button3.onclick = function(){
-		const activeSlide = document.querySelector('.activeSlide');
-		activeSlide.classList.remove('activeSlide');
-		slides[2].classList.add('activeSlide');
-
-		const activeBtn = document.querySelector('.activeButton');
-		activeBtn.classList.remove('activeButton');
-		buttons[2].classList.add('activeButton');
-
-		clearInterval(slideInterval);
-		slideInterval = setInterval(nextSlide, intervalTime);
-	}
-	button4.onclick = function(){
-		const activeSlide = document.querySelector('.activeSlide');
-		activeSlide.classList.remove('activeSlide');
-		slides[3].classList.add('activeSlide');
-
-		const activeBtn = document.querySelector('.activeButton');
-		activeBtn.classList.remove('activeButton');
-		buttons[3].classList.add('activeButton');
-
-		clearInterval(slideInterval);
-		slideInterval = setInterval(nextSlide, intervalTime);
-	}
-
-	//Filters
-	const dogFilters = document.querySelectorAll('.dogSelection');
-	const dogSubmit = document.getElementById('breedFilterSubmit');
-	var k;
-	for(k = 0; k < dogFilters.length; k++){
-		dogFilters[k].onclick = function(){
-			if(dogSubmit.classList.contains('hideFilterSubmit')){
-				dogSubmit.classList.remove('hideFilterSubmit');
-			}
-			if (this.previous) {
-				this.checked = false;
-				var i;
-				for(i = 0; i < dogFilters.length; i++){
-					if(dogFilters[i].checked){
-						break;
-					}
-					if(i==dogFilters.length-1){
-						dogSubmit.classList.add('hideFilterSubmit');
-					}
-				}
-			}
-			this.previous = this.checked;
-		}
-	}
-
-	const ageFilters = document.querySelectorAll('.ageSelection');
-	const ageSubmit = document.getElementById('ageFilterSubmit');
-	for(k = 0; k < ageFilters.length; k++){
-		ageFilters[k].onclick = function(){
-			if(ageSubmit.classList.contains('hideFilterSubmit')){
-				ageSubmit.classList.remove('hideFilterSubmit');
-			}
-			if (this.previous) {
-				this.checked = false;
-				var i;
-				for(i = 0; i < ageFilters.length; i++){
-					if(ageFilters[i].checked){
-						break;
-					}
-					if(i==ageFilters.length-1){
-						ageSubmit.classList.add('hideFilterSubmit');
-					}
-				}
-			}
-			this.previous = this.checked;
-		}
-	}
-
-	const genderFilters = document.querySelectorAll('.genderSelection');
-	const genderSubmit = document.getElementById('genderFilterSubmit');
-	for(k = 0; k < genderFilters.length; k++){
-		genderFilters[k].onclick = function(){
-			if(genderSubmit.classList.contains('hideFilterSubmit')){
-				genderSubmit.classList.remove('hideFilterSubmit');
-			}
-			if (this.previous) {
-				this.checked = false;
-				var i;
-				for(i = 0; i < genderFilters.length; i++){
-					if(genderFilters[i].checked){
-						break;
-					}
-					if(i==genderFilters.length-1){
-						genderSubmit.classList.add('hideFilterSubmit');
-					}
-				}
-			}
-			this.previous = this.checked;
-		}
-	}
-
-	const sizeFilters = document.querySelectorAll('.sizeSelection');
-	const sizeSubmit = document.getElementById('sizeFilterSubmit');
-	for(k = 0; k < ageFilters.length; k++){
-		sizeFilters[k].onclick = function(){
-			if(sizeSubmit.classList.contains('hideFilterSubmit')){
-				sizeSubmit.classList.remove('hideFilterSubmit');
-			}
-			if (this.previous) {
-				this.checked = false;
-				var i;
-				for(i = 0; i < sizeFilters.length; i++){
-					if(sizeFilters[i].checked){
-						break;
-					}
-					if(i==sizeFilters.length-1){
-						sizeSubmit.classList.add('hideFilterSubmit');
-					}
-				}
-			}
-			this.previous = this.checked;
-		}
-	}
-
-
 </script>
 
 <?php get_footer(); ?>
