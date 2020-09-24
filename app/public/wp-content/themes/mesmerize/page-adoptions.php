@@ -7,9 +7,6 @@
 	.filters ul li{
 		text-align: left;
 	}
-	.filters input{
-		/*height: 1rem;*/
-	}
 	.filters label{
 		font-size: 1rem;
 
@@ -123,8 +120,6 @@
 		padding: 10px;
 		box-sizing: border-box;
 	}
-	
-
 	.slider {
 		position: relative;
 		overflow: hidden;
@@ -153,8 +148,6 @@
 		color: #fff;
 		padding: 35px;
 	}
-
-
 	.buttonContainer{
 		text-align:center;
 	}
@@ -176,8 +169,6 @@
 	.activeButton{
 		background-color: dodgerblue;
 	}
-
-
 	.quantity{
 		display: inline;
 		float: right;
@@ -251,38 +242,37 @@
 	}
 </style>
 <?php 
-function appendForms(){
-	if(is_array($_GET["breed"]) || is_object($_GET["breed"])){
-		foreach($_GET["breed"] as $breed){
-			?>
-			<input type="hidden" name="breed[]" value="<?php echo $breed ?>">
-			<?php
+	function appendForms(){
+		if(is_array($_GET["breed"]) || is_object($_GET["breed"])){
+			foreach($_GET["breed"] as $breed){
+				?>
+				<input type="hidden" name="breed[]" value="<?php echo $breed ?>">
+				<?php
+			}
+		}
+		if(is_array($_GET["age"]) || is_object($_GET["age"])){
+			foreach($_GET["age"] as $age){
+				?>
+				<input type="hidden" name="age[]" value="<?php echo $age ?>">
+				<?php
+			}
+		}
+		if(is_array($_GET["gender"]) || is_object($_GET["gender"])){
+			foreach($_GET["gender"] as $gender){
+				?>
+				<input type="hidden" name="gender[]" value="<?php echo $gender ?>">
+				<?php
+			}
+		}
+		if(is_array($_GET["size"]) || is_object($_GET["size"])){
+			foreach($_GET["size"] as $size){
+				?>
+				<input type="hidden" name="size[]" value="<?php echo $size ?>">
+				<?php
+			}
 		}
 	}
-	if(is_array($_GET["age"]) || is_object($_GET["age"])){
-		foreach($_GET["age"] as $age){
-			?>
-			<input type="hidden" name="age[]" value="<?php echo $age ?>">
-			<?php
-		}
-	}
-	if(is_array($_GET["gender"]) || is_object($_GET["gender"])){
-		foreach($_GET["gender"] as $gender){
-			?>
-			<input type="hidden" name="gender[]" value="<?php echo $gender ?>">
-			<?php
-		}
-	}
-	if(is_array($_GET["size"]) || is_object($_GET["size"])){
-		foreach($_GET["size"] as $size){
-			?>
-			<input type="hidden" name="size[]" value="<?php echo $size ?>">
-			<?php
-		}
-	}
-}
 ?>
-
 <div id='page-content' class="page-content">
 	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
 		<section>
@@ -654,7 +644,7 @@ function appendForms(){
 					$filteredList = [];
 				//Down the rabbit hole of filtering
 					if(!empty($_GET)){
-						$dogs = $wpdb->get_results('SELECT a.name,a.description,b.breed_name,c.age_name,d.gender,e.size FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id INNER JOIN age c ON a.age_id = c.age_id INNER JOIN genders d ON a.gender_id = d.gender_id INNER JOIN sizes e ON a.size_id = e.size_id');
+						$dogs = $wpdb->get_results('SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id INNER JOIN age c ON a.age_id = c.age_id INNER JOIN genders d ON a.gender_id = d.gender_id INNER JOIN sizes e ON a.size_id = e.size_id');
 						foreach($dogs as $dog){
 						//Filtering if breed is selected
 							if(is_array($_GET["breed"])){
@@ -795,7 +785,7 @@ function appendForms(){
 						$dogs = $filteredList;
 					}
 					else{
-						$dogs = $wpdb->get_results('SELECT a.name,a.description,b.breed_name,c.age_name,d.gender FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id INNER JOIN age c ON a.age_id = c.age_id INNER JOIN genders d ON a.gender_id = d.gender_id');
+						$dogs = $wpdb->get_results('SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id INNER JOIN age c ON a.age_id = c.age_id INNER JOIN genders d ON a.gender_id = d.gender_id');
 					}
 					$cardCount = 0;
 					$pageNumber = 1;
@@ -820,12 +810,17 @@ function appendForms(){
 									}
 									?>
 									<div class="col-sm-4">
-										<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-											<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-											<h6 class=""><?php echo $dog->name ?></h6> 
-											<p class="small italic">Shelter Name</p>
-											<p class="text-center"><?php echo $dog->description ?></p> 
-										</div> 
+										<?php
+											$url = site_url('/adoptions/dogs/?id=') . $dog->dog_id;
+										?>
+										<a href="<?php echo $url; ?>" style="text-decoration: none; color: #3C424F; ">
+											<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
+												<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+												<h6 class=""><?php echo $dog->name ?></h6> 
+												<p class="small italic">Shelter Name</p>
+												<p class="text-center"><?php echo $dog->description ?></p> 
+											</div> 
+										</a>
 									</div>
 									<?php
 
