@@ -626,3 +626,20 @@
 [24-Sep-2020 19:28:52 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-dogs.php on line 7
 [24-Sep-2020 19:29:48 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-dogs.php on line 7
 [24-Sep-2020 19:29:49 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-dogs.php on line 7
+[25-Sep-2020 18:17:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function emptyempty() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:357
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php(370): getIPAddress()
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#3 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#4 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 357
+[25-Sep-2020 18:17:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function emptyempty() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:357
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php(370): getIPAddress()
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#3 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#4 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 357
+[25-Sep-2020 18:55:59 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 360

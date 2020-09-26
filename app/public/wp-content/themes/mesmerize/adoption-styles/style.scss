@@ -1,0 +1,239 @@
+.filters ul{
+    list-style: none;
+    margin: 0;
+}
+.filters ul li{
+    text-align: left;
+}
+.filters label{
+    font-size: 1rem;
+
+}
+.scrollRadio{
+    height: 15rem;
+    overflow: scroll;
+}
+.scrollRadio::-webkit-scrollbar {
+    width: 2px; 
+}
+.paginationSection{
+    width: 100%;
+    margin: 0;
+}
+.pagination{
+    text-align: center;
+}
+.pagination a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .5s;
+}
+.pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+.carousel-container {
+    width: 100%;
+    margin: 50px auto;
+    min-height: 200px;
+    position: relative;
+}
+@media screen and (max-width: 768px) {
+    .carousel-container {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .carousel-container {
+        width: 85%;
+    }
+}
+.carousel-container .carousel-inner {
+    overflow: auto;
+}
+.carousel-container .track {
+    display: inline-flex;
+    transition: transform 0.5s;
+}
+.carousel-container .card-container {
+    width: 259px;
+    flex-shrink: 0;
+    height: 250px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+.carousel-container .card-container .card {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.nav button {
+    background-color: dodgerblue;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.nav .prev {
+    left: -30px;
+    display: none;
+}
+.nav .prev.show {
+    display: block;
+}
+.nav .next {
+    right: -30px;
+}
+.nav .next.hide {
+    display: none;
+}
+.card > * {
+    flex: 1;
+}
+.card .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+.card .info {
+    text-align: center;
+    flex-basis: 40px;
+    color: #fff;
+    flex-grow: 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.slider {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    width: 100%;
+}
+.activeSlide{
+    opacity: 1 !important;
+}
+.slide{
+    position: absolute;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0;
+    background-size: cover;                      
+    background-repeat: no-repeat;
+    background-position: center center; 
+    height: 100%; 
+    width: 100%;
+    padding: 0;
+}
+.featuredContent{
+    position: absolute; 
+    bottom: 20px;
+    width: 600px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 35px;
+}
+.buttonContainer{
+    text-align:center;
+}
+.featuredButtons{
+    display: inline-block;
+    width: auto;
+}
+.featuredButtons li{
+    display: inline;
+}
+.featuredButton {
+    background-color: #fff;
+    height:10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid dodgerblue;
+    cursor: pointer;
+}
+.activeButton{
+    background-color: dodgerblue;
+}
+.quantity{
+    float: right;
+    margin: 0;
+    padding: 0;
+    margin-right: 7px;
+}
+.alignMargin{
+    margin-right: 5px;
+}
+.filterDivider{
+    margin: 0;
+}
+
+.filterChoices{
+    list-style: none;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.filterChoices li{
+    display: inline-block;
+}
+.filtersli{
+    background-color: dodgerblue;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    margin-left: 0;
+}
+.filterClose{
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.clearAll{
+    cursor: pointer;
+}
+.appliedFiltersHeader{
+    margin-bottom: 5px;
+}
+.filterSubmit{
+    display: block;
+    color: white;
+    background-color: dodgerblue;
+    width: 100%;
+    border: 0px;
+    margin-bottom: 5px;
+}
+.hideFilterSubmit{
+    display: none;
+}
+.iconBig{
+    width: 13rem !important;
+    height: 13rem !important;
+}
+.boxShadowAnimate:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+.activePag{
+    display: block !important;
+}
+.pag{
+    display: none;
+}
+.paginationButton{
+    cursor:pointer;
+}
