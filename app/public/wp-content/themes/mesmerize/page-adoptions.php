@@ -1,35 +1,21 @@
 <?php mesmerize_get_header(); ?>
 <link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-assets/style.css'); ?>">
 <?php 
+	function appendFormHelper($filterArr, $arrName){
+		if(is_array($filterArr) || is_object($filterArr)){
+			
+			foreach($filterArr as $filterVar){
+				?>
+				<input type="hidden" name="<?php echo $arrName . "[]" ?>" value="<?php echo $filterVar ?>">
+				<?php
+			}
+		}
+	}
 	function appendForms(){
-		if(is_array($_GET["breed"]) || is_object($_GET["breed"])){
-			foreach($_GET["breed"] as $breed){
-				?>
-				<input type="hidden" name="breed[]" value="<?php echo $breed ?>">
-				<?php
-			}
-		}
-		if(is_array($_GET["age"]) || is_object($_GET["age"])){
-			foreach($_GET["age"] as $age){
-				?>
-				<input type="hidden" name="age[]" value="<?php echo $age ?>">
-				<?php
-			}
-		}
-		if(is_array($_GET["gender"]) || is_object($_GET["gender"])){
-			foreach($_GET["gender"] as $gender){
-				?>
-				<input type="hidden" name="gender[]" value="<?php echo $gender ?>">
-				<?php
-			}
-		}
-		if(is_array($_GET["size"]) || is_object($_GET["size"])){
-			foreach($_GET["size"] as $size){
-				?>
-				<input type="hidden" name="size[]" value="<?php echo $size ?>">
-				<?php
-			}
-		}
+		appendFormHelper($_GET["breed"], "breed");
+		appendFormHelper($_GET["age"], "age");
+		appendFormHelper($_GET["gender"], "gender");
+		appendFormHelper($_GET["size"], "size");
 	}
 ?>
 <div id='page-content' class="page-content">
@@ -135,7 +121,6 @@
 								<ul class="scrollRadio">
 									<?php
 									$breeds = $wpdb->get_results('SELECT breed_name FROM breeds ORDER BY breed_name ASC');
-
 									foreach($breeds as $breed){
 										?>
 										<li>
@@ -437,7 +422,21 @@
 						}
 						return $arguments;
 					}
-					if(!(empty($_GET["breed"]) ||  empty($_GET["age"]) || empty($_GET["gender"] || empty($_GET["size"])))){
+					function finalQueryHelper($arguments,$finalQuery, $finalQueryAdjusted){
+						foreach($arguments as $argument){
+							if($argument){
+								if($finalQueryAdjusted){
+									$finalQuery .= " AND ( " . $argument . " )";
+								}
+								else{
+									$finalQuery .= "( " . $argument . " )";
+									$finalQueryAdjusted = true;
+								}
+							}
+						}
+						return $finalQuery;
+					}
+					if(is_array($_GET["breed"]) || is_array($_GET["age"]) || is_array($_GET["gender"]) || is_array($_GET["size"])){
 						$baseQuery = "
 						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
 						FROM dogs a 
@@ -457,33 +456,7 @@
 							$finalQuery .= "( " . $ageArguments . " )";
 							$finalQueryAdjusted = true;
 						}
-						if($genderArguments){
-							if($finalQueryAdjusted){
-								$finalQuery .= " AND ( " . $genderArguments . " )";
-							}
-							else{
-								$finalQuery .= "( " . $genderArguments . " )";
-								$finalQueryAdjusted = true;
-							}
-						}
-						if($sizeArguments){
-							if($finalQueryAdjusted){
-								$finalQuery .= " AND ( " . $sizeArguments . " )";
-							}
-							else{
-								$finalQuery .= "( " . $sizeArguments . " )";
-								$finalQueryAdjusted = true;
-							}
-						}
-						if($breedArguments){
-							if($finalQueryAdjusted){
-								$finalQuery .= " AND ( " . $breedArguments . " )";
-							}
-							else{
-								$finalQuery .= "( " . $breedArguments . " )";
-								$finalQueryAdjusted = true;
-							}
-						}
+						$finalQuery = finalQueryHelper([$genderArguments,$sizeArguments,$breedArguments],$finalQuery,$finalQueryAdjusted);
 						$finalQuery .= $orderClause . $limitClause;
 						$dogs = $wpdb->get_results($finalQuery);
 					}
