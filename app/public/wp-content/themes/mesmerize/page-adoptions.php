@@ -468,76 +468,37 @@
 						INNER JOIN genders d ON a.gender_id = d.gender_id" . $orderClause . $limitClause;
 						$dogs = $wpdb->get_results($defaultQuery);
 					}
-					$cardCount = 0;
-					$pageNumber = 1;
-					$rowCount = 0;
-					foreach($dogs as $dog){
-						if($cardCount == 0){
-							if($pageNumber == 1){
-								?>
-								<div id="page<?php echo $pageNumber?>" class="pag activePag">
-									<?php
-								}
-								else{
-									?>
-									<div id="page<?php echo $pageNumber?>" class="pag">
-										<?php
-									}
-								}
-								if($rowCount == 0){
-									?>
-									<div class="row spaced-cols content-center-sm" data-type="row">
-										<?php	
-									}
-									?>
-									<div class="col-sm-4">
-										<?php
-											$url = site_url('/adoptions/dogs/?id=') . $dog->dog_id;
-										?>
-										<a href="<?php echo $url; ?>" style="text-decoration: none; color: #3C424F; ">
-											<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-												<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-												<h6 class=""><?php echo $dog->name ?></h6> 
-												<p class="small italic">Shelter Name</p>
-												<p class="text-center"><?php echo $dog->description ?></p> 
-											</div> 
-										</a>
-									</div>
-									<?php
-
-									if($rowCount == 2){
-										?>
-									</div>
-									<?php
-								}
-
-								if($cardCount == 8){
-									?>
-								</div>
-								<?php
-							}
-							$rowCount++;
-							$cardCount++;
-							if($cardCount > 8){
-								$cardCount = 0;
-								$pageNumber++;
-							}
-							if($rowCount > 2){
-								$rowCount = 0;
-							}
-						}
-						if($rowCount == 0){
+					for($i=0; $i<count($dogs);$i++){				
+						if($i === 0 || $i == 3 || $i === 6){
 							?>
+							<div class="row spaced-cols content-center-sm" data-type="row">
+							<?php
+						}
+						$url = site_url('/adoptions/dogs/?id=') . $dogs[$i]->dog_id;
+						?>
+						<div class="col-sm-4">
+							<a href="<?php echo $url; ?>" style="text-decoration: none; color: #3C424F; ">
+								<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
+									<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+									<h6 class=""><?php echo $dog->name ?></h6> 
+									<p class="small italic">Shelter Name</p>
+									<p class="text-center"><?php echo $dog->description ?></p> 
+								</div> 
+							</a>
 						</div>
 						<?php
+						if($i === 2 || $i === 5 || $i === 8){
+							?>
+							</div>
+							<?php
+						}
+						elseif($i === count($dogs)-1){
+							?>
+							</div>
+							<?php
+						}
 					}
-					elseif($cardCount != 0){
-						?>
-					</div>
-				</div>
-				<?php
-			}
-			?>
+					?>
 			<div class="row paginationSection">
 				<div class="col-sm-12">
 					<div class="pagination">
