@@ -1,4 +1,18 @@
-	//------------------------------------------------------------------------
+    //------------------------------------------------------------------------
+	//PAGINATION SUBMIT
+    //------------------------------------------------------------------------
+    function paginationSubmit(pid){
+        const paginationForm = document.getElementById('paginationForm');
+
+        var pidInput = document.createElement("input");
+        pidInput.value = pid;
+        pidInput.type ="hidden";
+        pidInput.name = "pid";
+        paginationForm.appendChild(pidInput);
+        paginationForm.submit();
+    }
+    
+    //------------------------------------------------------------------------
 	//FILTER TAGS
 	//------------------------------------------------------------------------
 	function resubmitHelper(arr,remove,form,str){
@@ -45,7 +59,7 @@
 		form.submit();
 	}
 	//------------------------------------------------------------------------
-	//FILTER FUNCTIONALITY
+	//FILTER Checkbox
 	//------------------------------------------------------------------------
 	function filterFunctionalityHelper(selection,btn){
 		var k;

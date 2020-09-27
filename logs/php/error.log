@@ -978,3 +978,189 @@ Stack trace:
 						INNER JOIN genders d ON a.gender_id = d.gender_id 
 						INNER JOIN sizes e ON a.size_id = e.size_id 
 						WHERE  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 19:46:57 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function finalQueryHelper(), 3 passed in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 705 and exactly 4 expected in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:664
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php(705): finalQueryHelper(Array, '\r\n\t\t\t\t\t\tSELECT ...', false)
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#3 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#4 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 664
+[27-Sep-2020 19:46:58 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function finalQueryHelper(), 3 passed in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 705 and exactly 4 expected in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:664
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php(705): finalQueryHelper(Array, '\r\n\t\t\t\t\t\tSELECT ...', false)
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#3 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#4 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 664
+[27-Sep-2020 19:47:24 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 19:47:24 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 719
+[27-Sep-2020 19:47:24 UTC] PHP Stack trace:
+[27-Sep-2020 19:47:24 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[27-Sep-2020 19:47:24 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[27-Sep-2020 19:47:24 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[27-Sep-2020 19:47:24 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[27-Sep-2020 19:47:24 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 19:47:24 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 719
+[27-Sep-2020 19:47:24 UTC] PHP Stack trace:
+[27-Sep-2020 19:47:24 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[27-Sep-2020 19:47:24 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[27-Sep-2020 19:47:24 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[27-Sep-2020 19:47:24 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[27-Sep-2020 19:50:48 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 19:50:48 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 718
+[27-Sep-2020 19:50:48 UTC] PHP Stack trace:
+[27-Sep-2020 19:50:48 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[27-Sep-2020 19:50:48 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[27-Sep-2020 19:50:48 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[27-Sep-2020 19:50:48 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[27-Sep-2020 19:50:48 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 19:50:48 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 718
+[27-Sep-2020 19:50:48 UTC] PHP Stack trace:
+[27-Sep-2020 19:50:48 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[27-Sep-2020 19:50:48 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[27-Sep-2020 19:50:48 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[27-Sep-2020 19:50:48 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[27-Sep-2020 19:51:57 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 19:51:57 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 19:53:00 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 19:53:01 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 19:54:17 UTC] WordPress database error Unknown column 'breed_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE ( breed_name = 'Affenpinscher' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 19:54:18 UTC] WordPress database error Unknown column 'breed_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE ( breed_name = 'Affenpinscher' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 19:54:29 UTC] WordPress database error Unknown column 'breed_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE ( breed_name = 'Affenpinscher' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 19:54:29 UTC] WordPress database error Unknown column 'breed_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE ( breed_name = 'Affenpinscher' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 19:58:07 UTC] PHP Fatal error:  Uncaught Error: Unsupported operand types in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:757
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 757
+[27-Sep-2020 19:58:07 UTC] PHP Fatal error:  Uncaught Error: Unsupported operand types in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:757
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 757
+[27-Sep-2020 20:07:44 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( breed_name = 'Beagle' OR breed_name = 'Bossie' )' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:07:44 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( breed_name = 'Beagle' OR breed_name = 'Bossie' )' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:08:32 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affen' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:08:33 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affen' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:08:38 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affen' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:08:39 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affen' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:09:25 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affen' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:09:25 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affen' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:10:16 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:10:16 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:10:25 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:10:25 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:10:55 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:10:55 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:11:16 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:11:16 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:13:37 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:13:37 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:13:59 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:14:00 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:15:10 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:15:10 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:15:31 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:15:31 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR bree' at line 5 for query SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
