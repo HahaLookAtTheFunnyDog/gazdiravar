@@ -414,149 +414,70 @@
 				</div>
 				<div class="row">
 					<?php 
-					$dogs;
-					$filteredList = [];
-				//Down the rabbit hole of filtering
-					if(!empty($_GET)){
-						$dogs = $wpdb->get_results('SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id INNER JOIN age c ON a.age_id = c.age_id INNER JOIN genders d ON a.gender_id = d.gender_id INNER JOIN sizes e ON a.size_id = e.size_id');
-						foreach($dogs as $dog){
-						//Filtering if breed is selected
-							if(is_array($_GET["breed"])){
-								foreach($_GET["breed"] as $breed){
-									if($breed === $dog->breed_name){
-									//Checks if there's any age filters as well
-										if(is_array($_GET["age"])){
-											foreach($_GET["age"] as $age){
-												if($age === $dog->age_name){
-												//Back to checking
-													if(is_array($_GET["gender"])){
-														foreach($_GET["gender"] as $gender){
-															if($gender === $dog->gender){
-															//This means that breed, gender, age and size were all selected
-																if(is_array($_GET["size"])){
-																	foreach($_GET["size"] as $size){
-																		if($size === $dog->size){
-																			array_push($filteredList, $dog);
-																		}
-																	}
-																}
-															//Means that breed, age, gender were selected
-																else{
-																	array_push($filteredList, $dog);
-																}
-															}
-														}
-													}
-													elseif(is_array($_GET["size"])){
-														foreach($_GET["size"] as $size){
-															if($size === $dog->size){
-																array_push($filteredList, $dog);
-															}
-														}
-													}
-												//No other filters applied besides breed and age, can add to filtered list
-													else{
-														array_push($filteredList, $dog);
-													}
-												}
-											}
-										}
-									//if gender is not selected checks if gender is selected
-										elseif(is_array($_GET["gender"])){
-											foreach($_GET["gender"] as $gender){
-												if($gender === $dog->gender){
-													if(is_array($_GET["size"])){
-														foreach($_GET["size"] as $size){
-															if($size === $dog->size){
-																array_push($filteredList, $dog);
-															}
-														}
-													}
-													else{
-														array_push($filteredList, $dog);
-													}
-												}
-											}
-										}
-									//if neither of the first two is selected checks if size is selected
-										elseif(is_array($_GET["size"])){
-											foreach($_GET["size"] as $size){
-												if($size === $dog->size){
-													array_push($filteredList, $dog);
-												}
-											}
-										}
-									//if it made it this far, means no filters besides breed was applied so it can just add it to the filtered list
-										else{
-											array_push($filteredList,$dog);
-										}
-									}
+					function argumentCreator($arr,$columnName){
+						$arguments = "";
+						$edited = false;
+						if(is_array($arr)){
+							foreach($arr as $x){
+								if($edited){
+									$arguments .= " OR {$columnName} = '{$x}'";
 								}
-							}
-						//filtering if age is selected but not breed
-							elseif(is_array($_GET["age"])){
-								foreach($_GET["age"] as $age){
-									if($age === $dog->age_name){
-									//if age and gender are selected
-										if(is_array($_GET["gender"])){
-											foreach($_GET["gender"] as $gender){
-												if($gender === $dog->gender){
-												//if age gender and size are selected
-													if(is_array($_GET["size"])){
-														foreach($_GET["size"] as $size){
-															if($size === $dog->size){
-																array_push($filteredList, $dog);
-															}
-														}
-													}
-												//if age and gender are selected
-													else{
-														array_push($filteredList, $dog);
-													}
-												}
-											}
-										}
-									//if age and size are selected only
-										elseif(is_array($_GET["size"])){
-											foreach($_GET["size"] as $size){
-												if($size === $dog->size){
-													array_push($filteredList, $dog);
-												}
-											}
-										}
-										else{
-											array_push($filteredList, $dog);
-										}
-									}
+								else{
+									$arguments .= "{$columnName} = '{$x}'";
 								}
-							}
-						//filtering if gender is selected
-							elseif(is_array($_GET["gender"])){
-								foreach($_GET["gender"] as $gender){
-									if($gender === $dog->gender){
-										if($_GET["size"]){
-											foreach($_GET["size"] as $size){
-												if($size === $dog->size){
-													array_push($filteredList, $dog);
-												}
-											}
-										}
-										else{
-											array_push($filteredList, $dog);
-										}
-									}
-								}
-							}
-						//filtering if size is selected
-							elseif(is_array($_GET["size"])){
-								foreach($_GET["size"] as $size){
-									if($size === $dog->size){
-										array_push($filteredList, $dog);
-									}
-								}
+								$edited = true;
 							}
 						}
-						$dogs = $filteredList;
+						return $arguments;
+					}
+					if(!empty($_GET)){
+						$baseQuery = "
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE ";
+						$ageArguments = argumentCreator($_GET["age"], "age_name");
+						$genderArguments = argumentCreator($_GET["gender"], "gender");
+						$sizeArguments = argumentCreator($_GET["size"], "size");
+						$breedArguments = argumentCreator($_GET["breed"], "breed_name");
+
+						$finalQuery = $baseQuery;
+						$finalQueryAdjusted = false;
+						if($ageArguments){
+							$finalQuery .= "( " . $ageArguments . " )";
+							$finalQueryAdjusted = true;
+						}
+						if($genderArguments){
+							if($finalQueryAdjusted){
+								$finalQuery .= " AND ( " . $genderArguments . " )";
+							}
+							else{
+								$finalQuery .= "( " . $genderArguments . " )";
+								$finalQueryAdjusted = true;
+							}
+						}
+						if($sizeArguments){
+							if($finalQueryAdjusted){
+								$finalQuery .= " AND ( " . $sizeArguments . " )";
+							}
+							else{
+								$finalQuery .= "( " . $sizeArguments . " )";
+								$finalQueryAdjusted = true;
+							}
+						}
+						if($breedArguments){
+							if($finalQueryAdjusted){
+								$finalQuery .= " AND ( " . $breedArguments . " )";
+							}
+							else{
+								$finalQuery .= "( " . $breedArguments . " )";
+								$finalQueryAdjusted = true;
+							}
+						}
+						$dogs = $wpdb->get_results($finalQuery);
 					}
 					else{
 						$dogs = $wpdb->get_results('SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id INNER JOIN age c ON a.age_id = c.age_id INNER JOIN genders d ON a.gender_id = d.gender_id');

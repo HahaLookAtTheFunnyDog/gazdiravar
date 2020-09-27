@@ -643,3 +643,209 @@ Stack trace:
 #4 {main}
   thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 357
 [25-Sep-2020 18:55:59 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 360
+[26-Sep-2020 23:13:51 UTC] PHP Warning:  Use of undefined constant edited - assumed 'edited' (this will throw an Error in a future version of PHP) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 433
+[26-Sep-2020 23:13:51 UTC] PHP Stack trace:
+[26-Sep-2020 23:13:51 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:13:51 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:13:51 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:13:51 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:13:51 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 434
+[26-Sep-2020 23:13:51 UTC] PHP Stack trace:
+[26-Sep-2020 23:13:51 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:13:51 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:13:51 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:13:51 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:13:51 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 434
+[26-Sep-2020 23:13:51 UTC] PHP Stack trace:
+[26-Sep-2020 23:13:51 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:13:51 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:13:51 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:13:51 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:13:51 UTC] PHP Warning:  Use of undefined constant edited - assumed 'edited' (this will throw an Error in a future version of PHP) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 433
+[26-Sep-2020 23:13:51 UTC] PHP Stack trace:
+[26-Sep-2020 23:13:51 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:13:51 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:13:51 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:13:51 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:13:51 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 434
+[26-Sep-2020 23:13:51 UTC] PHP Stack trace:
+[26-Sep-2020 23:13:51 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:13:51 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:13:51 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:13:51 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:13:52 UTC] PHP Warning:  Use of undefined constant edited - assumed 'edited' (this will throw an Error in a future version of PHP) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 433
+[26-Sep-2020 23:13:52 UTC] PHP Stack trace:
+[26-Sep-2020 23:13:52 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:13:52 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:13:52 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:13:52 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:13:52 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 434
+[26-Sep-2020 23:13:52 UTC] PHP Stack trace:
+[26-Sep-2020 23:13:52 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:13:52 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:13:52 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:13:52 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:13:52 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 434
+[26-Sep-2020 23:13:52 UTC] PHP Stack trace:
+[26-Sep-2020 23:13:52 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:13:52 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:13:52 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:13:52 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:13:52 UTC] PHP Warning:  Use of undefined constant edited - assumed 'edited' (this will throw an Error in a future version of PHP) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 433
+[26-Sep-2020 23:13:52 UTC] PHP Stack trace:
+[26-Sep-2020 23:13:52 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:13:52 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:13:52 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:13:52 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:13:52 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 434
+[26-Sep-2020 23:13:52 UTC] PHP Stack trace:
+[26-Sep-2020 23:13:52 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:13:52 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:13:52 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:13:52 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:00 UTC] PHP Warning:  Use of undefined constant edited - assumed 'edited' (this will throw an Error in a future version of PHP) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 433
+[26-Sep-2020 23:16:00 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:00 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:00 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:00 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:00 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:00 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 434
+[26-Sep-2020 23:16:00 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:00 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:00 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:00 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:00 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:00 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 434
+[26-Sep-2020 23:16:00 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:00 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:00 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:00 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:00 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:00 UTC] PHP Warning:  Use of undefined constant edited - assumed 'edited' (this will throw an Error in a future version of PHP) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 433
+[26-Sep-2020 23:16:00 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:00 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:00 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:00 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:00 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:00 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 434
+[26-Sep-2020 23:16:00 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:00 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:00 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:00 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:00 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:00 UTC] PHP Warning:  Use of undefined constant edited - assumed 'edited' (this will throw an Error in a future version of PHP) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 433
+[26-Sep-2020 23:16:00 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:00 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:00 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:00 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:00 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:00 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 434
+[26-Sep-2020 23:16:00 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:00 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:00 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:00 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:00 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:00 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 434
+[26-Sep-2020 23:16:00 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:00 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:00 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:00 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:00 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:00 UTC] PHP Warning:  Use of undefined constant edited - assumed 'edited' (this will throw an Error in a future version of PHP) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 433
+[26-Sep-2020 23:16:00 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:00 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:00 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:00 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:00 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:00 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 434
+[26-Sep-2020 23:16:00 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:00 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:00 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:00 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:00 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:18 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 437
+[26-Sep-2020 23:16:18 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:18 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:18 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:18 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:18 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:18 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 437
+[26-Sep-2020 23:16:18 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:18 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:18 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:18 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:18 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:18 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 434
+[26-Sep-2020 23:16:18 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:18 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:18 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:18 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:18 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:19 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 437
+[26-Sep-2020 23:16:19 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:19 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:19 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:19 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:19 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:19 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 437
+[26-Sep-2020 23:16:19 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:19 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:19 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:19 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:19 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:16:19 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 434
+[26-Sep-2020 23:16:19 UTC] PHP Stack trace:
+[26-Sep-2020 23:16:19 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:16:19 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:16:19 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:16:19 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:34:10 UTC] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 436
+[26-Sep-2020 23:40:53 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 427
+[26-Sep-2020 23:55:23 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 459
+[26-Sep-2020 23:55:23 UTC] PHP Stack trace:
+[26-Sep-2020 23:55:23 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:55:23 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:55:23 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:55:23 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:55:24 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 459
+[26-Sep-2020 23:55:24 UTC] PHP Stack trace:
+[26-Sep-2020 23:55:24 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:55:24 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:55:24 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:55:24 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:57:47 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 459
+[26-Sep-2020 23:57:47 UTC] PHP Stack trace:
+[26-Sep-2020 23:57:47 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:57:47 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:57:47 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:57:47 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[26-Sep-2020 23:57:47 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 459
+[26-Sep-2020 23:57:47 UTC] PHP Stack trace:
+[26-Sep-2020 23:57:47 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[26-Sep-2020 23:57:47 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[26-Sep-2020 23:57:47 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[26-Sep-2020 23:57:47 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[27-Sep-2020 00:01:53 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 468
+[27-Sep-2020 00:01:53 UTC] PHP Stack trace:
+[27-Sep-2020 00:01:53 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[27-Sep-2020 00:01:53 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[27-Sep-2020 00:01:53 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[27-Sep-2020 00:01:53 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[27-Sep-2020 00:01:53 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 468
+[27-Sep-2020 00:01:53 UTC] PHP Stack trace:
+[27-Sep-2020 00:01:53 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[27-Sep-2020 00:01:53 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[27-Sep-2020 00:01:53 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[27-Sep-2020 00:01:53 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[27-Sep-2020 00:02:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 469
+[27-Sep-2020 00:02:31 UTC] PHP Stack trace:
+[27-Sep-2020 00:02:31 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[27-Sep-2020 00:02:31 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[27-Sep-2020 00:02:31 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[27-Sep-2020 00:02:31 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[27-Sep-2020 00:02:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 469
+[27-Sep-2020 00:02:31 UTC] PHP Stack trace:
+[27-Sep-2020 00:02:31 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[27-Sep-2020 00:02:31 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[27-Sep-2020 00:02:31 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[27-Sep-2020 00:02:31 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
