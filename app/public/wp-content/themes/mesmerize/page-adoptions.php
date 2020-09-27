@@ -414,6 +414,13 @@
 				</div>
 				<div class="row">
 					<?php 
+					$pageSize = 9;
+					$page = $_GET["pid"] ?? 1;
+					$pageLowerLimit = ($page-1) * $pageSize;
+					$dogCount = $wpdb->get_results("SELECT COUNT(*) as NumberOfDogs FROM dogs")[0]->NumberOfDogs;
+					$numberOfPages = ceil($dogCount/$pageSize);
+					$limitClause = " LIMIT " . $pageLowerLimit . "," . $pageSize;
+					$orderClause = " ORDER BY a.dog_id ASC";
 					function argumentCreator($arr,$columnName){
 						$arguments = "";
 						$edited = false;
@@ -430,7 +437,7 @@
 						}
 						return $arguments;
 					}
-					if(!empty($_GET)){
+					if(!(empty($_GET["breed"]) ||  empty($_GET["age"]) || empty($_GET["gender"] || empty($_GET["size"])))){
 						$baseQuery = "
 						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
 						FROM dogs a 
@@ -477,10 +484,16 @@
 								$finalQueryAdjusted = true;
 							}
 						}
+						$finalQuery .= $orderClause . $limitClause;
 						$dogs = $wpdb->get_results($finalQuery);
 					}
 					else{
-						$dogs = $wpdb->get_results('SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id INNER JOIN age c ON a.age_id = c.age_id INNER JOIN genders d ON a.gender_id = d.gender_id');
+						$defaultQuery = 
+						"SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id" . $orderClause . $limitClause;
+						$dogs = $wpdb->get_results($defaultQuery);
 					}
 					$cardCount = 0;
 					$pageNumber = 1;
@@ -557,15 +570,15 @@
 					<div class="pagination">
 						<a id="paginationFirst">&laquo;</a>
 						<?php
-						for($i = 1; $i <= $pageNumber; $i++){
-							if($i == 1){
+						for($i = 1; $i <= $numberOfPages; $i++){
+							if($i == $page){
 								?>
-								<a class="active paginationButton"><?php echo $i ?></a>
+								<a href="<?php echo site_url("/adoptions/?pid={$i}"); ?>" class="active paginationButton"><?php echo $i ?></a>
 								<?php
 							}
 							else{
 								?>
-								<a class="paginationButton"><?php echo $i ?></a>
+								<a href="<?php echo site_url("/adoptions/?pid={$i}"); ?>" class="paginationButton"><?php echo $i ?></a>
 								<?php
 							}
 						}
@@ -785,45 +798,6 @@
 	filterFunctionalityHelper(ageFilters,ageSubmit);
 	filterFunctionalityHelper(genderFilters,genderSubmit);
 	filterFunctionalityHelper(sizeFilters,sizeSubmit);
-
-	//------------------------------------------------------------------------
-	//PAGINATION
-	//------------------------------------------------------------------------
-	const paginationButtons = document.querySelectorAll('.paginationButton');
-	const pages = document.querySelectorAll('.pag');
-	var j;
-	for(j = 0; j < paginationButtons.length; j++){
-		paginationButtons[j].onclick = function(){
-			const activePage = document.querySelector('.activePag');
-			const activeButton = document.querySelector('.active');
-			activeButton.classList.remove('active');
-			activePage.classList.remove('activePag');
-
-			this.classList.add('active');
-			pages[this.innerText-1].classList.add('activePag');
-		}
-
-	}
-	const paginationFirst = document.getElementById('paginationFirst');
-	const paginationLast = document.getElementById('paginationLast');
-	paginationFirst.onclick = function(){
-		const activePage = document.querySelector('.activePag');
-		const activeButton = document.querySelector('.active');
-		activeButton.classList.remove('active');
-		activePage.classList.remove('activePag');
-
-		paginationButtons[0].classList.add('active');
-		pages[0].classList.add('activePag');
-	}
-	paginationLast.onclick = function(){
-		const activePage = document.querySelector('.activePag');
-		const activeButton = document.querySelector('.active');
-		activeButton.classList.remove('active');
-		activePage.classList.remove('activePag');
-
-		paginationButtons[paginationButtons.length-1].classList.add('active');
-		pages[pages.length-1].classList.add('activePag');
-	}
 
 	//------------------------------------------------------------------------
 	//RECENTLY VIEWED

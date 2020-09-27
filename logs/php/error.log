@@ -849,3 +849,132 @@ Stack trace:
 [27-Sep-2020 00:02:31 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
 [27-Sep-2020 00:02:31 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
 [27-Sep-2020 00:02:31 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[27-Sep-2020 00:41:04 UTC] PHP Parse error:  syntax error, unexpected '<', expecting end of file in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 566
+[27-Sep-2020 00:59:21 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 00:59:21 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 00:59:28 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 00:59:28 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 01:01:15 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 01:01:15 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 01:01:20 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 01:01:20 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 01:02:01 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 01:02:01 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 01:04:58 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY a.dog_id ASC LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 01:04:58 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY a.dog_id ASC LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 01:05:03 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY a.dog_id ASC LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 01:05:03 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY a.dog_id ASC LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 01:05:06 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY a.dog_id ASC LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 01:05:06 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY a.dog_id ASC LIMIT 0,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
