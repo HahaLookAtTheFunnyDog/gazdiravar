@@ -38,9 +38,6 @@
 ?>
 <?php mesmerize_get_header(); ?>
 <link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-assets/style.css'); ?>">
-<?php
-	print_r($_SESSION);
-?>
 <div id='page-content' class="page-content">
 	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
 			<h2 style="text-align: center">Featured Adoptions</h2>
@@ -589,14 +586,17 @@
 						$url = site_url('/adoptions/dogs/?id=') . $dogs[$i]->dog_id;
 						?>
 						<div class="col-sm-4">
-							<a href="<?php echo $url; ?>" style="text-decoration: none; color: #3C424F; ">
+						<form method="GET" action="dogs/">
+							<input type="hidden" name="id" value="<?php echo $dogs[$i]->dog_id; ?>">
+							<a onclick="this.parentNode.submit()" style="text-decoration: none; color: #3C424F; ">
 								<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
 									<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-									<h6 class=""><?php echo $dog->name ?></h6> 
+									<h6 class=""><?php echo $dogs[$i]->name; ?></h6> 
 									<p class="small italic">Shelter Name</p>
 									<p class="text-center"><?php echo $dog->description ?></p> 
 								</div> 
 							</a>
+						</form>
 						</div>
 						<?php
 						if($i === 2 || $i === 5 || $i === 8){
@@ -647,7 +647,7 @@
 		<div class="carousel-inner">
 			<div class="track">
 					<?php 
-						foreach($_SESSION["recentlyViewed"] as $dogID){
+						foreach(array_reverse($_SESSION["recentlyViewed"]) as $dogID){
 							$query = "SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM dogs a 
 							INNER JOIN breeds b ON a.breed_id = b.breed_id 
 							INNER JOIN age c ON a.age_id = c.age_id 

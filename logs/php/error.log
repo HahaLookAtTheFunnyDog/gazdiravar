@@ -1418,3 +1418,109 @@ Stack trace:
 [28-Sep-2020 18:54:16 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
 [28-Sep-2020 18:54:16 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
 [28-Sep-2020 18:54:16 UTC] PHP   5. session_start() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:4
+[28-Sep-2020 19:33:25 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 650
+[28-Sep-2020 19:33:25 UTC] PHP Stack trace:
+[28-Sep-2020 19:33:25 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[28-Sep-2020 19:33:25 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[28-Sep-2020 19:33:25 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[28-Sep-2020 19:33:25 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[28-Sep-2020 19:33:25 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 650
+[28-Sep-2020 19:33:25 UTC] PHP Stack trace:
+[28-Sep-2020 19:33:25 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[28-Sep-2020 19:33:25 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[28-Sep-2020 19:33:25 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[28-Sep-2020 19:33:25 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[28-Sep-2020 19:37:20 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:595
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 595
+[28-Sep-2020 19:37:21 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:595
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 595
+[28-Sep-2020 19:38:01 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:589
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 589
+[28-Sep-2020 19:38:01 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:589
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 589
+[28-Sep-2020 19:39:04 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:583
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 583
+[28-Sep-2020 19:39:05 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:583
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 583
+[28-Sep-2020 19:55:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 650
+[28-Sep-2020 19:55:43 UTC] PHP Stack trace:
+[28-Sep-2020 19:55:43 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[28-Sep-2020 19:55:43 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[28-Sep-2020 19:55:43 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[28-Sep-2020 19:55:43 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[28-Sep-2020 19:55:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 650
+[28-Sep-2020 19:55:43 UTC] PHP Stack trace:
+[28-Sep-2020 19:55:43 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[28-Sep-2020 19:55:43 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[28-Sep-2020 19:55:43 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[28-Sep-2020 19:55:43 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[28-Sep-2020 19:57:03 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-dogs.php on line 18
+[28-Sep-2020 19:57:03 UTC] PHP Stack trace:
+[28-Sep-2020 19:57:03 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[28-Sep-2020 19:57:03 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[28-Sep-2020 19:57:03 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[28-Sep-2020 19:57:03 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[28-Sep-2020 19:57:03 UTC] PHP   5. array_push() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-dogs.php:18
+[28-Sep-2020 19:57:03 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-dogs.php on line 18
+[28-Sep-2020 19:57:03 UTC] PHP Stack trace:
+[28-Sep-2020 19:57:03 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[28-Sep-2020 19:57:03 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[28-Sep-2020 19:57:03 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[28-Sep-2020 19:57:03 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[28-Sep-2020 19:57:03 UTC] PHP   5. array_push() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-dogs.php:18
+[28-Sep-2020 20:02:12 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-dogs.php on line 18
+[28-Sep-2020 20:02:12 UTC] PHP Stack trace:
+[28-Sep-2020 20:02:12 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[28-Sep-2020 20:02:12 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[28-Sep-2020 20:02:12 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[28-Sep-2020 20:02:12 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[28-Sep-2020 20:02:12 UTC] PHP   5. array_push() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-dogs.php:18
+[28-Sep-2020 20:02:12 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-dogs.php on line 18
+[28-Sep-2020 20:02:12 UTC] PHP Stack trace:
+[28-Sep-2020 20:02:12 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[28-Sep-2020 20:02:12 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[28-Sep-2020 20:02:12 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[28-Sep-2020 20:02:12 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[28-Sep-2020 20:02:12 UTC] PHP   5. array_push() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-dogs.php:18
+[28-Sep-2020 20:05:34 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 653
+[28-Sep-2020 20:05:34 UTC] PHP Stack trace:
+[28-Sep-2020 20:05:34 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[28-Sep-2020 20:05:34 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[28-Sep-2020 20:05:34 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[28-Sep-2020 20:05:34 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[28-Sep-2020 20:05:34 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 653
+[28-Sep-2020 20:05:34 UTC] PHP Stack trace:
+[28-Sep-2020 20:05:34 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[28-Sep-2020 20:05:34 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[28-Sep-2020 20:05:34 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[28-Sep-2020 20:05:34 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106

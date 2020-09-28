@@ -5,10 +5,16 @@
 <div id='page-content' class="page-content">
 	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
 		<?php
-			print_r($_GET["id"]);
 			if(is_array($_SESSION["recentlyViewed"])){
-				if(!in_array($_GET["id"][0], $_SESSION["recentlyViewed"], true)){
-					array_push($_SESSION["recentlyViewed"], $_GET["id"][0]);
+				print_r($_GET["id"]);
+				if(!(in_array($_GET["id"],$_SESSION["recentlyViewed"]))){
+					if(count($_SESSION["recentlyViewed"]) == 15){
+						array_shift($_SESSION["recentlyViewed"]);
+						array_push($_SESSION["recentlyViewed"], $_GET["id"]);
+					}
+					else{
+						array_push($_SESSION["recentlyViewed"], $_GET["id"]);
+					}
 				}
 			}
 			else{
