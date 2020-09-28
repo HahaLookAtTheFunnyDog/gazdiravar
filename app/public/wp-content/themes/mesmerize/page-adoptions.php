@@ -1,291 +1,25 @@
 <?php mesmerize_get_header(); ?>
-<style>
-	.filters ul{
-		list-style: none;
-		margin: 0;
-	}
-	.filters ul li{
-		text-align: left;
-	}
-	.filters input{
-		/*height: 1rem;*/
-	}
-	.filters label{
-		font-size: 1rem;
-
-	}
-	.scrollRadio{
-		height: 15rem;
-		overflow: scroll;
-	}
-	.scrollRadio::-webkit-scrollbar {
-		width: 2px; 
-	}
-	.paginationSection{
-		width: 100%;
-		margin: 0;
-	}
-	.pagination{
-		text-align: center;
-	}
-	.pagination a {
-		color: black;
-		padding: 8px 16px;
-		text-decoration: none;
-		transition: background-color .5s;
-	}
-	.pagination a.active {
-		background-color: dodgerblue;
-		color: white;
-	}
-	.pagination a:hover:not(.active) {
-		background-color: #ddd;
-	}
-	@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-	.carousel-container {
-		width: 100%;
-		margin: 50px auto;
-		min-height: 200px;
-		position: relative;
-	}
-	@media screen and (max-width: 768px) {
-		.carousel-container {
-			width: 80%;
-		}
-	}
-	@media screen and (max-width: 1024px) {
-		.carousel-container {
-			width: 85%;
-		}
-	}
-	.carousel-container .carousel-inner {
-		overflow: auto;
-	}
-	.carousel-container .track {
-		display: inline-flex;
-		transition: transform 0.5s;
-	}
-	.carousel-container .card-container {
-		width: 259px;
-		flex-shrink: 0;
-		height: 250px;
-		padding-right: 15px;
-		box-sizing: border-box;
-	}
-	.carousel-container .card-container .card {
-		width: 100%;
-		height: 100%;
-		border: 1px solid #ccc;
-		box-sizing: border-box;
-		border-radius: 10px;
-		display: flex;
-		flex-direction: column;
-	}
-	.nav button {
-		background-color: dodgerblue;
-		color: white;
-		width: 60px;
-		height: 60px;
-		border-radius: 50%;
-		border: 1px solid #aaa;
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		cursor: pointer;
-	}
-	.nav .prev {
-		left: -30px;
-		display: none;
-	}
-	.nav .prev.show {
-		display: block;
-	}
-	.nav .next {
-		right: -30px;
-	}
-	.nav .next.hide {
-		display: none;
-	}
-	.card > * {
-		flex: 1;
-	}
-	.card .img {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-size: 30px;
-	}
-	.card .info {
-		text-align: center;
-		flex-basis: 40px;
-		color: #fff;
-		flex-grow: 0;
-		padding: 10px;
-		box-sizing: border-box;
-	}
-	
-
-	.slider {
-		position: relative;
-		overflow: hidden;
-		height: 500px;
-		width: 100%;
-	}
-	.activeSlide{
-		opacity: 1 !important;
-	}
-	.slide{
-		position: absolute;
-		transition: opacity 0.4s ease-in-out;
-		opacity: 0;
-		background-size: cover;                      
-		background-repeat: no-repeat;
-		background-position: center center; 
-		height: 100%; 
-		width: 100%;
-		padding: 0;
-	}
-	.featuredContent{
-		position: absolute; 
-		bottom: 20px;
-		width: 600px;
-		background-color: rgba(0, 0, 0, 0.7);
-		color: #fff;
-		padding: 35px;
-	}
-
-
-	.buttonContainer{
-		text-align:center;
-	}
-	.featuredButtons{
-		display: inline-block;
-		width: auto;
-	}
-	.featuredButtons li{
-		display: inline;
-	}
-	.featuredButton {
-		background-color: #fff;
-		height:10px;
-		width: 10px;
-		border-radius: 50%;
-		border: 1px solid dodgerblue;
-		cursor: pointer;
-	}
-	.activeButton{
-		background-color: dodgerblue;
-	}
-
-
-	.quantity{
-		display: inline;
-		float: right;
-		margin: 0;
-		padding: 0;
-		margin-right: 7px;
-	}
-	.alignMargin{
-		margin-right: 5px;
-	}
-	.filterDivider{
-		margin: 0;
-	}
-
-	.filterChoices{
-		list-style: none;
-		margin: 0;
-		margin-bottom: 20px;
-	}
-	.filterChoices li{
-		display: inline-block;
-	}
-	.filtersli{
-		background-color: dodgerblue;
-		color: white;
-		padding-top: 5px;
-		padding-bottom: 5px;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 10px;
-		margin: 10px;
-		margin-left: 0;
-	}
-	.filterClose{
-		font-weight: bold;
-		cursor: pointer;
-		margin-left: 10px;
-	}
-	.clearAll{
-		cursor: pointer;
-	}
-	.appliedFiltersHeader{
-		margin-bottom: 5px;
-	}
-	.filterSubmit{
-		display: block;
-		color: white;
-		background-color: dodgerblue;
-		width: 100%;
-		border: 0px;
-		margin-bottom: 5px;
-	}
-	.hideFilterSubmit{
-		display: none;
-	}
-	.iconBig{
-		width: 13rem !important;
-		height: 13rem !important;
-	}
-	.boxShadowAnimate:hover{
-		box-shadow: 0 0 11px rgba(33,33,33,.2); 
-	}
-	.activePag{
-		display: block !important;
-	}
-	.pag{
-		display: none;
-	}
-	.paginationButton{
-		cursor:pointer;
-	}
-</style>
+<link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-assets/style.css'); ?>">
 <?php 
-function appendForms(){
-	if(is_array($_GET["breed"]) || is_object($_GET["breed"])){
-		foreach($_GET["breed"] as $breed){
-			?>
-			<input type="hidden" name="breed[]" value="<?php echo $breed ?>">
-			<?php
+	function appendFormHelper($filterArr, $arrName){
+		if(is_array($filterArr) || is_object($filterArr)){
+			
+			foreach($filterArr as $filterVar){
+				?>
+				<input type="hidden" name="<?php echo $arrName . "[]" ?>" value="<?php echo $filterVar ?>">
+				<?php
+			}
 		}
 	}
-	if(is_array($_GET["age"]) || is_object($_GET["age"])){
-		foreach($_GET["age"] as $age){
-			?>
-			<input type="hidden" name="age[]" value="<?php echo $age ?>">
-			<?php
-		}
+	function appendForms(){
+		appendFormHelper($_GET["breed"], "breed");
+		appendFormHelper($_GET["age"], "age");
+		appendFormHelper($_GET["gender"], "gender");
+		appendFormHelper($_GET["size"], "size");
 	}
-	if(is_array($_GET["gender"]) || is_object($_GET["gender"])){
-		foreach($_GET["gender"] as $gender){
-			?>
-			<input type="hidden" name="gender[]" value="<?php echo $gender ?>">
-			<?php
-		}
-	}
-	if(is_array($_GET["size"]) || is_object($_GET["size"])){
-		foreach($_GET["size"] as $size){
-			?>
-			<input type="hidden" name="size[]" value="<?php echo $size ?>">
-			<?php
-		}
-	}
-}
 ?>
-
 <div id='page-content' class="page-content">
 	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
-		<section>
 			<h2 style="text-align: center">Featured Adoptions</h2>
 			<hr>
 			<div class="container-fluid">
@@ -334,7 +68,7 @@ function appendForms(){
 							for($i = 1; $i <= count($featuredDogs); $i++){
 								?>
 								<li>
-									<button id="featured<?php echo $i; ?>" class="featuredButton
+									<button id="featured<?php echo $i; ?>" onclick="featuredButton(<?php echo $i ?>)" class="featuredButton
 										<?php
 										if($i == 1){
 											?>
@@ -361,6 +95,14 @@ function appendForms(){
 				<div class="filters">
 					<h2>
 						Filters
+						<?php
+							$user_ip = "70.30.213.116";
+							$geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
+							$country = $geo["geoplugin_countryName"];
+							$city = $geo["geoplugin_city"];
+							$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]" . "&pid=5";
+							$url = site_url('/adoptions/?pid=5');
+						?>
 					</h2>
 					<ul>
 						<li>
@@ -370,7 +112,6 @@ function appendForms(){
 								<ul class="scrollRadio">
 									<?php
 									$breeds = $wpdb->get_results('SELECT breed_name FROM breeds ORDER BY breed_name ASC');
-
 									foreach($breeds as $breed){
 										?>
 										<li>
@@ -448,7 +189,6 @@ function appendForms(){
 									<?php
 									appendForms();
 									?>
-
 								</ul>
 								<button type="submit" class="filterSubmit hideFilterSubmit" id="ageFilterSubmit">APPLY</button>
 							</form>
@@ -541,67 +281,257 @@ function appendForms(){
 								<button type="submit" class="filterSubmit hideFilterSubmit" id="sizeFilterSubmit">APPLY</button>
 							</form>
 						</li>
-						<li>
-							<hr class="filterDivider">
-							<h4>Good With</h4>
-							<Ul>
-								<li>
-									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Kids</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Other Dogs</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">Cats</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-							</Ul>
-						</li>
-						<li>
-							<hr class="filterDivider">
-							<h4>Within</h4>
-							<Ul>
-								<li>
-									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">50 Miles</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">100 Miles</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-								<li>
-									<input type="checkbox" id="GoldenRetriever" name="gender" value="GoldenRetriever">
-									<label for="GoldenRetriever">200 Miles</label>
-									<p class="quantity">
-										(0)
-									</p>
-									<br>
-								</li>
-							</Ul>
-						</li>
 						<hr class="filterDivider">
+						<li>
+						<h4>Country</h4> 
+        
+            <select id="country" name="country" class="form-control" style="margin: 0;">
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="Åland Islands">Åland Islands</option>
+                <option value="Albania">Albania</option>
+                <option value="Algeria">Algeria</option>
+                <option value="American Samoa">American Samoa</option>
+                <option value="Andorra">Andorra</option>
+                <option value="Angola">Angola</option>
+                <option value="Anguilla">Anguilla</option>
+                <option value="Antarctica">Antarctica</option>
+                <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Armenia">Armenia</option>
+                <option value="Aruba">Aruba</option>
+                <option value="Australia">Australia</option>
+                <option value="Austria">Austria</option>
+                <option value="Azerbaijan">Azerbaijan</option>
+                <option value="Bahamas">Bahamas</option>
+                <option value="Bahrain">Bahrain</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Barbados">Barbados</option>
+                <option value="Belarus">Belarus</option>
+                <option value="Belgium">Belgium</option>
+                <option value="Belize">Belize</option>
+                <option value="Benin">Benin</option>
+                <option value="Bermuda">Bermuda</option>
+                <option value="Bhutan">Bhutan</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                <option value="Botswana">Botswana</option>
+                <option value="Bouvet Island">Bouvet Island</option>
+                <option value="Brazil">Brazil</option>
+                <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                <option value="Brunei Darussalam">Brunei Darussalam</option>
+                <option value="Bulgaria">Bulgaria</option>
+                <option value="Burkina Faso">Burkina Faso</option>
+                <option value="Burundi">Burundi</option>
+                <option value="Cambodia">Cambodia</option>
+                <option value="Cameroon">Cameroon</option>
+                <option selected="selected" value="Canada">Canada</option>
+                <option value="Cape Verde">Cape Verde</option>
+                <option value="Cayman Islands">Cayman Islands</option>
+                <option value="Central African Republic">Central African Republic</option>
+                <option value="Chad">Chad</option>
+                <option value="Chile">Chile</option>
+                <option value="China">China</option>
+                <option value="Christmas Island">Christmas Island</option>
+                <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Comoros">Comoros</option>
+                <option value="Congo">Congo</option>
+                <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+                <option value="Cook Islands">Cook Islands</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Cote D'ivoire">Cote D'ivoire</option>
+                <option value="Croatia">Croatia</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Cyprus">Cyprus</option>
+                <option value="Czech Republic">Czech Republic</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Djibouti">Djibouti</option>
+                <option value="Dominica">Dominica</option>
+                <option value="Dominican Republic">Dominican Republic</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Egypt">Egypt</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Equatorial Guinea">Equatorial Guinea</option>
+                <option value="Eritrea">Eritrea</option>
+                <option value="Estonia">Estonia</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                <option value="Faroe Islands">Faroe Islands</option>
+                <option value="Fiji">Fiji</option>
+                <option value="Finland">Finland</option>
+                <option value="France">France</option>
+                <option value="French Guiana">French Guiana</option>
+                <option value="French Polynesia">French Polynesia</option>
+                <option value="French Southern Territories">French Southern Territories</option>
+                <option value="Gabon">Gabon</option>
+                <option value="Gambia">Gambia</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Germany">Germany</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Gibraltar">Gibraltar</option>
+                <option value="Greece">Greece</option>
+                <option value="Greenland">Greenland</option>
+                <option value="Grenada">Grenada</option>
+                <option value="Guadeloupe">Guadeloupe</option>
+                <option value="Guam">Guam</option>
+                <option value="Guatemala">Guatemala</option>
+                <option value="Guernsey">Guernsey</option>
+                <option value="Guinea">Guinea</option>
+                <option value="Guinea-bissau">Guinea-bissau</option>
+                <option value="Guyana">Guyana</option>
+                <option value="Haiti">Haiti</option>
+                <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+                <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                <option value="Honduras">Honduras</option>
+                <option value="Hong Kong">Hong Kong</option>
+                <option value="Hungary">Hungary</option>
+                <option value="Iceland">Iceland</option>
+                <option value="India">India</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+                <option value="Iraq">Iraq</option>
+                <option value="Ireland">Ireland</option>
+                <option value="Isle of Man">Isle of Man</option>
+                <option value="Israel">Israel</option>
+                <option value="Italy">Italy</option>
+                <option value="Jamaica">Jamaica</option>
+                <option value="Japan">Japan</option>
+                <option value="Jersey">Jersey</option>
+                <option value="Jordan">Jordan</option>
+                <option value="Kazakhstan">Kazakhstan</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Kiribati">Kiribati</option>
+                <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                <option value="Korea, Republic of">Korea, Republic of</option>
+                <option value="Kuwait">Kuwait</option>
+                <option value="Kyrgyzstan">Kyrgyzstan</option>
+                <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                <option value="Latvia">Latvia</option>
+                <option value="Lebanon">Lebanon</option>
+                <option value="Lesotho">Lesotho</option>
+                <option value="Liberia">Liberia</option>
+                <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                <option value="Liechtenstein">Liechtenstein</option>
+                <option value="Lithuania">Lithuania</option>
+                <option value="Luxembourg">Luxembourg</option>
+                <option value="Macao">Macao</option>
+                <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                <option value="Madagascar">Madagascar</option>
+                <option value="Malawi">Malawi</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Maldives">Maldives</option>
+                <option value="Mali">Mali</option>
+                <option value="Malta">Malta</option>
+                <option value="Marshall Islands">Marshall Islands</option>
+                <option value="Martinique">Martinique</option>
+                <option value="Mauritania">Mauritania</option>
+                <option value="Mauritius">Mauritius</option>
+                <option value="Mayotte">Mayotte</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+                <option value="Moldova, Republic of">Moldova, Republic of</option>
+                <option value="Monaco">Monaco</option>
+                <option value="Mongolia">Mongolia</option>
+                <option value="Montenegro">Montenegro</option>
+                <option value="Montserrat">Montserrat</option>
+                <option value="Morocco">Morocco</option>
+                <option value="Mozambique">Mozambique</option>
+                <option value="Myanmar">Myanmar</option>
+                <option value="Namibia">Namibia</option>
+                <option value="Nauru">Nauru</option>
+                <option value="Nepal">Nepal</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Netherlands Antilles">Netherlands Antilles</option>
+                <option value="New Caledonia">New Caledonia</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Nicaragua">Nicaragua</option>
+                <option value="Niger">Niger</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Niue">Niue</option>
+                <option value="Norfolk Island">Norfolk Island</option>
+                <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                <option value="Norway">Norway</option>
+                <option value="Oman">Oman</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Palau">Palau</option>
+                <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+                <option value="Panama">Panama</option>
+                <option value="Papua New Guinea">Papua New Guinea</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Peru">Peru</option>
+                <option value="Philippines">Philippines</option>
+                <option value="Pitcairn">Pitcairn</option>
+                <option value="Poland">Poland</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Puerto Rico">Puerto Rico</option>
+                <option value="Qatar">Qatar</option>
+                <option value="Reunion">Reunion</option>
+                <option value="Romania">Romania</option>
+                <option value="Russian Federation">Russian Federation</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="Saint Helena">Saint Helena</option>
+                <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                <option value="Saint Lucia">Saint Lucia</option>
+                <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+                <option value="Samoa">Samoa</option>
+                <option value="San Marino">San Marino</option>
+                <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="Senegal">Senegal</option>
+                <option value="Serbia">Serbia</option>
+                <option value="Seychelles">Seychelles</option>
+                <option value="Sierra Leone">Sierra Leone</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Slovakia">Slovakia</option>
+                <option value="Slovenia">Slovenia</option>
+                <option value="Solomon Islands">Solomon Islands</option>
+                <option value="Somalia">Somalia</option>
+                <option value="South Africa">South Africa</option>
+                <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+                <option value="Spain">Spain</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="Sudan">Sudan</option>
+                <option value="Suriname">Suriname</option>
+                <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+                <option value="Swaziland">Swaziland</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Switzerland">Switzerland</option>
+                <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                <option value="Taiwan, Province of China">Taiwan, Province of China</option>
+                <option value="Tajikistan">Tajikistan</option>
+                <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Timor-leste">Timor-leste</option>
+                <option value="Togo">Togo</option>
+                <option value="Tokelau">Tokelau</option>
+                <option value="Tonga">Tonga</option>
+                <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                <option value="Tunisia">Tunisia</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Turkmenistan">Turkmenistan</option>
+                <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                <option value="Tuvalu">Tuvalu</option>
+                <option value="Uganda">Uganda</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="United Arab Emirates">United Arab Emirates</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="United States">United States</option>
+                <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Uzbekistan">Uzbekistan</option>
+                <option value="Vanuatu">Vanuatu</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="Viet Nam">Viet Nam</option>
+                <option value="Virgin Islands, British">Virgin Islands, British</option>
+                <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                <option value="Wallis and Futuna">Wallis and Futuna</option>
+                <option value="Western Sahara">Western Sahara</option>
+                <option value="Yemen">Yemen</option>
+                <option value="Zambia">Zambia</option>
+                <option value="Zimbabwe">Zimbabwe</option>
+            </select>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -609,7 +539,7 @@ function appendForms(){
 				<div class="row">
 					<div class="col-sm-12 appliedFiltersHeader" >
 						<?php
-						if(is_array($_GET["breed"]) || is_object($_GET["breed"]) || is_array($_GET["age"]) || is_object($_GET["age"])){
+						if(is_array($_GET["breed"]) || is_array($_GET["age"]) || is_array($_GET["gender"]) || is_array($_GET["size"])){
 							?>
 							<h4>
 								Filters Applied
@@ -695,563 +625,283 @@ function appendForms(){
 									<?php
 								}
 							}
+							if(is_array($_GET["breed"]) || is_array($_GET["age"]) || is_array($_GET["gender"]) || is_array($_GET["size"])){
+								?>
+								<li class="clearAll" onclick="clearAll()">
+									Clear All
+								</li>		
+								<?php
+							}
 							?>
 						</ul>
 					</div>
 				</div>
-				<?php 
-				$dogs = $wpdb->get_results('SELECT * FROM dogs');
-				$cardCount = 0;
-				$pageNumber = 1;
-				$rowCount = 0;
-				foreach($dogs as $dog){
-					if($cardCount == 0){
-						if($pageNumber == 1){
+				<div class="row">
+					<?php 
+					$pageSize = 9;
+					$page = $_GET["pid"] ?? 1;
+					$pageLowerLimit = ($page-1) * $pageSize;
+					$dogCount = $wpdb->get_results("SELECT COUNT(*) as NumberOfDogs FROM dogs")[0]->NumberOfDogs;
+					$limitClause = " LIMIT " . $pageLowerLimit . "," . $pageSize;
+					$orderClause = " ORDER BY a.dog_id ASC";
+					function argumentCreator($arr,$columnName){
+						$arguments = "";
+						$edited = false;
+						if(is_array($arr)){
+							foreach($arr as $x){
+								if($edited){
+									$arguments .= " OR {$columnName} = '{$x}'";
+								}
+								else{
+									$arguments .= "{$columnName} = '{$x}'";
+								}
+								$edited = true;
+							}
+						}
+						return $arguments;
+					}
+					function finalQueryHelper($arguments,$finalQuery, $finalQueryAdjusted, $dogCountBaseQuery){
+						foreach($arguments as $argument){
+							if($argument){
+								if($finalQueryAdjusted){
+									$finalQuery .= " AND ( " . $argument . " )";
+									$dogCountBaseQuery .= " AND ( " . $argument . " )";
+								}
+								else{
+									$finalQuery .= "( " . $argument . " )";
+									$dogCountBaseQuery .= "( " . $argument . " )";
+									$finalQueryAdjusted = true;
+								}
+							}
+						}
+						return [$finalQuery,$dogCountBaseQuery];
+					}
+					$dogCount;
+					$dogCountBaseQuery = "SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+					INNER JOIN breeds b ON a.breed_id = b.breed_id 
+					INNER JOIN age c ON a.age_id = c.age_id 
+					INNER JOIN genders d ON a.gender_id = d.gender_id 
+					INNER JOIN sizes e ON a.size_id = e.size_id WHERE ";
+
+					if(is_array($_GET["breed"]) || is_array($_GET["age"]) || is_array($_GET["gender"]) || is_array($_GET["size"])){
+						$baseQuery = "
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE ";
+						
+						$ageArguments = argumentCreator($_GET["age"], "age_name");
+						$genderArguments = argumentCreator($_GET["gender"], "gender");
+						$sizeArguments = argumentCreator($_GET["size"], "size");
+						$breedArguments = argumentCreator($_GET["breed"], "breed_name");
+
+						$finalQuery = $baseQuery;
+						$finalQueryAdjusted = false;
+						if($ageArguments){
+							$finalQuery .= "( " . $ageArguments . " )";
+							$dogCountBaseQuery  .= "( " . $ageArguments . " )";
+							$finalQueryAdjusted = true;
+						}
+						$helper = finalQueryHelper([$genderArguments,$sizeArguments,$breedArguments],$finalQuery,$finalQueryAdjusted,$dogCountBaseQuery);
+						$finalQuery = $helper[0];
+						$finalQuery .= $orderClause . $limitClause;
+
+						$dogCount = $wpdb->get_results($helper[1])[0]->NumberOfDogs;
+						$dogs = $wpdb->get_results($finalQuery);
+					}
+					else{
+						$defaultQuery = 
+						"SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id" . $orderClause . $limitClause;
+						$dogs = $wpdb->get_results($defaultQuery);
+						$dogCount = $wpdb->get_results("SELECT COUNT(*) as NumberOfDogs FROM dogs")[0]->NumberOfDogs;;
+					}
+					for($i=0; $i<count($dogs);$i++){				
+						if($i === 0 || $i == 3 || $i === 6){
 							?>
-							<div id="page<?php echo $pageNumber?>" class="pag activePag">
+							<div class="row spaced-cols content-center-sm" data-type="row">
+							<?php
+						}
+						$url = site_url('/adoptions/dogs/?id=') . $dogs[$i]->dog_id;
+						?>
+						<div class="col-sm-4">
+							<a href="<?php echo $url; ?>" style="text-decoration: none; color: #3C424F; ">
+								<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
+									<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+									<h6 class=""><?php echo $dog->name ?></h6> 
+									<p class="small italic">Shelter Name</p>
+									<p class="text-center"><?php echo $dog->description ?></p> 
+								</div> 
+							</a>
+						</div>
+						<?php
+						if($i === 2 || $i === 5 || $i === 8){
+							?>
+							</div>
+							<?php
+						}
+						elseif($i === count($dogs)-1){
+							?>
+							</div>
+							<?php
+						}
+					}
+					$numberOfPages = ceil($dogCount/$pageSize);
+					?>
+			<div class="row paginationSection">
+				<div class="col-sm-12">
+					<div class="pagination">
+						<form method="GET" id="paginationForm">
+						<a id="paginationFirst" class="paginationButton" onclick="paginationSubmit(0)">&laquo;</a>
+						<?php
+						for($i =1; $i <= $numberOfPages; $i++){
+							if($i == $page){
+								?>
+								<a onclick="paginationSubmit(<?php echo $i; ?>)" id="<?php echo 'pag' . $i; ?>" class="active paginationButton"><?php echo $i ?></a>
 								<?php
 							}
 							else{
 								?>
-								<div id="page<?php echo $pageNumber?>" class="pag">
-									<?php
-								}
-							}
-							if($rowCount == 0){
-								?>
-								<div class="row spaced-cols content-center-sm" data-type="row">
-									<?php	
-								}
-								?>
-								<div class="col-sm-4">
-									<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-										<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-										<h6 class=""><?php echo $dog->name ?></h6> 
-										<p class="small italic">Shelter Name</p>
-										<p class="text-center"><?php echo $dog->description ?></p> 
-									</div> 
-								</div>
-								<?php
-
-								if($rowCount == 2){
-									?>
-								</div>
+								<a onclick="paginationSubmit(<?php echo $i; ?>)" id="<?php echo 'pag' . $i; ?>" class="paginationButton"><?php echo $i ?></a>
 								<?php
 							}
-
-							if($cardCount == 8){
-								?>
-							</div>
-							<?php
 						}
-						$rowCount++;
-						$cardCount++;
-						if($cardCount > 8){
-							$cardCount = 0;
-							$pageNumber++;
-						}
-						if($rowCount > 2){
-							$rowCount = 0;
-						}
-					}
-					if($cardCount != 0){
+						appendForms();
 						?>
+						<a id="paginationLast" class="paginationButton" onclick="paginationSubmit(<?php echo $numberOfPages; ?>)">&raquo;</a>
+						</form>
 					</div>
-				</div>
-				<?php
-			}
-			?>
-			<div class="row no-gutters paginationSection">
-				<div class="pagination">
-					<a id="paginationFirst">&laquo;</a>
-					<?php
-					for($i = 1; $i <= $pageNumber; $i++){
-						if($i == 1){
-							?>
-							<a class="active paginationButton"><?php echo $i ?></a>
-							<?php
-						}
-						else{
-							?>
-							<a class="paginationButton"><?php echo $i ?></a>
-							<?php
-						}
-					}
-					?>
-					<a id="paginationLast">&raquo;</a>
 				</div>
 			</div>
 		</div>
 	</div>
-	<hr style="margin-top: 2.5rem;">
-	<section class="recentlyViewed" style="width: 100%;">
-		<h2 style="text-align: center;">Recently Viewed Pets</h2>
-		<div class="carousel-container">
-			<div class="carousel-inner">
-				<div class="track">
-					<div class="card-container">
-						<div class="card boxShadowAnimate">
-							<div class="img">
-								<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-							</div>
-							<div class="info">
-								<h6 class="">Pet Name</h6>
-							</div>
-						</div>
+</div>
+<hr style="margin-top: 2.5rem;">
+<section class="recentlyViewed" style="width: 100%;">
+	<h2 style="text-align: center;">Recently Viewed Pets</h2>
+	<div class="carousel-container">
+		<div class="carousel-inner">
+			<div class="track">
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
 					</div>
-					<div class="card-container">
-						<div class="card boxShadowAnimate">
-							<div class="img">
-								<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-								<div class="info">
-									<h6 class="">Pet Name</h6>
-								</div>
-							</div>
-						</div>
-						<div class="card-container">
-							<div class="card boxShadowAnimate">
-								<div class="img">
-									<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-									<div class="info">
-										<h6 class="">Pet Name</h6>
-									</div>
-								</div>
-							</div>
-							<div class="card-container">
-								<div class="card boxShadowAnimate">
-									<div class="img">
-										<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-										<div class="info">
-											<h6 class="">Pet Name</h6>
-										</div>
-									</div>
-								</div>
-								<div class="card-container">
-									<div class="card boxShadowAnimate">
-										<div class="img">
-											<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-											<div class="info">
-												<h6 class="">Pet Name</h6>
-											</div>
-										</div>
-									</div>
-									<div class="card-container">
-										<div class="card boxShadowAnimate">
-											<div class="img">
-												<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-												<div class="info">
-													<h6 class="">Pet Name</h6>
-												</div>
-											</div>
-										</div>
-										<div class="card-container">
-											<div class="card boxShadowAnimate">
-												<div class="img">
-													<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-													<div class="info">
-														<h6 class="">Pet Name</h6>
-													</div>
-												</div>
-											</div>
-											<div class="card-container">
-												<div class="card boxShadowAnimate">
-													<div class="img">
-														<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-														<div class="info">
-															<h6 class="">Pet Name</h6>
-														</div>
-													</div>
-												</div>
-												<div class="card-container">
-													<div class="card boxShadowAnimate">
-														<div class="img">
-															<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-															<div class="info">
-																<h6 class="">Pet Name</h6>
-															</div>
-														</div>
-													</div>
-													<div class="card-container">
-														<div class="card boxShadowAnimate">
-															<div class="img">
-																<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-																<div class="info">
-																	<h6 class="">Pet Name</h6>
-																</div>
-															</div>
-														</div>
-														<div class="card-container">
-															<div class="card boxShadowAnimate">
-																<div class="img">
-																	<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-																	<div class="info">
-																		<h6 class="">Pet Name</h6>
-																	</div>
-																</div>
-															</div>
-															<div class="card-container">
-																<div class="card boxShadowAnimate">
-																	<div class="img">
-																		<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-																		<div class="info">
-																			<h6 class="">Pet Name</h6>
-																		</div>
-																	</div>
-																</div>
-																<div class="card-container">
-																	<div class="card boxShadowAnimate">
-																		<div class="img">
-																			<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-																			<div class="info">
-																				<h6 class="">Pet Name</h6>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="card-container">
-																		<div class="card boxShadowAnimate">
-																			<div class="img">
-																				<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon"></div>
-																				<div class="info">
-																					<h6 class="">Pet Name</h6>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																<div class="nav">
-																	<button class="prev">
-																		<i class="material-icons">
-																			<
-																		</i>
-																	</button>
-																	<button class="next">
-																		<i class="material-icons">
-																			>
-																		</i>
-																	</button>
-																</div>
-															</div>
-
-														</section>
-													</div>
-												</div>
-												<script>
-													function resubmit(breed, age, gender, size, remove){
-														breed = breed || 0;
-														age = age || 0;
-														gender = gender || 0;
-														size = size || 0;
-
-														var myjson = JSON.stringify(breed);
-														var breeds = JSON.parse(myjson);
-
-														myjson = JSON.stringify(age);
-														ages = JSON.parse(myjson);
-
-														myjson = JSON.stringify(gender);
-														genders = JSON.parse(myjson);
-
-														myjson = JSON.stringify(size);
-														sizes = JSON.parse(myjson);
-
-														var form = document.createElement("form");
-														form.method = "GET";
-														var i;
-														for(i = 0; i < breeds.length; i++){
-															if(!(breeds[i] === remove)){
-																var elementInput = document.createElement("input");
-																elementInput.value = breeds[i];
-																elementInput.name = "breed[]";
-
-																form.appendChild(elementInput);
-															}
-														}
-														for(i = 0; i < ages.length; i++){
-															if(!(ages[i] === remove)){
-																var elementInput = document.createElement("input");
-																elementInput.value = ages[i];
-																elementInput.name = "age[]";
-
-																form.appendChild(elementInput);
-															}
-														}
-														for(i = 0; i < genders.length; i++){
-															if(!(genders[i] === remove)){
-																var elementInput = document.createElement("input");
-																elementInput.value = genders[i];
-																elementInput.name = "gender[]";
-
-																form.appendChild(elementInput);
-															}
-														}
-														for(i = 0; i < sizes.length; i++){
-															if(!(sizes[i] === remove)){
-																var elementInput = document.createElement("input");
-																elementInput.value = sizes[i];
-																elementInput.name = "size[]";
-
-																form.appendChild(elementInput);
-															}
-														}
-														document.body.appendChild(form);
-														form.submit();
-													}
-
-
-
-													const paginationButtons = document.querySelectorAll('.paginationButton');
-													const pages = document.querySelectorAll('.pag');
-													var j;
-													for(j = 0; j < paginationButtons.length; j++){
-														paginationButtons[j].onclick = function(){
-															const activePage = document.querySelector('.activePag');
-															const activeButton = document.querySelector('.active');
-															activeButton.classList.remove('active');
-															activePage.classList.remove('activePag');
-
-															this.classList.add('active');
-															pages[this.innerText-1].classList.add('activePag');
-														}
-
-													}
-													const paginationFirst = document.getElementById('paginationFirst');
-													const paginationLast = document.getElementById('paginationLast');
-													paginationFirst.onclick = function(){
-														const activePage = document.querySelector('.activePag');
-														const activeButton = document.querySelector('.active');
-														activeButton.classList.remove('active');
-														activePage.classList.remove('activePag');
-
-														paginationButtons[0].classList.add('active');
-														pages[0].classList.add('activePag');
-													}
-													paginationLast.onclick = function(){
-														const activePage = document.querySelector('.activePag');
-														const activeButton = document.querySelector('.active');
-														activeButton.classList.remove('active');
-														activePage.classList.remove('activePag');
-
-														paginationButtons[paginationButtons.length-1].classList.add('active');
-														pages[pages.length-1].classList.add('activePag');
-													}
-
-
-													const prev  = document.querySelector('.prev');
-													const next = document.querySelector('.next');
-
-													const track = document.querySelector('.track');
-
-													let carouselWidth = document.querySelector('.carousel-container').offsetWidth;
-
-													window.addEventListener('resize', () => {
-														carouselWidth = document.querySelector('.carousel-container').offsetWidth;
-													})
-
-													let index = 0;
-
-													next.addEventListener('click', () => {
-														index++;
-														prev.classList.add('show');
-														track.style.transform = `translateX(-${index * carouselWidth}px)`;
-														if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
-															next.classList.add('hide');
-														}
-
-														else if(track.offsetWidth - (index * carouselWidth)*2 < 100){
-															next.classList.add('hide');
-														}
-													})
-													prev.addEventListener('click', () => {
-														index--;
-														next.classList.remove('hide');
-														if (index === 0) {
-															prev.classList.remove('show');
-														}
-														track.style.transform = `translateX(-${index * carouselWidth}px)`;
-													})
-
-												//slides
-
-												const buttons = document.querySelectorAll('.featuredButton');
-												const slides = document.querySelectorAll('.slide');
-												const intervalTime = 8000;
-												const button1 = document.getElementById('featured1');
-												const button2 = document.getElementById('featured2');
-												const button3 = document.getElementById('featured3');
-												const button4 = document.getElementById('featured4');
-
-
-												const nextSlide = () => {
-													const current = document.querySelector('.activeSlide');
-													if (current.nextElementSibling) {
-														current.nextElementSibling.classList.add('activeSlide');
-													} 
-													else {
-														slides[0].classList.add('activeSlide');
-													}
-													var i;
-													for (i = 0; i < buttons.length; i++) {
-														if(buttons[i].classList.contains('activeButton')){
-															buttons[i].classList.remove('activeButton');
-															if(i+1<buttons.length){
-																buttons[i+1].classList.add('activeButton');
-																break;
-															}
-															else{
-																buttons[0].classList.add('activeButton');
-																break;
-															}
-														}
-													}
-													setTimeout(() => current.classList.remove('activeSlide'));
-												};
-												slideInterval = setInterval(nextSlide, intervalTime);
-
-
-												button1.onclick = function(){
-													const activeSlide = document.querySelector('.activeSlide');
-													activeSlide.classList.remove('activeSlide');
-													slides[0].classList.add('activeSlide');
-
-													const activeBtn = document.querySelector('.activeButton');
-													activeBtn.classList.remove('activeButton');
-													buttons[0].classList.add('activeButton');
-													clearInterval(slideInterval);
-													slideInterval = setInterval(nextSlide, intervalTime);
-													
-												}
-												button2.onclick = function(){
-													const activeSlide = document.querySelector('.activeSlide');
-													activeSlide.classList.remove('activeSlide');
-													slides[1].classList.add('activeSlide');
-
-													const activeBtn = document.querySelector('.activeButton');
-													activeBtn.classList.remove('activeButton');
-													buttons[1].classList.add('activeButton');
-
-													clearInterval(slideInterval);
-													slideInterval = setInterval(nextSlide, intervalTime);
-												}
-												button3.onclick = function(){
-													const activeSlide = document.querySelector('.activeSlide');
-													activeSlide.classList.remove('activeSlide');
-													slides[2].classList.add('activeSlide');
-
-													const activeBtn = document.querySelector('.activeButton');
-													activeBtn.classList.remove('activeButton');
-													buttons[2].classList.add('activeButton');
-
-													clearInterval(slideInterval);
-													slideInterval = setInterval(nextSlide, intervalTime);
-												}
-												button4.onclick = function(){
-													const activeSlide = document.querySelector('.activeSlide');
-													activeSlide.classList.remove('activeSlide');
-													slides[3].classList.add('activeSlide');
-
-													const activeBtn = document.querySelector('.activeButton');
-													activeBtn.classList.remove('activeButton');
-													buttons[3].classList.add('activeButton');
-
-													clearInterval(slideInterval);
-													slideInterval = setInterval(nextSlide, intervalTime);
-												}
-
-												//Filters
-												const dogFilters = document.querySelectorAll('.dogSelection');
-												const dogSubmit = document.getElementById('breedFilterSubmit');
-												var k;
-												for(k = 0; k < dogFilters.length; k++){
-													dogFilters[k].onclick = function(){
-														if(dogSubmit.classList.contains('hideFilterSubmit')){
-															dogSubmit.classList.remove('hideFilterSubmit');
-														}
-														if (this.previous) {
-															this.checked = false;
-															var i;
-															for(i = 0; i < dogFilters.length; i++){
-																if(dogFilters[i].checked){
-																	break;
-																}
-																if(i==dogFilters.length-1){
-																	dogSubmit.classList.add('hideFilterSubmit');
-																}
-															}
-														}
-														this.previous = this.checked;
-													}
-												}
-
-												const ageFilters = document.querySelectorAll('.ageSelection');
-												const ageSubmit = document.getElementById('ageFilterSubmit');
-												for(k = 0; k < ageFilters.length; k++){
-													ageFilters[k].onclick = function(){
-														if(ageSubmit.classList.contains('hideFilterSubmit')){
-															ageSubmit.classList.remove('hideFilterSubmit');
-														}
-														if (this.previous) {
-															this.checked = false;
-															var i;
-															for(i = 0; i < ageFilters.length; i++){
-																if(ageFilters[i].checked){
-																	break;
-																}
-																if(i==ageFilters.length-1){
-																	ageSubmit.classList.add('hideFilterSubmit');
-																}
-															}
-														}
-														this.previous = this.checked;
-													}
-												}
-
-												const genderFilters = document.querySelectorAll('.genderSelection');
-												const genderSubmit = document.getElementById('genderFilterSubmit');
-												for(k = 0; k < genderFilters.length; k++){
-													genderFilters[k].onclick = function(){
-														if(genderSubmit.classList.contains('hideFilterSubmit')){
-															genderSubmit.classList.remove('hideFilterSubmit');
-														}
-														if (this.previous) {
-															this.checked = false;
-															var i;
-															for(i = 0; i < genderFilters.length; i++){
-																if(genderFilters[i].checked){
-																	break;
-																}
-																if(i==genderFilters.length-1){
-																	genderSubmit.classList.add('hideFilterSubmit');
-																}
-															}
-														}
-														this.previous = this.checked;
-													}
-												}
-
-												const sizeFilters = document.querySelectorAll('.sizeSelection');
-												const sizeSubmit = document.getElementById('sizeFilterSubmit');
-												for(k = 0; k < ageFilters.length; k++){
-													sizeFilters[k].onclick = function(){
-														if(sizeSubmit.classList.contains('hideFilterSubmit')){
-															sizeSubmit.classList.remove('hideFilterSubmit');
-														}
-														if (this.previous) {
-															this.checked = false;
-															var i;
-															for(i = 0; i < sizeFilters.length; i++){
-																if(sizeFilters[i].checked){
-																	break;
-																}
-																if(i==sizeFilters.length-1){
-																	sizeSubmit.classList.add('hideFilterSubmit');
-																}
-															}
-														}
-														this.previous = this.checked;
-													}
-												}
-
-
-											</script>
-
-											<?php get_footer(); ?>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+					<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+				<div class="card-container">
+					<div class="card boxShadowAnimate">
+						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+						<h6 style="text-align: center;">Pet Name</h6>
+						<p style="text-align: center; class="small italic">Shelter Name</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="nav">
+			<button class="prev">
+				<i class="material-icons">
+					<
+				</i>
+			</button>
+			<button class="next">
+				<i class="material-icons">
+					>
+				</i>
+			</button>
+		</div>
+	</div>
+</section>
+</div>
+</div>
+<script src="<?php echo site_url('/wp-content/themes/mesmerize/adoption-assets/adoptionsScript.js'); ?>" type="text/javascript">
+<?php get_footer(); ?>
