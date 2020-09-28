@@ -1164,3 +1164,257 @@ Stack trace:
 					INNER JOIN age c ON a.age_id = c.age_id 
 					INNER JOIN genders d ON a.gender_id = d.gender_id 
 					INNER JOIN sizes e ON a.size_id = e.size_id WHERE  AND ( gender = 'Male' OR gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:44:15 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-9,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE ( age_name = 'Young' OR age_name = 'Adult' OR age_name = 'Senior' OR age_name = 'Puppy' ) AND ( gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) ORDER BY a.dog_id ASC LIMIT -9,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:44:15 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-9,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE ( age_name = 'Young' OR age_name = 'Adult' OR age_name = 'Senior' OR age_name = 'Puppy' ) AND ( gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) ORDER BY a.dog_id ASC LIMIT -9,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:44:21 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-9,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE ( age_name = 'Young' OR age_name = 'Adult' OR age_name = 'Senior' OR age_name = 'Puppy' ) AND ( gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) ORDER BY a.dog_id ASC LIMIT -9,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:44:22 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-9,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE ( age_name = 'Young' OR age_name = 'Adult' OR age_name = 'Senior' OR age_name = 'Puppy' ) AND ( gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) ORDER BY a.dog_id ASC LIMIT -9,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:46:11 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-9,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE ( age_name = 'Young' OR age_name = 'Adult' OR age_name = 'Senior' OR age_name = 'Puppy' ) AND ( gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) ORDER BY a.dog_id ASC LIMIT -9,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:46:12 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-9,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE ( age_name = 'Young' OR age_name = 'Adult' OR age_name = 'Senior' OR age_name = 'Puppy' ) AND ( gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) ORDER BY a.dog_id ASC LIMIT -9,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:46:47 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-9,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE ( age_name = 'Young' OR age_name = 'Adult' OR age_name = 'Senior' OR age_name = 'Puppy' ) AND ( gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) ORDER BY a.dog_id ASC LIMIT -9,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[27-Sep-2020 20:46:47 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-9,9' at line 7 for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						WHERE ( age_name = 'Young' OR age_name = 'Adult' OR age_name = 'Senior' OR age_name = 'Puppy' ) AND ( gender = 'Female' ) AND ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' OR breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' ) ORDER BY a.dog_id ASC LIMIT -9,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 16:48:38 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 294
+[28-Sep-2020 16:58:12 UTC] WordPress database error Unknown column 'CANADA' in 'where clause' for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						INNER JOIN countries f ON a.country_id = f.country_id
+						WHERE ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' ) AND UPPER(f.country_name) = CANADA ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 16:58:13 UTC] WordPress database error Unknown column 'CANADA' in 'where clause' for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						INNER JOIN countries f ON a.country_id = f.country_id
+						WHERE ( breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' ) AND UPPER(f.country_name) = CANADA ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 16:58:21 UTC] WordPress database error Unknown column 'CANADA' in 'where clause' for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						INNER JOIN countries f ON a.country_id = f.country_id
+						WHERE ( breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' OR breed_name = 'Cardigan Welsh Corgi' OR breed_name = 'Daniff' OR breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' ) AND UPPER(f.country_name) = CANADA ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 16:58:22 UTC] WordPress database error Unknown column 'CANADA' in 'where clause' for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						INNER JOIN countries f ON a.country_id = f.country_id
+						WHERE ( breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' OR breed_name = 'Cardigan Welsh Corgi' OR breed_name = 'Daniff' OR breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' ) AND UPPER(f.country_name) = CANADA ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 16:59:26 UTC] WordPress database error Unknown column 'CANADA' in 'where clause' for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						INNER JOIN countries f ON a.country_id = f.country_id
+						WHERE ( breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' OR breed_name = 'Cardigan Welsh Corgi' OR breed_name = 'Daniff' OR breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' ) AND UPPER(f.country_name) = CANADA  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 16:59:27 UTC] WordPress database error Unknown column 'CANADA' in 'where clause' for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						INNER JOIN countries f ON a.country_id = f.country_id
+						WHERE ( breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' OR breed_name = 'Cardigan Welsh Corgi' OR breed_name = 'Daniff' OR breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' ) AND UPPER(f.country_name) = CANADA  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:00:17 UTC] WordPress database error Unknown column 'CANADA' in 'where clause' for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						INNER JOIN countries f ON a.country_id = f.country_id
+						WHERE ( breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' OR breed_name = 'Cardigan Welsh Corgi' OR breed_name = 'Daniff' OR breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' ) AND (UPPER(f.country_name) = CANADA)  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:00:17 UTC] WordPress database error Unknown column 'CANADA' in 'where clause' for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						INNER JOIN countries f ON a.country_id = f.country_id
+						WHERE ( breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' OR breed_name = 'Cardigan Welsh Corgi' OR breed_name = 'Daniff' OR breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' ) AND (UPPER(f.country_name) = CANADA)  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:01:14 UTC] WordPress database error Unknown column 'CANADA' in 'where clause' for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						INNER JOIN countries f ON a.country_id = f.country_id
+						WHERE ( breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' OR breed_name = 'Cardigan Welsh Corgi' OR breed_name = 'Daniff' OR breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' ) AND (UPPER(country_name) = CANADA)  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:01:15 UTC] WordPress database error Unknown column 'CANADA' in 'where clause' for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						INNER JOIN countries f ON a.country_id = f.country_id
+						WHERE ( breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' OR breed_name = 'Cardigan Welsh Corgi' OR breed_name = 'Daniff' OR breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' ) AND (UPPER(country_name) = CANADA)  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:03:19 UTC] WordPress database error Unknown column 'Canada' in 'where clause' for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						INNER JOIN countries f ON a.country_id = f.country_id
+						WHERE ( breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' OR breed_name = 'Cardigan Welsh Corgi' OR breed_name = 'Daniff' OR breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' ) AND (f.country_name = Canada)  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:03:20 UTC] WordPress database error Unknown column 'Canada' in 'where clause' for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						INNER JOIN countries f ON a.country_id = f.country_id
+						WHERE ( breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' OR breed_name = 'Cardigan Welsh Corgi' OR breed_name = 'Daniff' OR breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' ) AND (f.country_name = Canada)  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:03:49 UTC] WordPress database error Unknown column 'Canada' in 'where clause' for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						INNER JOIN countries f ON a.country_id = f.country_id
+						WHERE ( age_name = 'Puppy' ) AND ( breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' OR breed_name = 'Cardigan Welsh Corgi' OR breed_name = 'Daniff' OR breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' ) AND (f.country_name = Canada)  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:03:49 UTC] WordPress database error Unknown column 'Canada' in 'where clause' for query 
+						SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+						FROM dogs a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id 
+						INNER JOIN sizes e ON a.size_id = e.size_id 
+						INNER JOIN countries f ON a.country_id = f.country_id
+						WHERE ( age_name = 'Puppy' ) AND ( breed_name = 'Alaskan Klee Kai' OR breed_name = 'Bassador' OR breed_name = 'Beagle' OR breed_name = 'Bossie' OR breed_name = 'Cardigan Welsh Corgi' OR breed_name = 'Daniff' OR breed_name = 'Afador' OR breed_name = 'Affenhuahua' OR breed_name = 'Affenpinscher' OR breed_name = 'Akita' ) AND (f.country_name = Canada)  ORDER BY a.dog_id ASC LIMIT 0,9 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:11:12 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:11:12 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:11:27 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:11:27 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:12:16 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:12:16 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:507
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 507
+[28-Sep-2020 17:12:17 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:12:17 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:507
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 507
+[28-Sep-2020 17:12:34 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:12:34 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:13:33 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:13:34 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:13:37 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:13:37 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:14:11 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:14:11 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:45:48 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:466
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php(506): finalQueryHelper(Array, '\r\n\t\t\t\t\t\tSELECT ...', true, 'SELECT COUNT(*)...')
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#3 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#4 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 466
+[28-Sep-2020 17:45:48 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:466
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php(506): finalQueryHelper(Array, '\r\n\t\t\t\t\t\tSELECT ...', true, 'SELECT COUNT(*)...')
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#3 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#4 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 466
+[28-Sep-2020 18:12:38 UTC] PHP Parse error:  syntax error, unexpected ')' in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 270
+[28-Sep-2020 18:38:06 UTC] WordPress database error Table 'local.gender' doesn't exist for query SELECT COUNT(gender) AS genderCount FROM dogs a INNER JOIN gender b ON a.gender_id = b.gender_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(gender) = 'MALE' AND c.country_name = 'Belgium' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 18:38:06 UTC] WordPress database error Table 'local.gender' doesn't exist for query SELECT COUNT(gender) AS genderCount FROM dogs a INNER JOIN gender b ON a.gender_id = b.gender_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(gender) = 'FEMALE' AND c.country_name = 'Belgium' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 18:38:07 UTC] WordPress database error Table 'local.gender' doesn't exist for query SELECT COUNT(gender) AS genderCount FROM dogs a INNER JOIN gender b ON a.gender_id = b.gender_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(gender) = 'MALE' AND c.country_name = 'Belgium' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 18:38:07 UTC] WordPress database error Table 'local.gender' doesn't exist for query SELECT COUNT(gender) AS genderCount FROM dogs a INNER JOIN gender b ON a.gender_id = b.gender_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(gender) = 'FEMALE' AND c.country_name = 'Belgium' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 18:54:16 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 4
+[28-Sep-2020 18:54:16 UTC] PHP Stack trace:
+[28-Sep-2020 18:54:16 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[28-Sep-2020 18:54:16 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[28-Sep-2020 18:54:16 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[28-Sep-2020 18:54:16 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[28-Sep-2020 18:54:16 UTC] PHP   5. session_start() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:4
+[28-Sep-2020 18:54:16 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 4
+[28-Sep-2020 18:54:16 UTC] PHP Stack trace:
+[28-Sep-2020 18:54:16 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[28-Sep-2020 18:54:16 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[28-Sep-2020 18:54:16 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[28-Sep-2020 18:54:16 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[28-Sep-2020 18:54:16 UTC] PHP   5. session_start() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:4
