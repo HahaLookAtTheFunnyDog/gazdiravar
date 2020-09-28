@@ -26,7 +26,8 @@
 		$userCountry = $_GET["country"];
 	}
 	else{
-		$userCountry = $geo["geoplugin_countryName"];
+		//$userCountry = $geo["geoplugin_countryName"];
+		$userCountry = "Argentina";
 	}
 	$countryQryPrep = "SELECT count(country_name) as 'country_count' FROM dogs a INNER JOIN countries b ON a.country_id = b.country_id WHERE b.country_name = '" . $userCountry . "'";
 	$countryCount = $wpdb->get_results($countryQryPrep)[0]->country_count;
@@ -34,6 +35,9 @@
 	$countryAvailable = false;
 	if($countryCount > 0){
 		$countryAvailable = true;
+	}
+	else{
+		$userCountry = "All Countries";
 	}
 ?>
 <?php mesmerize_get_header(); ?>
@@ -327,6 +331,7 @@
 						<h4>Country</h4> 
 						<form method="GET">
 						<select id="country" name="country" class="form-control" style="margin: 0;" onchange="countrySelector()">
+							<option value="All">All Countries</option>
 						<?php
 							$countries = $wpdb->get_results("
 								SELECT DISTINCT b.country_name FROM dogs a
@@ -455,23 +460,12 @@
 							?>
 						</ul>
 					</div>
-					<?php
-						if($countryAvailable){
-							?>
 							<row>
 							<h4>
-								Now Displaying For: <?php if($countryAvailable){
-									echo $userCountry;
-								}
-								else{
-									echo "Everywhere";
-								} ?>
+								Now Displaying For: <?php echo $userCountry; ?>
 							</h4>
 							<hr>
 							</row>
-							<?php
-						}
-					?>
 				</div>
 				<div class="row">
 					<?php 
