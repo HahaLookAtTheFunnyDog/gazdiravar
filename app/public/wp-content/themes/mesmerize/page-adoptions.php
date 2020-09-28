@@ -17,17 +17,15 @@
 		appendFormHelper($_GET["size"], "size");
 	}
 	global $wpdb;
-	//My IP for testing since we're on local host
 	//Can retrieve the actual user ip once the website is live
-	$user_ip = "70.30.213.116";
+	$user_ip = $_SERVER['REMOTE_ADDR'];
 	$geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
 	global $userCountry;
 	if($_GET["country"]){
 		$userCountry = $_GET["country"];
 	}
 	else{
-		//$userCountry = $geo["geoplugin_countryName"];
-		$userCountry = "Argentina";
+		$userCountry = $geo["geoplugin_countryName"];
 	}
 	$countryQryPrep = "SELECT count(country_name) as 'country_count' FROM dogs a INNER JOIN countries b ON a.country_id = b.country_id WHERE b.country_name = '" . $userCountry . "'";
 	$countryCount = $wpdb->get_results($countryQryPrep)[0]->country_count;
