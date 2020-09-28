@@ -447,7 +447,7 @@
 							}
 							if(is_array($_GET["breed"]) || is_array($_GET["age"]) || is_array($_GET["gender"]) || is_array($_GET["size"])){
 								?>
-								<li class="clearAll" onclick="clearAll()">
+								<li class="clearAll" onclick="clearAll('<?php echo $userCountry; ?>')">
 									Clear All
 								</li>		
 								<?php

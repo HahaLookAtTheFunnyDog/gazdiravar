@@ -52,8 +52,12 @@
 		document.body.appendChild(form);
 		form.submit();
 	}
-	function clearAll(){
+	function clearAll(userCountry){
 		var form = document.createElement("form");
+		var inp = document.createElement("input");
+		inp.name = "country";
+		inp.value = userCountry;
+		form.appendChild(inp);
 		document.body.appendChild(form);
 		form.submit();
 	}
