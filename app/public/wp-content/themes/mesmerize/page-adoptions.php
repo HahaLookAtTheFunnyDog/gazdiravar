@@ -641,6 +641,9 @@
 	</div>
 </div>
 <hr style="margin-top: 2.5rem;">
+<?php
+if($_SESSION["recentlyViewed"]){
+?>
 <section class="recentlyViewed" style="width: 100%;">
 	<h2 style="text-align: center;">Recently Viewed Pets</h2>
 	<div class="carousel-container">
@@ -681,6 +684,9 @@
 		</div>
 	</div>
 </section>
+<?php
+}
+?>
 </div>
 </div>
 <script src="<?php echo site_url('/wp-content/themes/mesmerize/adoption-assets/adoptionsScript.js'); ?>" type="text/javascript">
