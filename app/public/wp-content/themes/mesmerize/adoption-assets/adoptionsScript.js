@@ -11,7 +11,6 @@
         paginationForm.appendChild(pidInput);
         paginationForm.submit();
     }
-    
     //------------------------------------------------------------------------
 	//FILTER TAGS
 	//------------------------------------------------------------------------
@@ -98,6 +97,10 @@
 	filterFunctionalityHelper(genderFilters,genderSubmit);
 	filterFunctionalityHelper(sizeFilters,sizeSubmit);
 
+	function countrySelector(){
+		const countryFilter = document.getElementById('countryFilterSubmit');
+		countryFilter.classList.remove('hideFilterSubmit');
+	}
 	//------------------------------------------------------------------------
 	//RECENTLY VIEWED
 	//------------------------------------------------------------------------

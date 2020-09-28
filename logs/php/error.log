@@ -1383,3 +1383,19 @@ Stack trace:
 [28-Sep-2020 17:13:37 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
 [28-Sep-2020 17:14:11 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
 [28-Sep-2020 17:14:11 UTC] WordPress database error Unknown column 'f.country_name' in 'where clause' for query SELECT COUNT(*) as NumberOfDogs FROM dogs WHERE (f.country_name = 'Canada')  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 17:45:48 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:466
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php(506): finalQueryHelper(Array, '\r\n\t\t\t\t\t\tSELECT ...', true, 'SELECT COUNT(*)...')
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#3 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#4 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 466
+[28-Sep-2020 17:45:48 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:466
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php(506): finalQueryHelper(Array, '\r\n\t\t\t\t\t\tSELECT ...', true, 'SELECT COUNT(*)...')
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#3 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#4 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 466

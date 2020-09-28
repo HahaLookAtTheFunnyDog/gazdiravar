@@ -17,6 +17,17 @@
 		appendFormHelper($_GET["gender"], "gender");
 		appendFormHelper($_GET["size"], "size");
 	}
+	//My IP for testing since we're on local host
+	//Can retrieve the actual user ip once the website is live
+	$user_ip = "70.30.213.116";
+	$geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
+	$userCountry;
+	if($_GET["country"]){
+		$userCountry = $_GET["country"];
+	}
+	else{
+		$userCountry = $geo["geoplugin_countryName"];
+	}
 ?>
 <div id='page-content' class="page-content">
 	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
@@ -274,13 +285,9 @@
 						<hr class="filterDivider">
 						<li>
 						<h4>Country</h4> 
-						<select id="country" name="country" class="form-control" style="margin: 0;">
+						<form method="GET">
+						<select id="country" name="country" class="form-control" style="margin: 0;" onchange="countrySelector()">
 						<?php
-							//My IP for testing since we're on local host
-							//Can retrieve the actual user ip once the website is live
-							$user_ip = "70.30.213.116";
-							$geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
-							$userCountry = $geo["geoplugin_countryName"];
 							$countries = $wpdb->get_results("
 								SELECT DISTINCT b.country_name FROM dogs a
 								INNER JOIN countries b 
@@ -301,6 +308,11 @@
 							}
 						?>
 						</select>
+						<?php 
+							appendForms();
+						?>
+						<button type="submit" class="filterSubmit hideFilterSubmit" id="countryFilterSubmit">APPLY</button>
+						</form>
 						</li>
 					</ul>
 				</div>
@@ -405,6 +417,18 @@
 							?>
 						</ul>
 					</div>
+					<?php
+						if($countryAvailable){
+							?>
+							<row>
+							<h4>
+								Now Displaying For: <?php echo $userCountry; ?>
+							</h4>
+							<hr>
+							</row>
+							<?php
+						}
+					?>
 				</div>
 				<div class="row">
 					<?php 
@@ -430,7 +454,7 @@
 						}
 						return $arguments;
 					}
-					function finalQueryHelper($arguments,$finalQuery, $finalQueryAdjusted, $dogCountBaseQuery){
+					function finalQueryHelper($arguments,$finalQuery, $finalQueryAdjusted, $dogCountBaseQuery, $userCountry, $countryAvailable){
 						foreach($arguments as $argument){
 							if($argument){
 								if($finalQueryAdjusted){
@@ -444,6 +468,11 @@
 								}
 							}
 						}
+						if($countryAvailable){
+							$dogCountBaseQuery  .= " AND (f.country_name = '" . $userCountry . "') ";
+							$finalQuery .= " AND (f.country_name = '" . $userCountry . "') ";
+						}
+
 						return [$finalQuery,$dogCountBaseQuery];
 					}
 					$dogCount;
@@ -478,14 +507,10 @@
 							$dogCountBaseQuery  .= "( " . $ageArguments . " )";
 							$finalQueryAdjusted = true;
 						}
-						$helper = finalQueryHelper([$genderArguments,$sizeArguments,$breedArguments],$finalQuery,$finalQueryAdjusted,$dogCountBaseQuery);
+						$helper = finalQueryHelper([$genderArguments,$sizeArguments,$breedArguments],$finalQuery,$finalQueryAdjusted,$dogCountBaseQuery,$userCountry,$countryAvailable);
 						$finalQuery = $helper[0];
-						if($countryAvailable){
-							$finalQuery .= " AND (f.country_name = '" . $userCountry . "') ";
-						}
+	
 						$finalQuery .= $orderClause . $limitClause;
-						print_r($finalQuery);
-
 						$dogCount = $wpdb->get_results($helper[1])[0]->NumberOfDogs;
 						$dogs = $wpdb->get_results($finalQuery);
 					}
