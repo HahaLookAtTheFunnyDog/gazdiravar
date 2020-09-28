@@ -1404,3 +1404,17 @@ Stack trace:
 [28-Sep-2020 18:38:06 UTC] WordPress database error Table 'local.gender' doesn't exist for query SELECT COUNT(gender) AS genderCount FROM dogs a INNER JOIN gender b ON a.gender_id = b.gender_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(gender) = 'FEMALE' AND c.country_name = 'Belgium' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
 [28-Sep-2020 18:38:07 UTC] WordPress database error Table 'local.gender' doesn't exist for query SELECT COUNT(gender) AS genderCount FROM dogs a INNER JOIN gender b ON a.gender_id = b.gender_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(gender) = 'MALE' AND c.country_name = 'Belgium' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
 [28-Sep-2020 18:38:07 UTC] WordPress database error Table 'local.gender' doesn't exist for query SELECT COUNT(gender) AS genderCount FROM dogs a INNER JOIN gender b ON a.gender_id = b.gender_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(gender) = 'FEMALE' AND c.country_name = 'Belgium' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[28-Sep-2020 18:54:16 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 4
+[28-Sep-2020 18:54:16 UTC] PHP Stack trace:
+[28-Sep-2020 18:54:16 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[28-Sep-2020 18:54:16 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[28-Sep-2020 18:54:16 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[28-Sep-2020 18:54:16 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[28-Sep-2020 18:54:16 UTC] PHP   5. session_start() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:4
+[28-Sep-2020 18:54:16 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 4
+[28-Sep-2020 18:54:16 UTC] PHP Stack trace:
+[28-Sep-2020 18:54:16 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[28-Sep-2020 18:54:16 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[28-Sep-2020 18:54:16 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[28-Sep-2020 18:54:16 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[28-Sep-2020 18:54:16 UTC] PHP   5. session_start() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:4

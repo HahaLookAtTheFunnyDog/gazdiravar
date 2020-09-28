@@ -1,6 +1,5 @@
-<?php mesmerize_get_header(); ?>
-<link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-assets/style.css'); ?>">
 <?php 
+	session_start();
 	function appendFormHelper($filterArr, $arrName){
 		if(is_array($filterArr) || is_object($filterArr)){
 			
@@ -36,6 +35,11 @@
 	if($countryCount > 0){
 		$countryAvailable = true;
 	}
+?>
+<?php mesmerize_get_header(); ?>
+<link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-assets/style.css'); ?>">
+<?php
+	print_r($_SESSION);
 ?>
 <div id='page-content' class="page-content">
 	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
@@ -642,104 +646,25 @@
 	<div class="carousel-container">
 		<div class="carousel-inner">
 			<div class="track">
-				<div class="card-container">
-					<div class="card boxShadowAnimate">
-						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-						<h6 style="text-align: center;">Pet Name</h6>
-						<p style="text-align: center; class="small italic">Shelter Name</p>
-					</div>
-				</div>
-				<div class="card-container">
-					<div class="card boxShadowAnimate">
-						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-						<h6 style="text-align: center;">Pet Name</h6>
-						<p style="text-align: center; class="small italic">Shelter Name</p>
-					</div>
-				</div>
-				<div class="card-container">
-					<div class="card boxShadowAnimate">
-						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-						<h6 style="text-align: center;">Pet Name</h6>
-						<p style="text-align: center; class="small italic">Shelter Name</p>
-					</div>
-				</div>
-				<div class="card-container">
-					<div class="card boxShadowAnimate">
-						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-						<h6 style="text-align: center;">Pet Name</h6>
-						<p style="text-align: center; class="small italic">Shelter Name</p>
-					</div>
-				</div>
-				<div class="card-container">
-					<div class="card boxShadowAnimate">
-						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-						<h6 style="text-align: center;">Pet Name</h6>
-						<p style="text-align: center; class="small italic">Shelter Name</p>
-					</div>
-				</div>
-				<div class="card-container">
-					<div class="card boxShadowAnimate">
-						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-						<h6 style="text-align: center;">Pet Name</h6>
-						<p style="text-align: center; class="small italic">Shelter Name</p>
-					</div>
-				</div>
-				<div class="card-container">
-					<div class="card boxShadowAnimate">
-						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-						<h6 style="text-align: center;">Pet Name</h6>
-						<p style="text-align: center; class="small italic">Shelter Name</p>
-					</div>
-				</div>
-				<div class="card-container">
-					<div class="card boxShadowAnimate">
-						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-						<h6 style="text-align: center;">Pet Name</h6>
-						<p style="text-align: center; class="small italic">Shelter Name</p>
-					</div>
-				</div>
-				<div class="card-container">
-					<div class="card boxShadowAnimate">
-						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-						<h6 style="text-align: center;">Pet Name</h6>
-						<p style="text-align: center; class="small italic">Shelter Name</p>
-					</div>
-				</div>
-				<div class="card-container">
-					<div class="card boxShadowAnimate">
-					<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-						<h6 style="text-align: center;">Pet Name</h6>
-						<p style="text-align: center; class="small italic">Shelter Name</p>
-					</div>
-				</div>
-				<div class="card-container">
-					<div class="card boxShadowAnimate">
-						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-						<h6 style="text-align: center;">Pet Name</h6>
-						<p style="text-align: center; class="small italic">Shelter Name</p>
-					</div>
-				</div>
-				<div class="card-container">
-					<div class="card boxShadowAnimate">
-						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-						<h6 style="text-align: center;">Pet Name</h6>
-						<p style="text-align: center; class="small italic">Shelter Name</p>
-					</div>
-				</div>
-				<div class="card-container">
-					<div class="card boxShadowAnimate">
-						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-						<h6 style="text-align: center;">Pet Name</h6>
-						<p style="text-align: center; class="small italic">Shelter Name</p>
-					</div>
-				</div>
-				<div class="card-container">
-					<div class="card boxShadowAnimate">
-						<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-						<h6 style="text-align: center;">Pet Name</h6>
-						<p style="text-align: center; class="small italic">Shelter Name</p>
-					</div>
-				</div>
+					<?php 
+						foreach($_SESSION["recentlyViewed"] as $dogID){
+							$query = "SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM dogs a 
+							INNER JOIN breeds b ON a.breed_id = b.breed_id 
+							INNER JOIN age c ON a.age_id = c.age_id 
+							INNER JOIN genders d ON a.gender_id = d.gender_id
+							INNER JOIN countries f ON a.country_id = f.country_id WHERE a.dog_id = " . $dogID;
+							$dog = $wpdb->get_results($query)[0];
+							?>
+							<div class="card-container">
+								<div class="card boxShadowAnimate">
+									<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
+									<h6 style="text-align: center;"><?php echo $dog->name; ?></h6>
+									<p style="text-align: center; class="small italic"><?php echo $dog->country_name; ?></p>
+								</div>
+							</div>
+							<?php
+						}
+					?>
 			</div>
 		</div>
 		<div class="nav">
