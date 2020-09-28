@@ -17,16 +17,24 @@
 		appendFormHelper($_GET["gender"], "gender");
 		appendFormHelper($_GET["size"], "size");
 	}
+	global $wpdb;
 	//My IP for testing since we're on local host
 	//Can retrieve the actual user ip once the website is live
 	$user_ip = "70.30.213.116";
 	$geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
-	$userCountry;
+	global $userCountry;
 	if($_GET["country"]){
 		$userCountry = $_GET["country"];
 	}
 	else{
 		$userCountry = $geo["geoplugin_countryName"];
+	}
+	$countryQryPrep = "SELECT count(country_name) as 'country_count' FROM dogs a INNER JOIN countries b ON a.country_id = b.country_id WHERE b.country_name = '" . $userCountry . "'";
+	$countryCount = $wpdb->get_results($countryQryPrep)[0]->country_count;
+	global $countryAvailable;
+	$countryAvailable = false;
+	if($countryCount > 0){
+		$countryAvailable = true;
 	}
 ?>
 <div id='page-content' class="page-content">
@@ -38,7 +46,6 @@
 					<div class="col-md-12">
 						<div class="slider">
 							<?php
-							global $wpdb;
 							$featuredDogs = $wpdb->get_results('SELECT * FROM dogs a INNER JOIN featured b ON a.dog_id = b.dog_id');
 							$featuredCount = 0;
 							foreach($featuredDogs as $dog){
@@ -133,8 +140,16 @@
 											<p class="quantity alignMargin">
 												<?php
 												$breedUpper = strtoupper($breed->breed_name);
-												$queryPrepare = $wpdb->prepare("SELECT COUNT(breed_name) AS breedCount FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id WHERE UPPER(breed_name) = %s", "$breedUpper");
-												$queryResult = $wpdb->get_results($queryPrepare);
+												$queryPrepare;
+												$queryResult;
+												if($countryAvailable){
+													$queryPrepare = "SELECT COUNT(breed_name) AS breedCount FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(breed_name) = '" . $breedUpper . "' AND c.country_name = '" . $userCountry . "'";
+													$queryResult = $wpdb->get_results($queryPrepare);
+												}
+												else{
+													$queryPrepare = $wpdb->prepare("SELECT COUNT(breed_name) AS breedCount FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id WHERE UPPER(breed_name) = %s", "$breedUpper");
+													$queryResult = $wpdb->get_results($queryPrepare);
+												}
 												echo "(" . $queryResult[0]->breedCount . ")";
 												?>
 											</p>
@@ -177,8 +192,16 @@
 											<p class="quantity">
 												<?php
 												$ageUpper = strtoupper($age->age_name);
-												$queryPrepare = $wpdb->prepare("SELECT COUNT(age_name) AS ageCount FROM dogs a INNER JOIN age b ON a.age_id = b.age_id WHERE UPPER(age_name) = %s", "$ageUpper");
-												$queryResult = $wpdb->get_results($queryPrepare);
+												$queryPrepare;
+												$queryResult;
+												if($countryAvailable){
+													$queryPrepare = "SELECT COUNT(age_name) AS ageCount FROM dogs a INNER JOIN age b ON a.age_id = b.age_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(age_name) = '" . $ageUpper . "' AND c.country_name = '" . $userCountry . "'";
+													$queryResult = $wpdb->get_results($queryPrepare);
+												}
+												else{
+													$queryPrepare = $wpdb->prepare("SELECT COUNT(age_name) AS ageCount FROM dogs a INNER JOIN age b ON a.age_id = b.age_id WHERE UPPER(age_name) = %s", "$ageUpper");
+													$queryResult = $wpdb->get_results($queryPrepare);
+												}
 												echo "(" . $queryResult[0]->ageCount . ")";
 												?>
 											</p>
@@ -221,8 +244,16 @@
 											<p class="quantity">
 												<?php 
 												$genderUpper = strtoupper($gender->gender);
-												$queryPrepare = $wpdb->prepare("SELECT COUNT(gender) AS genderCount FROM dogs a INNER JOIN genders b ON a.gender_id = b.gender_id WHERE UPPER(gender) = %s", "$genderUpper");
-												$queryResult = $wpdb->get_results($queryPrepare);
+												$queryPrepare;
+												$queryResult;
+												if($countryAvailable){
+													$queryPrepare = "SELECT COUNT(gender) AS genderCount FROM dogs a INNER JOIN genders b ON a.gender_id = b.gender_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(gender) = '" . $genderUpper . "' AND c.country_name = '" . $userCountry . "'";
+													$queryResult = $wpdb->get_results($queryPrepare);
+												}
+												else{
+													$queryPrepare = $wpdb->prepare("SELECT COUNT(gender) AS genderCount FROM dogs a INNER JOIN genders b ON a.gender_id = b.gender_id WHERE UPPER(gender) = %s", "$genderUpper");
+													$queryResult = $wpdb->get_results($queryPrepare);
+												}
 												echo "(" . $queryResult[0]->genderCount . ")";
 												?>
 											</p>
@@ -265,8 +296,16 @@
 											<p class="quantity">
 												<?php
 												$sizeUpper = strtoupper($size->size);
-												$queryPrepare = $wpdb->prepare("SELECT COUNT(size) AS sizeCount FROM dogs a INNER JOIN sizes b ON a.size_id = b.size_id WHERE UPPER(size) = %s", "$sizeUpper");
-												$queryResult = $wpdb->get_results($queryPrepare);
+												$queryPrepare;
+												$queryResult;
+												if($countryAvailable){
+													$queryPrepare = "SELECT COUNT(size) AS sizeCount FROM dogs a INNER JOIN sizes b ON a.size_id = b.size_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(size) = '" . $sizeUpper . "' AND c.country_name = '" . $userCountry . "'";
+													$queryResult = $wpdb->get_results($queryPrepare);
+												}
+												else{
+													$queryPrepare = $wpdb->prepare("SELECT COUNT(size) AS sizeCount FROM dogs a INNER JOIN sizes b ON a.size_id = b.size_id WHERE UPPER(size) = %s", "$sizeUpper");
+													$queryResult = $wpdb->get_results($queryPrepare);
+												}
 												echo "(" . $queryResult[0]->sizeCount . ")";
 												?>
 											</p>
@@ -293,14 +332,12 @@
 								INNER JOIN countries b 
 								ON a.country_id = b.country_id"
 							);
-							$countryAvailable = false;
 							foreach($countries as $country){
 								?>
 								<option 
 								<?php 
 									if(strtoupper($userCountry) === strtoupper($country->country_name)){
 										echo " selected ";
-										$countryAvailable = true;
 									}
 								?>
 								value="<?php echo $country->country_name; ?>"><?php echo $country->country_name; ?></option>
@@ -422,7 +459,12 @@
 							?>
 							<row>
 							<h4>
-								Now Displaying For: <?php echo $userCountry; ?>
+								Now Displaying For: <?php if($countryAvailable){
+									echo $userCountry;
+								}
+								else{
+									echo "Everywhere";
+								} ?>
 							</h4>
 							<hr>
 							</row>
