@@ -118,7 +118,7 @@ mesmerize_get_header(); ?>
 		<div class="container-fluid">
 			<div class="row no-gutters" style="margin: auto;">
 				<div class="col-md-12">
-					<div class="slider">
+					<div class="slider" style="cursor: pointer; ">
 						<?php
 						$featuredadoptions = $wpdb->get_results('SELECT * FROM adoptions a INNER JOIN featured b ON a.adoption_id = b.adoption_id');
 						$featuredCount = 0;
@@ -134,7 +134,8 @@ mesmerize_get_header(); ?>
 								<?php
 							}
 							?>
-							style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredCover.jpg"); ?>'); ">
+							style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredCover.jpg"); ?>')" id="featured<?php echo $adoption->adoption_id; ?>"
+							onclick='featuredClick()'>
 							<div class="featuredContent">
 								<h2 style="color: white;">
 									Hi I'm <?php echo $adoption->name ?>

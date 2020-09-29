@@ -200,7 +200,19 @@
 		activeBtn.classList.remove('activeButton');
 		buttons[index-1].classList.add('activeButton');
 	}
-
+	function featuredClick(){
+		var activeSlide = document.querySelector('.activeSlide');
+		var form = document.createElement("form");
+		var input = document.createElement("input");
+		input.value = activeSlide.id.charAt(activeSlide.id.length -1);
+		input.name = "id";
+		input.type = "hidden";
+		form.appendChild(input);
+		form.action = "animal/";
+		form.method = "GET";
+		document.body.appendChild(form);
+		form.submit();
+	}
 	//------------------------------------------------------------------------
 	//SORT BY
 	//------------------------------------------------------------------------
