@@ -1876,3 +1876,87 @@ Stack trace:
 [29-Sep-2020 20:20:09 UTC] WordPress database error Unknown column 'Dog' in 'where clause' for query SELECT breed_name FROM breeds a INNER JOIN species b ON a.species_id = b.species_id WHERE b.species_name = Dog made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
 [29-Sep-2020 20:20:32 UTC] WordPress database error Unknown column 'Dog' in 'where clause' for query SELECT breed_name FROM breeds a INNER JOIN species b ON a.species_id = b.species_id WHERE b.species_name = Dog made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
 [29-Sep-2020 20:20:32 UTC] WordPress database error Unknown column 'Dog' in 'where clause' for query SELECT breed_name FROM breeds a INNER JOIN species b ON a.species_id = b.species_id WHERE b.species_name = Dog made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 21:03:20 UTC] WordPress database error Unknown column 'a.genders_id' in 'on clause' for query SELECT COUNT(gender) AS genderCount 
+												FROM adoptions a 
+												INNER JOIN genders b ON a.genders_id = b.genders_id
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id
+												WHERE UPPER(gender) = 'MALE' AND species_name = 'Cat' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 21:03:20 UTC] WordPress database error Unknown column 'a.genders_id' in 'on clause' for query SELECT COUNT(gender) AS genderCount 
+												FROM adoptions a 
+												INNER JOIN genders b ON a.genders_id = b.genders_id
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id
+												WHERE UPPER(gender) = 'FEMALE' AND species_name = 'Cat' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 21:03:20 UTC] WordPress database error Unknown column 'a.genders_id' in 'on clause' for query SELECT COUNT(gender) AS genderCount 
+												FROM adoptions a 
+												INNER JOIN genders b ON a.genders_id = b.genders_id
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id
+												WHERE UPPER(gender) = 'MALE' AND species_name = 'Cat' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 21:03:20 UTC] WordPress database error Unknown column 'a.genders_id' in 'on clause' for query SELECT COUNT(gender) AS genderCount 
+												FROM adoptions a 
+												INNER JOIN genders b ON a.genders_id = b.genders_id
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id
+												WHERE UPPER(gender) = 'FEMALE' AND species_name = 'Cat' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 21:03:44 UTC] WordPress database error Unknown column 'a.genders_id' in 'on clause' for query SELECT COUNT(gender) AS genderCount 
+												FROM adoptions a 
+												INNER JOIN genders b ON a.genders_id = b.genders_id
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id
+												WHERE UPPER(gender) = 'MALE' AND species_name = 'Cat' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 21:03:44 UTC] WordPress database error Unknown column 'a.genders_id' in 'on clause' for query SELECT COUNT(gender) AS genderCount 
+												FROM adoptions a 
+												INNER JOIN genders b ON a.genders_id = b.genders_id
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id
+												WHERE UPPER(gender) = 'FEMALE' AND species_name = 'Cat' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 21:03:44 UTC] WordPress database error Unknown column 'a.genders_id' in 'on clause' for query SELECT COUNT(gender) AS genderCount 
+												FROM adoptions a 
+												INNER JOIN genders b ON a.genders_id = b.genders_id
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id
+												WHERE UPPER(gender) = 'MALE' AND species_name = 'Cat' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 21:03:44 UTC] WordPress database error Unknown column 'a.genders_id' in 'on clause' for query SELECT COUNT(gender) AS genderCount 
+												FROM adoptions a 
+												INNER JOIN genders b ON a.genders_id = b.genders_id
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id
+												WHERE UPPER(gender) = 'FEMALE' AND species_name = 'Cat' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 21:04:15 UTC] WordPress database error Unknown column 'a.genders_id' in 'on clause' for query SELECT COUNT(gender) AS genderCount 
+												FROM adoptions a 
+												INNER JOIN genders b ON a.genders_id = b.genders_id
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id
+												WHERE UPPER(gender) = 'MALE' AND species_name = 'Cat' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 21:04:15 UTC] WordPress database error Unknown column 'a.genders_id' in 'on clause' for query SELECT COUNT(gender) AS genderCount 
+												FROM adoptions a 
+												INNER JOIN genders b ON a.genders_id = b.genders_id
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id
+												WHERE UPPER(gender) = 'FEMALE' AND species_name = 'Cat' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 21:04:15 UTC] WordPress database error Unknown column 'a.genders_id' in 'on clause' for query SELECT COUNT(gender) AS genderCount 
+												FROM adoptions a 
+												INNER JOIN genders b ON a.genders_id = b.genders_id
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id
+												WHERE UPPER(gender) = 'MALE' AND species_name = 'Cat' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 21:04:15 UTC] WordPress database error Unknown column 'a.genders_id' in 'on clause' for query SELECT COUNT(gender) AS genderCount 
+												FROM adoptions a 
+												INNER JOIN genders b ON a.genders_id = b.genders_id
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id
+												WHERE UPPER(gender) = 'FEMALE' AND species_name = 'Cat' made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')

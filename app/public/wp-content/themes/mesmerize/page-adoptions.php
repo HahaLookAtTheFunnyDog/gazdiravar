@@ -215,7 +215,7 @@ mesmerize_get_header(); ?>
 						<form method="get">
 							<ul class="scrollRadio">
 								<?php
-								$qryPrep = "SELECT breed_name FROM breeds a INNER JOIN species b ON a.species_id = b.species_id WHERE b.species_name = '" . $_GET["species"] . "' ORDER BY breed_name ASC";
+								$qryPrep = "SELECT breed_name FROM breeds a INNER JOIN species b ON a.species_id = b.species_id WHERE b.species_name = '" . $speciesSelected . "' ORDER BY breed_name ASC";
 								$breeds = $wpdb->get_results($qryPrep);
 								foreach($breeds as $breed){
 									?>
@@ -293,12 +293,24 @@ mesmerize_get_header(); ?>
 											$queryPrepare;
 											$queryResult;
 											if($countryAvailable){
-												$queryPrepare = "SELECT COUNT(age_name) AS ageCount FROM adoptions a INNER JOIN age b ON a.age_id = b.age_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(age_name) = '" . $ageUpper . "' AND c.country_name = '" . $userCountry . "'";
-												$queryResult = $wpdb->get_results($queryPrepare);
+												$qry = "SELECT COUNT(age_name) AS ageCount FROM adoptions a 
+												INNER JOIN age b ON a.age_id = b.age_id 
+												INNER JOIN countries c ON a.country_id = c.country_id 
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) d ON a.breed_id = d.breed_id
+												WHERE UPPER(age_name) = '" . $ageUpper . "' AND c.country_name = '" . $userCountry . "' AND species_name = '" . $speciesSelected . "'";
+												$queryResult = $wpdb->get_results($qry);
 											}
 											else{
-												$queryPrepare = $wpdb->prepare("SELECT COUNT(age_name) AS ageCount FROM adoptions a INNER JOIN age b ON a.age_id = b.age_id WHERE UPPER(age_name) = %s", "$ageUpper");
-												$queryResult = $wpdb->get_results($queryPrepare);
+												$qryPrep = "SELECT COUNT(age_name) AS ageCount 
+												FROM adoptions a 
+												INNER JOIN age b ON a.age_id = b.age_id
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id
+												WHERE UPPER(age_name) = '" . $ageUpper ."' AND species_name = '" . $speciesSelected . "'";
+												$queryResult = $wpdb->get_results($qryPrep);
 											}
 											echo "(" . $queryResult[0]->ageCount . ")";
 											?>
@@ -346,12 +358,24 @@ mesmerize_get_header(); ?>
 											$queryPrepare;
 											$queryResult;
 											if($countryAvailable){
-												$queryPrepare = "SELECT COUNT(gender) AS genderCount FROM adoptions a INNER JOIN genders b ON a.gender_id = b.gender_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(gender) = '" . $genderUpper . "' AND c.country_name = '" . $userCountry . "'";
-												$queryResult = $wpdb->get_results($queryPrepare);
+												$qry = "SELECT COUNT(gender) AS genderCount FROM adoptions a 
+												INNER JOIN genders b ON a.gender_id = b.gender_id 
+												INNER JOIN countries c ON a.country_id = c.country_id 
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) d ON a.breed_id = d.breed_id
+												WHERE UPPER(gender) = '" . $genderUpper . "' AND c.country_name = '" . $userCountry . "' AND species_name = '" . $speciesSelected . "'";
+												$queryResult = $wpdb->get_results($qry);
 											}
 											else{
-												$queryPrepare = $wpdb->prepare("SELECT COUNT(gender) AS genderCount FROM adoptions a INNER JOIN genders b ON a.gender_id = b.gender_id WHERE UPPER(gender) = %s", "$genderUpper");
-												$queryResult = $wpdb->get_results($queryPrepare);
+												$qryPrep = "SELECT COUNT(gender) AS genderCount 
+												FROM adoptions a 
+												INNER JOIN genders b ON a.gender_id = b.gender_id
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id
+												WHERE UPPER(gender) = '" . $genderUpper ."' AND species_name = '" . $speciesSelected . "'";
+												$queryResult = $wpdb->get_results($qryPrep);
 											}
 											echo "(" . $queryResult[0]->genderCount . ")";
 											?>
@@ -399,12 +423,24 @@ mesmerize_get_header(); ?>
 											$queryPrepare;
 											$queryResult;
 											if($countryAvailable){
-												$queryPrepare = "SELECT COUNT(size) AS sizeCount FROM adoptions a INNER JOIN sizes b ON a.size_id = b.size_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(size) = '" . $sizeUpper . "' AND c.country_name = '" . $userCountry . "'";
-												$queryResult = $wpdb->get_results($queryPrepare);
+												$qry = "SELECT COUNT(size) AS sizeCount FROM adoptions a 
+												INNER JOIN sizes b ON a.size_id = b.size_id 
+												INNER JOIN countries c ON a.country_id = c.country_id 
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) d ON a.breed_id = d.breed_id
+												WHERE UPPER(size) = '" . $sizeUpper . "' AND c.country_name = '" . $userCountry . "' AND species_name = '" . $speciesSelected . "'";
+												$queryResult = $wpdb->get_results($qry);
 											}
 											else{
-												$queryPrepare = $wpdb->prepare("SELECT COUNT(size) AS sizeCount FROM adoptions a INNER JOIN sizes b ON a.size_id = b.size_id WHERE UPPER(size) = %s", "$sizeUpper");
-												$queryResult = $wpdb->get_results($queryPrepare);
+												$qryPrep = "SELECT COUNT(size) AS sizeCount 
+												FROM adoptions a 
+												INNER JOIN sizes b ON a.size_id = b.size_id
+												INNER JOIN 
+												(SELECT species_name, breed_id FROM breeds a 
+												INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id
+												WHERE UPPER(size) = '" . $sizeUpper ."' AND species_name = '" . $speciesSelected . "'";
+												$queryResult = $wpdb->get_results($qryPrep);
 											}
 											echo "(" . $queryResult[0]->sizeCount . ")";
 											?>
