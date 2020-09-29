@@ -314,43 +314,6 @@
   cursor: pointer;
 }
 
-#sortlist {
-  position: relative;
-}
-
-#sort_navlist {
-  position: absolute;
-  display: none;
-  text-align: left;
-}
-
-#sub_navlist li {
-  padding: 5px 0;
-}
-
-#navlist:hover > #sub_navlist {
-  display: block;
-}
-
-nav ul {
-  margin-right: 30px;
-}
-
-nav li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-ul {
-  background-color: orange;
-}
-
-#sub_navlist {
-  margin: 10 0;
-  padding: 0;
-  z-index: 9000;
-}
-
 #sortList {
   position: relative;
   cursor: pointer;
@@ -362,10 +325,16 @@ ul {
   margin: 10 0;
   padding: 0;
   z-index: 9000;
+  background-color: #fff;
 }
 
 #sub_navlist li {
-  padding: 5px 0;
+  padding: 0;
+  margin: 0;
+}
+
+#sub_navlist li:hover {
+  color: black;
 }
 
 #sortList ul {

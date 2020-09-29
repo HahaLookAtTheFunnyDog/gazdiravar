@@ -121,32 +121,34 @@
 	const prev  = document.querySelector('.prev');
 	const next = document.querySelector('.next');
 	const track = document.querySelector('.track');
-	let carouselWidth = document.querySelector('.carousel-container').offsetWidth;
-	window.addEventListener('resize', () => {
-	carouselWidth = document.querySelector('.carousel-container').offsetWidth;
-	})
-
-	let index = 0;
-	next.addEventListener('click', () => {
-		index++;
-		prev.classList.add('show');
-		track.style.transform = `translateX(-${index * carouselWidth}px)`;
-		if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
-			next.classList.add('hide');
-		}
-
-		else if(track.offsetWidth - (index * carouselWidth)*2 < 100){
-			next.classList.add('hide');
-		}
-	})
-	prev.addEventListener('click', () => {
-		index--;
-		next.classList.remove('hide');
-		if (index === 0) {
-			prev.classList.remove('show');
-		}
-		track.style.transform = `translateX(-${index * carouselWidth}px)`;
-	})
+	if(track){
+		let carouselWidth = document.querySelector('.carousel-container').offsetWidth;
+		window.addEventListener('resize', () => {
+		carouselWidth = document.querySelector('.carousel-container').offsetWidth;
+		})
+	
+		let index = 0;
+		next.addEventListener('click', () => {
+			index++;
+			prev.classList.add('show');
+			track.style.transform = `translateX(-${index * carouselWidth}px)`;
+			if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
+				next.classList.add('hide');
+			}
+	
+			else if(track.offsetWidth - (index * carouselWidth)*2 < 100){
+				next.classList.add('hide');
+			}
+		})
+		prev.addEventListener('click', () => {
+			index--;
+			next.classList.remove('hide');
+			if (index === 0) {
+				prev.classList.remove('show');
+			}
+			track.style.transform = `translateX(-${index * carouselWidth}px)`;
+		})
+	}
 	//------------------------------------------------------------------------
 	//SLIDES
 	//------------------------------------------------------------------------
@@ -196,11 +198,21 @@
 	const sortList = document.getElementById("sortList");
 	const subNavList = document.getElementById("sub_navlist");
 	sortList.onclick = function(){
-		console.log(subNavList.style.display);
 		if(subNavList.style.display == "none"){
 			subNavList.style.display = "block";
 		}
 		else{
 			subNavList.style.display = "none";
+		}
+	}
+	function sortSubmit(item,currentOrder){
+		currentOrder = currentOrder || 0;
+		if(!((!currentOrder && item.innerHTML === "Newest") || (item.innerHTML === "Oldest" && currentOrder == "Oldest"))){
+			const orderForm = document.getElementById("orderForm");
+			var orderInput = document.createElement("input");
+			orderInput.name = "order";
+			orderInput.value = item.innerHTML;
+			orderForm.appendChild(orderInput);
+			orderForm.submit();
 		}
 	}

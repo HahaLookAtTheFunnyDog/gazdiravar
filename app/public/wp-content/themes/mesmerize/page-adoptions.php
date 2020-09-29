@@ -16,8 +16,45 @@ function appendForms(){
 	appendFormHelper($_GET["gender"], "gender");
 	appendFormHelper($_GET["size"], "size");
 }
+function argumentCreator($arr,$columnName){
+	$arguments = "";
+	$edited = false;
+	if(is_array($arr)){
+		foreach($arr as $x){
+			if($edited){
+				$arguments .= " OR {$columnName} = '{$x}'";
+			}
+			else{
+				$arguments .= "{$columnName} = '{$x}'";
+			}
+			$edited = true;
+		}
+	}
+	return $arguments;
+}
+function finalQueryHelper($arguments,$finalQuery, $finalQueryAdjusted, $dogCountBaseQuery, $userCountry, $countryAvailable){
+	foreach($arguments as $argument){
+		if($argument){
+			if($finalQueryAdjusted){
+				$finalQuery .= " AND ( " . $argument . " )";
+				$dogCountBaseQuery .= " AND ( " . $argument . " )";
+			}
+			else{
+				$finalQuery .= "( " . $argument . " )";
+				$dogCountBaseQuery .= "( " . $argument . " )";
+				$finalQueryAdjusted = true;
+			}
+		}
+	}
+	if($countryAvailable){
+		$dogCountBaseQuery  .= " AND (f.country_name = '" . $userCountry . "') ";
+		$finalQuery .= " AND (f.country_name = '" . $userCountry . "') ";
+	}
+
+	return [$finalQuery,$dogCountBaseQuery];
+}
 global $wpdb;
-	//Can retrieve the actual user ip once the website is live
+//Can retrieve the actual user ip once the website is live
 $user_ip = $_SERVER['REMOTE_ADDR'];
 $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
 global $userCountry;
@@ -27,18 +64,29 @@ if($_GET["country"]){
 else{
 	$userCountry = $geo["geoplugin_countryName"];
 }
+global $countryAvailable;
 $countryQryPrep = "SELECT count(country_name) as 'country_count' FROM dogs a INNER JOIN countries b ON a.country_id = b.country_id WHERE b.country_name = '" . $userCountry . "'";
 $countryCount = $wpdb->get_results($countryQryPrep)[0]->country_count;
-global $countryAvailable;
-$countryAvailable = false;
 if($countryCount > 0){
 	$countryAvailable = true;
 }
 else{
+	$countryAvailable = false;
 	$userCountry = "All Countries";
 }
-?>
-<?php mesmerize_get_header(); ?>
+global $orderQuery;
+if(!($_GET["order"])){
+	$orderQuery = "ORDER BY register_date ASC";
+}
+else{
+	if($_GET["order"] == "Oldest"){
+		$orderQuery = "ORDER BY register_date DESC";
+	}
+	else{
+		$orderQuery = "ORDER BY register_date ASC";
+	}
+}
+mesmerize_get_header(); ?>
 <link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-assets/style.css'); ?>">
 <div id='page-content' class="page-content">
 	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
@@ -472,44 +520,6 @@ else{
 				$pageLowerLimit = ($page-1) * $pageSize;
 				$dogCount = $wpdb->get_results("SELECT COUNT(*) as NumberOfDogs FROM dogs")[0]->NumberOfDogs;
 				$limitClause = " LIMIT " . $pageLowerLimit . "," . $pageSize;
-				$orderClause = " ORDER BY a.dog_id ASC";
-				function argumentCreator($arr,$columnName){
-					$arguments = "";
-					$edited = false;
-					if(is_array($arr)){
-						foreach($arr as $x){
-							if($edited){
-								$arguments .= " OR {$columnName} = '{$x}'";
-							}
-							else{
-								$arguments .= "{$columnName} = '{$x}'";
-							}
-							$edited = true;
-						}
-					}
-					return $arguments;
-				}
-				function finalQueryHelper($arguments,$finalQuery, $finalQueryAdjusted, $dogCountBaseQuery, $userCountry, $countryAvailable){
-					foreach($arguments as $argument){
-						if($argument){
-							if($finalQueryAdjusted){
-								$finalQuery .= " AND ( " . $argument . " )";
-								$dogCountBaseQuery .= " AND ( " . $argument . " )";
-							}
-							else{
-								$finalQuery .= "( " . $argument . " )";
-								$dogCountBaseQuery .= "( " . $argument . " )";
-								$finalQueryAdjusted = true;
-							}
-						}
-					}
-					if($countryAvailable){
-						$dogCountBaseQuery  .= " AND (f.country_name = '" . $userCountry . "') ";
-						$finalQuery .= " AND (f.country_name = '" . $userCountry . "') ";
-					}
-
-					return [$finalQuery,$dogCountBaseQuery];
-				}
 				$dogCount;
 				$dogCountBaseQuery = "SELECT COUNT(*) as NumberOfDogs FROM dogs a 
 				INNER JOIN breeds b ON a.breed_id = b.breed_id 
@@ -545,13 +555,13 @@ else{
 					$helper = finalQueryHelper([$genderArguments,$sizeArguments,$breedArguments],$finalQuery,$finalQueryAdjusted,$dogCountBaseQuery,$userCountry,$countryAvailable);
 					$finalQuery = $helper[0];
 					
-					$finalQuery .= $orderClause . $limitClause;
+					$finalQuery .= $orderQuery . $limitClause;
 					$dogCount = $wpdb->get_results($helper[1])[0]->NumberOfDogs;
 					$dogs = $wpdb->get_results($finalQuery);
 				}
 				else{
 					$defaultQuery = 
-					"SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender FROM dogs a 
+					"SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM dogs a 
 					INNER JOIN breeds b ON a.breed_id = b.breed_id 
 					INNER JOIN age c ON a.age_id = c.age_id 
 					INNER JOIN genders d ON a.gender_id = d.gender_id
@@ -559,7 +569,7 @@ else{
 					if($countryAvailable){
 						$defaultQuery .= " WHERE (f.country_name = '" . $userCountry . "') ";
 					}
-					$defaultQuery .= $orderClause . $limitClause;
+					$defaultQuery .= $orderQuery . $limitClause;
 					$dogs = $wpdb->get_results($defaultQuery);
 					if($countryAvailable){
 						$qry = "SELECT COUNT(*) as NumberOfDogs FROM dogs a INNER JOIN countries b ON a.country_id = b.country_id WHERE (b.country_name = '" . $userCountry . "') ";
@@ -573,10 +583,13 @@ else{
 					<div class="col-sm-12">
 						<div class="dropdownsort">
 							<ul style="float: right; list-style: none; background-color: dodgerblue; padding: 4px;">
-								<li id="sortList"><a style="text-decoration: none; color: white;">Sorted By Newest</a>
-									<ul id="sub_navlist" style="float: right; margin-right: 0; margin-left: 80px; display: none; list-style: none; background-color: #fff; margin-top: 4px; color: #5B606B;  box-shadow: 5px 10px 18px #888888; ">
-										<li>Newest</li><br>
-										<li>Oldest</li>
+								<li id="sortList"><a style="text-decoration: none; color: white;">Sorted By <?php if($_GET["order"]){echo $_GET["order"];}else{echo "Newest";} ?></a>
+									<ul id="sub_navlist" style="float: right; margin-right: 0; margin-left: 80px; display: none; list-style: none; margin-top: 4px; color: #5B606B;  box-shadow: 5px 10px 18px #888888; ">
+										<form id="orderForm" method="GET" style="margin: 0;">
+										<li onclick="sortSubmit(this,'<?php echo $_GET['order']; ?>')">Newest</li><br>
+										<li onclick="sortSubmit(this,'<?php echo $_GET['order']; ?>')">Oldest</li>
+										<?php appendForms(); ?>
+										</form>
 									</ul>
 								</li>
 							</ul>
@@ -595,11 +608,11 @@ else{
 						<div class="col-sm-4">
 							<form method="GET" action="dogs/">
 								<input type="hidden" name="id" value="<?php echo $dogs[$i]->dog_id; ?>">
-								<a onclick="this.parentNode.submit()" style="text-decoration: none; color: #3C424F; ">
+								<a onclick="this.parentNode.submit()" style="text-decoration: none; color: #3C424F; cursor: pointer;">
 									<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
 										<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
 										<h6 class=""><?php echo $dogs[$i]->name; ?></h6> 
-										<p class="small italic">Shelter Name</p>
+										<p class="small italic"><?php echo $dogs[$i]->country_name; ?></p>
 										<p class="text-center"><?php echo $dog->description ?></p> 
 									</div> 
 								</a>
