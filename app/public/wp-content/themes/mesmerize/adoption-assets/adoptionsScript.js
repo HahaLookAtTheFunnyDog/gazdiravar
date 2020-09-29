@@ -62,12 +62,16 @@
 		document.body.appendChild(form);
 		form.submit();
 	}
-	function clearAll(userCountry){
+	function clearAll(userCountry, species){
 		var form = document.createElement("form");
-		var inp = document.createElement("input");
-		inp.name = "country";
-		inp.value = userCountry;
-		form.appendChild(inp);
+		var inpCountry = document.createElement("input");
+		var inpSpecies = document.createElement("input");
+		inpCountry.name = "country";
+		inpCountry.value = userCountry;
+		form.appendChild(inpCountry);
+		inpSpecies.name = "species";
+		inpSpecies.value = species;
+		form.appendChild(inpSpecies);
 		document.body.appendChild(form);
 		form.submit();
 	}

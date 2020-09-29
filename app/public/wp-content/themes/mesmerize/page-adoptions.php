@@ -599,7 +599,7 @@ mesmerize_get_header(); ?>
 						}
 						if(is_array($_GET["breed"]) || is_array($_GET["age"]) || is_array($_GET["gender"]) || is_array($_GET["size"])){
 							?>
-							<li class="clearAll" onclick="clearAll('<?php echo $userCountry; ?>')">
+							<li class="clearAll" onclick="clearAll('<?php echo $userCountry; ?>', '<?php echo $speciesSelected; ?>')">
 								Clear All
 							</li>		
 							<?php
