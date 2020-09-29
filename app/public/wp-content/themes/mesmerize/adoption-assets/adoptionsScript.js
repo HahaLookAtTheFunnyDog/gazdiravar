@@ -189,3 +189,18 @@
 		activeBtn.classList.remove('activeButton');
 		buttons[index-1].classList.add('activeButton');
 	}
+
+	//------------------------------------------------------------------------
+	//SORT BY
+	//------------------------------------------------------------------------
+	const sortList = document.getElementById("sortList");
+	const subNavList = document.getElementById("sub_navlist");
+	sortList.onclick = function(){
+		console.log(subNavList.style.display);
+		if(subNavList.style.display == "none"){
+			subNavList.style.display = "block";
+		}
+		else{
+			subNavList.style.display = "none";
+		}
+	}
