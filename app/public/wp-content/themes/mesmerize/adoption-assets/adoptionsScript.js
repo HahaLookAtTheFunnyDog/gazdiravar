@@ -111,8 +111,8 @@
 	filterFunctionalityHelper(genderFilters,genderSubmit);
 	filterFunctionalityHelper(sizeFilters,sizeSubmit);
 
-	function countrySelector(){
-		const countryFilter = document.getElementById('countryFilterSubmit');
+	function selectSelector(submitId){
+		const countryFilter = document.getElementById(submitId);
 		countryFilter.classList.remove('hideFilterSubmit');
 	}
 	//------------------------------------------------------------------------

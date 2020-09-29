@@ -1788,3 +1788,91 @@ Stack trace:
 [29-Sep-2020 19:42:30 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 7 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
 [29-Sep-2020 19:42:35 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 8 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
 [29-Sep-2020 19:42:35 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 8 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 20:11:17 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 225
+[29-Sep-2020 20:11:17 UTC] PHP Stack trace:
+[29-Sep-2020 20:11:17 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[29-Sep-2020 20:11:17 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[29-Sep-2020 20:11:17 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[29-Sep-2020 20:11:17 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[29-Sep-2020 20:11:17 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 225
+[29-Sep-2020 20:11:17 UTC] PHP Stack trace:
+[29-Sep-2020 20:11:17 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[29-Sep-2020 20:11:17 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[29-Sep-2020 20:11:17 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[29-Sep-2020 20:11:17 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[29-Sep-2020 20:11:41 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 226
+[29-Sep-2020 20:11:41 UTC] PHP Stack trace:
+[29-Sep-2020 20:11:41 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[29-Sep-2020 20:11:41 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[29-Sep-2020 20:11:41 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[29-Sep-2020 20:11:41 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[29-Sep-2020 20:11:42 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 226
+[29-Sep-2020 20:11:42 UTC] PHP Stack trace:
+[29-Sep-2020 20:11:42 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[29-Sep-2020 20:11:42 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[29-Sep-2020 20:11:42 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[29-Sep-2020 20:11:42 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[29-Sep-2020 20:12:14 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 226
+[29-Sep-2020 20:12:14 UTC] PHP Stack trace:
+[29-Sep-2020 20:12:14 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[29-Sep-2020 20:12:14 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[29-Sep-2020 20:12:14 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[29-Sep-2020 20:12:14 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[29-Sep-2020 20:12:14 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 226
+[29-Sep-2020 20:12:14 UTC] PHP Stack trace:
+[29-Sep-2020 20:12:14 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[29-Sep-2020 20:12:14 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[29-Sep-2020 20:12:14 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[29-Sep-2020 20:12:14 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[29-Sep-2020 20:16:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 226
+[29-Sep-2020 20:16:43 UTC] PHP Stack trace:
+[29-Sep-2020 20:16:43 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[29-Sep-2020 20:16:43 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[29-Sep-2020 20:16:43 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[29-Sep-2020 20:16:43 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[29-Sep-2020 20:16:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 226
+[29-Sep-2020 20:16:44 UTC] PHP Stack trace:
+[29-Sep-2020 20:16:44 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[29-Sep-2020 20:16:44 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[29-Sep-2020 20:16:44 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[29-Sep-2020 20:16:44 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[29-Sep-2020 20:17:08 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 226
+[29-Sep-2020 20:17:08 UTC] PHP Stack trace:
+[29-Sep-2020 20:17:08 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[29-Sep-2020 20:17:08 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[29-Sep-2020 20:17:08 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[29-Sep-2020 20:17:08 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[29-Sep-2020 20:17:08 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 226
+[29-Sep-2020 20:17:08 UTC] PHP Stack trace:
+[29-Sep-2020 20:17:08 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[29-Sep-2020 20:17:08 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[29-Sep-2020 20:17:08 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[29-Sep-2020 20:17:08 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[29-Sep-2020 20:17:16 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 226
+[29-Sep-2020 20:17:16 UTC] PHP Stack trace:
+[29-Sep-2020 20:17:16 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[29-Sep-2020 20:17:16 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[29-Sep-2020 20:17:16 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[29-Sep-2020 20:17:16 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[29-Sep-2020 20:17:17 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 226
+[29-Sep-2020 20:17:17 UTC] PHP Stack trace:
+[29-Sep-2020 20:17:17 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[29-Sep-2020 20:17:17 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[29-Sep-2020 20:17:17 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[29-Sep-2020 20:17:17 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[29-Sep-2020 20:19:42 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 226
+[29-Sep-2020 20:19:42 UTC] PHP Stack trace:
+[29-Sep-2020 20:19:42 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[29-Sep-2020 20:19:42 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[29-Sep-2020 20:19:42 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[29-Sep-2020 20:19:42 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[29-Sep-2020 20:19:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 226
+[29-Sep-2020 20:19:43 UTC] PHP Stack trace:
+[29-Sep-2020 20:19:43 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[29-Sep-2020 20:19:43 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[29-Sep-2020 20:19:43 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[29-Sep-2020 20:19:43 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[29-Sep-2020 20:20:08 UTC] WordPress database error Unknown column 'Dog' in 'where clause' for query SELECT breed_name FROM breeds a INNER JOIN species b ON a.species_id = b.species_id WHERE b.species_name = Dog made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 20:20:09 UTC] WordPress database error Unknown column 'Dog' in 'where clause' for query SELECT breed_name FROM breeds a INNER JOIN species b ON a.species_id = b.species_id WHERE b.species_name = Dog made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 20:20:32 UTC] WordPress database error Unknown column 'Dog' in 'where clause' for query SELECT breed_name FROM breeds a INNER JOIN species b ON a.species_id = b.species_id WHERE b.species_name = Dog made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 20:20:32 UTC] WordPress database error Unknown column 'Dog' in 'where clause' for query SELECT breed_name FROM breeds a INNER JOIN species b ON a.species_id = b.species_id WHERE b.species_name = Dog made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')

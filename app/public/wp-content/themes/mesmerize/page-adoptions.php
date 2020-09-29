@@ -93,6 +93,13 @@ else{
 		$orderQuery = "ORDER BY register_date DESC";
 	}
 }
+global $speciesSelected;
+if($_GET["species"]){
+	$speciesSelected = $_GET["species"];
+}
+else{
+	$speciesSelected = "dog";
+}
 mesmerize_get_header(); ?>
 <link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-assets/style.css'); ?>">
 <div id='page-content' class="page-content">
@@ -171,13 +178,45 @@ mesmerize_get_header(); ?>
 					Filters
 				</h2>
 				<ul>
+				<li>
+						<h4>Species</h4> 
+						<form method="GET">
+							<select id="species" name="species" class="form-control" style="margin: 0;" onchange="selectSelector('speciesFilterSubmit')">
+								<?php
+									$species = $wpdb->get_results("
+									SELECT DISTINCT b.species_name FROM adoptions a
+									INNER JOIN 
+									(SELECT species_name, breed_id FROM breeds a 
+									INNER JOIN species b ON a.species_id = b.species_id) b
+									ON a.breed_id = b.breed_id"
+								);
+								foreach($species as $species){
+									?>
+									<option 
+									<?php 
+									if(strtoupper($speciesSelected) === strtoupper($species->species_name)){
+										echo " selected ";
+									}
+									?>
+									value="<?php echo $species->species_name; ?>"><?php echo $species->species_name; ?></option>
+									<?php
+								}
+								?>
+							</select>
+							<?php 
+							appendFilters();
+							?>
+							<button type="submit" class="filterSubmit hideFilterSubmit" id="speciesFilterSubmit">APPLY</button>
+						</form>
+					</li>
 					<li>
 						<hr class="filterDivider">
 						<h4>Breed</h4>
 						<form method="get">
 							<ul class="scrollRadio">
 								<?php
-								$breeds = $wpdb->get_results('SELECT breed_name FROM breeds ORDER BY breed_name ASC');
+								$qryPrep = "SELECT breed_name FROM breeds a INNER JOIN species b ON a.species_id = b.species_id WHERE b.species_name = '" . $_GET["species"] . "' ORDER BY breed_name ASC";
+								$breeds = $wpdb->get_results($qryPrep);
 								foreach($breeds as $breed){
 									?>
 									<li>
@@ -387,7 +426,7 @@ mesmerize_get_header(); ?>
 					<li>
 						<h4>Country</h4> 
 						<form method="GET">
-							<select id="country" name="country" class="form-control" style="margin: 0;" onchange="countrySelector()">
+							<select id="country" name="country" class="form-control" style="margin: 0;" onchange="selectSelector('countryFilterSubmit')">
 								<option value="All">All Countries</option>
 								<?php
 								$countries = $wpdb->get_results("
