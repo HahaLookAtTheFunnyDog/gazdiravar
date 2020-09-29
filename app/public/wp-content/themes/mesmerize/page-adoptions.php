@@ -10,8 +10,10 @@ function appendFormHelper($filterArr, $arrName){
 		}
 	}
 }
-function appendFilters(){
-	appendFormHelper($_GET["breed"], "breed");
+function appendFilters($appendBreed = true){
+	if($appendBreed){
+		appendFormHelper($_GET["breed"], "breed");
+	}
 	appendFormHelper($_GET["age"], "age");
 	appendFormHelper($_GET["gender"], "gender");
 	appendFormHelper($_GET["size"], "size");
@@ -21,6 +23,13 @@ function appendCountry(){
 	?>
 		<input type="hidden" name="country" value="<?php echo $_GET["country"]; ?>">
 	<?php
+	}
+}
+function appendSpecies(){
+	if($_GET["species"]){
+		?>
+			<input type="hidden" name="species" value="<?php echo $_GET['species']; ?>">
+		<?php
 	}
 }
 function argumentCreator($arr,$columnName){
@@ -204,7 +213,8 @@ mesmerize_get_header(); ?>
 								?>
 							</select>
 							<?php 
-							appendFilters();
+							appendFilters(false);
+							appendCountry();
 							?>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="speciesFilterSubmit">APPLY</button>
 						</form>
@@ -259,6 +269,7 @@ mesmerize_get_header(); ?>
 							<?php
 							appendFilters();
 							appendCountry();
+							appendSpecies();
 							?>
 							<button type="submit" class="filterSubmit hideFilterSubmit" name="breedSubmit" id="breedFilterSubmit">APPLY</button>
 						</form>
@@ -323,6 +334,7 @@ mesmerize_get_header(); ?>
 								<?php
 								appendFilters();
 								appendCountry();
+								appendSpecies();
 								?>
 							</ul>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="ageFilterSubmit">APPLY</button>
@@ -389,6 +401,7 @@ mesmerize_get_header(); ?>
 							<?php
 							appendFilters();
 							appendCountry();
+							appendSpecies();
 							?>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="genderFilterSubmit">APPLY</button>
 						</form>
@@ -454,6 +467,7 @@ mesmerize_get_header(); ?>
 							<?php
 							appendFilters();
 							appendCountry();
+							appendSpecies();
 							?>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="sizeFilterSubmit">APPLY</button>
 						</form>
@@ -485,6 +499,7 @@ mesmerize_get_header(); ?>
 							</select>
 							<?php 
 							appendFilters();
+							appendSpecies();
 							?>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="countryFilterSubmit">APPLY</button>
 						</form>
@@ -624,6 +639,7 @@ mesmerize_get_header(); ?>
 					INNER JOIN genders d ON a.gender_id = d.gender_id 
 					INNER JOIN sizes e ON a.size_id = e.size_id 
 					INNER JOIN countries f ON a.country_id = f.country_id
+					INNER JOIN (SELECT species_name, breed_id FROM breeds a INNER JOIN species b ON a.species_id = b.species_id) g ON a.breed_id = g.breed_id 
 					WHERE ";
 					
 					$ageArguments = argumentCreator($_GET["age"], "age_name");
@@ -640,6 +656,7 @@ mesmerize_get_header(); ?>
 					}
 					$helper = finalQueryHelper([$genderArguments,$sizeArguments,$breedArguments],$finalQuery,$finalQueryAdjusted,$adoptionCountBaseQuery,$userCountry,$countryAvailable);
 					$finalQuery = $helper[0];
+					$finalQuery .= " AND species_name = '" . $speciesSelected . "'";
 					
 					$finalQuery .= $orderQuery . $limitClause;
 					$adoptionCount = $wpdb->get_results($helper[1])[0]->NumberOfadoptions;
@@ -651,18 +668,28 @@ mesmerize_get_header(); ?>
 					INNER JOIN breeds b ON a.breed_id = b.breed_id 
 					INNER JOIN age c ON a.age_id = c.age_id 
 					INNER JOIN genders d ON a.gender_id = d.gender_id
-					INNER JOIN countries f ON a.country_id = f.country_id ";
+					INNER JOIN countries f ON a.country_id = f.country_id 
+					INNER JOIN (SELECT species_name, breed_id FROM breeds a INNER JOIN species b ON a.species_id = b.species_id) g ON a.breed_id = g.breed_id
+					WHERE species_name = '" . $speciesSelected ."'";
 					if($countryAvailable){
-						$defaultQuery .= " WHERE (f.country_name = '" . $userCountry . "') ";
+						$defaultQuery .= " AND (f.country_name = '" . $userCountry . "') ";
 					}
 					$defaultQuery .= $orderQuery . $limitClause;
 					$adoptions = $wpdb->get_results($defaultQuery);
 					if($countryAvailable){
-						$qry = "SELECT COUNT(*) as NumberOfadoptions FROM adoptions a INNER JOIN countries b ON a.country_id = b.country_id WHERE (b.country_name = '" . $userCountry . "') ";
+						$qry = 
+						"SELECT COUNT(*) as NumberOfadoptions FROM adoptions a 
+						INNER JOIN countries b ON a.country_id = b.country_id
+						INNER JOIN (SELECT species_name, breed_id FROM breeds a INNER JOIN species b ON a.species_id = b.species_id) c ON a.breed_id = c.breed_id 
+						WHERE (b.country_name = '" . $userCountry . "') AND species_name = '" . $speciesSelected . "'";
 						$adoptionCount = $wpdb->get_results($qry)[0]->NumberOfadoptions;
 					}
 					else{
-						$adoptionCount = $wpdb->get_results("SELECT COUNT(*) as NumberOfadoptions FROM adoptions")[0]->NumberOfadoptions;
+						$qry = 
+						"SELECT COUNT(*) as NumberOfadoptions FROM adoptions a 
+						INNER JOIN (SELECT species_name, breed_id FROM breeds a INNER JOIN species b ON a.species_id = b.species_id) b ON a.breed_id = b.breed_id 
+						WHERE species_name = '" . $speciesSelected . "'";
+						$adoptionCount = $wpdb->get_results($qry)[0]->NumberOfadoptions;
 					}
 				}?>
 				<div class="row">
@@ -674,7 +701,7 @@ mesmerize_get_header(); ?>
 										<form id="orderForm" method="GET" style="margin: 0;">
 										<li onclick="sortSubmit(this,'<?php echo $_GET['order']; ?>')">Newest</li><br>
 										<li onclick="sortSubmit(this,'<?php echo $_GET['order']; ?>')">Oldest</li>
-										<?php appendFilters(); appendCountry(); ?>
+										<?php appendFilters(); appendCountry(); appendSpecies(); ?>
 										</form>
 									</ul>
 								</li>
