@@ -10,11 +10,18 @@ function appendFormHelper($filterArr, $arrName){
 		}
 	}
 }
-function appendForms(){
+function appendFilters(){
 	appendFormHelper($_GET["breed"], "breed");
 	appendFormHelper($_GET["age"], "age");
 	appendFormHelper($_GET["gender"], "gender");
 	appendFormHelper($_GET["size"], "size");
+}
+function appendCountry(){
+	if($_GET["country"]){
+	?>
+		<input type="hidden" name="country" value="<?php echo $_GET["country"]; ?>">
+	<?php
+	}
 }
 function argumentCreator($arr,$columnName){
 	$arguments = "";
@@ -211,7 +218,8 @@ mesmerize_get_header(); ?>
 								?>
 							</ul>
 							<?php
-							appendForms();
+							appendFilters();
+							appendCountry();
 							?>
 							<button type="submit" class="filterSubmit hideFilterSubmit" name="breedSubmit" id="breedFilterSubmit">APPLY</button>
 						</form>
@@ -262,7 +270,8 @@ mesmerize_get_header(); ?>
 								}
 								?>
 								<?php
-								appendForms();
+								appendFilters();
+								appendCountry();
 								?>
 							</ul>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="ageFilterSubmit">APPLY</button>
@@ -315,7 +324,8 @@ mesmerize_get_header(); ?>
 								?>
 							</ul>
 							<?php
-							appendForms();
+							appendFilters();
+							appendCountry();
 							?>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="genderFilterSubmit">APPLY</button>
 						</form>
@@ -367,7 +377,8 @@ mesmerize_get_header(); ?>
 								?>
 							</ul>
 							<?php
-							appendForms();
+							appendFilters();
+							appendCountry();
 							?>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="sizeFilterSubmit">APPLY</button>
 						</form>
@@ -398,7 +409,7 @@ mesmerize_get_header(); ?>
 								?>
 							</select>
 							<?php 
-							appendForms();
+							appendFilters();
 							?>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="countryFilterSubmit">APPLY</button>
 						</form>
@@ -588,7 +599,7 @@ mesmerize_get_header(); ?>
 										<form id="orderForm" method="GET" style="margin: 0;">
 										<li onclick="sortSubmit(this,'<?php echo $_GET['order']; ?>')">Newest</li><br>
 										<li onclick="sortSubmit(this,'<?php echo $_GET['order']; ?>')">Oldest</li>
-										<?php appendForms(); ?>
+										<?php appendFilters(); appendCountry(); ?>
 										</form>
 									</ul>
 								</li>
@@ -650,7 +661,8 @@ mesmerize_get_header(); ?>
 									<?php
 								}
 							}
-							appendForms();
+							appendFilters();
+							appendCountry();
 							?>
 							<a id="paginationLast" class="paginationButton" onclick="paginationSubmit(<?php echo $numberOfPages; ?>)">&raquo;</a>
 						</form>
