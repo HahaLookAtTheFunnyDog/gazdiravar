@@ -748,6 +748,9 @@ mesmerize_get_header(); ?>
 			<div class="row paginationSection">
 				<div class="col-sm-12">
 					<div class="pagination">
+						<?php
+						if($numberOfPages > 0){
+						?>
 						<form method="GET" id="paginationForm">
 							<a id="paginationFirst" class="paginationButton" onclick="paginationSubmit(1)">&laquo;</a>
 							<?php
@@ -773,6 +776,16 @@ mesmerize_get_header(); ?>
 							?>
 							<a id="paginationLast" class="paginationButton" onclick="paginationSubmit(<?php echo $numberOfPages; ?>)">&raquo;</a>
 						</form>
+						<?php
+						} 
+						else{
+							?>
+								<h1>
+									Uh Oh, There doesn't seem to be any adoptions available with the filters you've chosen.
+								</h1>
+							<?php
+						}
+						?>
 					</div>
 				</div>
 			</div>
