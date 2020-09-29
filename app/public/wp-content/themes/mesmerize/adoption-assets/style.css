@@ -67,7 +67,7 @@
 }
 
 .carousel-container .carousel-inner {
-  overflow: auto;
+  overflow: hidden;
 }
 
 .carousel-container .track {

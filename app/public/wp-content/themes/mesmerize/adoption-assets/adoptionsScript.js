@@ -128,6 +128,14 @@
 		})
 	
 		let index = 0;
+		if(track.offsetWidth < carouselWidth){
+			next.classList.add('hide');
+		}
+		if((track.offsetWidth - carouselWidth) < 100){
+			next.classList.add('hide');
+		}
+		console.log(carouselWidth);
+		console.log(track.offsetWidth);
 		next.addEventListener('click', () => {
 			index++;
 			prev.classList.add('show');
