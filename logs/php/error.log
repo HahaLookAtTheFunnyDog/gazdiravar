@@ -2264,3 +2264,35 @@ Stack trace:
 						INNER JOIN age c ON a.age_id = c.age_id 
 						INNER JOIN genders d ON a.gender_id = d.gender_id
 						INNER JOIN countries f ON a.country_id = f.country_id WHERE a.adoption_id = undefined made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 22:31:38 UTC] WordPress database error Unknown column 'featured4' in 'where clause' for query SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id
+						INNER JOIN countries f ON a.country_id = f.country_id WHERE a.adoption_id = featured4 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 22:31:38 UTC] WordPress database error Unknown column 'undefined' in 'where clause' for query SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id
+						INNER JOIN countries f ON a.country_id = f.country_id WHERE a.adoption_id = undefined made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 22:31:38 UTC] WordPress database error Unknown column 'featured4' in 'where clause' for query SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id
+						INNER JOIN countries f ON a.country_id = f.country_id WHERE a.adoption_id = featured4 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 22:31:38 UTC] WordPress database error Unknown column 'undefined' in 'where clause' for query SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id
+						INNER JOIN countries f ON a.country_id = f.country_id WHERE a.adoption_id = undefined made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 22:31:56 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 16 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 22:31:56 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 16 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 22:33:35 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 16 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 22:33:35 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 16 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 22:34:25 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 10 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 22:34:25 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 10 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 22:34:51 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 5 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 22:34:51 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 5 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 22:37:48 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 22:37:48 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 22:38:54 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 22:38:55 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
