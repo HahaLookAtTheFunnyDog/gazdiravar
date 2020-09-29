@@ -1732,3 +1732,59 @@ Stack trace:
 [28-Sep-2020 22:13:05 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
 [28-Sep-2020 22:13:05 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
 [28-Sep-2020 22:13:05 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[29-Sep-2020 19:40:40 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 for query SELECT * FROM adoptionss WHERE adoption_id =  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 19:40:40 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 for query SELECT * FROM adoptionss WHERE adoption_id =  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 19:40:43 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id
+						INNER JOIN countries f ON a.country_id = f.country_id WHERE a.adoption_id =  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 19:40:44 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id
+						INNER JOIN countries f ON a.country_id = f.country_id WHERE a.adoption_id =  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 19:40:45 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 19:40:45 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 19:40:48 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id
+						INNER JOIN countries f ON a.country_id = f.country_id WHERE a.adoption_id =  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 19:40:48 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id
+						INNER JOIN countries f ON a.country_id = f.country_id WHERE a.adoption_id =  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 19:41:39 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id
+						INNER JOIN countries f ON a.country_id = f.country_id WHERE a.adoption_id =  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 19:41:39 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id
+						INNER JOIN countries f ON a.country_id = f.country_id WHERE a.adoption_id =  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 19:41:42 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id
+						INNER JOIN countries f ON a.country_id = f.country_id WHERE a.adoption_id =  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 19:41:42 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5 for query SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
+						INNER JOIN breeds b ON a.breed_id = b.breed_id 
+						INNER JOIN age c ON a.age_id = c.age_id 
+						INNER JOIN genders d ON a.gender_id = d.gender_id
+						INNER JOIN countries f ON a.country_id = f.country_id WHERE a.adoption_id =  made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptions.php')
+[29-Sep-2020 19:42:04 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 19:42:04 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 19:42:11 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 19:42:11 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 19:42:16 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 10 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 19:42:16 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 10 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 19:42:26 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 6 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 19:42:26 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 6 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 19:42:30 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 7 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 19:42:30 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 7 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 19:42:35 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 8 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[29-Sep-2020 19:42:35 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 8 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')

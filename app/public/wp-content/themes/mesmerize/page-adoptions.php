@@ -39,26 +39,26 @@ function argumentCreator($arr,$columnName){
 	}
 	return $arguments;
 }
-function finalQueryHelper($arguments,$finalQuery, $finalQueryAdjusted, $dogCountBaseQuery, $userCountry, $countryAvailable){
+function finalQueryHelper($arguments,$finalQuery, $finalQueryAdjusted, $adoptionCountBaseQuery, $userCountry, $countryAvailable){
 	foreach($arguments as $argument){
 		if($argument){
 			if($finalQueryAdjusted){
 				$finalQuery .= " AND ( " . $argument . " )";
-				$dogCountBaseQuery .= " AND ( " . $argument . " )";
+				$adoptionCountBaseQuery .= " AND ( " . $argument . " )";
 			}
 			else{
 				$finalQuery .= "( " . $argument . " )";
-				$dogCountBaseQuery .= "( " . $argument . " )";
+				$adoptionCountBaseQuery .= "( " . $argument . " )";
 				$finalQueryAdjusted = true;
 			}
 		}
 	}
 	if($countryAvailable){
-		$dogCountBaseQuery  .= " AND (f.country_name = '" . $userCountry . "') ";
+		$adoptionCountBaseQuery  .= " AND (f.country_name = '" . $userCountry . "') ";
 		$finalQuery .= " AND (f.country_name = '" . $userCountry . "') ";
 	}
 
-	return [$finalQuery,$dogCountBaseQuery];
+	return [$finalQuery,$adoptionCountBaseQuery];
 }
 global $wpdb;
 //Can retrieve the actual user ip once the website is live
@@ -72,7 +72,7 @@ else{
 	$userCountry = $geo["geoplugin_countryName"];
 }
 global $countryAvailable;
-$countryQryPrep = "SELECT count(country_name) as 'country_count' FROM dogs a INNER JOIN countries b ON a.country_id = b.country_id WHERE b.country_name = '" . $userCountry . "'";
+$countryQryPrep = "SELECT count(country_name) as 'country_count' FROM adoptions a INNER JOIN countries b ON a.country_id = b.country_id WHERE b.country_name = '" . $userCountry . "'";
 $countryCount = $wpdb->get_results($countryQryPrep)[0]->country_count;
 if($countryCount > 0){
 	$countryAvailable = true;
@@ -104,9 +104,9 @@ mesmerize_get_header(); ?>
 				<div class="col-md-12">
 					<div class="slider">
 						<?php
-						$featuredDogs = $wpdb->get_results('SELECT * FROM dogs a INNER JOIN featured b ON a.dog_id = b.dog_id');
+						$featuredadoptions = $wpdb->get_results('SELECT * FROM adoptions a INNER JOIN featured b ON a.adoption_id = b.adoption_id');
 						$featuredCount = 0;
-						foreach($featuredDogs as $dog){
+						foreach($featuredadoptions as $adoption){
 							if($featuredCount==0){
 								?>
 								<div class="slide activeSlide"
@@ -121,10 +121,10 @@ mesmerize_get_header(); ?>
 							style="background-image: url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/featuredCover.jpg"); ?>'); ">
 							<div class="featuredContent">
 								<h2 style="color: white;">
-									Hi I'm <?php echo $dog->name ?>
+									Hi I'm <?php echo $adoption->name ?>
 								</h2>
 								<p style="color: white;">
-									<?php echo $dog->description ?>
+									<?php echo $adoption->description ?>
 								</p>
 							</div>
 						</div>
@@ -140,7 +140,7 @@ mesmerize_get_header(); ?>
 				<div class="buttonContainer">
 					<ul class="featuredButtons" style="list-style: none;">
 						<?php
-						for($i = 1; $i <= count($featuredDogs); $i++){
+						for($i = 1; $i <= count($featuredadoptions); $i++){
 							?>
 							<li>
 								<button id="featured<?php echo $i; ?>" onclick="featuredButton(<?php echo $i ?>)" class="featuredButton
@@ -181,7 +181,7 @@ mesmerize_get_header(); ?>
 								foreach($breeds as $breed){
 									?>
 									<li>
-										<input type="checkbox" id="<?php echo str_replace(' ', '', $breed->breed_name); ?>" name="breed[]" value="<?php echo $breed->breed_name ?>" class="dogSelection"
+										<input type="checkbox" id="<?php echo str_replace(' ', '', $breed->breed_name); ?>" name="breed[]" value="<?php echo $breed->breed_name ?>" class="adoptionSelection"
 										<?php 
 										if(is_array($_GET["breed"]) || is_object($_GET["breed"])){
 											foreach($_GET["breed"] as $alreadySubmittedBreed){
@@ -201,11 +201,11 @@ mesmerize_get_header(); ?>
 											$queryPrepare;
 											$queryResult;
 											if($countryAvailable){
-												$queryPrepare = "SELECT COUNT(breed_name) AS breedCount FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(breed_name) = '" . $breedUpper . "' AND c.country_name = '" . $userCountry . "'";
+												$queryPrepare = "SELECT COUNT(breed_name) AS breedCount FROM adoptions a INNER JOIN breeds b ON a.breed_id = b.breed_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(breed_name) = '" . $breedUpper . "' AND c.country_name = '" . $userCountry . "'";
 												$queryResult = $wpdb->get_results($queryPrepare);
 											}
 											else{
-												$queryPrepare = $wpdb->prepare("SELECT COUNT(breed_name) AS breedCount FROM dogs a INNER JOIN breeds b ON a.breed_id = b.breed_id WHERE UPPER(breed_name) = %s", "$breedUpper");
+												$queryPrepare = $wpdb->prepare("SELECT COUNT(breed_name) AS breedCount FROM adoptions a INNER JOIN breeds b ON a.breed_id = b.breed_id WHERE UPPER(breed_name) = %s", "$breedUpper");
 												$queryResult = $wpdb->get_results($queryPrepare);
 											}
 											echo "(" . $queryResult[0]->breedCount . ")";
@@ -254,11 +254,11 @@ mesmerize_get_header(); ?>
 											$queryPrepare;
 											$queryResult;
 											if($countryAvailable){
-												$queryPrepare = "SELECT COUNT(age_name) AS ageCount FROM dogs a INNER JOIN age b ON a.age_id = b.age_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(age_name) = '" . $ageUpper . "' AND c.country_name = '" . $userCountry . "'";
+												$queryPrepare = "SELECT COUNT(age_name) AS ageCount FROM adoptions a INNER JOIN age b ON a.age_id = b.age_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(age_name) = '" . $ageUpper . "' AND c.country_name = '" . $userCountry . "'";
 												$queryResult = $wpdb->get_results($queryPrepare);
 											}
 											else{
-												$queryPrepare = $wpdb->prepare("SELECT COUNT(age_name) AS ageCount FROM dogs a INNER JOIN age b ON a.age_id = b.age_id WHERE UPPER(age_name) = %s", "$ageUpper");
+												$queryPrepare = $wpdb->prepare("SELECT COUNT(age_name) AS ageCount FROM adoptions a INNER JOIN age b ON a.age_id = b.age_id WHERE UPPER(age_name) = %s", "$ageUpper");
 												$queryResult = $wpdb->get_results($queryPrepare);
 											}
 											echo "(" . $queryResult[0]->ageCount . ")";
@@ -307,11 +307,11 @@ mesmerize_get_header(); ?>
 											$queryPrepare;
 											$queryResult;
 											if($countryAvailable){
-												$queryPrepare = "SELECT COUNT(gender) AS genderCount FROM dogs a INNER JOIN genders b ON a.gender_id = b.gender_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(gender) = '" . $genderUpper . "' AND c.country_name = '" . $userCountry . "'";
+												$queryPrepare = "SELECT COUNT(gender) AS genderCount FROM adoptions a INNER JOIN genders b ON a.gender_id = b.gender_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(gender) = '" . $genderUpper . "' AND c.country_name = '" . $userCountry . "'";
 												$queryResult = $wpdb->get_results($queryPrepare);
 											}
 											else{
-												$queryPrepare = $wpdb->prepare("SELECT COUNT(gender) AS genderCount FROM dogs a INNER JOIN genders b ON a.gender_id = b.gender_id WHERE UPPER(gender) = %s", "$genderUpper");
+												$queryPrepare = $wpdb->prepare("SELECT COUNT(gender) AS genderCount FROM adoptions a INNER JOIN genders b ON a.gender_id = b.gender_id WHERE UPPER(gender) = %s", "$genderUpper");
 												$queryResult = $wpdb->get_results($queryPrepare);
 											}
 											echo "(" . $queryResult[0]->genderCount . ")";
@@ -360,11 +360,11 @@ mesmerize_get_header(); ?>
 											$queryPrepare;
 											$queryResult;
 											if($countryAvailable){
-												$queryPrepare = "SELECT COUNT(size) AS sizeCount FROM dogs a INNER JOIN sizes b ON a.size_id = b.size_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(size) = '" . $sizeUpper . "' AND c.country_name = '" . $userCountry . "'";
+												$queryPrepare = "SELECT COUNT(size) AS sizeCount FROM adoptions a INNER JOIN sizes b ON a.size_id = b.size_id INNER JOIN countries c ON a.country_id = c.country_id WHERE UPPER(size) = '" . $sizeUpper . "' AND c.country_name = '" . $userCountry . "'";
 												$queryResult = $wpdb->get_results($queryPrepare);
 											}
 											else{
-												$queryPrepare = $wpdb->prepare("SELECT COUNT(size) AS sizeCount FROM dogs a INNER JOIN sizes b ON a.size_id = b.size_id WHERE UPPER(size) = %s", "$sizeUpper");
+												$queryPrepare = $wpdb->prepare("SELECT COUNT(size) AS sizeCount FROM adoptions a INNER JOIN sizes b ON a.size_id = b.size_id WHERE UPPER(size) = %s", "$sizeUpper");
 												$queryResult = $wpdb->get_results($queryPrepare);
 											}
 											echo "(" . $queryResult[0]->sizeCount . ")";
@@ -391,7 +391,7 @@ mesmerize_get_header(); ?>
 								<option value="All">All Countries</option>
 								<?php
 								$countries = $wpdb->get_results("
-									SELECT DISTINCT b.country_name FROM dogs a
+									SELECT DISTINCT b.country_name FROM adoptions a
 									INNER JOIN countries b 
 									ON a.country_id = b.country_id"
 								);
@@ -529,10 +529,10 @@ mesmerize_get_header(); ?>
 				$pageSize = 9;
 				$page = $_GET["pid"] ?? 1;
 				$pageLowerLimit = ($page-1) * $pageSize;
-				$dogCount = $wpdb->get_results("SELECT COUNT(*) as NumberOfDogs FROM dogs")[0]->NumberOfDogs;
+				$adoptionCount = $wpdb->get_results("SELECT COUNT(*) as NumberOfadoptions FROM adoptions")[0]->NumberOfadoptions;
 				$limitClause = " LIMIT " . $pageLowerLimit . "," . $pageSize;
-				$dogCount;
-				$dogCountBaseQuery = "SELECT COUNT(*) as NumberOfDogs FROM dogs a 
+				$adoptionCount;
+				$adoptionCountBaseQuery = "SELECT COUNT(*) as NumberOfadoptions FROM adoptions a 
 				INNER JOIN breeds b ON a.breed_id = b.breed_id 
 				INNER JOIN age c ON a.age_id = c.age_id 
 				INNER JOIN genders d ON a.gender_id = d.gender_id 
@@ -542,8 +542,8 @@ mesmerize_get_header(); ?>
 
 				if(is_array($_GET["breed"]) || is_array($_GET["age"]) || is_array($_GET["gender"]) || is_array($_GET["size"])){
 					$baseQuery = "
-					SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
-					FROM dogs a 
+					SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+					FROM adoptions a 
 					INNER JOIN breeds b ON a.breed_id = b.breed_id 
 					INNER JOIN age c ON a.age_id = c.age_id 
 					INNER JOIN genders d ON a.gender_id = d.gender_id 
@@ -560,19 +560,19 @@ mesmerize_get_header(); ?>
 					$finalQueryAdjusted = false;
 					if($ageArguments){
 						$finalQuery .= "( " . $ageArguments . " )";
-						$dogCountBaseQuery  .= "( " . $ageArguments . " )";
+						$adoptionCountBaseQuery  .= "( " . $ageArguments . " )";
 						$finalQueryAdjusted = true;
 					}
-					$helper = finalQueryHelper([$genderArguments,$sizeArguments,$breedArguments],$finalQuery,$finalQueryAdjusted,$dogCountBaseQuery,$userCountry,$countryAvailable);
+					$helper = finalQueryHelper([$genderArguments,$sizeArguments,$breedArguments],$finalQuery,$finalQueryAdjusted,$adoptionCountBaseQuery,$userCountry,$countryAvailable);
 					$finalQuery = $helper[0];
 					
 					$finalQuery .= $orderQuery . $limitClause;
-					$dogCount = $wpdb->get_results($helper[1])[0]->NumberOfDogs;
-					$dogs = $wpdb->get_results($finalQuery);
+					$adoptionCount = $wpdb->get_results($helper[1])[0]->NumberOfadoptions;
+					$adoptions = $wpdb->get_results($finalQuery);
 				}
 				else{
 					$defaultQuery = 
-					"SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM dogs a 
+					"SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
 					INNER JOIN breeds b ON a.breed_id = b.breed_id 
 					INNER JOIN age c ON a.age_id = c.age_id 
 					INNER JOIN genders d ON a.gender_id = d.gender_id
@@ -581,13 +581,13 @@ mesmerize_get_header(); ?>
 						$defaultQuery .= " WHERE (f.country_name = '" . $userCountry . "') ";
 					}
 					$defaultQuery .= $orderQuery . $limitClause;
-					$dogs = $wpdb->get_results($defaultQuery);
+					$adoptions = $wpdb->get_results($defaultQuery);
 					if($countryAvailable){
-						$qry = "SELECT COUNT(*) as NumberOfDogs FROM dogs a INNER JOIN countries b ON a.country_id = b.country_id WHERE (b.country_name = '" . $userCountry . "') ";
-						$dogCount = $wpdb->get_results($qry)[0]->NumberOfDogs;
+						$qry = "SELECT COUNT(*) as NumberOfadoptions FROM adoptions a INNER JOIN countries b ON a.country_id = b.country_id WHERE (b.country_name = '" . $userCountry . "') ";
+						$adoptionCount = $wpdb->get_results($qry)[0]->NumberOfadoptions;
 					}
 					else{
-						$dogCount = $wpdb->get_results("SELECT COUNT(*) as NumberOfDogs FROM dogs")[0]->NumberOfDogs;
+						$adoptionCount = $wpdb->get_results("SELECT COUNT(*) as NumberOfadoptions FROM adoptions")[0]->NumberOfadoptions;
 					}
 				}?>
 				<div class="row">
@@ -608,23 +608,23 @@ mesmerize_get_header(); ?>
 					</div>
 				</div>
 				<?php
-				for($i=0; $i<count($dogs);$i++){				
+				for($i=0; $i<count($adoptions);$i++){				
 					if($i === 0 || $i == 3 || $i === 6){
 						?>
 						<div class="row spaced-cols content-center-sm" data-type="row">
 							<?php
 						}
-						$url = site_url('/adoptions/dogs/?id=') . $dogs[$i]->dog_id;
+						$url = site_url('/adoptions/adoptions/?id=') . $adoptions[$i]->adoption_id;
 						?>
 						<div class="col-sm-4">
-							<form method="GET" action="dogs/">
-								<input type="hidden" name="id" value="<?php echo $dogs[$i]->dog_id; ?>">
+							<form method="GET" action="animal/">
+								<input type="hidden" name="id" value="<?php echo $adoptions[$i]->adoption_id; ?>">
 								<a onclick="this.parentNode.submit()" class="cardLink">
 									<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
 										<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
-										<h6 class=""><?php echo $dogs[$i]->name; ?></h6> 
-										<p class="small italic"><?php echo $dogs[$i]->country_name; ?></p>
-										<p class="text-center"><?php echo $dog->description ?></p> 
+										<h6 class=""><?php echo $adoptions[$i]->name; ?></h6> 
+										<p class="small italic"><?php echo $adoptions[$i]->country_name; ?></p>
+										<p class="text-center"><?php echo $adoption->description ?></p> 
 									</div> 
 								</a>
 							</form>
@@ -635,13 +635,13 @@ mesmerize_get_header(); ?>
 						</div>
 						<?php
 					}
-					elseif($i === count($dogs)-1){
+					elseif($i === count($adoptions)-1){
 						?>
 					</div>
 					<?php
 				}
 			}
-			$numberOfPages = ceil($dogCount/$pageSize);
+			$numberOfPages = ceil($adoptionCount/$pageSize);
 			?>
 			<div class="row paginationSection">
 				<div class="col-sm-12">
@@ -687,21 +687,21 @@ if($_SESSION["recentlyViewed"]){
 			<div class="carousel-inner">
 				<div class="track">
 					<?php 
-					foreach(array_reverse($_SESSION["recentlyViewed"]) as $dogID){
-						$query = "SELECT a.dog_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM dogs a 
+					foreach(array_reverse($_SESSION["recentlyViewed"]) as $adoptionID){
+						$query = "SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
 						INNER JOIN breeds b ON a.breed_id = b.breed_id 
 						INNER JOIN age c ON a.age_id = c.age_id 
 						INNER JOIN genders d ON a.gender_id = d.gender_id
-						INNER JOIN countries f ON a.country_id = f.country_id WHERE a.dog_id = " . $dogID;
-						$dog = $wpdb->get_results($query)[0];
+						INNER JOIN countries f ON a.country_id = f.country_id WHERE a.adoption_id = " . $adoptionID;
+						$adoption = $wpdb->get_results($query)[0];
 						?>
 						<div class="card-container">
-						<form method="GET" action="dogs/">
-						<input type="hidden" name="id" value="<?php echo $dog->dog_id; ?>">
+						<form method="GET" action="animal/">
+						<input type="hidden" name="id" value="<?php echo $adoption->adoption_id; ?>">
 							<div class="card boxShadowAnimate" onclick="this.parentNode.submit();" style="cursor: pointer;">
 								<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-								<h6 style="text-align: center;"><?php echo $dog->name; ?></h6>
-								<p style="text-align: center; class="small italic"><?php echo $dog->country_name; ?></p>
+								<h6 style="text-align: center;"><?php echo $adoption->name; ?></h6>
+								<p style="text-align: center; class="small italic"><?php echo $adoption->country_name; ?></p>
 								</a>
 							</div>
 					</form>

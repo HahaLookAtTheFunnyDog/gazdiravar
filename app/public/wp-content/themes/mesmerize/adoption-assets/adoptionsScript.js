@@ -97,8 +97,8 @@
 			}
 		}
 	}
-	const dogFilters = document.querySelectorAll('.dogSelection');
-	const dogSubmit = document.getElementById('breedFilterSubmit');
+	const adoptionFilters = document.querySelectorAll('.adoptionSelection');
+	const adoptionSubmit = document.getElementById('breedFilterSubmit');
 	const ageFilters = document.querySelectorAll('.ageSelection');
 	const ageSubmit = document.getElementById('ageFilterSubmit');
 	const genderFilters = document.querySelectorAll('.genderSelection');
@@ -106,7 +106,7 @@
 	const sizeFilters = document.querySelectorAll('.sizeSelection');
 	const sizeSubmit = document.getElementById('sizeFilterSubmit');
 	var k;
-	filterFunctionalityHelper(dogFilters,dogSubmit);
+	filterFunctionalityHelper(adoptionFilters,adoptionSubmit);
 	filterFunctionalityHelper(ageFilters,ageSubmit);
 	filterFunctionalityHelper(genderFilters,genderSubmit);
 	filterFunctionalityHelper(sizeFilters,sizeSubmit);

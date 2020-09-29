@@ -21,10 +21,9 @@
 				$_SESSION["recentlyViewed"] = array($_GET["id"][0]);
 			}
 			global $wpdb;
-			$query = "SELECT * FROM dogs WHERE dog_id = " . $_GET["id"];
+			$query = "SELECT * FROM adoptionss WHERE adoption_id = " . $_GET["id"];
 			$dog = $wpdb->get_results($query);
 		?>
 	</div>
 </div>
 <?php get_footer(); ?>
-
