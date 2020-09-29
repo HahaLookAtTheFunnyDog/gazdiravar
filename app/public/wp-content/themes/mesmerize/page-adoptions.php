@@ -83,14 +83,14 @@ else{
 }
 global $orderQuery;
 if(!($_GET["order"])){
-	$orderQuery = "ORDER BY register_date ASC";
+	$orderQuery = "ORDER BY register_date DESC";
 }
 else{
 	if($_GET["order"] == "Oldest"){
-		$orderQuery = "ORDER BY register_date DESC";
+		$orderQuery = "ORDER BY register_date ASC";
 	}
 	else{
-		$orderQuery = "ORDER BY register_date ASC";
+		$orderQuery = "ORDER BY register_date DESC";
 	}
 }
 mesmerize_get_header(); ?>
@@ -663,6 +663,11 @@ mesmerize_get_header(); ?>
 							}
 							appendFilters();
 							appendCountry();
+							if($_GET["order"]){
+								?>
+								<input type="hidden" name="order" value="<?php echo $_GET['order']; ?>">
+								<?php
+							}
 							?>
 							<a id="paginationLast" class="paginationButton" onclick="paginationSubmit(<?php echo $numberOfPages; ?>)">&raquo;</a>
 						</form>
