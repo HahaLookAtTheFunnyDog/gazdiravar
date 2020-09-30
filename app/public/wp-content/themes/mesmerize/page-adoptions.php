@@ -32,6 +32,13 @@ function appendSpecies(){
 		<?php
 	}
 }
+function appendOrder(){
+	if($_GET["order"]){
+		?>
+			<input type="hidden" name="order" value="<?php echo $_GET["order"]; ?>">
+		<?php
+	}
+}
 function argumentCreator($arr,$columnName){
 	$arguments = "";
 	$edited = false;
@@ -91,12 +98,14 @@ else{
 	$userCountry = "All Countries";
 }
 global $orderQuery;
+$order = "Newest";
 if(!($_GET["order"])){
 	$orderQuery = "ORDER BY register_date DESC";
 }
 else{
 	if($_GET["order"] == "Oldest"){
 		$orderQuery = "ORDER BY register_date ASC";
+		$order = "Oldest";
 	}
 	else{
 		$orderQuery = "ORDER BY register_date DESC";
@@ -191,7 +200,7 @@ mesmerize_get_header(); ?>
 				<li>
 						<h4>Species</h4> 
 						<form method="GET">
-							<select id="species" name="species" class="form-control" style="margin: 0;" onchange="selectSelector('speciesFilterSubmit')">
+							<select id="species" name="species" class="form-control" style="margin: 0;" onchange="this.parentNode.submit()">
 								<?php
 									$species = $wpdb->get_results("
 									SELECT DISTINCT b.species_name FROM adoptions a
@@ -216,6 +225,7 @@ mesmerize_get_header(); ?>
 							<?php 
 							appendFilters(false);
 							appendCountry();
+							appendOrder();
 							?>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="speciesFilterSubmit">APPLY</button>
 						</form>
@@ -271,6 +281,7 @@ mesmerize_get_header(); ?>
 							appendFilters();
 							appendCountry();
 							appendSpecies();
+							appendOrder();
 							?>
 							<button type="submit" class="filterSubmit hideFilterSubmit" name="breedSubmit" id="breedFilterSubmit">APPLY</button>
 						</form>
@@ -336,6 +347,7 @@ mesmerize_get_header(); ?>
 								appendFilters();
 								appendCountry();
 								appendSpecies();
+								appendOrder();
 								?>
 							</ul>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="ageFilterSubmit">APPLY</button>
@@ -403,6 +415,7 @@ mesmerize_get_header(); ?>
 							appendFilters();
 							appendCountry();
 							appendSpecies();
+							appendOrder();
 							?>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="genderFilterSubmit">APPLY</button>
 						</form>
@@ -469,6 +482,7 @@ mesmerize_get_header(); ?>
 							appendFilters();
 							appendCountry();
 							appendSpecies();
+							appendOrder();
 							?>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="sizeFilterSubmit">APPLY</button>
 						</form>
@@ -477,7 +491,7 @@ mesmerize_get_header(); ?>
 					<li>
 						<h4>Country</h4> 
 						<form method="GET">
-							<select id="country" name="country" class="form-control" style="margin: 0;" onchange="selectSelector('countryFilterSubmit')">
+							<select id="country" name="country" class="form-control" style="margin: 0;" onchange="this.parentNode.submit()">
 								<option value="All">All Countries</option>
 								<?php
 								$countries = $wpdb->get_results("
@@ -501,6 +515,7 @@ mesmerize_get_header(); ?>
 							<?php 
 							appendFilters();
 							appendSpecies();
+							appendOrder();
 							?>
 							<button type="submit" class="filterSubmit hideFilterSubmit" id="countryFilterSubmit">APPLY</button>
 						</form>
@@ -600,7 +615,7 @@ mesmerize_get_header(); ?>
 						}
 						if(is_array($_GET["breed"]) || is_array($_GET["age"]) || is_array($_GET["gender"]) || is_array($_GET["size"])){
 							?>
-							<li class="clearAll" onclick="clearAll('<?php echo $userCountry; ?>', '<?php echo $speciesSelected; ?>')">
+							<li class="clearAll" onclick="clearAll('<?php echo $userCountry; ?>', '<?php echo $speciesSelected; ?>','<?php echo $order; ?>')">
 								Clear All
 							</li>		
 							<?php
@@ -769,11 +784,7 @@ mesmerize_get_header(); ?>
 							}
 							appendFilters();
 							appendCountry();
-							if($_GET["order"]){
-								?>
-								<input type="hidden" name="order" value="<?php echo $_GET['order']; ?>">
-								<?php
-							}
+							appendOrder();
 							?>
 							<a id="paginationLast" class="paginationButton" onclick="paginationSubmit(<?php echo $numberOfPages; ?>)">&raquo;</a>
 						</form>

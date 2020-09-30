@@ -62,16 +62,22 @@
 		document.body.appendChild(form);
 		form.submit();
 	}
-	function clearAll(userCountry, species){
+	function clearAll(userCountry, species,order){
 		var form = document.createElement("form");
 		var inpCountry = document.createElement("input");
 		var inpSpecies = document.createElement("input");
+		var inpOrder = document.createElement("input");
+
 		inpCountry.name = "country";
 		inpCountry.value = userCountry;
 		form.appendChild(inpCountry);
 		inpSpecies.name = "species";
 		inpSpecies.value = species;
 		form.appendChild(inpSpecies);
+		inpOrder.name = "order";
+		inpOrder.value = order;
+		form.appendChild(inpOrder);
+
 		document.body.appendChild(form);
 		form.submit();
 	}
@@ -114,11 +120,6 @@
 	filterFunctionalityHelper(ageFilters,ageSubmit);
 	filterFunctionalityHelper(genderFilters,genderSubmit);
 	filterFunctionalityHelper(sizeFilters,sizeSubmit);
-
-	function selectSelector(submitId){
-		const countryFilter = document.getElementById(submitId);
-		countryFilter.classList.remove('hideFilterSubmit');
-	}
 	//------------------------------------------------------------------------
 	//RECENTLY VIEWED
 	//------------------------------------------------------------------------
