@@ -1,7 +1,7 @@
 [PHP]
 engine = On
 {{#if os.windows}}
-extension_dir="{{extensionsDir}}"
+extension_dir="{{extension_dir}}"
 {{/if}}
 
 ; Maxes
@@ -195,18 +195,11 @@ ldap.max_links = -1
 [mcrypt]
 [dba]
 
-[imagick]
-{{#if os.windows}}
-extension = php_imagick.dll
-{{else}}
-extension = {{extensionsDir}}/imagick.so
-{{/if}}
-
 [opcache]
 {{#if os.windows}}
 zend_extension = php_opcache.dll
 {{else}}
-zend_extension = {{extensionsDir}}/opcache.so
+zend_extension = {{extensions.opcache}}
 {{/if}}
 
 opcache.enable=1
@@ -216,7 +209,7 @@ opcache.enable_cli=1
 {{#if os.windows}}
 zend_extension = php_xdebug.dll
 {{else}}
-zend_extension = {{extensionsDir}}/xdebug.so
+zend_extension = {{extensions.xdebug}}
 {{/if}}
 
 xdebug.remote_enable=1
