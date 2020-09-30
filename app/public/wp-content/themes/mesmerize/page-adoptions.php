@@ -750,9 +750,9 @@ mesmerize_get_header(); ?>
 								<a onclick="this.parentNode.submit()" class="cardLink">
 									<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
 										<?php
-											$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg');
+											$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.png');
 											if($adoptions[$i]->profile_picture_filename){
-												$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/' . $adoptions[$i]->profile_picture_filename . '.jpg');
+												$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/' . $adoptions[$i]->profile_picture_filename . '.png');
 											}
 										?>
 										<img src="<?php echo  $imgSrc; ?>" class="round icon iconBig">
@@ -853,9 +853,9 @@ if($_SESSION["recentlyViewed"]){
 								<input type="hidden" name="id" value="<?php echo $adoption->adoption_id; ?>">
 								<div class="card boxShadowAnimate" onclick="this.parentNode.submit();" style="cursor: pointer;">
 									<?php
-										$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg');
+										$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.png');
 										if($adoption->profile_picture_filename){
-											$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/' . $adoption->profile_picture_filename . '.jpg');
+											$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/' . $adoption->profile_picture_filename . '.png');
 										}
 									?>
 									<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo $imgSrc; ?>" class="round icon iconSmall">
