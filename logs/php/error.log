@@ -2308,3 +2308,120 @@ Stack trace:
 [30-Sep-2020 00:39:13 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 2 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
 [30-Sep-2020 00:44:14 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 12 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
 [30-Sep-2020 00:44:14 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 12 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[30-Sep-2020 03:01:04 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 746
+[30-Sep-2020 03:01:04 UTC] PHP Stack trace:
+[30-Sep-2020 03:01:04 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:01:04 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:01:04 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:01:04 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:01:04 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:746
+[30-Sep-2020 03:01:04 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 746
+[30-Sep-2020 03:01:04 UTC] PHP Stack trace:
+[30-Sep-2020 03:01:04 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:01:04 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:01:04 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:01:04 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:01:04 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:746
+[30-Sep-2020 03:01:04 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 746
+[30-Sep-2020 03:01:04 UTC] PHP Stack trace:
+[30-Sep-2020 03:01:04 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:01:04 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:01:04 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:01:04 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:01:04 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:746
+[30-Sep-2020 03:01:04 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 746
+[30-Sep-2020 03:01:04 UTC] PHP Stack trace:
+[30-Sep-2020 03:01:04 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:01:04 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:01:04 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:01:04 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:01:04 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:746
+[30-Sep-2020 03:01:04 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 746
+[30-Sep-2020 03:01:04 UTC] PHP Stack trace:
+[30-Sep-2020 03:01:04 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:01:04 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:01:04 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:01:04 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:01:04 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:746
+[30-Sep-2020 03:01:04 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 746
+[30-Sep-2020 03:01:04 UTC] PHP Stack trace:
+[30-Sep-2020 03:01:04 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:01:04 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:01:04 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:01:04 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:01:04 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:746
+[30-Sep-2020 03:08:29 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 156
+[30-Sep-2020 03:08:29 UTC] PHP Stack trace:
+[30-Sep-2020 03:08:29 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:08:29 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:08:29 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:08:29 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:08:29 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:156
+[30-Sep-2020 03:08:29 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 156
+[30-Sep-2020 03:08:29 UTC] PHP Stack trace:
+[30-Sep-2020 03:08:29 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:08:29 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:08:29 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:08:29 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:08:29 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:156
+[30-Sep-2020 03:08:29 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 156
+[30-Sep-2020 03:08:29 UTC] PHP Stack trace:
+[30-Sep-2020 03:08:29 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:08:29 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:08:29 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:08:29 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:08:29 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:156
+[30-Sep-2020 03:08:29 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 156
+[30-Sep-2020 03:08:29 UTC] PHP Stack trace:
+[30-Sep-2020 03:08:29 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:08:29 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:08:29 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:08:29 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:08:29 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:156
+[30-Sep-2020 03:08:30 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 156
+[30-Sep-2020 03:08:30 UTC] PHP Stack trace:
+[30-Sep-2020 03:08:30 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:08:30 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:08:30 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:08:30 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:08:30 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:156
+[30-Sep-2020 03:08:30 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 156
+[30-Sep-2020 03:08:30 UTC] PHP Stack trace:
+[30-Sep-2020 03:08:30 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:08:30 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:08:30 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:08:30 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:08:30 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:156
+[30-Sep-2020 03:08:30 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 156
+[30-Sep-2020 03:08:30 UTC] PHP Stack trace:
+[30-Sep-2020 03:08:30 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:08:30 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:08:30 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:08:30 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:08:30 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:156
+[30-Sep-2020 03:08:30 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 156
+[30-Sep-2020 03:08:30 UTC] PHP Stack trace:
+[30-Sep-2020 03:08:30 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:08:30 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:08:30 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:08:30 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:08:30 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:156
+[30-Sep-2020 03:09:37 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 156
+[30-Sep-2020 03:09:37 UTC] PHP Stack trace:
+[30-Sep-2020 03:09:37 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:09:37 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:09:37 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:09:37 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:09:37 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:156
+[30-Sep-2020 03:09:37 UTC] PHP Warning:  strpos(): Offset not contained in string in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 156
+[30-Sep-2020 03:09:37 UTC] PHP Stack trace:
+[30-Sep-2020 03:09:37 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[30-Sep-2020 03:09:37 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[30-Sep-2020 03:09:37 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[30-Sep-2020 03:09:37 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[30-Sep-2020 03:09:37 UTC] PHP   5. strpos() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php:156
+[30-Sep-2020 03:16:26 UTC] PHP Parse error:  syntax error, unexpected '.', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptions.php on line 752
+[30-Sep-2020 03:30:14 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 6 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[30-Sep-2020 03:30:15 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 6 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[30-Sep-2020 03:32:23 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 6 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[30-Sep-2020 03:32:24 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 6 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')

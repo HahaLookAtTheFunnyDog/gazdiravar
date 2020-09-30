@@ -195,11 +195,11 @@
 
 .featuredContent {
   position: absolute;
-  bottom: 20px;
-  width: 600px;
-  background-color: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
   color: #fff;
-  padding: 35px;
+  padding: 10px;
 }
 
 .buttonContainer {
@@ -286,6 +286,9 @@
   width: 100%;
   border: 0px;
   margin-bottom: 5px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 .hideFilterSubmit {
@@ -293,8 +296,13 @@
 }
 
 .iconBig {
-  width: 13rem !important;
-  height: 13rem !important;
+  width: 20rem !important;
+  height: 12rem !important;
+}
+
+.iconSmall {
+  width: 10rem !important;
+  height: 10rem !important;
 }
 
 .boxShadowAnimate:hover {

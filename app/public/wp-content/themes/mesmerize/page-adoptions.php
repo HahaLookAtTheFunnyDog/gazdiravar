@@ -20,22 +20,22 @@ function appendFilters($appendBreed = true){
 }
 function appendCountry(){
 	if($_GET["country"]){
-	?>
+		?>
 		<input type="hidden" name="country" value="<?php echo $_GET["country"]; ?>">
-	<?php
+		<?php
 	}
 }
 function appendSpecies(){
 	if($_GET["species"]){
 		?>
-			<input type="hidden" name="species" value="<?php echo $_GET['species']; ?>">
+		<input type="hidden" name="species" value="<?php echo $_GET['species']; ?>">
 		<?php
 	}
 }
 function appendOrder(){
 	if($_GET["order"]){
 		?>
-			<input type="hidden" name="order" value="<?php echo $_GET["order"]; ?>">
+		<input type="hidden" name="order" value="<?php echo $_GET["order"]; ?>">
 		<?php
 	}
 }
@@ -150,6 +150,16 @@ mesmerize_get_header(); ?>
 									Hi I'm <?php echo $adoption->name ?>
 								</h2>
 								<p style="color: white;">
+									<?php
+										$shortDesc = $adoption->description;
+										if(substr_count($shortDesc, ' ') > 15){
+											$pos=strpos($adoption->description, ' ', 80);
+											$shortDesc = substr($adoption->description,0,$pos );
+											if(!($shortDesc == $adoption->description)){
+												$shortDesc .= " ...";
+											}
+										}
+									?>
 									<?php echo $adoption->description ?>
 								</p>
 							</div>
@@ -197,12 +207,12 @@ mesmerize_get_header(); ?>
 					Filters
 				</h2>
 				<ul>
-				<li>
+					<li>
 						<h4>Species</h4> 
 						<form method="GET">
 							<select id="species" name="species" class="form-control" style="margin: 0;" onchange="this.parentNode.submit()">
 								<?php
-									$species = $wpdb->get_results("
+								$species = $wpdb->get_results("
 									SELECT DISTINCT b.species_name FROM adoptions a
 									INNER JOIN 
 									(SELECT species_name, breed_id FROM breeds a 
@@ -648,7 +658,7 @@ mesmerize_get_header(); ?>
 
 				if(is_array($_GET["breed"]) || is_array($_GET["age"]) || is_array($_GET["gender"]) || is_array($_GET["size"])){
 					$baseQuery = "
-					SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
+					SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,e.size,f.country_name
 					FROM adoptions a 
 					INNER JOIN breeds b ON a.breed_id = b.breed_id 
 					INNER JOIN age c ON a.age_id = c.age_id 
@@ -680,7 +690,7 @@ mesmerize_get_header(); ?>
 				}
 				else{
 					$defaultQuery = 
-					"SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
+					"SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
 					INNER JOIN breeds b ON a.breed_id = b.breed_id 
 					INNER JOIN age c ON a.age_id = c.age_id 
 					INNER JOIN genders d ON a.gender_id = d.gender_id
@@ -715,9 +725,9 @@ mesmerize_get_header(); ?>
 								<li id="sortList"><a style="text-decoration: none; color: white;">Sorted By <?php if($_GET["order"]){echo $_GET["order"];}else{echo "Newest";} ?></a>
 									<ul id="sub_navlist" style="float: right; margin-right: 0; margin-left: 80px; display: none; list-style: none; margin-top: 4px; color: #5B606B;  box-shadow: 5px 10px 18px #888888; ">
 										<form id="orderForm" method="GET" style="margin: 0;">
-										<li onclick="sortSubmit(this,'<?php echo $_GET['order']; ?>')">Newest</li><br>
-										<li onclick="sortSubmit(this,'<?php echo $_GET['order']; ?>')">Oldest</li>
-										<?php appendFilters(); appendCountry(); appendSpecies(); ?>
+											<li onclick="sortSubmit(this,'<?php echo $_GET['order']; ?>')">Newest</li><br>
+											<li onclick="sortSubmit(this,'<?php echo $_GET['order']; ?>')">Oldest</li>
+											<?php appendFilters(); appendCountry(); appendSpecies(); ?>
 										</form>
 									</ul>
 								</li>
@@ -739,10 +749,26 @@ mesmerize_get_header(); ?>
 								<input type="hidden" name="id" value="<?php echo $adoptions[$i]->adoption_id; ?>">
 								<a onclick="this.parentNode.submit()" class="cardLink">
 									<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
-										<img src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon iconBig">
+										<?php
+											$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg');
+											if($adoptions[$i]->profile_picture_filename){
+												$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/' . $adoptions[$i]->profile_picture_filename . '.jpg');
+											}
+										?>
+										<img src="<?php echo  $imgSrc; ?>" class="round icon iconBig">
 										<h6 class=""><?php echo $adoptions[$i]->name; ?></h6> 
 										<p class="small italic"><?php echo $adoptions[$i]->country_name; ?></p>
-										<p class="text-center"><?php echo $adoption->description ?></p> 
+										<?php
+											$shortDesc = $adoptions[$i]->description;
+											if(substr_count($shortDesc, ' ') > 10){
+												$pos=strpos($adoptions[$i]->description, ' ', 40);
+												$shortDesc = substr($adoptions[$i]->description,0,$pos );
+												if(!($shortDesc == $adoptions[$i]->description)){
+													$shortDesc .= " ...";
+												}
+											}
+										?>
+										<p class="text-center"><?php echo $shortDesc; ?></p> 
 									</div> 
 								</a>
 							</form>
@@ -766,35 +792,35 @@ mesmerize_get_header(); ?>
 					<div class="pagination">
 						<?php
 						if($numberOfPages > 0){
-						?>
-						<form method="GET" id="paginationForm">
-							<a id="paginationFirst" class="paginationButton" onclick="paginationSubmit(1)">&laquo;</a>
-							<?php
-							for($i =1; $i <= $numberOfPages; $i++){
-								if($i == $page){
-									?>
-									<a onclick="paginationSubmit(<?php echo $i; ?>)" id="<?php echo 'pag' . $i; ?>" class="active paginationButton"><?php echo $i ?></a>
-									<?php
-								}
-								else{
-									?>
-									<a onclick="paginationSubmit(<?php echo $i; ?>)" id="<?php echo 'pag' . $i; ?>" class="paginationButton"><?php echo $i ?></a>
-									<?php
-								}
-							}
-							appendFilters();
-							appendCountry();
-							appendOrder();
 							?>
-							<a id="paginationLast" class="paginationButton" onclick="paginationSubmit(<?php echo $numberOfPages; ?>)">&raquo;</a>
-						</form>
-						<?php
+							<form method="GET" id="paginationForm">
+								<a id="paginationFirst" class="paginationButton" onclick="paginationSubmit(1)">&laquo;</a>
+								<?php
+								for($i =1; $i <= $numberOfPages; $i++){
+									if($i == $page){
+										?>
+										<a onclick="paginationSubmit(<?php echo $i; ?>)" id="<?php echo 'pag' . $i; ?>" class="active paginationButton"><?php echo $i ?></a>
+										<?php
+									}
+									else{
+										?>
+										<a onclick="paginationSubmit(<?php echo $i; ?>)" id="<?php echo 'pag' . $i; ?>" class="paginationButton"><?php echo $i ?></a>
+										<?php
+									}
+								}
+								appendFilters();
+								appendCountry();
+								appendOrder();
+								?>
+								<a id="paginationLast" class="paginationButton" onclick="paginationSubmit(<?php echo $numberOfPages; ?>)">&raquo;</a>
+							</form>
+							<?php
 						} 
 						else{
 							?>
-								<h1>
-									Uh Oh, There doesn't seem to be any adoptions available with the filters you've chosen.
-								</h1>
+							<h1>
+								Uh Oh, There doesn't seem to be any adoptions available with the filters you've chosen.
+							</h1>
 							<?php
 						}
 						?>
@@ -815,7 +841,7 @@ if($_SESSION["recentlyViewed"]){
 				<div class="track">
 					<?php 
 					foreach(array_reverse($_SESSION["recentlyViewed"]) as $adoptionID){
-						$query = "SELECT a.adoption_id, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
+						$query = "SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
 						INNER JOIN breeds b ON a.breed_id = b.breed_id 
 						INNER JOIN age c ON a.age_id = c.age_id 
 						INNER JOIN genders d ON a.gender_id = d.gender_id
@@ -823,36 +849,42 @@ if($_SESSION["recentlyViewed"]){
 						$adoption = $wpdb->get_results($query)[0];
 						?>
 						<div class="card-container">
-						<form method="GET" action="animal/">
-						<input type="hidden" name="id" value="<?php echo $adoption->adoption_id; ?>">
-							<div class="card boxShadowAnimate" onclick="this.parentNode.submit();" style="cursor: pointer;">
-								<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg'); ?>" class="round icon">
-								<h6 style="text-align: center;"><?php echo $adoption->name; ?></h6>
-								<p style="text-align: center; class="small italic"><?php echo $adoption->country_name; ?></p>
+							<form method="GET" action="animal/">
+								<input type="hidden" name="id" value="<?php echo $adoption->adoption_id; ?>">
+								<div class="card boxShadowAnimate" onclick="this.parentNode.submit();" style="cursor: pointer;">
+									<?php
+										$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.jpg');
+										if($adoption->profile_picture_filename){
+											$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/' . $adoption->profile_picture_filename . '.jpg');
+										}
+									?>
+									<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo $imgSrc; ?>" class="round icon iconSmall">
+									<h6 style="text-align: center;"><?php echo $adoption->name; ?></h6>
+									<p style="text-align: center; class="small italic"><?php echo $adoption->country_name; ?></p>
 								</a>
 							</div>
-					</form>
-						</div>
-						<?php
-					}
-					?>
-				</div>
-			</div>
-			<div class="nav">
-				<button class="prev">
-					<i class="material-icons">
-						<
-					</i>
-				</button>
-				<button class="next">
-					<i class="material-icons">
-						>
-					</i>
-				</button>
+						</form>
+					</div>
+					<?php
+				}
+				?>
 			</div>
 		</div>
-	</section>
-	<?php
+		<div class="nav">
+			<button class="prev">
+				<i class="material-icons">
+					<
+				</i>
+			</button>
+			<button class="next">
+				<i class="material-icons">
+					>
+				</i>
+			</button>
+		</div>
+	</div>
+</section>
+<?php
 }
 ?>
 </div>

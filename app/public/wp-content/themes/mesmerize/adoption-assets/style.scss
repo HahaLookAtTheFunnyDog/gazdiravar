@@ -140,11 +140,11 @@
 }
 .featuredContent{
     position: absolute; 
-    bottom: 20px;
-    width: 600px;
-    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
     color: #fff;
-    padding: 35px;
+    padding: 10px;
 }
 .buttonContainer{
     text-align:center;
@@ -179,7 +179,6 @@
 .filterDivider{
     margin: 0;
 }
-
 .filterChoices{
     list-style: none;
     margin: 0;
@@ -217,13 +216,20 @@
     width: 100%;
     border: 0px;
     margin-bottom: 5px;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 .hideFilterSubmit{
     display: none;
 }
 .iconBig{
-    width: 13rem !important;
-    height: 13rem !important;
+    width: 20rem !important;
+    height: 12rem !important;
+}
+.iconSmall{
+    width: 10rem !important;
+    height: 10rem !important;
 }
 .boxShadowAnimate:hover{
     box-shadow: 0 0 11px rgba(33,33,33,.2); 
@@ -241,36 +247,32 @@
 #sortList {
     position: relative;
     cursor: pointer;
-  }
-  
-  #sub_navlist {
+}
+
+#sub_navlist {
     position: absolute;
     text-align: left;
     margin: 10 0;
     padding: 0;
     z-index: 9000;
     background-color: #fff;
-  }
-  
-  #sub_navlist li {
+}
+#sub_navlist li {
     padding: 0;
     margin: 0;
-  }
-  #sub_navlist li:hover{
-      color:  black;
-  }
-  
-  
-  #sortList ul {
+}
+#sub_navlist li:hover{
+    color:  black;
+}
+#sortList ul {
     margin-right: 30px;
-  }
-  
-  #sortList li {
+}
+#sortList li {
     display: inline-block;
     margin: 0 10px;
-  }
-  .cardLink{
+}
+.cardLink{
     text-decoration: none; 
     color: #3C424F;
-     cursor: pointer;
-  }
+    cursor: pointer;
+}
