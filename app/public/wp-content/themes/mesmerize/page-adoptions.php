@@ -237,7 +237,6 @@ mesmerize_get_header(); ?>
 							appendCountry();
 							appendOrder();
 							?>
-							<button type="submit" class="filterSubmit hideFilterSubmit" id="speciesFilterSubmit">APPLY</button>
 						</form>
 					</li>
 					<li>
@@ -527,7 +526,6 @@ mesmerize_get_header(); ?>
 							appendSpecies();
 							appendOrder();
 							?>
-							<button type="submit" class="filterSubmit hideFilterSubmit" id="countryFilterSubmit">APPLY</button>
 						</form>
 					</li>
 				</ul>
@@ -554,7 +552,7 @@ mesmerize_get_header(); ?>
 						if(is_array($_GET["breed"]) || is_object($_GET["breed"])){
 							foreach($_GET["breed"] as $breed){
 								?>
-								<li class="filtersli">
+								<li class="choices">
 									<?php echo $breed ?>
 									<span class="filterClose" onclick='resubmit(
 										<?php echo json_encode($_GET["breed"]); ?> ,
@@ -572,7 +570,7 @@ mesmerize_get_header(); ?>
 						if(is_array($_GET["age"]) || is_object($_GET["age"])){
 							foreach($_GET["age"] as $age){
 								?>
-								<li class="filtersli">
+								<li class="choices">
 									<?php echo $age ?>
 									<span class="filterClose"  onclick='resubmit(
 										<?php echo json_encode($_GET["breed"]); ?>,
@@ -590,7 +588,7 @@ mesmerize_get_header(); ?>
 						if(is_array($_GET["gender"]) || is_object($_GET["gender"])){
 							foreach($_GET["gender"] as $gender){
 								?>
-								<li class="filtersli">
+								<li class="choices">
 									<?php echo $gender ?>
 									<span class="filterClose"  onclick='resubmit(
 										<?php echo json_encode($_GET["breed"]); ?>,
@@ -608,7 +606,7 @@ mesmerize_get_header(); ?>
 						if(is_array($_GET["size"]) || is_object($_GET["size"])){
 							foreach($_GET["size"] as $size){
 								?>
-								<li class="filtersli">
+								<li class="choices">
 									<?php echo $size ?>
 									<span class="filterClose"  onclick='resubmit(
 										<?php echo json_encode($_GET["breed"]); ?>,
@@ -721,10 +719,10 @@ mesmerize_get_header(); ?>
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="dropdownsort">
-							<ul style="float: right; list-style: none; background-color: dodgerblue; padding: 4px;">
-								<li id="sortList"><a style="text-decoration: none; color: white;">Sorted By <?php if($_GET["order"]){echo $_GET["order"];}else{echo "Newest";} ?></a>
+							<ul class="sortByTopList">
+								<li id="sortList"><a>Sorted By <?php if($_GET["order"]){echo $_GET["order"];}else{echo "Newest";} ?></a>
 									<ul id="sub_navlist" style="float: right; margin-right: 0; margin-left: 80px; display: none; list-style: none; margin-top: 4px; color: #5B606B;  box-shadow: 5px 10px 18px #888888; ">
-										<form id="orderForm" method="GET" style="margin: 0;">
+										<form id="orderForm" method="GET">
 											<li onclick="sortSubmit(this,'<?php echo $_GET['order']; ?>')">Newest</li><br>
 											<li onclick="sortSubmit(this,'<?php echo $_GET['order']; ?>')">Oldest</li>
 											<?php appendFilters(); appendCountry(); appendSpecies(); ?>
@@ -748,19 +746,18 @@ mesmerize_get_header(); ?>
 							<form method="GET" action="animal/">
 								<input type="hidden" name="id" value="<?php echo $adoptions[$i]->adoption_id; ?>">
 								<a onclick="this.parentNode.submit()" class="cardLink">
-									<div class="card y-move bordered" style="padding: 0;" data-type="column" style="margin-bottom: 1.5rem;">
+									<div class="card y-move bordered adoptionsCard" data-type="column">
 										<?php
 											$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.png');
 											if($adoptions[$i]->profile_picture_filename){
 												$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/' . $adoptions[$i]->profile_picture_filename . '.png');
 											}
 										?>
-										<div style="background: url('<?php echo $imgSrc; ?>') no-repeat center; height: 300px; background-size: cover; position: relative;">
-											<div style="background-color: white; height: 25px; width: 100%; bottom: 0; position: absolute; border-radius: 40% 40% 0 0;">
-											</div>
+										<div class="catalogPicture" style="background: url('<?php echo $imgSrc; ?>') no-repeat center; background-size: cover; position: relative;">
+											<div class="catalogRoundedBottom"></div>
 										</div>
 										<div class="catalogContent">
-										<h6 class=""><?php echo $adoptions[$i]->name; ?></h6> 
+										<h6><?php echo $adoptions[$i]->name; ?></h6> 
 										<p class="small italic"><?php echo $adoptions[$i]->country_name; ?></p>
 										<?php
 											$shortDesc = $adoptions[$i]->description;
@@ -839,7 +836,7 @@ mesmerize_get_header(); ?>
 <?php
 if($_SESSION["recentlyViewed"]){
 	?>
-	<section class="recentlyViewed" style="width: 100%;">
+	<section class="recentlyViewed">
 		<h2 style="text-align: center;">Recently Viewed Pets</h2>
 		<div class="carousel-container">
 			<div class="carousel-inner">
@@ -863,7 +860,7 @@ if($_SESSION["recentlyViewed"]){
 											$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/' . $adoption->profile_picture_filename . '.png');
 										}
 									?>
-									<img style="margin: auto; width: 8rem; height: 8rem;" src="<?php echo $imgSrc; ?>" class="round icon iconSmall">
+									<img src="<?php echo $imgSrc; ?>" class="round icon iconSmall">
 									<h6 style="text-align: center;"><?php echo $adoption->name; ?></h6>
 									<p style="text-align: center; class="small italic"><?php echo $adoption->country_name; ?></p>
 								</a>
