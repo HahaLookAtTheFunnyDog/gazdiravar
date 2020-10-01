@@ -748,14 +748,18 @@ mesmerize_get_header(); ?>
 							<form method="GET" action="animal/">
 								<input type="hidden" name="id" value="<?php echo $adoptions[$i]->adoption_id; ?>">
 								<a onclick="this.parentNode.submit()" class="cardLink">
-									<div class="card y-move bordered" data-type="column" style="margin-bottom: 1.5rem;">
+									<div class="card y-move bordered" style="padding: 0;" data-type="column" style="margin-bottom: 1.5rem;">
 										<?php
 											$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.png');
 											if($adoptions[$i]->profile_picture_filename){
 												$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/' . $adoptions[$i]->profile_picture_filename . '.png');
 											}
 										?>
-										<img src="<?php echo  $imgSrc; ?>" class="round icon iconBig">
+										<div style="background: url('<?php echo $imgSrc; ?>') no-repeat center; height: 300px; background-size: cover; position: relative;">
+											<div style="background-color: white; height: 25px; width: 100%; bottom: 0; position: absolute; border-radius: 40% 40% 0 0;">
+											</div>
+										</div>
+										<div class="catalogContent">
 										<h6 class=""><?php echo $adoptions[$i]->name; ?></h6> 
 										<p class="small italic"><?php echo $adoptions[$i]->country_name; ?></p>
 										<?php
@@ -769,6 +773,7 @@ mesmerize_get_header(); ?>
 											}
 										?>
 										<p class="text-center"><?php echo $shortDesc; ?></p> 
+										</div>
 									</div> 
 								</a>
 							</form>

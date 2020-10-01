@@ -359,4 +359,12 @@
   color: #3C424F;
   cursor: pointer;
 }
+
+/*.catalogPicture{
+    border-radius: 5px -20px 5px;
+}*/
+.catalogContent {
+  padding: 10px;
+  padding-top: 0;
+}
 /*# sourceMappingURL=style.css.map */
