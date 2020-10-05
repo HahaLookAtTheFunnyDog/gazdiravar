@@ -34,6 +34,16 @@
 				<div class="col-md-3 col-md-offset-1">
 					<div class="row no-gutters">
 						<section class="adoptSection">
+							<div class="adoptionPicture">
+							</div>
+							<div class="adoptionInformation">
+								<h4 class="adoptTitle">Ready to Adopt?</h4>
+								<button class="adoptionButton">Adopt</button>
+								<button class="adoptionButton adoptionButtonSpacing">Sponsor</button>
+							</div>
+							<div class="adoptionMoreInformation">
+								<p style="text-align: center;">More Information</p>
+							</div>
 						</section>
 					</div>
 					<div class="row no-gutters rowTopSpacing">

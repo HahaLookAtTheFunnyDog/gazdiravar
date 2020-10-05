@@ -1,8 +1,31 @@
+$primaryColor: dodgerblue;
 $secondaryColor: #fff;
+
 @mixin sectionBox{
     width: 100%;
     box-shadow: 0 0 11px rgba(33,33,33,.2); 
     border-radius: 15px;
+}
+@mixin moreInformation{
+    border-radius: 0 0 15px 15px;
+        border-top: 2px solid black;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        padding: 3px;
+        cursor: pointer;
+        &:hover{
+            background-color: green;
+        }
+}
+@mixin picture($color){
+    top: 10px;
+    border: 7px solid $color;
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: black;
 }
 .aboutSection{
     @include sectionBox();
@@ -12,8 +35,38 @@ $secondaryColor: #fff;
 }
 .adoptSection{
     @include sectionBox();
-    background-color: dodgerblue;
-    height: 100px;
+    background-color:$primaryColor;
+    padding: 0;
+    position: relative;
+    .adoptionPicture{
+        @include picture($primaryColor);
+        right: -75px;
+    }
+    .adoptionInformation{
+        margin-bottom: 30px;
+        padding: 25px;
+        .adoptTitle{
+            text-align: center;
+        }
+        .adoptionButton{
+            border: 2px solid $secondaryColor;
+            color: $secondaryColor;
+            display: block;
+            padding: 4px;
+            width: 100%;
+            background-color: transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            &:hover{
+                background-color: $secondaryColor;
+                color: $primaryColor;
+                border: 2px solid $primaryColor;
+            }
+        }
+    }
+    .adoptionMoreInformation{
+        @include moreInformation();
+    }
 }
 .shelterSection{
     @include sectionBox();
@@ -22,14 +75,8 @@ $secondaryColor: #fff;
     padding: 0;
     position: relative;
     .shelterPicture{
-        top: 10px;
-        border: 7px solid red;
-        position: absolute;
+        @include picture(red);
         left: -75px;
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        background-color: black;
     }
     .shelterInfo{
         padding: 25px;
@@ -42,17 +89,12 @@ $secondaryColor: #fff;
         }
     }
     .shelterViewMore{
-        border-top: 2px solid black;
-        border-radius: 0 0 15px 15px;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        padding: 3px;
-        &:hover{
-            background-color: green;
-        }
+        @include moreInformation();
     }
 }
 .rowTopSpacing{
     margin-top: 2.5rem;
+}
+.adoptionButtonSpacing{
+    margin-top: .5rem;
 }

@@ -14,7 +14,59 @@
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   border-radius: 15px;
   background-color: dodgerblue;
+  padding: 0;
+  position: relative;
+}
+
+.adoptSection .adoptionPicture {
+  top: 10px;
+  border: 7px solid dodgerblue;
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
   height: 100px;
+  background-color: black;
+  right: -75px;
+}
+
+.adoptSection .adoptionInformation {
+  margin-bottom: 30px;
+  padding: 25px;
+}
+
+.adoptSection .adoptionInformation .adoptTitle {
+  text-align: center;
+}
+
+.adoptSection .adoptionInformation .adoptionButton {
+  border: 2px solid #fff;
+  color: #fff;
+  display: block;
+  padding: 4px;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.adoptSection .adoptionInformation .adoptionButton:hover {
+  background-color: #fff;
+  color: dodgerblue;
+  border: 2px solid dodgerblue;
+}
+
+.adoptSection .adoptionMoreInformation {
+  border-radius: 0 0 15px 15px;
+  border-top: 2px solid black;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.adoptSection .adoptionMoreInformation:hover {
+  background-color: green;
 }
 
 .shelterSection {
@@ -32,11 +84,11 @@
   top: 10px;
   border: 7px solid red;
   position: absolute;
-  left: -75px;
   border-radius: 50%;
   width: 100px;
   height: 100px;
   background-color: black;
+  left: -75px;
 }
 
 .shelterSection .shelterInfo {
@@ -53,12 +105,13 @@
 }
 
 .shelterSection .shelterViewMore {
-  border-top: 2px solid black;
   border-radius: 0 0 15px 15px;
+  border-top: 2px solid black;
   width: 100%;
   position: absolute;
   bottom: 0;
   padding: 3px;
+  cursor: pointer;
 }
 
 .shelterSection .shelterViewMore:hover {
@@ -67,5 +120,9 @@
 
 .rowTopSpacing {
   margin-top: 2.5rem;
+}
+
+.adoptionButtonSpacing {
+  margin-top: .5rem;
 }
 /*# sourceMappingURL=style.css.map */
