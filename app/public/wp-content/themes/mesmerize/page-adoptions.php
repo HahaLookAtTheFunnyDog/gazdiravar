@@ -122,7 +122,7 @@ mesmerize_get_header(); ?>
 <link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-assets/style.css'); ?>">
 <div id='page-content' class="page-content">
 	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
-		<h2 style="text-align: center">Featured Adoptions</h2>
+		<h2 style="text-align: center">Urgent</h2>
 		<hr>
 		<div class="container-fluid">
 			<div class="row no-gutters" style="margin: auto;">

@@ -25,13 +25,13 @@
 		?>
 		<link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-animal-assets/style.css'); ?>">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-9 col-md-offset-1">
+			<div class="row no-gutters">
+				<div class="col-md-8 ">
 					<section class="aboutSection">
 						<h1><?php echo ucwords($dog->name); ?></h1>
 					</section>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3 col-md-offset-1">
 					<div class="row no-gutters">
 						<section class="adoptSection">
 						</section>
@@ -39,10 +39,14 @@
 					<div class="row no-gutters rowTopSpacing">
 						<section class="shelterSection">
 							<div class="shelterPicture">
-
 							</div>
-							<div class="viewShelter">
-								<a><h4>View Shelter</h4></a>
+							<div class="shelterInfo">
+								<h4>Shelter Name</h4>
+								<h5>Country</h5>
+								<h5>email@emailprovider.com</h5>
+							</div>
+							<div class="shelterViewMore">
+								<p style="text-align: center;">More Information</p>
 							</div>
 						</section>
 					</div>

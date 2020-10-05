@@ -22,35 +22,50 @@
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   border-radius: 15px;
-  background-color: #fff;
+  background-color: red;
   height: 200px;
   padding: 0;
+  position: relative;
 }
 
 .shelterSection .shelterPicture {
-  border-radius: 15px 15px 0 0;
-  height: 80%;
-  background-color: red;
+  top: 10px;
+  border: 7px solid red;
+  position: absolute;
+  left: -75px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: black;
 }
 
-.shelterSection .viewShelter {
-  padding-bottom: 0;
-  margin-bottom: 0;
+.shelterSection .shelterInfo {
+  padding: 25px;
 }
 
-.shelterSection .viewShelter a {
-  text-decoration: none;
-}
-
-.shelterSection .viewShelter a h4 {
+.shelterSection .shelterInfo h4 {
   text-align: center;
 }
 
-.shelterSection .viewShelter:hover {
+.shelterSection .shelterInfo h5 {
+  font-size: .7rem;
+  text-align: center;
+}
+
+.shelterSection .shelterViewMore {
+  border-top: 2px solid black;
+  border-radius: 0 0 15px 15px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 3px;
+}
+
+.shelterSection .shelterViewMore:hover {
   background-color: green;
 }
 
 .rowTopSpacing {
-  margin-top: 20px;
+  margin-top: 2.5rem;
 }
 /*# sourceMappingURL=style.css.map */

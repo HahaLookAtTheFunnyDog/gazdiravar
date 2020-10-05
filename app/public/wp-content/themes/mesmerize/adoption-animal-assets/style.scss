@@ -17,28 +17,42 @@ $secondaryColor: #fff;
 }
 .shelterSection{
     @include sectionBox();
-    background-color: $secondaryColor;
+    background-color: red;
     height: 200px;
     padding: 0;
+    position: relative;
     .shelterPicture{
-        border-radius: 15px 15px 0 0;
-        height: 80%;
-        background-color: red;
+        top: 10px;
+        border: 7px solid red;
+        position: absolute;
+        left: -75px;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        background-color: black;
     }
-    .viewShelter{
-        a{
-            text-decoration: none;
-            h4{
-                text-align: center;
-            }
+    .shelterInfo{
+        padding: 25px;
+        h4{
+            text-align: center;
         }
+        h5{
+            font-size: .7rem;
+            text-align: center;
+        }
+    }
+    .shelterViewMore{
+        border-top: 2px solid black;
+        border-radius: 0 0 15px 15px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        padding: 3px;
         &:hover{
             background-color: green;
         }
-        padding-bottom: 0;
-        margin-bottom: 0;
     }
 }
 .rowTopSpacing{
-    margin-top: 20px;
+    margin-top: 2.5rem;
 }
