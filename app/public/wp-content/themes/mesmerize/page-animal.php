@@ -38,6 +38,12 @@
 					</div>
 					<div class="row no-gutters rowTopSpacing">
 						<section class="shelterSection">
+							<div class="shelterPicture">
+
+							</div>
+							<div class="viewShelter">
+								<a><h4>View Shelter</h4></a>
+							</div>
 						</section>
 					</div>
 				</div>

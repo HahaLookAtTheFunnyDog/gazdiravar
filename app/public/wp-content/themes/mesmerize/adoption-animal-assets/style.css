@@ -1,29 +1,53 @@
 .aboutSection {
-  background-color: #fff;
+  width: 100%;
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
-  width: 100%;
-  height: 100vh;
   border-radius: 15px;
+  background-color: #fff;
+  height: 100vh;
   padding: 20px;
 }
 
 .adoptSection {
-  background-color: #fff;
+  width: 100%;
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   border-radius: 15px;
-  width: 100%;
+  background-color: dodgerblue;
   height: 100px;
 }
 
 .shelterSection {
-  background-color: #fff;
+  width: 100%;
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   border-radius: 15px;
-  width: 100%;
+  background-color: #fff;
   height: 200px;
+  padding: 0;
+}
+
+.shelterSection .shelterPicture {
+  border-radius: 15px 15px 0 0;
+  height: 80%;
+  background-color: red;
+}
+
+.shelterSection .viewShelter {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.shelterSection .viewShelter a {
+  text-decoration: none;
+}
+
+.shelterSection .viewShelter a h4 {
+  text-align: center;
+}
+
+.shelterSection .viewShelter:hover {
+  background-color: green;
 }
 
 .rowTopSpacing {

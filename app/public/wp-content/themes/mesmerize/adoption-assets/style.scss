@@ -40,7 +40,7 @@ $secondaryColor: #fff;
     }
 }
 .carousel-container {
-    width: 100%;
+    width: 60rem;
     margin: 50px auto;
     min-height: 200px;
     position: relative;
@@ -52,7 +52,7 @@ $secondaryColor: #fff;
         transition: transform 0.5s;
     }
     .card-container {
-        width: 259px;
+        width: 15rem;
         flex-shrink: 0;
         height: 275px;
         padding-right: 15px;
@@ -66,16 +66,6 @@ $secondaryColor: #fff;
             display: flex;
             flex-direction: column;
         }
-    }
-}
-@media screen and (max-width: 768px) {
-    .carousel-container {
-        width: 80%;
-    }
-}
-@media screen and (max-width: 1024px) {
-    .carousel-container {
-        width: 85%;
     }
 }
 .nav{
@@ -302,5 +292,23 @@ $secondaryColor: #fff;
     }
     ul form{
         margin: 0;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .carousel-container {
+        width: 30rem;
+    }
+    .card-container{
+        width: 7.5rem;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .carousel-container {
+        width: 45rem;
+    }
+    .card-container{
+        width: 11.25rem;
     }
 }
