@@ -20,9 +20,30 @@
 				$_SESSION["recentlyViewed"] = array($_GET["id"]);
 			}
 			global $wpdb;
-			$query = "SELECT * FROM adoptionss WHERE adoption_id = " . $_GET["id"];
-			$dog = $wpdb->get_results($query);
+			$query = "SELECT * FROM adoptions WHERE adoption_id = " . $_GET["id"];
+			$dog = $wpdb->get_results($query)[0];
 		?>
+		<link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-animal-assets/style.css'); ?>">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9 col-md-offset-1">
+					<section class="aboutSection">
+						<h1><?php echo ucwords($dog->name); ?></h1>
+					</section>
+				</div>
+				<div class="col-md-2">
+					<div class="row no-gutters">
+						<section class="adoptSection">
+						</section>
+					</div>
+					<div class="row no-gutters rowTopSpacing">
+						<section class="shelterSection">
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
+<script src="<?php echo site_url('/wp-content/themes/mesmerize/adoption-animal-assets/animalScript.js'); ?>" type="text/javascript">
 <?php get_footer(); ?>
