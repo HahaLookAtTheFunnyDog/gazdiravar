@@ -1,20 +1,22 @@
+$primaryColor: dodgerblue;
+$secondaryColor: #fff;
+
 .filters ul{
     list-style: none;
     margin: 0;
-}
-.filters ul li{
-    text-align: left;
-}
-.filters label{
-    font-size: 1rem;
-
+    li{
+        text-align: left;
+    }
+    label{
+        font-size: 1rem;
+    }
 }
 .scrollRadio{
     height: 15rem;
     overflow: scroll;
-}
-.scrollRadio::-webkit-scrollbar {
-    width: 2px; 
+    &::-webkit-scrollbar {
+        width: 2px; 
+    }
 }
 .paginationSection{
     width: 100%;
@@ -22,26 +24,49 @@
 }
 .pagination{
     text-align: center;
+    a{
+        cursor: pointer;
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color .5s;
+        &.active{
+            background-color: $primaryColor;
+            color: $secondaryColor;
+        }
+        &:hover:not(.active){
+            background-color: #ddd;
+        }
+    }
 }
-.pagination a {
-    color: black;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .5s;
-}
-.pagination a.active {
-    background-color: dodgerblue;
-    color: white;
-}
-.pagination a:hover:not(.active) {
-    background-color: #ddd;
-}
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 .carousel-container {
     width: 100%;
     margin: 50px auto;
     min-height: 200px;
     position: relative;
+    .carousel-inner{
+        overflow: hidden;
+    }
+    .track{
+        display: inline-flex;
+        transition: transform 0.5s;
+    }
+    .card-container {
+        width: 259px;
+        flex-shrink: 0;
+        height: 275px;
+        padding-right: 15px;
+        box-sizing: border-box;
+        .card {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }
 @media screen and (max-width: 768px) {
     .carousel-container {
@@ -53,40 +78,23 @@
         width: 85%;
     }
 }
-.carousel-container .carousel-inner {
-    overflow: auto;
-}
-.carousel-container .track {
-    display: inline-flex;
-    transition: transform 0.5s;
-}
-.carousel-container .card-container {
-    width: 259px;
-    flex-shrink: 0;
-    height: 250px;
-    padding-right: 15px;
-    box-sizing: border-box;
-}
-.carousel-container .card-container .card {
-    width: 100%;
-    height: 100%;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-}
-.nav button {
-    background-color: dodgerblue;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 1px solid #aaa;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
+.nav{
+    .prev {
+        left: -30px;
+        display: none;
+    }
+    button {
+        background-color: $primaryColor;
+        color: $secondaryColor;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 1px solid #aaa;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
 }
 .nav .prev {
     left: -30px;
@@ -101,71 +109,74 @@
 .nav .next.hide {
     display: none;
 }
+
 .card > * {
     flex: 1;
 }
-.card .img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-}
-.card .info {
-    text-align: center;
-    flex-basis: 40px;
-    color: #fff;
-    flex-grow: 0;
-    padding: 10px;
-    box-sizing: border-box;
+.card{
+    .img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+    }
+    .info {
+        text-align: center;
+        flex-basis: 40px;
+        color: $secondaryColor;
+        flex-grow: 0;
+        padding: 10px;
+        box-sizing: border-box;
+    }
 }
 .slider {
     position: relative;
     overflow: hidden;
     height: 500px;
     width: 100%;
+    .slide{
+        position: absolute;
+        transition: opacity 0.4s ease-in-out;
+        opacity: 0;
+        background-size: cover;                      
+        background-repeat: no-repeat;
+        background-position: center center; 
+        height: 100%; 
+        width: 100%;
+        padding: 0;
+        .featuredContent{
+            position: absolute; 
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: $secondaryColor;
+            padding: 10px;
+        }
+    }
 }
 .activeSlide{
     opacity: 1 !important;
 }
-.slide{
-    position: absolute;
-    transition: opacity 0.4s ease-in-out;
-    opacity: 0;
-    background-size: cover;                      
-    background-repeat: no-repeat;
-    background-position: center center; 
-    height: 100%; 
-    width: 100%;
-    padding: 0;
-}
-.featuredContent{
-    position: absolute; 
-    bottom: 20px;
-    width: 600px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    padding: 35px;
-}
 .buttonContainer{
     text-align:center;
-}
-.featuredButtons{
-    display: inline-block;
-    width: auto;
-}
-.featuredButtons li{
-    display: inline;
-}
-.featuredButton {
-    background-color: #fff;
-    height:10px;
-    width: 10px;
-    border-radius: 50%;
-    border: 1px solid dodgerblue;
-    cursor: pointer;
-}
-.activeButton{
-    background-color: dodgerblue;
+    .featuredButtons{
+        display: inline-block;
+        width: auto;
+        li{
+            display: inline;
+            .featuredButton {
+                background-color: $secondaryColor;
+                height:10px;
+                width: 10px;
+                border-radius: 50%;
+                border: 1px solid $primaryColor;
+                cursor: pointer;
+            }
+            .activeButton{
+                background-color: $primaryColor;
+            }
+        }
+    }
 }
 .quantity{
     float: right;
@@ -179,32 +190,30 @@
 .filterDivider{
     margin: 0;
 }
-
 .filterChoices{
     list-style: none;
     margin: 0;
     margin-bottom: 20px;
-}
-.filterChoices li{
-    display: inline-block;
-}
-.filtersli{
-    background-color: dodgerblue;
-    color: white;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    margin: 10px;
-    margin-left: 0;
-}
-.filterClose{
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: 10px;
+    .choices{
+        display: inline-block;
+        background-color: $primaryColor;
+        color: $secondaryColor;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 10px;
+        margin: 10px;
+        margin-left: 0;
+        .filterClose{
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    }
 }
 .clearAll{
+    display: inline-block;
     cursor: pointer;
 }
 .appliedFiltersHeader{
@@ -212,28 +221,86 @@
 }
 .filterSubmit{
     display: block;
-    color: white;
-    background-color: dodgerblue;
+    color: $secondaryColor;
+    background-color: $primaryColor;
     width: 100%;
     border: 0px;
     margin-bottom: 5px;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 .hideFilterSubmit{
     display: none;
 }
-.iconBig{
-    width: 13rem !important;
-    height: 13rem !important;
+.iconSmall{
+    width: 10rem !important;
+    height: 10rem !important;
+    margin: auto;
 }
 .boxShadowAnimate:hover{
     box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
-.activePag{
-    display: block !important;
+#sortList {
+    position: relative;
+    cursor: pointer;
+    ul {
+        margin-right: 30px;
+    }
+    li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+    #sub_navlist {
+        position: absolute;
+        text-align: left;
+        margin: 10 0;
+        padding: 0;
+        z-index: 9000;
+        background-color: $secondaryColor;
+        li:hover{
+            color:  black;
+        }
+    }
 }
-.pag{
-    display: none;
+.cardLink{
+    text-decoration: none; 
+    color: #3C424F;
+    cursor: pointer;
+    .adoptionsCard{
+        margin-bottom: 1.5rem; 
+        padding: 0;
+        .catalogPicture{
+            height: 300px;
+            position: relative;
+            .catalogRoundedBottom{
+                background-color: $secondaryColor; 
+                height: 25px; 
+                width: 100%; 
+                bottom: 0; 
+                position: absolute; 
+                border-radius: 40% 40% 0 0;
+            }
+        }
+        .catalogContent{
+            padding: 10px;
+             padding-top: 0;
+         }
+    }
 }
-.paginationButton{
-    cursor:pointer;
+.recentlyViewed{
+    width: 100%;
+}
+.sortByTopList{
+    float: right; 
+    list-style: none; 
+    background-color: $primaryColor; 
+    padding: 4px;
+    li a{
+        text-decoration: none; 
+        color: $secondaryColor;
+    }
+    ul form{
+        margin: 0;
+    }
 }

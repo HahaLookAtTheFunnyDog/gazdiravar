@@ -1,4 +1,14 @@
-    //------------------------------------------------------------------------
+	//------------------------------------------------------------------------
+	//Reloads page in same spot
+	//------------------------------------------------------------------------
+	document.addEventListener("DOMContentLoaded", function(event) { 
+		var scrollpos = localStorage.getItem('scrollpos');
+		if (scrollpos) window.scrollTo(0, scrollpos);
+	});
+	window.onbeforeunload = function(e) {
+		localStorage.setItem('scrollpos', window.scrollY);
+	};
+	//------------------------------------------------------------------------
 	//PAGINATION SUBMIT
     //------------------------------------------------------------------------
     function paginationSubmit(pid){
@@ -52,8 +62,22 @@
 		document.body.appendChild(form);
 		form.submit();
 	}
-	function clearAll(){
+	function clearAll(userCountry, species,order){
 		var form = document.createElement("form");
+		var inpCountry = document.createElement("input");
+		var inpSpecies = document.createElement("input");
+		var inpOrder = document.createElement("input");
+
+		inpCountry.name = "country";
+		inpCountry.value = userCountry;
+		form.appendChild(inpCountry);
+		inpSpecies.name = "species";
+		inpSpecies.value = species;
+		form.appendChild(inpSpecies);
+		inpOrder.name = "order";
+		inpOrder.value = order;
+		form.appendChild(inpOrder);
+
 		document.body.appendChild(form);
 		form.submit();
 	}
@@ -83,8 +107,8 @@
 			}
 		}
 	}
-	const dogFilters = document.querySelectorAll('.dogSelection');
-	const dogSubmit = document.getElementById('breedFilterSubmit');
+	const adoptionFilters = document.querySelectorAll('.adoptionSelection');
+	const adoptionSubmit = document.getElementById('breedFilterSubmit');
 	const ageFilters = document.querySelectorAll('.ageSelection');
 	const ageSubmit = document.getElementById('ageFilterSubmit');
 	const genderFilters = document.querySelectorAll('.genderSelection');
@@ -92,47 +116,49 @@
 	const sizeFilters = document.querySelectorAll('.sizeSelection');
 	const sizeSubmit = document.getElementById('sizeFilterSubmit');
 	var k;
-	filterFunctionalityHelper(dogFilters,dogSubmit);
+	filterFunctionalityHelper(adoptionFilters,adoptionSubmit);
 	filterFunctionalityHelper(ageFilters,ageSubmit);
 	filterFunctionalityHelper(genderFilters,genderSubmit);
 	filterFunctionalityHelper(sizeFilters,sizeSubmit);
-
-	function countrySelector(){
-		const countryFilter = document.getElementById('countryFilterSubmit');
-		countryFilter.classList.remove('hideFilterSubmit');
-	}
 	//------------------------------------------------------------------------
 	//RECENTLY VIEWED
 	//------------------------------------------------------------------------
 	const prev  = document.querySelector('.prev');
 	const next = document.querySelector('.next');
 	const track = document.querySelector('.track');
-	let carouselWidth = document.querySelector('.carousel-container').offsetWidth;
-	window.addEventListener('resize', () => {
-	carouselWidth = document.querySelector('.carousel-container').offsetWidth;
-	})
-
-	let index = 0;
-	next.addEventListener('click', () => {
-		index++;
-		prev.classList.add('show');
-		track.style.transform = `translateX(-${index * carouselWidth}px)`;
-		if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
+	if(track){
+		let carouselWidth = document.querySelector('.carousel-container').offsetWidth;
+		window.addEventListener('resize', () => {
+		carouselWidth = document.querySelector('.carousel-container').offsetWidth;
+		})
+		let index = 0;
+		if(track.offsetWidth < carouselWidth){
 			next.classList.add('hide');
 		}
-
-		else if(track.offsetWidth - (index * carouselWidth)*2 < 100){
+		if((track.offsetWidth - carouselWidth) < 100){
 			next.classList.add('hide');
 		}
-	})
-	prev.addEventListener('click', () => {
-		index--;
-		next.classList.remove('hide');
-		if (index === 0) {
-			prev.classList.remove('show');
-		}
-		track.style.transform = `translateX(-${index * carouselWidth}px)`;
-	})
+		next.addEventListener('click', () => {
+			index++;
+			prev.classList.add('show');
+			track.style.transform = `translateX(-${index * carouselWidth}px)`;
+			if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
+				next.classList.add('hide');
+			}
+	
+			else if(track.offsetWidth - (index * carouselWidth)*2 < 100){
+				next.classList.add('hide');
+			}
+		})
+		prev.addEventListener('click', () => {
+			index--;
+			next.classList.remove('hide');
+			if (index === 0) {
+				prev.classList.remove('show');
+			}
+			track.style.transform = `translateX(-${index * carouselWidth}px)`;
+		})
+	}
 	//------------------------------------------------------------------------
 	//SLIDES
 	//------------------------------------------------------------------------
@@ -174,4 +200,41 @@
 		const activeBtn = document.querySelector('.activeButton');
 		activeBtn.classList.remove('activeButton');
 		buttons[index-1].classList.add('activeButton');
+	}
+	function featuredClick(){
+		var activeSlide = document.querySelector('.activeSlide');
+		var form = document.createElement("form");
+		var input = document.createElement("input");
+		input.value = activeSlide.id.charAt(activeSlide.id.length -1);
+		input.name = "id";
+		input.type = "hidden";
+		form.appendChild(input);
+		form.action = "animal/";
+		form.method = "GET";
+		document.body.appendChild(form);
+		form.submit();
+	}
+	//------------------------------------------------------------------------
+	//SORT BY
+	//------------------------------------------------------------------------
+	const sortList = document.getElementById("sortList");
+	const subNavList = document.getElementById("sub_navlist");
+	sortList.onclick = function(){
+		if(subNavList.style.display == "none"){
+			subNavList.style.display = "block";
+		}
+		else{
+			subNavList.style.display = "none";
+		}
+	}
+	function sortSubmit(item,currentOrder){
+		currentOrder = currentOrder || 0;
+		if(!((!currentOrder && item.innerHTML === "Newest") || (item.innerHTML === "Oldest" && currentOrder == "Oldest"))){
+			const orderForm = document.getElementById("orderForm");
+			var orderInput = document.createElement("input");
+			orderInput.name = "order";
+			orderInput.value = item.innerHTML;
+			orderForm.appendChild(orderInput);
+			orderForm.submit();
+		}
 	}
