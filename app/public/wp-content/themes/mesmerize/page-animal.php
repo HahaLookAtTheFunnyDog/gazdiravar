@@ -1,6 +1,10 @@
 <?php
 	session_start();
 ?>
+<div class="adoptionFormContainer">
+	<div class="adoptionForm">
+	</div>
+</div>
 <?php mesmerize_get_header(); ?>
 <div id='page-content' class="page-content">
 	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
@@ -57,7 +61,7 @@
 						</div>
 						<div class="textPart">
 						<h1><?php echo ucwords($adoption->name); ?></h1>
-						<h3>Country</h3>
+						<h3><?php echo $adoption->country_name; ?></h3>
 						<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ultricies elit. Praesent fermentum nunc at turpis tempus, vitae ultricies lectus blandit. Morbi ut luctus leo. Integer ornare fermentum urna, at efficitur turpis. Vivamus malesuada, nulla quis porttitor venenatis, justo neque luctus mauris, sit amet maximus velit mauris non turpis. Nulla efficitur est et pulvinar scelerisque. In sed tristique erat. Donec convallis leo sit amet ligula placerat, ut ornare nunc ornare. Morbi ultrices sem mauris, non varius tellus aliquet in. Vivamus vel gravida elit. Fusce eu suscipit tortor, eget laoreet mauris. Nam lorem libero, porta non aliquam et, congue ac tortor. Nullam vehicula facilisis nunc vel tempor. Maecenas sit amet venenatis massa, sit amet pulvinar massa. Etiam mattis nulla lorem, ac tempor orci pretium quis. Sed at risus molestie felis ullamcorper efficitur id sit amet turpis.
 

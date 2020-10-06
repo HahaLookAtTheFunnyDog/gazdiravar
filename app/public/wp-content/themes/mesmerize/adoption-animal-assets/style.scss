@@ -122,6 +122,7 @@ $secondaryColor: #fff;
 }
 .shelterSection{
     @include sectionBox();
+    color: white;
     background-color: red;
     .shelterPicture{
         @include picture(red);
@@ -147,6 +148,7 @@ $secondaryColor: #fff;
 .infoSection{
     @include sectionBox();
     background-color: $primaryColor;
+    color: white;
     .infoPicture{
         @include picture($primaryColor);
         left: -75px;
@@ -169,4 +171,21 @@ $secondaryColor: #fff;
 }
 .adoptionButtonSpacing{
     margin-top: .5rem;
+}
+
+.adoptionFormContainer{
+    overflow: hidden;
+    position: fixed;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10,10,10,.86);
+}
+.adoptionForm{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 800px;
+    height: 800px;
+    background-color: red;
 }
