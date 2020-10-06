@@ -37,7 +37,51 @@ $secondaryColor: #fff;
     @include sectionBox();
     background-color: $secondaryColor;
     height: 100vh;
-    padding: 20px;
+    .slideShowContainer{
+        width: 100%;
+        height: 350px;
+        position: relative;
+        .slideContainer{
+            width: 100%;
+            height: 100%;
+            .slide{
+                background-color: red;
+                border-radius: 15px 15px 0 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .slidePrev{
+            top: 50%;
+            left: 25px;
+            position: absolute;
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+            background-color: green;
+        }
+        .slideNext{
+            top: 50%;
+            right: 25px;
+            position: absolute;
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+            background-color: green;
+        }
+    }
+    .textPart{
+        padding: 25px;
+        h1{
+            text-align: center;
+        }
+        h3{
+            text-align: center;
+        }
+        p{
+
+        }
+    }
 }
 .adoptSection{
     @include sectionBox();
@@ -97,9 +141,9 @@ $secondaryColor: #fff;
 }
 .infoSection{
     @include sectionBox();
-    background-color: red;
+    background-color: $primaryColor;
     .infoPicture{
-        @include picture(red);
+        @include picture($primaryColor);
         left: -75px;
     }
     .infoBox{
