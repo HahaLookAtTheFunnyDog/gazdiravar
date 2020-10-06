@@ -2489,3 +2489,57 @@ Stack trace:
 [05-Oct-2020 17:28:14 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 13 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
 [05-Oct-2020 17:28:31 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 13 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
 [05-Oct-2020 17:28:31 UTC] WordPress database error Table 'local.adoptionss' doesn't exist for query SELECT * FROM adoptionss WHERE adoption_id = 13 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[06-Oct-2020 22:21:07 UTC] WordPress database error Every derived table must have its own alias for query SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date, size FROM adoptions a 
+			INNER JOIN breeds b ON a.breed_id = b.breed_id 
+			INNER JOIN age c ON a.age_id = c.age_id 
+			INNER JOIN genders d ON a.gender_id = d.gender_id
+			INNER JOIN countries f ON a.country_id = f.country_id 
+			INNER JOIN (SELECT species_name, breed_id FROM breeds a INNER JOIN species b ON a.species_id = b.species_id) g ON a.breed_id = g.breed_id
+			INNER JOIN sizes h ON a.size_id = h.size_id
+			INNER JOIN (SELECT country_name AS 'shelter_country', name, email FROM shelters INNER JOIN countries ON shelters.country_id = countries.country_id)
+			WHERE adoption_id =  14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[06-Oct-2020 22:21:07 UTC] WordPress database error Every derived table must have its own alias for query SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date, size FROM adoptions a 
+			INNER JOIN breeds b ON a.breed_id = b.breed_id 
+			INNER JOIN age c ON a.age_id = c.age_id 
+			INNER JOIN genders d ON a.gender_id = d.gender_id
+			INNER JOIN countries f ON a.country_id = f.country_id 
+			INNER JOIN (SELECT species_name, breed_id FROM breeds a INNER JOIN species b ON a.species_id = b.species_id) g ON a.breed_id = g.breed_id
+			INNER JOIN sizes h ON a.size_id = h.size_id
+			INNER JOIN (SELECT country_name AS 'shelter_country', name, email FROM shelters INNER JOIN countries ON shelters.country_id = countries.country_id)
+			WHERE adoption_id =  14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[06-Oct-2020 22:25:59 UTC] WordPress database error Every derived table must have its own alias for query SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date, size FROM adoptions a 
+			INNER JOIN breeds b ON a.breed_id = b.breed_id 
+			INNER JOIN age c ON a.age_id = c.age_id 
+			INNER JOIN genders d ON a.gender_id = d.gender_id
+			INNER JOIN countries f ON a.country_id = f.country_id 
+			INNER JOIN (SELECT species_name, breed_id FROM breeds a INNER JOIN species b ON a.species_id = b.species_id) g ON a.breed_id = g.breed_id
+			INNER JOIN sizes h ON a.size_id = h.size_id
+			INNER JOIN (SELECT country_name AS 'shelter_country', name, email FROM shelters INNER JOIN countries ON shelters.country_id = countries.country_id)
+			WHERE adoption_id =  14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[06-Oct-2020 22:25:59 UTC] WordPress database error Every derived table must have its own alias for query SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date, size FROM adoptions a 
+			INNER JOIN breeds b ON a.breed_id = b.breed_id 
+			INNER JOIN age c ON a.age_id = c.age_id 
+			INNER JOIN genders d ON a.gender_id = d.gender_id
+			INNER JOIN countries f ON a.country_id = f.country_id 
+			INNER JOIN (SELECT species_name, breed_id FROM breeds a INNER JOIN species b ON a.species_id = b.species_id) g ON a.breed_id = g.breed_id
+			INNER JOIN sizes h ON a.size_id = h.size_id
+			INNER JOIN (SELECT country_name AS 'shelter_country', name, email FROM shelters INNER JOIN countries ON shelters.country_id = countries.country_id)
+			WHERE adoption_id =  14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[06-Oct-2020 22:33:34 UTC] WordPress database error Every derived table must have its own alias for query SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date, size FROM adoptions a 
+			INNER JOIN breeds b ON a.breed_id = b.breed_id 
+			INNER JOIN age c ON a.age_id = c.age_id 
+			INNER JOIN genders d ON a.gender_id = d.gender_id
+			INNER JOIN countries f ON a.country_id = f.country_id 
+			INNER JOIN (SELECT species_name, breed_id FROM breeds a INNER JOIN species b ON a.species_id = b.species_id) g ON a.breed_id = g.breed_id
+			INNER JOIN sizes h ON a.size_id = h.size_id
+			INNER JOIN (SELECT country_name AS 'shelter_country', name, email FROM shelters INNER JOIN countries ON shelters.country_id = countries.country_id)
+			WHERE adoption_id =  14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[06-Oct-2020 22:33:34 UTC] WordPress database error Every derived table must have its own alias for query SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date, size FROM adoptions a 
+			INNER JOIN breeds b ON a.breed_id = b.breed_id 
+			INNER JOIN age c ON a.age_id = c.age_id 
+			INNER JOIN genders d ON a.gender_id = d.gender_id
+			INNER JOIN countries f ON a.country_id = f.country_id 
+			INNER JOIN (SELECT species_name, breed_id FROM breeds a INNER JOIN species b ON a.species_id = b.species_id) g ON a.breed_id = g.breed_id
+			INNER JOIN sizes h ON a.size_id = h.size_id
+			INNER JOIN (SELECT country_name AS 'shelter_country', name, email FROM shelters INNER JOIN countries ON shelters.country_id = countries.country_id)
+			WHERE adoption_id =  14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')

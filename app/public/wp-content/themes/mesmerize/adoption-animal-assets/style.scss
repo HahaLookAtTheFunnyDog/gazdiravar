@@ -156,6 +156,9 @@ $secondaryColor: #fff;
         .infoTitle{
             text-align: center;
         }
+        .dynamicInfo{
+            display: inline;
+        }
     }
     .infoViewMore{
         @include moreInformation();

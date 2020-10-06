@@ -20,14 +20,19 @@
 				$_SESSION["recentlyViewed"] = array($_GET["id"]);
 			}
 			global $wpdb;
-			$query = "SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date FROM adoptions a 
+			$query = "SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date, size, a.shelter_id FROM adoptions a 
 			INNER JOIN breeds b ON a.breed_id = b.breed_id 
 			INNER JOIN age c ON a.age_id = c.age_id 
 			INNER JOIN genders d ON a.gender_id = d.gender_id
 			INNER JOIN countries f ON a.country_id = f.country_id 
 			INNER JOIN (SELECT species_name, breed_id FROM breeds a INNER JOIN species b ON a.species_id = b.species_id) g ON a.breed_id = g.breed_id
+			INNER JOIN sizes h ON a.size_id = h.size_id
 			WHERE adoption_id =  " . $_GET["id"];
 			$adoption = $wpdb->get_results($query)[0];
+			$shelter;
+			if($adoption->shelter_id){
+				$shelter = $wpdb->get_results("SELECT a.name, a.email, b.country_name FROM shelters a INNER JOIN countries b ON a.country_id = b.country_id")[0];
+			}
 		?>
 		<link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-animal-assets/style.css'); ?>">
 		<div class="container">
@@ -67,7 +72,7 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 							<div class="adoptionPicture">
 							</div>
 							<div class="adoptionInformation">
-								<h4 class="adoptTitle">Ready to Adopt?</h4>
+								<h4 class="adoptTitle">Ready to Help?</h4>
 								<button class="adoptionButton">Adopt</button>
 								<button class="adoptionButton adoptionButtonSpacing">Sponsor</button>
 							</div>
@@ -76,20 +81,26 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 							</div>
 						</section>
 					</div>
+					<?php
+						if($shelter){
+					?>
 					<div class="row no-gutters rowTopSpacing">
 						<section class="shelterSection">
 							<div class="shelterPicture">
 							</div>
 							<div class="shelterInfo">
-								<h4 class="shelterName">Shelter Name</h4>
-								<h5 class="locationPart">Country</h5>
-								<h5 class="emailPart">email@emailprovider.com</h5>
+								<h4 class="shelterName"><?php echo $shelter->name; ?></h4>
+								<h5 class="locationPart"><?php echo $shelter->country_name; ?></h5>
+								<h5 class="emailPart"><?php echo $shelter->email; ?></h5>
 							</div>
 							<div class="shelterViewMore">
 								<p style="text-align: center;">More Information</p>
 							</div>
 						</section>
 					</div>
+					<?php
+						}
+					?>
 					<div class="row no-gutters rowTopSpacing">
 						<section class="infoSection">
 							<div class="infoPicture">
@@ -98,32 +109,33 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 								<h4 class="infoTitle">Information</h4>
 								<div class="row">
 									<div class="col-sm-6">Register Date</div>
-									<div class="col-sm-6">: <?php echo $adoption->register_date ?></div>
+									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->register_date; ?></p></div>
 									<hr>
 								</div>
 								<div class="row">
 									<div class="col-sm-6">Species</div>
-									<div class="col-sm-6">: SampleText</div>
+									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->species_name; ?></p></div>
 									<hr>
 								</div>
 								<div class="row">
 									<div class="col-sm-6">Breed</div>
-									<div class="col-sm-6">: SampleText</div>
+									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->breed_name; ?></p></div>
 									<hr>
 								</div>
 								<div class="row">
 									<div class="col-sm-6">Gender</div>
-									<div class="col-sm-6">: SampleText</div>
+									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->gender; ?></p></div>
 									<hr>
 								</div>
 								<div class="row">
 									<div class="col-sm-6">Age</div>
-									<div class="col-sm-6">: SampleText</div>
+									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->age_name; ?></p></div>
 									<hr>
 								</div>
 								<div class="row">
 									<div class="col-sm-6">Size</div>
-									<div class="col-sm-6">: SampleText</div>
+									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->size; ?></p></div>
+									<hr>
 								</div>
 							</div>
 							<div class="infoViewMore">
