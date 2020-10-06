@@ -16,15 +16,21 @@
 }
 
 .aboutSection .slideShowContainer .slideContainer {
+  position: relative;
   width: 100%;
   height: 100%;
 }
 
 .aboutSection .slideShowContainer .slideContainer .slide {
-  background-color: red;
+  position: absolute;
   border-radius: 15px 15px 0 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
+}
+
+.aboutSection .slideShowContainer .slideContainer .active {
+  opacity: 1;
 }
 
 .aboutSection .slideShowContainer .slidePrev {
@@ -57,6 +63,10 @@
 
 .aboutSection .textPart h3 {
   text-align: center;
+}
+
+.aboutSection .textPart p {
+  line-height: 1.6;
 }
 
 .adoptSection {

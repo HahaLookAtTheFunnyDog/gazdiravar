@@ -20,8 +20,14 @@
 				$_SESSION["recentlyViewed"] = array($_GET["id"]);
 			}
 			global $wpdb;
-			$query = "SELECT * FROM adoptions WHERE adoption_id = " . $_GET["id"];
-			$dog = $wpdb->get_results($query)[0];
+			$query = "SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date FROM adoptions a 
+			INNER JOIN breeds b ON a.breed_id = b.breed_id 
+			INNER JOIN age c ON a.age_id = c.age_id 
+			INNER JOIN genders d ON a.gender_id = d.gender_id
+			INNER JOIN countries f ON a.country_id = f.country_id 
+			INNER JOIN (SELECT species_name, breed_id FROM breeds a INNER JOIN species b ON a.species_id = b.species_id) g ON a.breed_id = g.breed_id
+			WHERE adoption_id =  " . $_GET["id"];
+			$adoption = $wpdb->get_results($query)[0];
 		?>
 		<link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-animal-assets/style.css'); ?>">
 		<div class="container">
@@ -30,7 +36,13 @@
 					<section class="aboutSection">
 						<div class="slideShowContainer">
 							<div class="slideContainer">
-								<div class="slide">
+								<div class="slide active" style="background-color: red;">
+								</div>
+								<div class="slide" style="background-color: green;">
+								</div>
+								<div class="slide" style="background-color: black;">
+								</div>
+								<div class="slide" style="background-color: yellow;">
 								</div>
 							</div>
 							<div class="slidePrev">
@@ -39,7 +51,7 @@
 							</div>
 						</div>
 						<div class="textPart">
-						<h1><?php echo ucwords($dog->name); ?></h1>
+						<h1><?php echo ucwords($adoption->name); ?></h1>
 						<h3>Country</h3>
 						<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ultricies elit. Praesent fermentum nunc at turpis tempus, vitae ultricies lectus blandit. Morbi ut luctus leo. Integer ornare fermentum urna, at efficitur turpis. Vivamus malesuada, nulla quis porttitor venenatis, justo neque luctus mauris, sit amet maximus velit mauris non turpis. Nulla efficitur est et pulvinar scelerisque. In sed tristique erat. Donec convallis leo sit amet ligula placerat, ut ornare nunc ornare. Morbi ultrices sem mauris, non varius tellus aliquet in. Vivamus vel gravida elit. Fusce eu suscipit tortor, eget laoreet mauris. Nam lorem libero, porta non aliquam et, congue ac tortor. Nullam vehicula facilisis nunc vel tempor. Maecenas sit amet venenatis massa, sit amet pulvinar massa. Etiam mattis nulla lorem, ac tempor orci pretium quis. Sed at risus molestie felis ullamcorper efficitur id sit amet turpis.
@@ -86,7 +98,7 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 								<h4 class="infoTitle">Information</h4>
 								<div class="row">
 									<div class="col-sm-6">Register Date</div>
-									<div class="col-sm-6">: SampleText</div>
+									<div class="col-sm-6">: <?php echo $adoption->register_date ?></div>
 									<hr>
 								</div>
 								<div class="row">
