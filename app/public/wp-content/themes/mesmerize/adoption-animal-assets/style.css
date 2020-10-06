@@ -3,6 +3,8 @@
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   border-radius: 15px;
+  padding: 0;
+  position: relative;
   background-color: #fff;
   height: 100vh;
   padding: 20px;
@@ -13,9 +15,9 @@
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   border-radius: 15px;
-  background-color: dodgerblue;
   padding: 0;
   position: relative;
+  background-color: dodgerblue;
 }
 
 .adoptSection .adoptionPicture {
@@ -26,11 +28,11 @@
   width: 100px;
   height: 100px;
   background-color: black;
-  right: -75px;
+  left: -75px;
 }
 
 .adoptSection .adoptionInformation {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   padding: 25px;
 }
 
@@ -74,10 +76,9 @@
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   border-radius: 15px;
-  background-color: red;
-  height: 200px;
   padding: 0;
   position: relative;
+  background-color: red;
 }
 
 .shelterSection .shelterPicture {
@@ -88,19 +89,24 @@
   width: 100px;
   height: 100px;
   background-color: black;
-  left: -75px;
+  right: -75px;
 }
 
 .shelterSection .shelterInfo {
+  margin-bottom: 20px;
   padding: 25px;
 }
 
-.shelterSection .shelterInfo h4 {
+.shelterSection .shelterInfo .shelterName {
   text-align: center;
 }
 
-.shelterSection .shelterInfo h5 {
+.shelterSection .shelterInfo .emailPart {
   font-size: .7rem;
+  text-align: center;
+}
+
+.shelterSection .shelterInfo .locationPart {
   text-align: center;
 }
 
@@ -115,6 +121,50 @@
 }
 
 .shelterSection .shelterViewMore:hover {
+  background-color: green;
+}
+
+.infoSection {
+  width: 100%;
+  -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+          box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  border-radius: 15px;
+  padding: 0;
+  position: relative;
+  background-color: red;
+}
+
+.infoSection .infoPicture {
+  top: 10px;
+  border: 7px solid red;
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  left: -75px;
+}
+
+.infoSection .infoBox {
+  margin-bottom: 20px;
+  padding: 25px;
+}
+
+.infoSection .infoBox .infoTitle {
+  text-align: center;
+}
+
+.infoSection .infoViewMore {
+  border-radius: 0 0 15px 15px;
+  border-top: 2px solid black;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.infoSection .infoViewMore:hover {
   background-color: green;
 }
 

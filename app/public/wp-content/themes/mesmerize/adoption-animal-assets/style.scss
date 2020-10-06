@@ -5,6 +5,8 @@ $secondaryColor: #fff;
     width: 100%;
     box-shadow: 0 0 11px rgba(33,33,33,.2); 
     border-radius: 15px;
+    padding: 0;
+    position: relative;
 }
 @mixin moreInformation{
     border-radius: 0 0 15px 15px;
@@ -27,6 +29,10 @@ $secondaryColor: #fff;
     height: 100px;
     background-color: black;
 }
+@mixin marginPaddingBox{
+    margin-bottom: 20px;
+    padding: 25px;
+}
 .aboutSection{
     @include sectionBox();
     background-color: $secondaryColor;
@@ -36,15 +42,12 @@ $secondaryColor: #fff;
 .adoptSection{
     @include sectionBox();
     background-color:$primaryColor;
-    padding: 0;
-    position: relative;
     .adoptionPicture{
         @include picture($primaryColor);
-        right: -75px;
+        left: -75px;
     }
     .adoptionInformation{
-        margin-bottom: 30px;
-        padding: 25px;
+        @include marginPaddingBox();
         .adoptTitle{
             text-align: center;
         }
@@ -71,24 +74,41 @@ $secondaryColor: #fff;
 .shelterSection{
     @include sectionBox();
     background-color: red;
-    height: 200px;
-    padding: 0;
-    position: relative;
     .shelterPicture{
         @include picture(red);
-        left: -75px;
+        right: -75px;
     }
     .shelterInfo{
-        padding: 25px;
-        h4{
+        @include marginPaddingBox();
+        .shelterName{
             text-align: center;
         }
-        h5{
+        .emailPart {
             font-size: .7rem;
+            text-align: center;
+        }
+        .locationPart{
             text-align: center;
         }
     }
     .shelterViewMore{
+        @include moreInformation();
+    }
+}
+.infoSection{
+    @include sectionBox();
+    background-color: red;
+    .infoPicture{
+        @include picture(red);
+        left: -75px;
+    }
+    .infoBox{
+        @include marginPaddingBox();
+        .infoTitle{
+            text-align: center;
+        }
+    }
+    .infoViewMore{
         @include moreInformation();
     }
 }

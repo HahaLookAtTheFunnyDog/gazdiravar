@@ -51,11 +51,52 @@
 							<div class="shelterPicture">
 							</div>
 							<div class="shelterInfo">
-								<h4>Shelter Name</h4>
-								<h5>Country</h5>
-								<h5>email@emailprovider.com</h5>
+								<h4 class="shelterName">Shelter Name</h4>
+								<h5 class="locationPart">Country</h5>
+								<h5 class="emailPart">email@emailprovider.com</h5>
 							</div>
 							<div class="shelterViewMore">
+								<p style="text-align: center;">More Information</p>
+							</div>
+						</section>
+					</div>
+					<div class="row no-gutters rowTopSpacing">
+						<section class="infoSection">
+							<div class="infoPicture">
+							</div>
+							<div class="infoBox container" style="width: 100%;">
+								<h4 class="infoTitle">Information</h4>
+								<div class="row">
+									<div class="col-sm-6">Register Date</div>
+									<div class="col-sm-6">: SampleText</div>
+									<hr>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">Species</div>
+									<div class="col-sm-6">: SampleText</div>
+									<hr>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">Breed</div>
+									<div class="col-sm-6">: SampleText</div>
+									<hr>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">Gender</div>
+									<div class="col-sm-6">: SampleText</div>
+									<hr>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">Age</div>
+									<div class="col-sm-6">: SampleText</div>
+									<hr>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">Size</div>
+									<div class="col-sm-6">: SampleText</div>
+								</div>
+							</div>
+							<div class="infoViewMore">
 								<p style="text-align: center;">More Information</p>
 							</div>
 						</section>
