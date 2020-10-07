@@ -1,7 +1,42 @@
 <?php
 	session_start();
 ?>
-<div class="adoptionFormContainer">
+<?php mesmerize_get_header(); ?>
+<div id='page-content' class="page-content">
+	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
+        <?php
+			if(is_array($_SESSION["recentlyViewed"])){
+				if(!(in_array($_GET["id"],$_SESSION["recentlyViewed"]))){
+					if(count($_SESSION["recentlyViewed"]) == 15){
+						array_shift($_SESSION["recentlyViewed"]);
+						array_push($_SESSION["recentlyViewed"], $_GET["id"]);
+					}
+					else{
+						array_push($_SESSION["recentlyViewed"], $_GET["id"]);
+					}
+				}
+			}
+			else{
+				$_SESSION["recentlyViewed"] = array($_GET["id"]);
+			}
+			global $wpdb;
+			$query = "SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date, size, a.shelter_id FROM adoptions a 
+			INNER JOIN breeds b ON a.breed_id = b.breed_id 
+			INNER JOIN age c ON a.age_id = c.age_id 
+			INNER JOIN genders d ON a.gender_id = d.gender_id
+			INNER JOIN countries f ON a.country_id = f.country_id 
+			INNER JOIN (SELECT species_name, breed_id FROM breeds a INNER JOIN species b ON a.species_id = b.species_id) g ON a.breed_id = g.breed_id
+			INNER JOIN sizes h ON a.size_id = h.size_id
+			WHERE adoption_id =  " . $_GET["id"];
+			$adoption = $wpdb->get_results($query)[0];
+			$shelter;
+			if($adoption->shelter_id){
+				$shelter = $wpdb->get_results("SELECT a.name, a.email, b.country_name FROM shelters a INNER JOIN countries b ON a.country_id = b.country_id")[0];
+			}
+		?>
+		<link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-animal-assets/style.css'); ?>">
+		<div class="container">
+		<div class="adoptionFormContainer">
 	<div class="adoptionForm">
 		<h1>Adoption Contact</h1>
 		<form method="post">
@@ -38,41 +73,6 @@
 		</form>
 	</div>
 </div>
-<?php mesmerize_get_header(); ?>
-<div id='page-content' class="page-content">
-	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
-        <?php
-			if(is_array($_SESSION["recentlyViewed"])){
-				if(!(in_array($_GET["id"],$_SESSION["recentlyViewed"]))){
-					if(count($_SESSION["recentlyViewed"]) == 15){
-						array_shift($_SESSION["recentlyViewed"]);
-						array_push($_SESSION["recentlyViewed"], $_GET["id"]);
-					}
-					else{
-						array_push($_SESSION["recentlyViewed"], $_GET["id"]);
-					}
-				}
-			}
-			else{
-				$_SESSION["recentlyViewed"] = array($_GET["id"]);
-			}
-			global $wpdb;
-			$query = "SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date, size, a.shelter_id FROM adoptions a 
-			INNER JOIN breeds b ON a.breed_id = b.breed_id 
-			INNER JOIN age c ON a.age_id = c.age_id 
-			INNER JOIN genders d ON a.gender_id = d.gender_id
-			INNER JOIN countries f ON a.country_id = f.country_id 
-			INNER JOIN (SELECT species_name, breed_id FROM breeds a INNER JOIN species b ON a.species_id = b.species_id) g ON a.breed_id = g.breed_id
-			INNER JOIN sizes h ON a.size_id = h.size_id
-			WHERE adoption_id =  " . $_GET["id"];
-			$adoption = $wpdb->get_results($query)[0];
-			$shelter;
-			if($adoption->shelter_id){
-				$shelter = $wpdb->get_results("SELECT a.name, a.email, b.country_name FROM shelters a INNER JOIN countries b ON a.country_id = b.country_id")[0];
-			}
-		?>
-		<link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-animal-assets/style.css'); ?>">
-		<div class="container">
 			<div class="row no-gutters">
 				<div class="col-md-8 ">
 					<section class="aboutSection">

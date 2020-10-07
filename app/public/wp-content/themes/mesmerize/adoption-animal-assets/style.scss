@@ -17,7 +17,8 @@ $secondaryColor: #fff;
         padding: 3px;
         cursor: pointer;
         &:hover{
-            background-color: green;
+            background-color:$primaryColor;
+            color: $secondaryColor;
         }
 }
 @mixin picture($color){
@@ -85,14 +86,16 @@ $secondaryColor: #fff;
         }
         p{
             line-height: 1.6;
+            text-align: center;
         }
     }
 }
 .adoptSection{
     @include sectionBox();
-    background-color:$primaryColor;
+    background-color:$secondaryColor;
     .adoptionPicture{
-        @include picture($primaryColor);
+        @include picture($secondaryColor);
+        box-shadow: -4px 0 0 0 rgba(33,33,33,.2); 
         left: -75px;
     }
     .adoptionInformation{
@@ -101,8 +104,7 @@ $secondaryColor: #fff;
             text-align: center;
         }
         .adoptionButton{
-            border: 2px solid $secondaryColor;
-            color: $secondaryColor;
+            border: 2px solid #424855;
             display: block;
             padding: 4px;
             width: 100%;
@@ -122,10 +124,10 @@ $secondaryColor: #fff;
 }
 .shelterSection{
     @include sectionBox();
-    color: white;
-    background-color: red;
+    background-color: $secondaryColor;
     .shelterPicture{
-        @include picture(red);
+        @include picture($secondaryColor);
+        box-shadow: 4px 0 0 0 rgba(33,33,33,.2); 
         right: -75px;
     }
     .shelterInfo{
@@ -147,10 +149,10 @@ $secondaryColor: #fff;
 }
 .infoSection{
     @include sectionBox();
-    background-color: $primaryColor;
-    color: white;
+    background-color: $secondaryColor;
     .infoPicture{
-        @include picture($primaryColor);
+        @include picture($secondaryColor);
+        box-shadow: -4px 0 0 0 rgba(33,33,33,.2); 
         left: -75px;
     }
     .infoBox{
@@ -180,6 +182,10 @@ $secondaryColor: #fff;
     z-index: 50;
     width: 100%;
     height: 100%;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     background-color: rgba(10,10,10,.86);
 }
 .adoptionForm{
