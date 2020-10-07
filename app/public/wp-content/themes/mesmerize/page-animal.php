@@ -149,6 +149,58 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 					</div>
 				</div>
 			</div>
+			<?php
+				$query = "SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, g.size FROM adoptions a 
+				INNER JOIN breeds b ON a.breed_id = b.breed_id 
+				INNER JOIN age c ON a.age_id = c.age_id 
+				INNER JOIN genders d ON a.gender_id = d.gender_id
+				INNER JOIN countries f ON a.country_id = f.country_id 
+				INNER JOIN sizes g ON a.size_id = g.size_id
+				WHERE d.gender = '" . $adoption->gender . "' 
+				AND c.age_name = '" . $adoption->age_name . "'
+				 AND g.size = '" . $adoption->size . 
+				"' AND a.adoption_id <> '" . $adoption->adoption_id . "' LIMIT 4";
+				$recommendAdoptions = $wpdb->get_results($query);
+				if($recommendAdoptions){
+			?>
+			<div class="row no-gutters">
+				<hr style="margin-top: 2.5rem;">
+				<h2 style="text-align: center;">Similar Adoptions</h2>
+				<div class="col-md-12">
+					<section class="recommendedSection">
+					<div class="carousel-inner">
+						<div class="track">
+							<?php
+								foreach($recommendAdoptions as $adoption){
+									?>
+									<div class="card-container">
+										<form method="GET" action="animal/">
+											<input type="hidden" name="id" value="<?php echo $adoption->adoption_id; ?>">
+											<div class="card boxShadowAnimate" onclick="this.parentNode.submit();" style="cursor: pointer;">
+													<?php
+														$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.png');
+														if($adoption->profile_picture_filename){
+															$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/' . $adoption->profile_picture_filename . '.png');
+														}
+													?>
+													<img src="<?php echo $imgSrc; ?>" class="round icon iconSmall">
+													<h6 style="text-align: center;"><?php echo $adoption->name; ?></h6>
+													<p style="text-align: center; class="small italic"><?php echo $adoption->country_name; ?></p>
+												</a>
+											</div>
+										</form>
+									</div>
+									<?php
+								}
+							?>
+						</div>
+					</div>
+					</section>
+				</div>
+			</div>
+			<?php
+				}
+			?>
 		</div>
 	</div>
 </div>

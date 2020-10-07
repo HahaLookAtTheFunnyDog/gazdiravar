@@ -2543,3 +2543,87 @@ Stack trace:
 			INNER JOIN sizes h ON a.size_id = h.size_id
 			INNER JOIN (SELECT country_name AS 'shelter_country', name, email FROM shelters INNER JOIN countries ON shelters.country_id = countries.country_id)
 			WHERE adoption_id =  14 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[07-Oct-2020 20:19:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-animal.php on line 166
+[07-Oct-2020 20:19:35 UTC] PHP Stack trace:
+[07-Oct-2020 20:19:35 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[07-Oct-2020 20:19:35 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[07-Oct-2020 20:19:35 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[07-Oct-2020 20:19:35 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[07-Oct-2020 20:19:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-animal.php on line 166
+[07-Oct-2020 20:19:35 UTC] PHP Stack trace:
+[07-Oct-2020 20:19:35 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[07-Oct-2020 20:19:35 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[07-Oct-2020 20:19:35 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[07-Oct-2020 20:19:35 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[07-Oct-2020 20:39:52 UTC] WordPress database error Unknown column 'a.adoptionid' in 'where clause' for query SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, g.size FROM adoptions a 
+								INNER JOIN breeds b ON a.breed_id = b.breed_id 
+								INNER JOIN age c ON a.age_id = c.age_id 
+								INNER JOIN genders d ON a.gender_id = d.gender_id
+								INNER JOIN countries f ON a.country_id = f.country_id 
+								INNER JOIN sizes g ON a.size_id = g.size_id
+								WHERE d.gender = 'Female' 
+								AND c.age_name = 'Infant'
+								 AND g.size = 'Large' AND a.adoptionid <> '4' LIMIT 4 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[07-Oct-2020 20:39:52 UTC] WordPress database error Unknown column 'a.adoptionid' in 'where clause' for query SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, g.size FROM adoptions a 
+								INNER JOIN breeds b ON a.breed_id = b.breed_id 
+								INNER JOIN age c ON a.age_id = c.age_id 
+								INNER JOIN genders d ON a.gender_id = d.gender_id
+								INNER JOIN countries f ON a.country_id = f.country_id 
+								INNER JOIN sizes g ON a.size_id = g.size_id
+								WHERE d.gender = 'Female' 
+								AND c.age_name = 'Infant'
+								 AND g.size = 'Large' AND a.adoptionid <> '4' LIMIT 4 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[07-Oct-2020 20:40:01 UTC] WordPress database error Unknown column 'a.adoptionid' in 'where clause' for query SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, g.size FROM adoptions a 
+								INNER JOIN breeds b ON a.breed_id = b.breed_id 
+								INNER JOIN age c ON a.age_id = c.age_id 
+								INNER JOIN genders d ON a.gender_id = d.gender_id
+								INNER JOIN countries f ON a.country_id = f.country_id 
+								INNER JOIN sizes g ON a.size_id = g.size_id
+								WHERE d.gender = 'Male' 
+								AND c.age_name = 'Infant'
+								 AND g.size = 'Small' AND a.adoptionid <> '1' LIMIT 4 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[07-Oct-2020 20:40:01 UTC] WordPress database error Unknown column 'a.adoptionid' in 'where clause' for query SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, g.size FROM adoptions a 
+								INNER JOIN breeds b ON a.breed_id = b.breed_id 
+								INNER JOIN age c ON a.age_id = c.age_id 
+								INNER JOIN genders d ON a.gender_id = d.gender_id
+								INNER JOIN countries f ON a.country_id = f.country_id 
+								INNER JOIN sizes g ON a.size_id = g.size_id
+								WHERE d.gender = 'Male' 
+								AND c.age_name = 'Infant'
+								 AND g.size = 'Small' AND a.adoptionid <> '1' LIMIT 4 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[07-Oct-2020 20:40:06 UTC] WordPress database error Unknown column 'a.adoptionid' in 'where clause' for query SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, g.size FROM adoptions a 
+								INNER JOIN breeds b ON a.breed_id = b.breed_id 
+								INNER JOIN age c ON a.age_id = c.age_id 
+								INNER JOIN genders d ON a.gender_id = d.gender_id
+								INNER JOIN countries f ON a.country_id = f.country_id 
+								INNER JOIN sizes g ON a.size_id = g.size_id
+								WHERE d.gender = 'Male' 
+								AND c.age_name = 'Infant'
+								 AND g.size = 'Small' AND a.adoptionid <> '2' LIMIT 4 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[07-Oct-2020 20:40:06 UTC] WordPress database error Unknown column 'a.adoptionid' in 'where clause' for query SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, g.size FROM adoptions a 
+								INNER JOIN breeds b ON a.breed_id = b.breed_id 
+								INNER JOIN age c ON a.age_id = c.age_id 
+								INNER JOIN genders d ON a.gender_id = d.gender_id
+								INNER JOIN countries f ON a.country_id = f.country_id 
+								INNER JOIN sizes g ON a.size_id = g.size_id
+								WHERE d.gender = 'Male' 
+								AND c.age_name = 'Infant'
+								 AND g.size = 'Small' AND a.adoptionid <> '2' LIMIT 4 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[07-Oct-2020 20:40:23 UTC] WordPress database error Unknown column 'a.adoptionid' in 'where clause' for query SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, g.size FROM adoptions a 
+								INNER JOIN breeds b ON a.breed_id = b.breed_id 
+								INNER JOIN age c ON a.age_id = c.age_id 
+								INNER JOIN genders d ON a.gender_id = d.gender_id
+								INNER JOIN countries f ON a.country_id = f.country_id 
+								INNER JOIN sizes g ON a.size_id = g.size_id
+								WHERE d.gender = 'Male' 
+								AND c.age_name = 'Infant'
+								 AND g.size = 'Small' AND a.adoptionid <> '2' LIMIT 4 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[07-Oct-2020 20:40:23 UTC] WordPress database error Unknown column 'a.adoptionid' in 'where clause' for query SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, g.size FROM adoptions a 
+								INNER JOIN breeds b ON a.breed_id = b.breed_id 
+								INNER JOIN age c ON a.age_id = c.age_id 
+								INNER JOIN genders d ON a.gender_id = d.gender_id
+								INNER JOIN countries f ON a.country_id = f.country_id 
+								INNER JOIN sizes g ON a.size_id = g.size_id
+								WHERE d.gender = 'Male' 
+								AND c.age_name = 'Infant'
+								 AND g.size = 'Small' AND a.adoptionid <> '2' LIMIT 4 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')

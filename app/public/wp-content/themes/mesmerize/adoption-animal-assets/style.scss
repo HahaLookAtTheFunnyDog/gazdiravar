@@ -174,6 +174,7 @@ $secondaryColor: #fff;
 }
 
 .adoptionFormContainer{
+    display: none;
     overflow: hidden;
     position: fixed;
     z-index: 50;
@@ -188,4 +189,39 @@ $secondaryColor: #fff;
     width: 800px;
     height: 800px;
     background-color: red;
+}
+
+.recommendedSection {
+    width: 60rem;
+    margin: 50px auto;
+    min-height: 200px;
+    position: relative;
+    .carousel-inner{
+        overflow: hidden;
+    }
+    .track{
+        display: inline-flex;
+        transition: transform 0.5s;
+    }
+    .card-container {
+        width: 15rem;
+        flex-shrink: 0;
+        height: 275px;
+        padding-right: 15px;
+        box-sizing: border-box;
+        .card {
+            .iconSmall{
+                width: 10rem !important;
+                height: 10rem !important;
+                margin: auto;
+            }
+            width: 100%;
+            height: 100%;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }

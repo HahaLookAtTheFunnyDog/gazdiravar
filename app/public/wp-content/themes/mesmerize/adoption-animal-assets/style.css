@@ -242,6 +242,7 @@
 }
 
 .adoptionFormContainer {
+  display: none;
   overflow: hidden;
   position: fixed;
   z-index: 50;
@@ -259,5 +260,58 @@
   width: 800px;
   height: 800px;
   background-color: red;
+}
+
+.recommendedSection {
+  width: 60rem;
+  margin: 50px auto;
+  min-height: 200px;
+  position: relative;
+}
+
+.recommendedSection .carousel-inner {
+  overflow: hidden;
+}
+
+.recommendedSection .track {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.recommendedSection .card-container {
+  width: 15rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  height: 275px;
+  padding-right: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.recommendedSection .card-container .card {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.recommendedSection .card-container .card .iconSmall {
+  width: 10rem !important;
+  height: 10rem !important;
+  margin: auto;
 }
 /*# sourceMappingURL=style.css.map */
