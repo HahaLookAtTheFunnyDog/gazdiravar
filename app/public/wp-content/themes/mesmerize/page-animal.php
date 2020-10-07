@@ -1,6 +1,10 @@
 <?php
 	session_start();
 ?>
+<div class="adoptionFormContainer">
+	<div class="adoptionForm">
+	</div>
+</div>
 <?php mesmerize_get_header(); ?>
 <div id='page-content' class="page-content">
 	<div class="<?php mesmerize_page_content_wrapper_class(); ?>">
@@ -20,24 +24,127 @@
 				$_SESSION["recentlyViewed"] = array($_GET["id"]);
 			}
 			global $wpdb;
-			$query = "SELECT * FROM adoptions WHERE adoption_id = " . $_GET["id"];
-			$dog = $wpdb->get_results($query)[0];
+			$query = "SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date, size, a.shelter_id FROM adoptions a 
+			INNER JOIN breeds b ON a.breed_id = b.breed_id 
+			INNER JOIN age c ON a.age_id = c.age_id 
+			INNER JOIN genders d ON a.gender_id = d.gender_id
+			INNER JOIN countries f ON a.country_id = f.country_id 
+			INNER JOIN (SELECT species_name, breed_id FROM breeds a INNER JOIN species b ON a.species_id = b.species_id) g ON a.breed_id = g.breed_id
+			INNER JOIN sizes h ON a.size_id = h.size_id
+			WHERE adoption_id =  " . $_GET["id"];
+			$adoption = $wpdb->get_results($query)[0];
+			$shelter;
+			if($adoption->shelter_id){
+				$shelter = $wpdb->get_results("SELECT a.name, a.email, b.country_name FROM shelters a INNER JOIN countries b ON a.country_id = b.country_id")[0];
+			}
 		?>
 		<link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-animal-assets/style.css'); ?>">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-9 col-md-offset-1">
+			<div class="row no-gutters">
+				<div class="col-md-8 ">
 					<section class="aboutSection">
-						<h1><?php echo ucwords($dog->name); ?></h1>
+						<div class="slideShowContainer">
+							<div class="slideContainer">
+								<div class="slide active" style="background-color: red;">
+								</div>
+								<div class="slide" style="background-color: green;">
+								</div>
+								<div class="slide" style="background-color: black;">
+								</div>
+								<div class="slide" style="background-color: yellow;">
+								</div>
+							</div>
+							<div class="slidePrev">
+							</div>
+							<div class="slideNext">
+							</div>
+						</div>
+						<div class="textPart">
+						<h1><?php echo ucwords($adoption->name); ?></h1>
+						<h3><?php echo $adoption->country_name; ?></h3>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ultricies elit. Praesent fermentum nunc at turpis tempus, vitae ultricies lectus blandit. Morbi ut luctus leo. Integer ornare fermentum urna, at efficitur turpis. Vivamus malesuada, nulla quis porttitor venenatis, justo neque luctus mauris, sit amet maximus velit mauris non turpis. Nulla efficitur est et pulvinar scelerisque. In sed tristique erat. Donec convallis leo sit amet ligula placerat, ut ornare nunc ornare. Morbi ultrices sem mauris, non varius tellus aliquet in. Vivamus vel gravida elit. Fusce eu suscipit tortor, eget laoreet mauris. Nam lorem libero, porta non aliquam et, congue ac tortor. Nullam vehicula facilisis nunc vel tempor. Maecenas sit amet venenatis massa, sit amet pulvinar massa. Etiam mattis nulla lorem, ac tempor orci pretium quis. Sed at risus molestie felis ullamcorper efficitur id sit amet turpis.
+
+Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem eleifend metus, ac laoreet velit arcu non eros. Vivamus finibus, felis vitae egestas luctus, arcu nisl cursus tortor, vel commodo felis nulla vel purus. Vivamus tincidunt libero tempor mauris iaculis finibus. Fusce pellentesque ultrices odio sit amet mollis. Morbi nisl velit, laoreet at pellentesque eu, dictum vitae mi. Etiam vel lectus vitae elit bibendum varius id vitae mauris. Fusce non molestie dolor.
+						</p>
+						</div>
 					</section>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3 col-md-offset-1">
 					<div class="row no-gutters">
 						<section class="adoptSection">
+							<div class="adoptionPicture">
+							</div>
+							<div class="adoptionInformation">
+								<h4 class="adoptTitle">Ready to Help?</h4>
+								<button class="adoptionButton">Adopt</button>
+								<button class="adoptionButton adoptionButtonSpacing">Sponsor</button>
+							</div>
+							<div class="adoptionMoreInformation">
+								<p style="text-align: center;">More Information</p>
+							</div>
 						</section>
 					</div>
+					<?php
+						if($shelter){
+					?>
 					<div class="row no-gutters rowTopSpacing">
 						<section class="shelterSection">
+							<div class="shelterPicture">
+							</div>
+							<div class="shelterInfo">
+								<h4 class="shelterName"><?php echo $shelter->name; ?></h4>
+								<h5 class="locationPart"><?php echo $shelter->country_name; ?></h5>
+								<h5 class="emailPart"><?php echo $shelter->email; ?></h5>
+							</div>
+							<div class="shelterViewMore">
+								<p style="text-align: center;">More Information</p>
+							</div>
+						</section>
+					</div>
+					<?php
+						}
+					?>
+					<div class="row no-gutters rowTopSpacing">
+						<section class="infoSection">
+							<div class="infoPicture">
+							</div>
+							<div class="infoBox container" style="width: 100%;">
+								<h4 class="infoTitle">Information</h4>
+								<div class="row">
+									<div class="col-sm-6">Register Date</div>
+									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->register_date; ?></p></div>
+									<hr>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">Species</div>
+									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->species_name; ?></p></div>
+									<hr>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">Breed</div>
+									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->breed_name; ?></p></div>
+									<hr>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">Gender</div>
+									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->gender; ?></p></div>
+									<hr>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">Age</div>
+									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->age_name; ?></p></div>
+									<hr>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">Size</div>
+									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->size; ?></p></div>
+									<hr>
+								</div>
+							</div>
+							<div class="infoViewMore">
+								<p style="text-align: center;">More Information</p>
+							</div>
 						</section>
 					</div>
 				</div>

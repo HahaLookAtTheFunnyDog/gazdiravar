@@ -1,32 +1,263 @@
 .aboutSection {
-  background-color: #fff;
+  width: 100%;
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
-  width: 100%;
-  height: 100vh;
   border-radius: 15px;
-  padding: 20px;
+  padding: 0;
+  position: relative;
+  background-color: #fff;
+  height: 100vh;
+}
+
+.aboutSection .slideShowContainer {
+  width: 100%;
+  height: 350px;
+  position: relative;
+}
+
+.aboutSection .slideShowContainer .slideContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.aboutSection .slideShowContainer .slideContainer .slide {
+  position: absolute;
+  border-radius: 15px 15px 0 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.aboutSection .slideShowContainer .slideContainer .active {
+  opacity: 1;
+}
+
+.aboutSection .slideShowContainer .slidePrev {
+  top: 50%;
+  left: 25px;
+  position: absolute;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background-color: green;
+}
+
+.aboutSection .slideShowContainer .slideNext {
+  top: 50%;
+  right: 25px;
+  position: absolute;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background-color: green;
+}
+
+.aboutSection .textPart {
+  padding: 25px;
+}
+
+.aboutSection .textPart h1 {
+  text-align: center;
+}
+
+.aboutSection .textPart h3 {
+  text-align: center;
+}
+
+.aboutSection .textPart p {
+  line-height: 1.6;
 }
 
 .adoptSection {
-  background-color: #fff;
+  width: 100%;
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   border-radius: 15px;
-  width: 100%;
+  padding: 0;
+  position: relative;
+  background-color: dodgerblue;
+}
+
+.adoptSection .adoptionPicture {
+  top: 10px;
+  border: 7px solid dodgerblue;
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
   height: 100px;
+  background-color: black;
+  left: -75px;
+}
+
+.adoptSection .adoptionInformation {
+  margin-bottom: 20px;
+  padding: 25px;
+}
+
+.adoptSection .adoptionInformation .adoptTitle {
+  text-align: center;
+}
+
+.adoptSection .adoptionInformation .adoptionButton {
+  border: 2px solid #fff;
+  color: #fff;
+  display: block;
+  padding: 4px;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.adoptSection .adoptionInformation .adoptionButton:hover {
+  background-color: #fff;
+  color: dodgerblue;
+  border: 2px solid dodgerblue;
+}
+
+.adoptSection .adoptionMoreInformation {
+  border-radius: 0 0 15px 15px;
+  border-top: 2px solid black;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.adoptSection .adoptionMoreInformation:hover {
+  background-color: green;
 }
 
 .shelterSection {
-  background-color: #fff;
+  width: 100%;
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   border-radius: 15px;
+  padding: 0;
+  position: relative;
+  color: white;
+  background-color: red;
+}
+
+.shelterSection .shelterPicture {
+  top: 10px;
+  border: 7px solid red;
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  right: -75px;
+}
+
+.shelterSection .shelterInfo {
+  margin-bottom: 20px;
+  padding: 25px;
+}
+
+.shelterSection .shelterInfo .shelterName {
+  text-align: center;
+}
+
+.shelterSection .shelterInfo .emailPart {
+  font-size: .7rem;
+  text-align: center;
+}
+
+.shelterSection .shelterInfo .locationPart {
+  text-align: center;
+}
+
+.shelterSection .shelterViewMore {
+  border-radius: 0 0 15px 15px;
+  border-top: 2px solid black;
   width: 100%;
-  height: 200px;
+  position: absolute;
+  bottom: 0;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.shelterSection .shelterViewMore:hover {
+  background-color: green;
+}
+
+.infoSection {
+  width: 100%;
+  -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+          box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  border-radius: 15px;
+  padding: 0;
+  position: relative;
+  background-color: dodgerblue;
+  color: white;
+}
+
+.infoSection .infoPicture {
+  top: 10px;
+  border: 7px solid dodgerblue;
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  left: -75px;
+}
+
+.infoSection .infoBox {
+  margin-bottom: 20px;
+  padding: 25px;
+}
+
+.infoSection .infoBox .infoTitle {
+  text-align: center;
+}
+
+.infoSection .infoBox .dynamicInfo {
+  display: inline;
+}
+
+.infoSection .infoViewMore {
+  border-radius: 0 0 15px 15px;
+  border-top: 2px solid black;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.infoSection .infoViewMore:hover {
+  background-color: green;
 }
 
 .rowTopSpacing {
-  margin-top: 20px;
+  margin-top: 2.5rem;
+}
+
+.adoptionButtonSpacing {
+  margin-top: .5rem;
+}
+
+.adoptionFormContainer {
+  overflow: hidden;
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.86);
+}
+
+.adoptionForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background-color: red;
 }
 /*# sourceMappingURL=style.css.map */

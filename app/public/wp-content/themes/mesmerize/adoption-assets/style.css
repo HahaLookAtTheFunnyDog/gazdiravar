@@ -48,7 +48,7 @@
 }
 
 .carousel-container {
-  width: 100%;
+  width: 60rem;
   margin: 50px auto;
   min-height: 200px;
   position: relative;
@@ -69,7 +69,7 @@
 }
 
 .carousel-container .card-container {
-  width: 259px;
+  width: 15rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   height: 275px;
@@ -92,18 +92,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-@media screen and (max-width: 768px) {
-  .carousel-container {
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .carousel-container {
-    width: 85%;
-  }
 }
 
 .nav .prev {
@@ -384,5 +372,23 @@
 
 .sortByTopList ul form {
   margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-container {
+    width: 30rem;
+  }
+  .card-container {
+    width: 7.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .carousel-container {
+    width: 45rem;
+  }
+  .card-container {
+    width: 11.25rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
