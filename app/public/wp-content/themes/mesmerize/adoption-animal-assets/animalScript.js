@@ -25,3 +25,16 @@
             slides[slides.length-1].classList.add('active');
         }
     }
+    //------------------------------------------------------------------------
+	//Adoption Form
+    //------------------------------------------------------------------------
+    const adoptFormContainer = document.querySelector(".adoptionFormContainer");
+    const adoptButton = document.getElementById("adoptButton");
+    const adoptFormCancel = document.getElementById("adoptFormCancel");
+
+    adoptButton.onclick = function(){
+        adoptFormContainer.style.display = "block";
+    }
+    adoptFormCancel.onclick = function(){
+        adoptFormContainer.style.display = "none";
+    }

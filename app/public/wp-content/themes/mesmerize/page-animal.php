@@ -3,6 +3,39 @@
 ?>
 <div class="adoptionFormContainer">
 	<div class="adoptionForm">
+		<h1>Adoption Contact</h1>
+		<form method="post">
+			<label for="fname">First Name</label>
+			<input type="text" id="fname" name="fname">
+			<label for="lname">Last Name</label>
+			<input type="text" id="lname" name="lname">
+			<label for="emailAddr">Email</label>
+			<input type="text" id="emailAddr" name="emailAddr">
+			<label for="country">Country</label>
+			<select id="country" name="country" class="form-control" style="margin: 0;" onchange="this.parentNode.submit()">
+				<?php
+				$countries = $wpdb->get_results("
+					SELECT country_name FROM countries"
+				);
+				foreach($countries as $country){
+					?>
+					<option 
+					value="<?php echo $country->country_name; ?>"><?php echo $country->country_name; ?></option>
+					<?php
+				}
+				?>
+			</select>
+			<label for="message">Additional Comments (Optional)</label>
+			<input type="text" class="formMessage" id="message" name="message">
+			<ul>
+				<li>
+					<button>Submit</button>
+				</li>
+				<li>
+					<button id="adoptFormCancel">Cancel</button>
+				</li>
+			</ul>
+		</form>
 	</div>
 </div>
 <?php mesmerize_get_header(); ?>
@@ -77,7 +110,7 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 							</div>
 							<div class="adoptionInformation">
 								<h4 class="adoptTitle">Ready to Help?</h4>
-								<button class="adoptionButton">Adopt</button>
+								<button class="adoptionButton" id="adoptButton">Adopt</button>
 								<button class="adoptionButton adoptionButtonSpacing">Sponsor</button>
 							</div>
 							<div class="adoptionMoreInformation">

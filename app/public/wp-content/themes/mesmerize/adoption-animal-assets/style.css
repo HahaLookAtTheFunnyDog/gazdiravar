@@ -242,7 +242,7 @@
 }
 
 .adoptionFormContainer {
-  display: none;
+  display: none !important;
   overflow: hidden;
   position: fixed;
   z-index: 50;
@@ -252,6 +252,9 @@
 }
 
 .adoptionForm {
+  display: none;
+  padding: 15px;
+  border-radius: 25px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -259,7 +262,36 @@
           transform: translate(-50%, -50%);
   width: 800px;
   height: 800px;
-  background-color: red;
+  background-color: white;
+}
+
+.adoptionForm form .formMessage {
+  height: 200px;
+}
+
+.adoptionForm form label, .adoptionForm form input {
+  display: block;
+}
+
+.adoptionForm form label {
+  margin-top: 25px;
+}
+
+.adoptionForm form ul {
+  margin-top: 25px;
+  list-style: none;
+  text-align: center;
+}
+
+.adoptionForm form ul li {
+  display: inline-block;
+}
+
+.adoptionForm form ul li button {
+  cursor: pointer;
+  border-radius: 15px;
+  height: 30px;
+  width: 60px;
 }
 
 .recommendedSection {
