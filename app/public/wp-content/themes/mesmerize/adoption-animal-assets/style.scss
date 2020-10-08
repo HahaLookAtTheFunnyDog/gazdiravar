@@ -24,13 +24,14 @@ $secondaryTextColor: #fff;
     }
 }
 @mixin picture($color){
+    cursor: pointer;
     top: 10px;
     border: 7px solid $color;
     position: absolute;
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    background-color: black;
+    background-color: $secondaryTextColor;
 }
 @mixin marginPaddingBox{
     margin-bottom: 20px;

@@ -1,6 +1,8 @@
 <?php
 	session_start();
 ?>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
 <div class="adoptionFormContainer">
 </div>
 <?php mesmerize_get_header(); ?>
@@ -73,7 +75,11 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 				<div class="col-md-3 col-md-offset-1">
 					<div class="row no-gutters">
 						<section class="adoptSection">
-							<div class="adoptionPicture">
+							<div class="adoptionPicture" style="background-image: 
+							url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/shelterIcon.png");?>');
+							background-size: cover;                     
+    						background-repeat:   no-repeat;
+    						background-position: center center;">
 							</div>
 							<div class="adoptionInformation">
 								<h4 class="adoptTitle">Ready to Help?</h4>
@@ -89,7 +95,11 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 					?>
 					<div class="row no-gutters rowTopSpacing">
 						<section class="shelterSection">
-							<div class="shelterPicture">
+							<div class="shelterPicture" style="background-image: 
+							url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/shelterIcon.png");?>');
+							background-size: cover;                     
+    						background-repeat:   no-repeat;
+    						background-position: center center;">
 							</div>
 							<div class="shelterInfo">
 								<h4 class="shelterName"><?php echo $shelter->name; ?></h4>
@@ -106,7 +116,11 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 					?>
 					<div class="row no-gutters rowTopSpacing">
 						<section class="infoSection">
-							<div class="infoPicture">
+							<div class="infoPicture" style="background-image: 
+							url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/shelterIcon.png");?>');
+							background-size: cover;                     
+    						background-repeat:   no-repeat;
+    						background-position: center center;">
 							</div>
 							<div class="infoBox container" style="width: 100%;">
 								<h4 class="infoTitle">Information</h4>
