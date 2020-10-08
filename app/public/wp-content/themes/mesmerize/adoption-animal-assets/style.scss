@@ -64,7 +64,14 @@ $secondaryColor: #fff;
             cursor: pointer;
             width: 25px;
             height: 25px;
-            background-color: green;
+            button{
+                color: $secondaryColor;
+                font-weight: bold;
+                font-size: 25px;
+                background-color: transparent;
+                border-color: transparent;
+                cursor: pointer;
+            }
         }
         .slideNext{
             top: 50%;
@@ -73,7 +80,14 @@ $secondaryColor: #fff;
             cursor: pointer;
             width: 25px;
             height: 25px;
-            background-color: green;
+            button{
+                color: $secondaryColor;
+                font-weight: bold;
+                font-size: 25px;
+                background-color: transparent;
+                border-color: transparent;
+                cursor: pointer;
+            }
         }
     }
     .textPart{
@@ -95,7 +109,7 @@ $secondaryColor: #fff;
     background-color:$secondaryColor;
     .adoptionPicture{
         @include picture($secondaryColor);
-        box-shadow: -4px 0 0 0 rgba(33,33,33,.2); 
+        box-shadow: -1px 0 0 0 rgba(33,33,33,.2); 
         left: -75px;
     }
     .adoptionInformation{
@@ -127,7 +141,7 @@ $secondaryColor: #fff;
     background-color: $secondaryColor;
     .shelterPicture{
         @include picture($secondaryColor);
-        box-shadow: 4px 0 0 0 rgba(33,33,33,.2); 
+        box-shadow: 1px 0 0 0 rgba(33,33,33,.2); 
         right: -75px;
     }
     .shelterInfo{
@@ -152,20 +166,18 @@ $secondaryColor: #fff;
     background-color: $secondaryColor;
     .infoPicture{
         @include picture($secondaryColor);
-        box-shadow: -4px 0 0 0 rgba(33,33,33,.2); 
+        box-shadow: -1px 0 0 0 rgba(33,33,33,.2); 
         left: -75px;
     }
     .infoBox{
         @include marginPaddingBox();
+        margin-bottom: 0;
         .infoTitle{
             text-align: center;
         }
         .dynamicInfo{
             display: inline;
         }
-    }
-    .infoViewMore{
-        @include moreInformation();
     }
 }
 .rowTopSpacing{
