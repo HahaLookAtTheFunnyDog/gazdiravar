@@ -251,7 +251,7 @@
 }
 
 .adoptionFormContainer {
-  display: none !important;
+  display: none;
   overflow: hidden;
   position: fixed;
   z-index: 50;

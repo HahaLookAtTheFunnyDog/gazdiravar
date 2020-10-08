@@ -1,4 +1,23 @@
     //------------------------------------------------------------------------
+	//Adoption Form
+    //------------------------------------------------------------------------
+    const adoptFormContainer = document.querySelector(".adoptionFormContainer");
+    const adoptionForm = document.querySelector(".adoptionForm");
+    const adoptButton = document.getElementById("adoptButton");
+    const adoptFormCancel = document.getElementById("adoptFormCancel");
+
+    adoptButton.onclick = function(){
+        adoptionForm.style.display = "block";
+        adoptFormContainer.appendChild(adoptionForm);
+        adoptFormContainer.style.display = "block";
+
+    }
+    adoptFormCancel.onclick = function(){
+        adoptionForm.remove();
+        adoptFormContainer.style.display = "none";
+    }
+    
+    //------------------------------------------------------------------------
 	//Slideshow
     //------------------------------------------------------------------------
     const prevButton = document.querySelector('.slidePrev');
@@ -24,17 +43,4 @@
         else{
             slides[slides.length-1].classList.add('active');
         }
-    }
-    //------------------------------------------------------------------------
-	//Adoption Form
-    //------------------------------------------------------------------------
-    const adoptFormContainer = document.querySelector(".adoptionFormContainer");
-    const adoptButton = document.getElementById("adoptButton");
-    const adoptFormCancel = document.getElementById("adoptFormCancel");
-
-    adoptButton.onclick = function(){
-        adoptFormContainer.style.display = "block";
-    }
-    adoptFormCancel.onclick = function(){
-        adoptFormContainer.style.display = "none";
     }
