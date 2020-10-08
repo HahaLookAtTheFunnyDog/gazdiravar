@@ -111,34 +111,28 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 							<div class="infoBox container" style="width: 100%;">
 								<h4 class="infoTitle">Information</h4>
 								<div class="row">
-									<div class="col-sm-6">Register Date</div>
-									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->register_date; ?></p></div>
-									<hr>
+									<div class="col-sm-6 borderRight">Register Date</div>
+									<div class="col-sm-6 "><p class="dynamicInfo"><?php echo $adoption->register_date; ?></p></div>
 								</div>
 								<div class="row">
-									<div class="col-sm-6">Species</div>
-									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->species_name; ?></p></div>
-									<hr>
+									<div class="col-sm-6 borderRight">Species</div>
+									<div class="col-sm-6 "><p class="dynamicInfo"><?php echo $adoption->species_name; ?></p></div>
 								</div>
 								<div class="row">
-									<div class="col-sm-6">Breed</div>
-									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->breed_name; ?></p></div>
-									<hr>
+									<div class="col-sm-6 borderRight">Breed</div>
+									<div class="col-sm-6"><p class="dynamicInfo"><?php echo $adoption->breed_name; ?></p></div>
 								</div>
 								<div class="row">
-									<div class="col-sm-6">Gender</div>
-									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->gender; ?></p></div>
-									<hr>
+									<div class="col-sm-6 borderRight">Gender</div>
+									<div class="col-sm-6"><p class="dynamicInfo"><?php echo $adoption->gender; ?></p></div>
 								</div>
 								<div class="row">
-									<div class="col-sm-6">Age</div>
-									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->age_name; ?></p></div>
-									<hr>
+									<div class="col-sm-6 borderRight">Age</div>
+									<div class="col-sm-6"><p class="dynamicInfo"><?php echo $adoption->age_name; ?></p></div>
 								</div>
 								<div class="row">
-									<div class="col-sm-6">Size</div>
-									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->size; ?></p></div>
-									<hr>
+									<div class="col-sm-6 borderRight">Size</div>
+									<div class="col-sm-6"><p class="dynamicInfo"><?php echo $adoption->size; ?></p></div>
 								</div>
 							</div>
 						</section>
@@ -210,7 +204,7 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 			<label for="emailAddr">Email</label>
 			<input type="text" id="emailAddr" name="emailAddr">
 			<label for="country">Country</label>
-			<select id="country" name="country" class="form-control" style="margin: 0;" onchange="this.parentNode.submit()">
+			<select id="country" name="country" class="form-control" style="margin: 0;">
 				<?php
 				$countries = $wpdb->get_results("
 					SELECT country_name FROM countries"

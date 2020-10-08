@@ -136,12 +136,13 @@
 
 .adoptSection .adoptionMoreInformation {
   border-radius: 0 0 15px 15px;
-  border-top: 2px solid black;
+  border-top: 2px solid #3C424F;
   width: 100%;
   position: absolute;
   bottom: 0;
   padding: 3px;
   cursor: pointer;
+  color: #3C424F;
 }
 
 .adoptSection .adoptionMoreInformation:hover {
@@ -192,12 +193,13 @@
 
 .shelterSection .shelterViewMore {
   border-radius: 0 0 15px 15px;
-  border-top: 2px solid black;
+  border-top: 2px solid #3C424F;
   width: 100%;
   position: absolute;
   bottom: 0;
   padding: 3px;
   cursor: pointer;
+  color: #3C424F;
 }
 
 .shelterSection .shelterViewMore:hover {
@@ -232,6 +234,11 @@
   margin-bottom: 20px;
   padding: 25px;
   margin-bottom: 0;
+  color: #3C424F;
+}
+
+.infoSection .infoBox .borderRight {
+  border-right: 2px solid #3C424F;
 }
 
 .infoSection .infoBox .infoTitle {
@@ -240,6 +247,13 @@
 
 .infoSection .infoBox .dynamicInfo {
   display: inline;
+}
+
+.infoSection .infoBox .row {
+  border-bottom: 2px solid #3C424F;
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .rowTopSpacing {
@@ -266,7 +280,7 @@
 
 .adoptionForm {
   display: none;
-  padding: 15px;
+  padding: 35px;
   border-radius: 25px;
   position: absolute;
   top: 50%;
@@ -284,6 +298,11 @@
 
 .adoptionForm form label, .adoptionForm form input {
   display: block;
+  color: #3C424F;
+}
+
+.adoptionForm form input, .adoptionForm form select {
+  border: 1px solid #3C424F;
 }
 
 .adoptionForm form label {
@@ -302,7 +321,7 @@
 
 .adoptionForm form ul li button {
   cursor: pointer;
-  border-radius: 15px;
+  border-radius: 5px;
   height: 30px;
   width: 60px;
 }

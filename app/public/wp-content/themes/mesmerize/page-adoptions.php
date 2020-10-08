@@ -892,4 +892,4 @@ if($_SESSION["recentlyViewed"]){
 </div>
 </div>
 <script src="<?php echo site_url('/wp-content/themes/mesmerize/adoption-assets/adoptionsScript.js'); ?>" type="text/javascript">
-	<?php get_footer(); ?>
+<?php get_footer(); ?>

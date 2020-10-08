@@ -5,7 +5,7 @@
     const adoptionForm = document.querySelector(".adoptionForm");
     const adoptButton = document.getElementById("adoptButton");
     const adoptFormCancel = document.getElementById("adoptFormCancel");
-
+    adoptionForm.remove();
     adoptButton.onclick = function(){
         adoptionForm.style.display = "block";
         adoptFormContainer.appendChild(adoptionForm);

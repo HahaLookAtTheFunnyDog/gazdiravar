@@ -1,5 +1,6 @@
 $primaryColor: dodgerblue;
-$secondaryColor: #fff;
+$primaryTextColor: #3C424F;
+$secondaryTextColor: #fff;
 
 @mixin sectionBox{
     width: 100%;
@@ -10,16 +11,17 @@ $secondaryColor: #fff;
 }
 @mixin moreInformation{
     border-radius: 0 0 15px 15px;
-        border-top: 2px solid black;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        padding: 3px;
-        cursor: pointer;
-        &:hover{
-            background-color:$primaryColor;
-            color: $secondaryColor;
-        }
+    border-top: 2px solid $primaryTextColor;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 3px;
+    cursor: pointer;
+    color: $primaryTextColor;
+    &:hover{
+        background-color:$primaryColor;
+        color: $secondaryTextColor;
+    }
 }
 @mixin picture($color){
     top: 10px;
@@ -36,7 +38,7 @@ $secondaryColor: #fff;
 }
 .aboutSection{
     @include sectionBox();
-    background-color: $secondaryColor;
+    background-color: $secondaryTextColor;
     height: 100vh;
     .slideShowContainer{
         width: 100%;
@@ -65,7 +67,7 @@ $secondaryColor: #fff;
             width: 25px;
             height: 25px;
             button{
-                color: $secondaryColor;
+                color: $secondaryTextColor;
                 font-weight: bold;
                 font-size: 25px;
                 background-color: transparent;
@@ -81,7 +83,7 @@ $secondaryColor: #fff;
             width: 25px;
             height: 25px;
             button{
-                color: $secondaryColor;
+                color: $secondaryTextColor;
                 font-weight: bold;
                 font-size: 25px;
                 background-color: transparent;
@@ -106,9 +108,9 @@ $secondaryColor: #fff;
 }
 .adoptSection{
     @include sectionBox();
-    background-color:$secondaryColor;
+    background-color:$secondaryTextColor;
     .adoptionPicture{
-        @include picture($secondaryColor);
+        @include picture($secondaryTextColor);
         box-shadow: -1px 0 0 0 rgba(33,33,33,.2); 
         left: -75px;
     }
@@ -126,7 +128,7 @@ $secondaryColor: #fff;
             border-radius: 8px;
             cursor: pointer;
             &:hover{
-                background-color: $secondaryColor;
+                background-color: $secondaryTextColor;
                 color: $primaryColor;
                 border: 2px solid $primaryColor;
             }
@@ -138,9 +140,9 @@ $secondaryColor: #fff;
 }
 .shelterSection{
     @include sectionBox();
-    background-color: $secondaryColor;
+    background-color: $secondaryTextColor;
     .shelterPicture{
-        @include picture($secondaryColor);
+        @include picture($secondaryTextColor);
         box-shadow: 1px 0 0 0 rgba(33,33,33,.2); 
         right: -75px;
     }
@@ -163,20 +165,30 @@ $secondaryColor: #fff;
 }
 .infoSection{
     @include sectionBox();
-    background-color: $secondaryColor;
+    background-color: $secondaryTextColor;
     .infoPicture{
-        @include picture($secondaryColor);
+        @include picture($secondaryTextColor);
         box-shadow: -1px 0 0 0 rgba(33,33,33,.2); 
         left: -75px;
     }
     .infoBox{
         @include marginPaddingBox();
         margin-bottom: 0;
+        color: $primaryTextColor;
+        .borderRight{
+            border-right: 2px solid $primaryTextColor;
+        }   
         .infoTitle{
             text-align: center;
         }
         .dynamicInfo{
             display: inline;
+        }
+        .row{
+            border-bottom: 2px solid $primaryTextColor;
+            text-align: center;
+            padding-bottom: 10px;
+            padding-top: 10px;
         }
     }
 }
@@ -202,7 +214,7 @@ $secondaryColor: #fff;
 }
 .adoptionForm{
     display: none;
-    padding: 15px;
+    padding: 35px;
     border-radius: 25px;
     position: absolute;
     top: 50%; left: 50%;
@@ -216,6 +228,10 @@ $secondaryColor: #fff;
         }
         label, input{
             display: block;
+            color: $primaryTextColor
+        }
+        input, select{
+            border: 1px solid $primaryTextColor;
         }
         label{
             margin-top: 25px;
@@ -228,7 +244,7 @@ $secondaryColor: #fff;
                 display: inline-block;
                 button{
                     cursor: pointer;
-                    border-radius: 15px;
+                    border-radius: 5px;
                     height: 30px;
                     width: 60px;
                 }
