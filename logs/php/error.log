@@ -2627,3 +2627,6 @@ Stack trace:
 								WHERE d.gender = 'Male' 
 								AND c.age_name = 'Infant'
 								 AND g.size = 'Small' AND a.adoptionid <> '2' LIMIT 4 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-animal.php')
+[13-Oct-2020 22:13:34 UTC] PHP Notice:  Array to string conversion in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 6
+[13-Oct-2020 22:13:34 UTC] PHP Stack trace:
+[13-Oct-2020 22:13:34 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:0

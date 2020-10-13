@@ -65,9 +65,11 @@
 						<h1><?php echo ucwords($adoption->name); ?></h1>
 						<h3><?php echo $adoption->country_name; ?></h3>
 						<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ultricies elit. Praesent fermentum nunc at turpis tempus, vitae ultricies lectus blandit. Morbi ut luctus leo. Integer ornare fermentum urna, at efficitur turpis. Vivamus malesuada, nulla quis porttitor venenatis, justo neque luctus mauris, sit amet maximus velit mauris non turpis. Nulla efficitur est et pulvinar scelerisque. In sed tristique erat. Donec convallis leo sit amet ligula placerat, ut ornare nunc ornare. Morbi ultrices sem mauris, non varius tellus aliquet in. Vivamus vel gravida elit. Fusce eu suscipit tortor, eget laoreet mauris. Nam lorem libero, porta non aliquam et, congue ac tortor. Nullam vehicula facilisis nunc vel tempor. Maecenas sit amet venenatis massa, sit amet pulvinar massa. Etiam mattis nulla lorem, ac tempor orci pretium quis. Sed at risus molestie felis ullamcorper efficitur id sit amet turpis.
+						Morgo is looking for a forever home for a long time now, more than 2 years. <br><br>
 
-Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem eleifend metus, ac laoreet velit arcu non eros. Vivamus finibus, felis vitae egestas luctus, arcu nisl cursus tortor, vel commodo felis nulla vel purus. Vivamus tincidunt libero tempor mauris iaculis finibus. Fusce pellentesque ultrices odio sit amet mollis. Morbi nisl velit, laoreet at pellentesque eu, dictum vitae mi. Etiam vel lectus vitae elit bibendum varius id vitae mauris. Fusce non molestie dolor.
+We don't know why, he is really lovable. It would be extremely sad if he would need to live all his life behind a cage. <br><br>
+
+He is beautiful, eats well, pays attention to things and he is about 4 years old. He is really waiting for the one who will fall in love with him and take him home forever. Please help us find him the home he can call his own.
 						</p>
 						</div>
 					</section>
@@ -75,11 +77,7 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 				<div class="col-md-3 col-md-offset-1">
 					<div class="row no-gutters">
 						<section class="adoptSection">
-							<div class="adoptionPicture" style="background-image: 
-							url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/shelterIcon.png");?>');
-							background-size: cover;                     
-    						background-repeat:   no-repeat;
-    						background-position: center center;">
+							<div class="adoptionPicture">
 							</div>
 							<div class="adoptionInformation">
 								<h4 class="adoptTitle">Ready to Help?</h4>
@@ -95,11 +93,7 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 					?>
 					<div class="row no-gutters rowTopSpacing">
 						<section class="shelterSection">
-							<div class="shelterPicture" style="background-image: 
-							url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/shelterIcon.png");?>');
-							background-size: cover;                     
-    						background-repeat:   no-repeat;
-    						background-position: center center;">
+							<div class="shelterPicture">
 							</div>
 							<div class="shelterInfo">
 								<h4 class="shelterName"><?php echo $shelter->name; ?></h4>
@@ -116,11 +110,7 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 					?>
 					<div class="row no-gutters rowTopSpacing">
 						<section class="infoSection">
-							<div class="infoPicture" style="background-image: 
-							url('<?php echo site_url("/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/shelterIcon.png");?>');
-							background-size: cover;                     
-    						background-repeat:   no-repeat;
-    						background-position: center center;">
+							<div class="infoPicture">
 							</div>
 							<div class="infoBox container" style="width: 100%;">
 								<h4 class="infoTitle">Information</h4>
@@ -210,15 +200,15 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 </div>
 <div class="adoptionForm">
 		<h1>Adoption Contact</h1>
-		<form method="post">
+		<form method="post" class="formAdoption">
 			<label for="fname">First Name</label>
-			<input type="text" id="fname" name="fname">
+			<input required class="adoptionFormInput" type="text" id="fname" name="fname">
 			<label for="lname">Last Name</label>
-			<input type="text" id="lname" name="lname">
+			<input required class="adoptionFormInput" type="text" id="lname" name="lname">
 			<label for="emailAddr">Email</label>
-			<input type="text" id="emailAddr" name="emailAddr">
+			<input required class="adoptionFormInput" type="text" id="emailAddr" name="emailAddr">
 			<label for="country">Country</label>
-			<select id="country" name="country" class="form-control" style="margin: 0;">
+			<select required class="adoptionFormInput" id="country" name="country" class="form-control" style="margin: 0;">
 				<?php
 				$countries = $wpdb->get_results("
 					SELECT country_name FROM countries"
@@ -232,7 +222,7 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 				?>
 			</select>
 			<label for="message">Additional Comments (Optional)</label>
-			<input type="text" class="formMessage" id="message" name="message">
+			<input class="adoptionFormInput" type="text" class="formMessage" id="message" name="message">
 			<ul>
 				<li>
 					<button>Submit</button>
@@ -243,5 +233,6 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 			</ul>
 		</form>
 	</div>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
 <script src="<?php echo site_url('/wp-content/themes/mesmerize/adoption-animal-assets/animalScript.js'); ?>" type="text/javascript">
 <?php get_footer(); ?>

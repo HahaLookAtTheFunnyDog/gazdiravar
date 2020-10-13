@@ -82,7 +82,8 @@
 }
 
 .aboutSection .textPart p {
-  line-height: 1.6;
+  line-height: 2;
+  font-size: 19px;
   text-align: center;
 }
 
@@ -97,22 +98,24 @@
 }
 
 .adoptSection .adoptionPicture {
+  -webkit-box-shadow: 0 -1px 0 0 rgba(33, 33, 33, 0.2);
+          box-shadow: 0 -1px 0 0 rgba(33, 33, 33, 0.2);
   cursor: pointer;
-  top: 10px;
+  top: -50px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   border: 7px solid #fff;
   position: absolute;
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  background-color: #fff;
-  -webkit-box-shadow: -1px 0 0 0 rgba(33, 33, 33, 0.2);
-          box-shadow: -1px 0 0 0 rgba(33, 33, 33, 0.2);
-  left: -75px;
+  background-color: dodgerblue;
 }
 
 .adoptSection .adoptionInformation {
   margin-bottom: 20px;
-  padding: 25px;
+  padding: 50px 25px 25px 25px;
 }
 
 .adoptSection .adoptionInformation .adoptTitle {
@@ -162,22 +165,24 @@
 }
 
 .shelterSection .shelterPicture {
+  -webkit-box-shadow: 0 -1px 0 0 rgba(33, 33, 33, 0.2);
+          box-shadow: 0 -1px 0 0 rgba(33, 33, 33, 0.2);
   cursor: pointer;
-  top: 10px;
+  top: -50px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   border: 7px solid #fff;
   position: absolute;
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  background-color: #fff;
-  -webkit-box-shadow: 1px 0 0 0 rgba(33, 33, 33, 0.2);
-          box-shadow: 1px 0 0 0 rgba(33, 33, 33, 0.2);
-  right: -75px;
+  background-color: dodgerblue;
 }
 
 .shelterSection .shelterInfo {
   margin-bottom: 20px;
-  padding: 25px;
+  padding: 50px 25px 25px 25px;
 }
 
 .shelterSection .shelterInfo .shelterName {
@@ -220,22 +225,24 @@
 }
 
 .infoSection .infoPicture {
+  -webkit-box-shadow: 0 -1px 0 0 rgba(33, 33, 33, 0.2);
+          box-shadow: 0 -1px 0 0 rgba(33, 33, 33, 0.2);
   cursor: pointer;
-  top: 10px;
+  top: -50px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   border: 7px solid #fff;
   position: absolute;
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  background-color: #fff;
-  -webkit-box-shadow: -1px 0 0 0 rgba(33, 33, 33, 0.2);
-          box-shadow: -1px 0 0 0 rgba(33, 33, 33, 0.2);
-  left: -75px;
+  background-color: dodgerblue;
 }
 
 .infoSection .infoBox {
   margin-bottom: 20px;
-  padding: 25px;
+  padding: 50px 25px 25px 25px;
   margin-bottom: 0;
   color: #3C424F;
 }
@@ -260,7 +267,7 @@
 }
 
 .rowTopSpacing {
-  margin-top: 2.5rem;
+  margin-top: 4.5rem;
 }
 
 .adoptionButtonSpacing {

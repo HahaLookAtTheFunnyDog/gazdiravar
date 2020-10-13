@@ -1,6 +1,30 @@
+jQuery(document).ready(function($){
+
     //------------------------------------------------------------------------
 	//Adoption Form
     //------------------------------------------------------------------------
+    const formAdoption = document.querySelector(".formAdoption");
+    /*
+    formAdoption.onsubmit = function(){
+        var inputs = document.querySelectorAll(".adoptionFormInput");
+        var data = {};
+        for(var i = 0; i < inputs.length; i++){
+            data[inputs[i].getAttribute("name")] = inputs[i].value;
+        }
+        var jsonData = JSON.stringify(data);        
+        jQuery.ajax({
+            type : "post",
+            dataType : "json",
+            url : document.location.origin + '/wp-content/themes/mesmerize/adoptionFormSubmit.php',
+            data : jsonData,
+            success: function() {
+               alert("Success");
+            },
+            error: function(){
+                alert("error");
+            }
+         });
+    }*/
     const adoptFormContainer = document.querySelector(".adoptionFormContainer");
     const adoptionForm = document.querySelector(".adoptionForm");
     const adoptButton = document.getElementById("adoptButton");
@@ -10,11 +34,39 @@
         adoptionForm.style.display = "block";
         adoptFormContainer.appendChild(adoptionForm);
         adoptFormContainer.style.display = "block";
-
+        var inputs = document.querySelectorAll(".adoptionFormInput");
+        var data = {};
+        for(var i = 0; i < inputs.length; i++){
+            data[inputs[i].getAttribute("name")] = inputs[i].value;
+        }
+        var jsonData = JSON.stringify(data);   
+        jQuery.post(document.location.origin + '/wp-content/themes/mesmerize/adoptionFormSubmit.php',
+         jsonData,
+         function(data){
+            console.log(data);
+         });     
     }
     adoptFormCancel.onclick = function(){
-        adoptionForm.remove();
         adoptFormContainer.style.display = "none";
+    }
+    function adoptionFormSubmit(){
+        alert("hello");
+    
+        /*
+        jQuery.ajax({
+            type : "post",
+            dataType : "json",
+            url : myAjax.ajaxurl,
+            data : {action: "my_user_like", post_id : post_id, nonce: nonce},
+            success: function(response) {
+               if(response.type == "success") {
+                  jQuery("#like_counter").html(response.like_count);
+               }
+               else {
+                  alert("Your like could not be added");
+               }
+            }
+         });*/
     }
     
     //------------------------------------------------------------------------
@@ -44,3 +96,4 @@
             slides[slides.length-1].classList.add('active');
         }
     }
+});

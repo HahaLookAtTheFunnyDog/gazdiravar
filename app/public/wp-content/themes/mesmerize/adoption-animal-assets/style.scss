@@ -24,18 +24,21 @@ $secondaryTextColor: #fff;
     }
 }
 @mixin picture($color){
+    box-shadow: 0 -1px 0 0 rgba(33,33,33,.2);
     cursor: pointer;
-    top: 10px;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%);
     border: 7px solid $color;
     position: absolute;
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    background-color: $secondaryTextColor;
+    background-color: $primaryColor;
 }
 @mixin marginPaddingBox{
     margin-bottom: 20px;
-    padding: 25px;
+    padding: 50px 25px 25px 25px;
 }
 .aboutSection{
     @include sectionBox();
@@ -102,7 +105,8 @@ $secondaryTextColor: #fff;
             text-align: center;
         }
         p{
-            line-height: 1.6;
+            line-height: 2;
+            font-size: 19px;
             text-align: center;
         }
     }
@@ -112,8 +116,6 @@ $secondaryTextColor: #fff;
     background-color:$secondaryTextColor;
     .adoptionPicture{
         @include picture($secondaryTextColor);
-        box-shadow: -1px 0 0 0 rgba(33,33,33,.2); 
-        left: -75px;
     }
     .adoptionInformation{
         @include marginPaddingBox();
@@ -144,8 +146,6 @@ $secondaryTextColor: #fff;
     background-color: $secondaryTextColor;
     .shelterPicture{
         @include picture($secondaryTextColor);
-        box-shadow: 1px 0 0 0 rgba(33,33,33,.2); 
-        right: -75px;
     }
     .shelterInfo{
         @include marginPaddingBox();
@@ -169,8 +169,6 @@ $secondaryTextColor: #fff;
     background-color: $secondaryTextColor;
     .infoPicture{
         @include picture($secondaryTextColor);
-        box-shadow: -1px 0 0 0 rgba(33,33,33,.2); 
-        left: -75px;
     }
     .infoBox{
         @include marginPaddingBox();
@@ -194,7 +192,7 @@ $secondaryTextColor: #fff;
     }
 }
 .rowTopSpacing{
-    margin-top: 2.5rem;
+    margin-top: 4.5rem;
 }
 .adoptionButtonSpacing{
     margin-top: .5rem;
@@ -253,7 +251,6 @@ $secondaryTextColor: #fff;
         }
     }
 }
-
 .recommendedSection {
     width: 60rem;
     margin: 50px auto;
