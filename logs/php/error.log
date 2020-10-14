@@ -2630,3 +2630,102 @@ Stack trace:
 [13-Oct-2020 22:13:34 UTC] PHP Notice:  Array to string conversion in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 6
 [13-Oct-2020 22:13:34 UTC] PHP Stack trace:
 [13-Oct-2020 22:13:34 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:0
+[13-Oct-2020 22:43:08 UTC] PHP Warning:  array_push() expects parameter 1 to be array, string given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 8
+[13-Oct-2020 22:43:08 UTC] PHP Stack trace:
+[13-Oct-2020 22:43:08 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:0
+[13-Oct-2020 22:43:08 UTC] PHP   2. array_push() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:8
+[13-Oct-2020 22:43:57 UTC] PHP Warning:  array_push() expects parameter 1 to be array, string given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 8
+[13-Oct-2020 22:43:57 UTC] PHP Stack trace:
+[13-Oct-2020 22:43:57 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:0
+[13-Oct-2020 22:43:57 UTC] PHP   2. array_push() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:8
+[13-Oct-2020 22:44:20 UTC] PHP Warning:  array_push() expects parameter 1 to be array, string given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 8
+[13-Oct-2020 22:44:20 UTC] PHP Stack trace:
+[13-Oct-2020 22:44:20 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:0
+[13-Oct-2020 22:44:20 UTC] PHP   2. array_push() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:8
+[13-Oct-2020 22:45:02 UTC] PHP Warning:  array_push() expects parameter 1 to be array, string given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 8
+[13-Oct-2020 22:45:02 UTC] PHP Stack trace:
+[13-Oct-2020 22:45:02 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:0
+[13-Oct-2020 22:45:02 UTC] PHP   2. array_push() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:8
+[13-Oct-2020 22:45:55 UTC] PHP Warning:  json_decode() expects parameter 1 to be string, array given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 7
+[13-Oct-2020 22:45:55 UTC] PHP Stack trace:
+[13-Oct-2020 22:45:55 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:0
+[13-Oct-2020 22:45:55 UTC] PHP   2. json_decode() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:7
+[13-Oct-2020 22:48:14 UTC] PHP Warning:  json_decode() expects parameter 1 to be string, array given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 7
+[13-Oct-2020 22:48:14 UTC] PHP Stack trace:
+[13-Oct-2020 22:48:14 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:0
+[13-Oct-2020 22:48:14 UTC] PHP   2. json_decode() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:7
+[13-Oct-2020 22:48:14 UTC] PHP Warning:  json_decode() expects parameter 1 to be string, array given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 8
+[13-Oct-2020 22:48:14 UTC] PHP Stack trace:
+[13-Oct-2020 22:48:14 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:0
+[13-Oct-2020 22:48:14 UTC] PHP   2. json_decode() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:8
+[13-Oct-2020 22:51:54 UTC] PHP Warning:  json_decode() expects parameter 1 to be string, array given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 7
+[13-Oct-2020 22:51:54 UTC] PHP Stack trace:
+[13-Oct-2020 22:51:54 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:0
+[13-Oct-2020 22:51:54 UTC] PHP   2. json_decode() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:7
+[13-Oct-2020 22:51:54 UTC] PHP Warning:  json_decode() expects parameter 1 to be string, array given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 8
+[13-Oct-2020 22:51:54 UTC] PHP Stack trace:
+[13-Oct-2020 22:51:54 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:0
+[13-Oct-2020 22:51:54 UTC] PHP   2. json_decode() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:8
+[13-Oct-2020 22:52:38 UTC] PHP Warning:  json_decode() expects parameter 1 to be string, array given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 7
+[13-Oct-2020 22:52:38 UTC] PHP Stack trace:
+[13-Oct-2020 22:52:38 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:0
+[13-Oct-2020 22:52:38 UTC] PHP   2. json_decode() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:7
+[13-Oct-2020 22:59:18 UTC] PHP Parse error:  syntax error, unexpected '}' in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 14
+[13-Oct-2020 23:00:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function insert() on null in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:8
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 8
+[13-Oct-2020 23:05:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function insert() on null in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:9
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 9
+[13-Oct-2020 23:06:45 UTC] PHP Fatal error:  Uncaught Error: Call to a member function insert() on null in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:8
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 8
+[13-Oct-2020 23:07:45 UTC] PHP Fatal error:  Uncaught Error: Call to a member function insert() on null in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:8
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 8
+[13-Oct-2020 23:09:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function insert() on null in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:8
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 8
+[13-Oct-2020 23:10:22 UTC] PHP Fatal error:  Uncaught Error: Call to a member function insert() on null in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:8
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 8
+[13-Oct-2020 23:12:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function insert() on null in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:8
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 8
+[13-Oct-2020 23:37:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_results() on null in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php:3
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\adoptionFormSubmit.php on line 3
+[13-Oct-2020 23:49:47 UTC] WordPress database error Column 'email' cannot be null for query INSERT INTO `messages` (`first_name`, `last_name`, `email`) VALUES ('kian', 'morot', NULL) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptionFormSubmit.php')
+[13-Oct-2020 23:50:43 UTC] WordPress database error Column 'email' cannot be null for query INSERT INTO `messages` (`first_name`, `last_name`, `email`) VALUES ('kian', 'morot', NULL) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptionFormSubmit.php')
+[13-Oct-2020 23:51:29 UTC] WordPress database error Column 'email' cannot be null for query INSERT INTO `messages` (`first_name`, `last_name`, `email`) VALUES ('ra', 'ary', NULL) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptionFormSubmit.php')
+[13-Oct-2020 23:51:54 UTC] WordPress database error Column 'email' cannot be null for query INSERT INTO `messages` (`first_name`, `last_name`, `email`) VALUES ('arg', 'rga', NULL) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptionFormSubmit.php')
+[13-Oct-2020 23:53:39 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptionFormSubmit.php:6
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptionFormSubmit.php on line 6
+[14-Oct-2020 00:09:35 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptionFormSubmit.php:6
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptionFormSubmit.php on line 6
+[14-Oct-2020 00:10:33 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptionFormSubmit.php:7
+Stack trace:
+#0 C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php(106): include()
+#1 C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Kian\\L...')
+#2 C:\Users\Kian\Local Sites\work\app\public\index.php(17): require('C:\\Users\\Kian\\L...')
+#3 {main}
+  thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptionFormSubmit.php on line 7
+[14-Oct-2020 00:17:31 UTC] WordPress database error Column 'email' cannot be null for query INSERT INTO `messages` (`first_name`, `last_name`, `email`) VALUES ('thst', 'tshths', NULL) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptionFormSubmit.php')
