@@ -2,8 +2,9 @@ jQuery(document).ready(function($){
     //------------------------------------------------------------------------
 	//Adoption Form
     //------------------------------------------------------------------------
-    const formAdoption = document.querySelector(".formAdoption");
-    formAdoption.onsubmit = function(){
+    const adoptionBtn = document.getElementById("adoptionFormBtn");
+    adoptionBtn.onclick = function(){
+        alert("hello");
         var inputs = document.querySelectorAll(".adoptionFormInput");
         var data = {};
         for(var i = 0; i < inputs.length; i++){

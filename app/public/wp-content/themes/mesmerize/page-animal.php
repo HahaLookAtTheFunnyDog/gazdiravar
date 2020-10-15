@@ -200,7 +200,7 @@ He is beautiful, eats well, pays attention to things and he is about 4 years old
 </div>
 <div class="adoptionForm">
 		<h1>Adoption Contact</h1>
-		<form method="post" class="formAdoption">
+		<div class="formAdoption">
 			<label for="fname">First Name</label>
 			<input required class="adoptionFormInput" type="text" id="fname" name="fname">
 			<label for="lname">Last Name</label>
@@ -225,13 +225,13 @@ He is beautiful, eats well, pays attention to things and he is about 4 years old
 			<input class="adoptionFormInput" type="text" class="formMessage" id="message" name="message">
 			<ul>
 				<li>
-					<button>Submit</button>
+					<button id="adoptionFormBtn">Submit</button>
 				</li>
 				<li>
 					<button id="adoptFormCancel">Cancel</button>
 				</li>
 			</ul>
-		</form>
+		</div>
 	</div>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
 <script src="<?php echo site_url('/wp-content/themes/mesmerize/adoption-animal-assets/animalScript.js'); ?>" type="text/javascript">

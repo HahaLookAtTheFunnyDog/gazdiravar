@@ -302,34 +302,34 @@
   background-color: white;
 }
 
-.adoptionForm form .formMessage {
+.adoptionForm .formAdoption .formMessage {
   height: 200px;
 }
 
-.adoptionForm form label, .adoptionForm form input {
+.adoptionForm .formAdoption label, .adoptionForm .formAdoption input {
   display: block;
   color: #3C424F;
 }
 
-.adoptionForm form input, .adoptionForm form select {
+.adoptionForm .formAdoption input, .adoptionForm .formAdoption select {
   border: 1px solid #3C424F;
 }
 
-.adoptionForm form label {
+.adoptionForm .formAdoption label {
   margin-top: 25px;
 }
 
-.adoptionForm form ul {
+.adoptionForm .formAdoption ul {
   margin-top: 25px;
   list-style: none;
   text-align: center;
 }
 
-.adoptionForm form ul li {
+.adoptionForm .formAdoption ul li {
   display: inline-block;
 }
 
-.adoptionForm form ul li button {
+.adoptionForm .formAdoption ul li button {
   cursor: pointer;
   border-radius: 5px;
   height: 30px;
