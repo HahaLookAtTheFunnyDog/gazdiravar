@@ -65,11 +65,9 @@
 						<h1><?php echo ucwords($adoption->name); ?></h1>
 						<h3><?php echo $adoption->country_name; ?></h3>
 						<p>
-						Morgo is looking for a forever home for a long time now, more than 2 years. <br><br>
-
-We don't know why, he is really lovable. It would be extremely sad if he would need to live all his life behind a cage. <br><br>
-
-He is beautiful, eats well, pays attention to things and he is about 4 years old. He is really waiting for the one who will fall in love with him and take him home forever. Please help us find him the home he can call his own.
+						<?php 
+							echo $adoption->description;
+						?>
 						</p>
 						</div>
 					</section>
@@ -222,7 +220,7 @@ He is beautiful, eats well, pays attention to things and he is about 4 years old
 				?>
 			</select>
 			<label for="message">Additional Comments (Optional)</label>
-			<input class="adoptionFormInput" type="text" class="formMessage" id="message" name="message">
+			<textarea></textarea>
 			<ul>
 				<li>
 					<button id="adoptionFormBtn">Submit</button>

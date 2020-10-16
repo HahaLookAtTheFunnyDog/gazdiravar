@@ -43,7 +43,7 @@ $secondaryTextColor: #fff;
 .aboutSection{
     @include sectionBox();
     background-color: $secondaryTextColor;
-    height: 100vh;
+ 
     .slideShowContainer{
         width: 100%;
         height: 350px;
@@ -105,8 +105,8 @@ $secondaryTextColor: #fff;
             text-align: center;
         }
         p{
-            line-height: 2;
-            font-size: 19px;
+            line-height: 3;
+            font-size: 20px;
             text-align: center;
         }
     }
@@ -176,7 +176,7 @@ $secondaryTextColor: #fff;
         color: $primaryTextColor;
         .borderRight{
             border-right: 2px solid $primaryTextColor;
-        }   
+        } 
         .infoTitle{
             text-align: center;
         }
@@ -188,6 +188,7 @@ $secondaryTextColor: #fff;
             text-align: center;
             padding-bottom: 10px;
             padding-top: 10px;
+            font-size: 12px;
         }
     }
 }
@@ -229,8 +230,12 @@ $secondaryTextColor: #fff;
             display: block;
             color: $primaryTextColor
         }
-        input, select{
+        input, select, textarea{
             border: 1px solid $primaryTextColor;
+        }
+        textarea{
+            resize: none;
+            height: 125px;
         }
         label{
             margin-top: 25px;

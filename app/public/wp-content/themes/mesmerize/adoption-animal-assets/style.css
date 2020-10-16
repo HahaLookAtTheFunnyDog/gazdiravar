@@ -6,7 +6,6 @@
   padding: 0;
   position: relative;
   background-color: #fff;
-  height: 100vh;
 }
 
 .aboutSection .slideShowContainer {
@@ -82,8 +81,8 @@
 }
 
 .aboutSection .textPart p {
-  line-height: 2;
-  font-size: 19px;
+  line-height: 3;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -264,6 +263,7 @@
   text-align: center;
   padding-bottom: 10px;
   padding-top: 10px;
+  font-size: 12px;
 }
 
 .rowTopSpacing {
@@ -311,8 +311,13 @@
   color: #3C424F;
 }
 
-.adoptionForm .formAdoption input, .adoptionForm .formAdoption select {
+.adoptionForm .formAdoption input, .adoptionForm .formAdoption select, .adoptionForm .formAdoption textarea {
   border: 1px solid #3C424F;
+}
+
+.adoptionForm .formAdoption textarea {
+  resize: none;
+  height: 125px;
 }
 
 .adoptionForm .formAdoption label {
