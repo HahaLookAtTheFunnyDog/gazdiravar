@@ -53,7 +53,10 @@ $secondaryTextColor: #fff;
             width: 100%;
             height: 100%;
             .slide{
+                background-repeat: no-repeat;
+                background-position: center top;
                 position: absolute;
+                background-size: 100% 100%;
                 border-radius: 15px 15px 0 0;
                 width: 100%;
                 height: 100%;

@@ -24,7 +24,7 @@
 				$_SESSION["recentlyViewed"] = array($_GET["id"]);
 			}
 			global $wpdb;
-			$query = "SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date, size, a.shelter_id FROM adoptions a 
+			$query = "SELECT a.adoption_id, a.profile_picture_filename, a.page_picture_one_filename, a.page_picture_two_filename, a.page_picture_three_filename, a.page_picture_four_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date, size, a.shelter_id FROM adoptions a 
 			INNER JOIN breeds b ON a.breed_id = b.breed_id 
 			INNER JOIN age c ON a.age_id = c.age_id 
 			INNER JOIN genders d ON a.gender_id = d.gender_id
@@ -45,6 +45,33 @@
 					<section class="aboutSection">
 						<div class="slideShowContainer">
 							<div class="slideContainer">
+								<?php
+									$pictures = [];
+									if($adoption->page_picture_one_filename){
+										array_push($pictures,$adoption->page_picture_one_filename);
+									}
+									if($adoption->page_picture_two_filename){
+										array_push($pictures,$adoption->page_picture_two_filename);
+									}
+									if($adoption->page_picture_three_filename){
+										array_push($pictures,$adoption->page_picture_three_filename);
+									}
+									if($adoption->page_picture_four_filename){
+										array_push($pictures,$adoption->page_picture_four_filename);
+									}
+									if($pictures){
+										$count = 0;
+										foreach($pictures as $picture){
+											$url = "/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/" . $picture . ".jpg";
+											$src = site_url($url);
+											?>
+											<div class="slide <?php if($count == 0){echo "active";} ?>" style="background-image: url('<?php echo $src; ?>');"></div>
+											<?php
+											$count++;
+										}
+									}
+									else{
+								?>
 								<div class="slide active" style="background-color: red;">
 								</div>
 								<div class="slide" style="background-color: green;">
@@ -53,6 +80,9 @@
 								</div>
 								<div class="slide" style="background-color: yellow;">
 								</div>
+								<?php
+								}
+								?>
 							</div>
 							<div class="slidePrev">
 								<button><</button>
