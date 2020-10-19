@@ -102,7 +102,7 @@
 						</div>
 					</section>
 				</div>
-				<div class="col-md-3 col-md-offset-1">
+				<div class="col-md-4">
 					<div class="row no-gutters">
 						<section class="adoptSection">
 							<div class="adoptionPicture">
@@ -128,9 +128,12 @@
 								<h5 class="locationPart"><?php echo $shelter->country_name; ?></h5>
 								<h5 class="emailPart"><?php echo $shelter->email; ?></h5>
 							</div>
-							<div class="shelterViewMore">
-								<p style="text-align: center;">More Information</p>
-							</div>
+							<form method="GET" action="/shelter/">
+								<input type="hidden" name="id" value="<?php echo $adoption->shelter_id; ?>">
+								<div class="shelterViewMore" onclick="parentNode.submit()">
+									<p style="text-align: center;">More Information</p>
+								</div>
+							</form>
 						</section>
 					</div>
 					<?php
