@@ -293,3 +293,14 @@ $secondaryTextColor: #fff;
         }
     }
 }
+.shelterPageContent{
+    @include sectionBox();
+    height: 100vh;
+    margin-top: 175px;
+    .shelterPageContentPicture{
+        @include picture($secondaryTextColor);
+        top: -125px;
+        width: 250px;
+        height: 250px;
+    }
+}
