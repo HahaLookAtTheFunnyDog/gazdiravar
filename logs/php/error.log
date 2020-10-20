@@ -2729,3 +2729,109 @@ Stack trace:
 #3 {main}
   thrown in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-adoptionFormSubmit.php on line 7
 [14-Oct-2020 00:17:31 UTC] WordPress database error Column 'email' cannot be null for query INSERT INTO `messages` (`first_name`, `last_name`, `email`) VALUES ('thst', 'tshths', NULL) made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/mesmerize/page-adoptionFormSubmit.php')
+[20-Oct-2020 19:03:41 UTC] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 81
+[20-Oct-2020 19:03:41 UTC] PHP Stack trace:
+[20-Oct-2020 19:03:41 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:03:41 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:03:41 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:03:41 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[20-Oct-2020 19:03:41 UTC] PHP   5. array_reverse() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php:81
+[20-Oct-2020 19:03:41 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 81
+[20-Oct-2020 19:03:41 UTC] PHP Stack trace:
+[20-Oct-2020 19:03:41 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:03:41 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:03:41 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:03:41 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[20-Oct-2020 19:03:41 UTC] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 81
+[20-Oct-2020 19:03:41 UTC] PHP Stack trace:
+[20-Oct-2020 19:03:41 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:03:41 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:03:41 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:03:41 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[20-Oct-2020 19:03:41 UTC] PHP   5. array_reverse() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php:81
+[20-Oct-2020 19:03:41 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 81
+[20-Oct-2020 19:03:41 UTC] PHP Stack trace:
+[20-Oct-2020 19:03:41 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:03:41 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:03:41 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:03:41 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[20-Oct-2020 19:04:19 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 3
+[20-Oct-2020 19:04:19 UTC] PHP Stack trace:
+[20-Oct-2020 19:04:19 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:04:19 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:04:19 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:04:19 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[20-Oct-2020 19:04:19 UTC] PHP   5. session_start() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php:3
+[20-Oct-2020 19:04:19 UTC] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 82
+[20-Oct-2020 19:04:19 UTC] PHP Stack trace:
+[20-Oct-2020 19:04:19 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:04:19 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:04:19 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:04:19 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[20-Oct-2020 19:04:19 UTC] PHP   5. array_reverse() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php:82
+[20-Oct-2020 19:04:19 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 82
+[20-Oct-2020 19:04:19 UTC] PHP Stack trace:
+[20-Oct-2020 19:04:19 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:04:19 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:04:19 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:04:19 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[20-Oct-2020 19:04:19 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 3
+[20-Oct-2020 19:04:19 UTC] PHP Stack trace:
+[20-Oct-2020 19:04:19 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:04:19 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:04:19 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:04:19 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[20-Oct-2020 19:04:19 UTC] PHP   5. session_start() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php:3
+[20-Oct-2020 19:04:19 UTC] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 82
+[20-Oct-2020 19:04:19 UTC] PHP Stack trace:
+[20-Oct-2020 19:04:19 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:04:19 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:04:19 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:04:19 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[20-Oct-2020 19:04:19 UTC] PHP   5. array_reverse() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php:82
+[20-Oct-2020 19:04:19 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 82
+[20-Oct-2020 19:04:19 UTC] PHP Stack trace:
+[20-Oct-2020 19:04:19 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:04:19 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:04:19 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:04:19 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[20-Oct-2020 19:04:27 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 3
+[20-Oct-2020 19:04:27 UTC] PHP Stack trace:
+[20-Oct-2020 19:04:27 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:04:27 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:04:27 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:04:27 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[20-Oct-2020 19:04:27 UTC] PHP   5. session_start() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php:3
+[20-Oct-2020 19:04:27 UTC] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 82
+[20-Oct-2020 19:04:27 UTC] PHP Stack trace:
+[20-Oct-2020 19:04:27 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:04:27 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:04:27 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:04:27 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[20-Oct-2020 19:04:27 UTC] PHP   5. array_reverse() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php:82
+[20-Oct-2020 19:04:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 82
+[20-Oct-2020 19:04:27 UTC] PHP Stack trace:
+[20-Oct-2020 19:04:27 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:04:27 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:04:27 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:04:27 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[20-Oct-2020 19:04:28 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 3
+[20-Oct-2020 19:04:28 UTC] PHP Stack trace:
+[20-Oct-2020 19:04:28 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:04:28 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:04:28 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:04:28 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[20-Oct-2020 19:04:28 UTC] PHP   5. session_start() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php:3
+[20-Oct-2020 19:04:28 UTC] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 82
+[20-Oct-2020 19:04:28 UTC] PHP Stack trace:
+[20-Oct-2020 19:04:28 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:04:28 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:04:28 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:04:28 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[20-Oct-2020 19:04:28 UTC] PHP   5. array_reverse() C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php:82
+[20-Oct-2020 19:04:28 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Kian\Local Sites\work\app\public\wp-content\themes\mesmerize\page-shelter.php on line 82
+[20-Oct-2020 19:04:28 UTC] PHP Stack trace:
+[20-Oct-2020 19:04:28 UTC] PHP   1. {main}() C:\Users\Kian\Local Sites\work\app\public\index.php:0
+[20-Oct-2020 19:04:28 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
+[20-Oct-2020 19:04:28 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
+[20-Oct-2020 19:04:28 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106

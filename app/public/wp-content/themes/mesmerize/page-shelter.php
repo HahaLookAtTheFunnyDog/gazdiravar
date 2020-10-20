@@ -72,6 +72,57 @@
         </div>
     </section>
     <section class="shelterPageAdoptions">
+    <hr style="margin-top: 2.5rem;">
+    <section class="recentlyViewed">
+		<h2 style="text-align: center;">More From <?php echo $shelter->name; ?></h2>
+		<div class="carousel-container">
+			<div class="carousel-inner">
+				<div class="track">
+                    <?php 
+                    $query = "SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name FROM adoptions a 
+                    INNER JOIN breeds b ON a.breed_id = b.breed_id 
+                    INNER JOIN age c ON a.age_id = c.age_id 
+                    INNER JOIN genders d ON a.gender_id = d.gender_id
+                    INNER JOIN countries f ON a.country_id = f.country_id WHERE a.shelter_id = " . $_GET["id"];
+                    $adoptions = $wpdb->get_results($query);
+					foreach($adoptions as $adoption){
+						?>
+						<div class="card-container">
+							<form method="GET" action="animal/">
+								<input type="hidden" name="id" value="<?php echo $adoption->adoption_id; ?>">
+								<div class="card boxShadowAnimate" onclick="this.parentNode.submit();" style="cursor: pointer;">
+									<?php
+										$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.png');
+										if($adoption->profile_picture_filename){
+											$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/' . $adoption->profile_picture_filename . '.png');
+										}
+									?>
+									<img src="<?php echo $imgSrc; ?>" class="round icon iconSmall">
+									<h6 style="text-align: center;"><?php echo $adoption->name; ?></h6>
+									<p style="text-align: center; class="small italic"><?php echo $adoption->country_name; ?></p>
+								</a>
+							</div>
+						</form>
+					</div>
+					<?php
+				}
+				?>
+			</div>
+		</div>
+		<div class="nav">
+			<button class="prev">
+				<i class="material-icons">
+					<
+				</i>
+			</button>
+			<button class="next">
+				<i class="material-icons">
+					>
+				</i>
+			</button>
+		</div>
+	</div>
+</section>
     </section>
     </div>
 </div>
