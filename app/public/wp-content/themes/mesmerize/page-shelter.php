@@ -69,7 +69,48 @@
     </section>
     <section class="shelterPageContent">
         <div class="shelterPageContentPicture">
+		<h4>
+							LOGO
+		</h4>
         </div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h4>Country</h4>
+					<h4>Street</h4>
+					<h4>Postal Code</h4>
+				</div>
+			</div>
+			<div class="row" style="margin-top: 20px;">
+				<div class="col-md-12">
+						<h5>Follow Us</h5>
+						<ul>
+							<li>
+								<div style="background-color: red; height: 25px; width: 25px;"></div>
+							</li>
+							<li>
+								<div style="background-color: red; height: 25px; width: 25px;"></div>
+							</li>
+						</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h1>About</h1>
+				<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta nisi tellus, eget laoreet elit consectetur ut. Ut at blandit nisi. Aenean sagittis imperdiet neque in rhoncus. Duis tristique volutpat ipsum, a viverra neque rhoncus sed. Vivamus id cursus metus, quis luctus lectus. Vivamus vulputate magna turpis, in tempus diam posuere at. In semper, nibh non porttitor pretium, dui arcu pretium ligula, vitae feugiat enim tortor ac urna. Integer vitae blandit sapien. Pellentesque placerat tempor justo, ac lacinia tellus porttitor nec. Suspendisse lobortis ornare nibh. Fusce egestas, justo nec faucibus mollis, nibh dui fringilla ipsum, sed tempor lorem nisi sed nulla. In quis venenatis tellus. Sed risus enim, lobortis consectetur leo et, porta pretium lectus. Praesent nec eros vel mi eleifend tristique. Suspendisse potenti. Aliquam est sem, pharetra eu lacus id, vulputate condimentum magna.
+
+Aenean quis ligula semper ex malesuada venenatis. Phasellus interdum blandit mauris, eu porttitor orci feugiat sit amet. Integer tristique elit nisl, eu posuere augue aliquet quis. Donec enim justo, imperdiet vitae magna imperdiet, euismod pellentesque erat. Duis a malesuada erat. Fusce et libero nisi. Etiam porta tristique tincidunt. Vestibulum nec hendrerit metus, sed rutrum quam. Morbi nec ante metus. Fusce dapibus dolor mi, a placerat dolor faucibus nec.
+
+Cras in lacus elementum turpis maximus scelerisque. Duis id sem dui. Fusce non turpis ullamcorper libero laoreet congue sed sit amet ante. Fusce volutpat a ipsum et dictum. Donec ut sapien elit. Fusce vitae feugiat enim. Duis id diam et leo congue dapibus. Mauris egestas, velit in varius iaculis, turpis diam fermentum quam, non semper quam leo at nibh.
+
+Vestibulum ac ligula vitae mauris ultrices congue et sed libero. Nullam pretium mi et lorem malesuada, vel ultrices risus faucibus. Ut sed euismod nunc. Aliquam suscipit lacus sed libero pharetra elementum. Duis non imperdiet metus. Ut id sem at tellus fermentum laoreet a id ipsum. Nam finibus aliquam molestie. Integer non bibendum velit. Phasellus condimentum eros sed sapien rhoncus mattis. Sed vehicula convallis rutrum. Donec ultrices porttitor blandit. Nam semper hendrerit leo sed interdum. Sed in mattis dui. Nam suscipit, tellus et interdum feugiat, elit sapien ullamcorper mauris, non rutrum nunc orci et dui. Vestibulum convallis velit id nisi dictum, in mattis metus facilisis.
+
+Praesent mattis nulla ac gravida mattis. Sed nisl nisl, placerat quis interdum non, fermentum et mauris. Vivamus quis sapien ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sollicitudin justo rhoncus tellus varius, ut tempus sapien pulvinar. Vivamus semper sapien id pharetra rutrum. Proin facilisis ornare enim, eu gravida est blandit ac. Suspendisse sit amet lacus lectus. Etiam eros nisl, sagittis vitae magna in, aliquam condimentum arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam elementum nibh purus. Nam euismod neque sed egestas porttitor. Fusce porta consequat faucibus. Etiam tristique massa sed nulla cursus, auctor tincidunt nisl iaculis.
+				</p>
+			</div>
+		</div>
     </section>
     <section class="shelterPageAdoptions">
     <hr style="margin-top: 2.5rem;">

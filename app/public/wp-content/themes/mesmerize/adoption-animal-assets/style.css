@@ -406,6 +406,26 @@
   position: relative;
   height: 100vh;
   margin-top: 175px;
+  padding: 130px 50px 50px 50px;
+}
+
+.shelterPageContent h4, .shelterPageContent h5, .shelterPageContent ul {
+  margin: 0;
+  text-align: center;
+}
+
+.shelterPageContent p {
+  line-height: 2;
+  font-size: 16px;
+}
+
+.shelterPageContent ul {
+  list-style: none;
+  padding: 0;
+}
+
+.shelterPageContent ul li {
+  display: inline-block;
 }
 
 .shelterPageContent .shelterPageContentPicture {
