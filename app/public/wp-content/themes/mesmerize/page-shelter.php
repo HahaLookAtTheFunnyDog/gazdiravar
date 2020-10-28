@@ -1,7 +1,7 @@
 <?php 
     mesmerize_get_header(); 
     global $wpdb;
-    $shelter = $wpdb->get_results("SELECT * FROM shelters WHERE shelter_id = " . $_GET["id"])[0];
+    $shelter = $wpdb->get_results("SELECT * FROM shelters INNER JOIN countries ON shelters.country_id = countries.country_id WHERE shelter_id = " . $_GET["id"])[0];
 ?>
 <link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-assets/style.css'); ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo site_url('/wp-content/themes/mesmerize/adoption-animal-assets/style.css'); ?>">
@@ -76,9 +76,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h4>Country</h4>
-					<h4>Street</h4>
-					<h4>Postal Code</h4>
+					<h4><?php echo $shelter->country_name; ?></h4>
+					<h5><?php echo $shelter->street_name; ?></h5>
+					<h5><?php echo strtoupper($shelter->postal_code); ?></h5>
 				</div>
 			</div>
 			<div class="row" style="margin-top: 20px;">
@@ -86,10 +86,14 @@
 						<h5>Follow Us</h5>
 						<ul>
 							<li>
-								<div style="background-color: red; height: 25px; width: 25px;"></div>
+								<a href="http://<?php echo $shelter->instagram_link; ?>">
+									<div style="background-color: red; height: 25px; width: 25px;"></div>
+								</a>
 							</li>
 							<li>
-								<div style="background-color: red; height: 25px; width: 25px;"></div>
+								<a href="http://<?php echo $shelter->twitter_link; ?>">
+									<div style="background-color: red; height: 25px; width: 25px;"></div>
+								</a>
 							</li>
 						</ul>
 				</div>
@@ -115,7 +119,7 @@ Praesent mattis nulla ac gravida mattis. Sed nisl nisl, placerat quis interdum n
     <section class="shelterPageAdoptions">
     <hr style="margin-top: 2.5rem;">
     <section class="recentlyViewed">
-		<h2 style="text-align: center;">More From <?php echo $shelter->name; ?></h2>
+		<h2 style="text-align: center;">Adoptions From <?php echo $shelter->name; ?></h2>
 		<div class="carousel-container">
 			<div class="carousel-inner">
 				<div class="track">
