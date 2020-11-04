@@ -6,7 +6,6 @@
   padding: 0;
   position: relative;
   background-color: #fff;
-  height: 100vh;
 }
 
 .aboutSection .slideShowContainer {
@@ -22,7 +21,10 @@
 }
 
 .aboutSection .slideShowContainer .slideContainer .slide {
+  background-repeat: no-repeat;
+  background-position: center top;
   position: absolute;
+  background-size: 100% 100%;
   border-radius: 15px 15px 0 0;
   width: 100%;
   height: 100%;
@@ -40,7 +42,15 @@
   cursor: pointer;
   width: 25px;
   height: 25px;
-  background-color: green;
+}
+
+.aboutSection .slideShowContainer .slidePrev button {
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
 }
 
 .aboutSection .slideShowContainer .slideNext {
@@ -50,7 +60,15 @@
   cursor: pointer;
   width: 25px;
   height: 25px;
-  background-color: green;
+}
+
+.aboutSection .slideShowContainer .slideNext button {
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
 }
 
 .aboutSection .textPart {
@@ -66,7 +84,9 @@
 }
 
 .aboutSection .textPart p {
-  line-height: 1.6;
+  line-height: 3;
+  font-size: 20px;
+  text-align: center;
 }
 
 .adoptSection {
@@ -76,23 +96,28 @@
   border-radius: 15px;
   padding: 0;
   position: relative;
-  background-color: dodgerblue;
+  background-color: #fff;
 }
 
 .adoptSection .adoptionPicture {
-  top: 10px;
-  border: 7px solid dodgerblue;
+  -webkit-box-shadow: 0 -1px 0 0 rgba(33, 33, 33, 0.2);
+          box-shadow: 0 -1px 0 0 rgba(33, 33, 33, 0.2);
+  cursor: pointer;
+  top: -50px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  border: 7px solid #fff;
   position: absolute;
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  background-color: black;
-  left: -75px;
+  background-color: dodgerblue;
 }
 
 .adoptSection .adoptionInformation {
   margin-bottom: 20px;
-  padding: 25px;
+  padding: 50px 25px 25px 25px;
 }
 
 .adoptSection .adoptionInformation .adoptTitle {
@@ -100,8 +125,7 @@
 }
 
 .adoptSection .adoptionInformation .adoptionButton {
-  border: 2px solid #fff;
-  color: #fff;
+  border: 2px solid #424855;
   display: block;
   padding: 4px;
   width: 100%;
@@ -118,16 +142,18 @@
 
 .adoptSection .adoptionMoreInformation {
   border-radius: 0 0 15px 15px;
-  border-top: 2px solid black;
+  border-top: 2px solid #3C424F;
   width: 100%;
   position: absolute;
   bottom: 0;
   padding: 3px;
   cursor: pointer;
+  color: #3C424F;
 }
 
 .adoptSection .adoptionMoreInformation:hover {
-  background-color: green;
+  background-color: dodgerblue;
+  color: #fff;
 }
 
 .shelterSection {
@@ -137,24 +163,28 @@
   border-radius: 15px;
   padding: 0;
   position: relative;
-  color: white;
-  background-color: red;
+  background-color: #fff;
 }
 
 .shelterSection .shelterPicture {
-  top: 10px;
-  border: 7px solid red;
+  -webkit-box-shadow: 0 -1px 0 0 rgba(33, 33, 33, 0.2);
+          box-shadow: 0 -1px 0 0 rgba(33, 33, 33, 0.2);
+  cursor: pointer;
+  top: -50px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  border: 7px solid #fff;
   position: absolute;
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  background-color: black;
-  right: -75px;
+  background-color: dodgerblue;
 }
 
 .shelterSection .shelterInfo {
   margin-bottom: 20px;
-  padding: 25px;
+  padding: 50px 25px 25px 25px;
 }
 
 .shelterSection .shelterInfo .shelterName {
@@ -172,16 +202,18 @@
 
 .shelterSection .shelterViewMore {
   border-radius: 0 0 15px 15px;
-  border-top: 2px solid black;
+  border-top: 2px solid #3C424F;
   width: 100%;
   position: absolute;
   bottom: 0;
   padding: 3px;
   cursor: pointer;
+  color: #3C424F;
 }
 
 .shelterSection .shelterViewMore:hover {
-  background-color: green;
+  background-color: dodgerblue;
+  color: #fff;
 }
 
 .infoSection {
@@ -191,24 +223,34 @@
   border-radius: 15px;
   padding: 0;
   position: relative;
-  background-color: dodgerblue;
-  color: white;
+  background-color: #fff;
 }
 
 .infoSection .infoPicture {
-  top: 10px;
-  border: 7px solid dodgerblue;
+  -webkit-box-shadow: 0 -1px 0 0 rgba(33, 33, 33, 0.2);
+          box-shadow: 0 -1px 0 0 rgba(33, 33, 33, 0.2);
+  cursor: pointer;
+  top: -50px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  border: 7px solid #fff;
   position: absolute;
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  background-color: black;
-  left: -75px;
+  background-color: dodgerblue;
 }
 
 .infoSection .infoBox {
   margin-bottom: 20px;
-  padding: 25px;
+  padding: 50px 25px 25px 25px;
+  margin-bottom: 0;
+  color: #3C424F;
+}
+
+.infoSection .infoBox .borderRight {
+  border-right: 2px solid #3C424F;
 }
 
 .infoSection .infoBox .infoTitle {
@@ -219,22 +261,16 @@
   display: inline;
 }
 
-.infoSection .infoViewMore {
-  border-radius: 0 0 15px 15px;
-  border-top: 2px solid black;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  padding: 3px;
-  cursor: pointer;
-}
-
-.infoSection .infoViewMore:hover {
-  background-color: green;
+.infoSection .infoBox .row {
+  border-bottom: 2px solid #3C424F;
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 14px;
 }
 
 .rowTopSpacing {
-  margin-top: 2.5rem;
+  margin-top: 4.5rem;
 }
 
 .adoptionButtonSpacing {
@@ -242,15 +278,23 @@
 }
 
 .adoptionFormContainer {
+  display: none;
   overflow: hidden;
   position: fixed;
   z-index: 50;
   width: 100%;
   height: 100%;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: rgba(10, 10, 10, 0.86);
 }
 
 .adoptionForm {
+  display: none;
+  padding: 35px;
+  border-radius: 25px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -258,6 +302,148 @@
           transform: translate(-50%, -50%);
   width: 800px;
   height: 800px;
-  background-color: red;
+  background-color: white;
+}
+
+.adoptionForm .formAdoption .formMessage {
+  height: 200px;
+}
+
+.adoptionForm .formAdoption label, .adoptionForm .formAdoption input {
+  display: block;
+  color: #3C424F;
+}
+
+.adoptionForm .formAdoption input, .adoptionForm .formAdoption select, .adoptionForm .formAdoption textarea {
+  border: 1px solid #3C424F;
+}
+
+.adoptionForm .formAdoption textarea {
+  resize: none;
+  height: 125px;
+}
+
+.adoptionForm .formAdoption label {
+  margin-top: 25px;
+}
+
+.adoptionForm .formAdoption ul {
+  margin-top: 25px;
+  list-style: none;
+  text-align: center;
+}
+
+.adoptionForm .formAdoption ul li {
+  display: inline-block;
+}
+
+.adoptionForm .formAdoption ul li button {
+  cursor: pointer;
+  border-radius: 5px;
+  height: 30px;
+  width: 60px;
+}
+
+.recommendedSection {
+  width: 60rem;
+  margin: 50px auto;
+  min-height: 200px;
+  position: relative;
+}
+
+.recommendedSection .carousel-inner {
+  overflow: hidden;
+}
+
+.recommendedSection .track {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.recommendedSection .card-container {
+  width: 15rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  height: 275px;
+  padding-right: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.recommendedSection .card-container .card {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.recommendedSection .card-container .card .iconSmall {
+  width: 10rem !important;
+  height: 10rem !important;
+  margin: auto;
+}
+
+.shelterPageContent {
+  width: 100%;
+  -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+          box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  border-radius: 15px;
+  padding: 0;
+  position: relative;
+  height: 100vh;
+  margin-top: 175px;
+  padding: 130px 50px 50px 50px;
+}
+
+.shelterPageContent h4, .shelterPageContent h5, .shelterPageContent ul {
+  margin: 0;
+  text-align: center;
+}
+
+.shelterPageContent p {
+  line-height: 2;
+  font-size: 16px;
+}
+
+.shelterPageContent ul {
+  list-style: none;
+  padding: 0;
+}
+
+.shelterPageContent ul li {
+  display: inline-block;
+}
+
+.shelterPageContent .shelterPageContentPicture {
+  -webkit-box-shadow: 0 -1px 0 0 rgba(33, 33, 33, 0.2);
+          box-shadow: 0 -1px 0 0 rgba(33, 33, 33, 0.2);
+  cursor: pointer;
+  top: -50px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  border: 7px solid #fff;
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: dodgerblue;
+  top: -125px;
+  width: 250px;
+  height: 250px;
 }
 /*# sourceMappingURL=style.css.map */

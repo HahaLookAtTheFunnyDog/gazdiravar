@@ -1,9 +1,9 @@
 <?php
 	session_start();
 ?>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
 <div class="adoptionFormContainer">
-	<div class="adoptionForm">
-	</div>
 </div>
 <?php mesmerize_get_header(); ?>
 <div id='page-content' class="page-content">
@@ -24,7 +24,7 @@
 				$_SESSION["recentlyViewed"] = array($_GET["id"]);
 			}
 			global $wpdb;
-			$query = "SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date, size, a.shelter_id FROM adoptions a 
+			$query = "SELECT a.adoption_id, a.profile_picture_filename, a.page_picture_one_filename, a.page_picture_two_filename, a.page_picture_three_filename, a.page_picture_four_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, species_name, register_date, size, a.shelter_id FROM adoptions a 
 			INNER JOIN breeds b ON a.breed_id = b.breed_id 
 			INNER JOIN age c ON a.age_id = c.age_id 
 			INNER JOIN genders d ON a.gender_id = d.gender_id
@@ -45,6 +45,33 @@
 					<section class="aboutSection">
 						<div class="slideShowContainer">
 							<div class="slideContainer">
+								<?php
+									$pictures = [];
+									if($adoption->page_picture_one_filename){
+										array_push($pictures,$adoption->page_picture_one_filename);
+									}
+									if($adoption->page_picture_two_filename){
+										array_push($pictures,$adoption->page_picture_two_filename);
+									}
+									if($adoption->page_picture_three_filename){
+										array_push($pictures,$adoption->page_picture_three_filename);
+									}
+									if($adoption->page_picture_four_filename){
+										array_push($pictures,$adoption->page_picture_four_filename);
+									}
+									if($pictures){
+										$count = 0;
+										foreach($pictures as $picture){
+											$url = "/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/" . $picture . ".jpg";
+											$src = site_url($url);
+											?>
+											<div class="slide <?php if($count == 0){echo "active";} ?>" style="background-image: url('<?php echo $src; ?>');"></div>
+											<?php
+											$count++;
+										}
+									}
+									else{
+								?>
 								<div class="slide active" style="background-color: red;">
 								</div>
 								<div class="slide" style="background-color: green;">
@@ -53,32 +80,36 @@
 								</div>
 								<div class="slide" style="background-color: yellow;">
 								</div>
+								<?php
+								}
+								?>
 							</div>
 							<div class="slidePrev">
+								<button><</button>
 							</div>
 							<div class="slideNext">
+							<button>></button>
 							</div>
 						</div>
 						<div class="textPart">
 						<h1><?php echo ucwords($adoption->name); ?></h1>
 						<h3><?php echo $adoption->country_name; ?></h3>
 						<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ultricies elit. Praesent fermentum nunc at turpis tempus, vitae ultricies lectus blandit. Morbi ut luctus leo. Integer ornare fermentum urna, at efficitur turpis. Vivamus malesuada, nulla quis porttitor venenatis, justo neque luctus mauris, sit amet maximus velit mauris non turpis. Nulla efficitur est et pulvinar scelerisque. In sed tristique erat. Donec convallis leo sit amet ligula placerat, ut ornare nunc ornare. Morbi ultrices sem mauris, non varius tellus aliquet in. Vivamus vel gravida elit. Fusce eu suscipit tortor, eget laoreet mauris. Nam lorem libero, porta non aliquam et, congue ac tortor. Nullam vehicula facilisis nunc vel tempor. Maecenas sit amet venenatis massa, sit amet pulvinar massa. Etiam mattis nulla lorem, ac tempor orci pretium quis. Sed at risus molestie felis ullamcorper efficitur id sit amet turpis.
-
-Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem eleifend metus, ac laoreet velit arcu non eros. Vivamus finibus, felis vitae egestas luctus, arcu nisl cursus tortor, vel commodo felis nulla vel purus. Vivamus tincidunt libero tempor mauris iaculis finibus. Fusce pellentesque ultrices odio sit amet mollis. Morbi nisl velit, laoreet at pellentesque eu, dictum vitae mi. Etiam vel lectus vitae elit bibendum varius id vitae mauris. Fusce non molestie dolor.
+						<?php 
+							echo $adoption->description;
+						?>
 						</p>
 						</div>
 					</section>
 				</div>
-				<div class="col-md-3 col-md-offset-1">
+				<div class="col-md-4">
 					<div class="row no-gutters">
 						<section class="adoptSection">
 							<div class="adoptionPicture">
 							</div>
 							<div class="adoptionInformation">
 								<h4 class="adoptTitle">Ready to Help?</h4>
-								<button class="adoptionButton">Adopt</button>
-								<button class="adoptionButton adoptionButtonSpacing">Sponsor</button>
+								<button class="adoptionButton" id="adoptButton">Adopt</button>
 							</div>
 							<div class="adoptionMoreInformation">
 								<p style="text-align: center;">More Information</p>
@@ -97,9 +128,12 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 								<h5 class="locationPart"><?php echo $shelter->country_name; ?></h5>
 								<h5 class="emailPart"><?php echo $shelter->email; ?></h5>
 							</div>
-							<div class="shelterViewMore">
-								<p style="text-align: center;">More Information</p>
-							</div>
+							<form method="GET" action="/shelter/">
+								<input type="hidden" name="id" value="<?php echo $adoption->shelter_id; ?>">
+								<div class="shelterViewMore" onclick="parentNode.submit()">
+									<p style="text-align: center;">More Information</p>
+								</div>
+							</form>
 						</section>
 					</div>
 					<?php
@@ -112,45 +146,124 @@ Integer eget porta odio. Aenean finibus, nulla eu aliquam rhoncus, nulla lorem e
 							<div class="infoBox container" style="width: 100%;">
 								<h4 class="infoTitle">Information</h4>
 								<div class="row">
-									<div class="col-sm-6">Register Date</div>
-									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->register_date; ?></p></div>
-									<hr>
+									<div class="col-sm-6 borderRight">Register Date</div>
+									<div class="col-sm-6 "><p class="dynamicInfo"><?php echo $adoption->register_date; ?></p></div>
 								</div>
 								<div class="row">
-									<div class="col-sm-6">Species</div>
-									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->species_name; ?></p></div>
-									<hr>
+									<div class="col-sm-6 borderRight">Species</div>
+									<div class="col-sm-6 "><p class="dynamicInfo"><?php echo $adoption->species_name; ?></p></div>
 								</div>
 								<div class="row">
-									<div class="col-sm-6">Breed</div>
-									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->breed_name; ?></p></div>
-									<hr>
+									<div class="col-sm-6 borderRight">Breed</div>
+									<div class="col-sm-6"><p class="dynamicInfo"><?php echo $adoption->breed_name; ?></p></div>
 								</div>
 								<div class="row">
-									<div class="col-sm-6">Gender</div>
-									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->gender; ?></p></div>
-									<hr>
+									<div class="col-sm-6 borderRight">Gender</div>
+									<div class="col-sm-6"><p class="dynamicInfo"><?php echo $adoption->gender; ?></p></div>
 								</div>
 								<div class="row">
-									<div class="col-sm-6">Age</div>
-									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->age_name; ?></p></div>
-									<hr>
+									<div class="col-sm-6 borderRight">Age</div>
+									<div class="col-sm-6"><p class="dynamicInfo"><?php echo $adoption->age_name; ?></p></div>
 								</div>
 								<div class="row">
-									<div class="col-sm-6">Size</div>
-									<div class="col-sm-6">: <p class="dynamicInfo"><?php echo $adoption->size; ?></p></div>
-									<hr>
+									<div class="col-sm-6 borderRight">Size</div>
+									<div class="col-sm-6"><p class="dynamicInfo"><?php echo $adoption->size; ?></p></div>
 								</div>
-							</div>
-							<div class="infoViewMore">
-								<p style="text-align: center;">More Information</p>
 							</div>
 						</section>
 					</div>
 				</div>
 			</div>
+			<?php
+				$query = "SELECT a.adoption_id, a.profile_picture_filename, a.name,a.description,b.breed_name,c.age_name,d.gender,f.country_name, g.size FROM adoptions a 
+				INNER JOIN breeds b ON a.breed_id = b.breed_id 
+				INNER JOIN age c ON a.age_id = c.age_id 
+				INNER JOIN genders d ON a.gender_id = d.gender_id
+				INNER JOIN countries f ON a.country_id = f.country_id 
+				INNER JOIN sizes g ON a.size_id = g.size_id
+				WHERE d.gender = '" . $adoption->gender . "' 
+				AND c.age_name = '" . $adoption->age_name . "'
+				 AND g.size = '" . $adoption->size . 
+				"' AND a.adoption_id <> '" . $adoption->adoption_id . "' LIMIT 4";
+				$recommendAdoptions = $wpdb->get_results($query);
+				if($recommendAdoptions){
+			?>
+			<div class="row no-gutters">
+				<hr style="margin-top: 2.5rem;">
+				<h2 style="text-align: center;">Similar Adoptions</h2>
+				<div class="col-md-12">
+					<section class="recommendedSection">
+					<div class="carousel-inner">
+						<div class="track">
+							<?php
+								foreach($recommendAdoptions as $adoption){
+									?>
+									<div class="card-container">
+										<form method="GET" action="<?php echo site_url('/adoptions/animal/'); ?>">
+											<input type="hidden" name="id" value="<?php echo $adoption->adoption_id; ?>">
+											<div class="card boxShadowAnimate" onclick="this.parentNode.submit();" style="cursor: pointer;">
+													<?php
+														$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/dog.png');
+														if($adoption->profile_picture_filename){
+															$imgSrc = site_url('/wp-content/plugins/mesmerize-companion/theme-data/mesmerize/sections/images/' . $adoption->profile_picture_filename . '.png');
+														}
+													?>
+													<img src="<?php echo $imgSrc; ?>" class="round icon iconSmall">
+													<h6 style="text-align: center;"><?php echo $adoption->name; ?></h6>
+													<p style="text-align: center; class="small italic"><?php echo $adoption->country_name; ?></p>
+												</a>
+											</div>
+										</form>
+									</div>
+									<?php
+								}
+							?>
+						</div>
+					</div>
+					</section>
+				</div>
+			</div>
+			<?php
+				}
+			?>
 		</div>
 	</div>
 </div>
+<div class="adoptionForm">
+		<h1>Adoption Contact</h1>
+		<div class="formAdoption">
+			<label for="fname">First Name</label>
+			<input required class="adoptionFormInput" type="text" id="fname" name="fname">
+			<label for="lname">Last Name</label>
+			<input required class="adoptionFormInput" type="text" id="lname" name="lname">
+			<label for="emailAddr">Email</label>
+			<input required class="adoptionFormInput" type="text" id="emailAddr" name="emailAddr">
+			<label for="country">Country</label>
+			<select required class="adoptionFormInput" id="country" name="country" class="form-control" style="margin: 0;">
+				<?php
+				$countries = $wpdb->get_results("
+					SELECT country_name FROM countries"
+				);
+				foreach($countries as $country){
+					?>
+					<option 
+					value="<?php echo $country->country_name; ?>"><?php echo $country->country_name; ?></option>
+					<?php
+				}
+				?>
+			</select>
+			<label for="message">Additional Comments (Optional)</label>
+			<textarea></textarea>
+			<ul>
+				<li>
+					<button id="adoptionFormBtn">Submit</button>
+				</li>
+				<li>
+					<button id="adoptFormCancel">Cancel</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
 <script src="<?php echo site_url('/wp-content/themes/mesmerize/adoption-animal-assets/animalScript.js'); ?>" type="text/javascript">
 <?php get_footer(); ?>

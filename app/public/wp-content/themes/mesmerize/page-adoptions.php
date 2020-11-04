@@ -740,7 +740,6 @@ mesmerize_get_header(); ?>
 						<div class="row spaced-cols content-center-sm" data-type="row">
 							<?php
 						}
-						$url = site_url('/adoptions/adoptions/?id=') . $adoptions[$i]->adoption_id;
 						?>
 						<div class="col-sm-4">
 							<form method="GET" action="animal/">
@@ -892,4 +891,4 @@ if($_SESSION["recentlyViewed"]){
 </div>
 </div>
 <script src="<?php echo site_url('/wp-content/themes/mesmerize/adoption-assets/adoptionsScript.js'); ?>" type="text/javascript">
-	<?php get_footer(); ?>
+<?php get_footer(); ?>

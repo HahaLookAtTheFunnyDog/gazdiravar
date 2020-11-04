@@ -1,5 +1,6 @@
 $primaryColor: dodgerblue;
-$secondaryColor: #fff;
+$primaryTextColor: #3C424F;
+$secondaryTextColor: #fff;
 
 @mixin sectionBox{
     width: 100%;
@@ -10,33 +11,39 @@ $secondaryColor: #fff;
 }
 @mixin moreInformation{
     border-radius: 0 0 15px 15px;
-        border-top: 2px solid black;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        padding: 3px;
-        cursor: pointer;
-        &:hover{
-            background-color: green;
-        }
+    border-top: 2px solid $primaryTextColor;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 3px;
+    cursor: pointer;
+    color: $primaryTextColor;
+    &:hover{
+        background-color:$primaryColor;
+        color: $secondaryTextColor;
+    }
 }
 @mixin picture($color){
-    top: 10px;
+    box-shadow: 0 -1px 0 0 rgba(33,33,33,.2);
+    cursor: pointer;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%);
     border: 7px solid $color;
     position: absolute;
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    background-color: black;
+    background-color: $primaryColor;
 }
 @mixin marginPaddingBox{
     margin-bottom: 20px;
-    padding: 25px;
+    padding: 50px 25px 25px 25px;
 }
 .aboutSection{
     @include sectionBox();
-    background-color: $secondaryColor;
-    height: 100vh;
+    background-color: $secondaryTextColor;
+ 
     .slideShowContainer{
         width: 100%;
         height: 350px;
@@ -46,7 +53,10 @@ $secondaryColor: #fff;
             width: 100%;
             height: 100%;
             .slide{
+                background-repeat: no-repeat;
+                background-position: center top;
                 position: absolute;
+                background-size: 100% 100%;
                 border-radius: 15px 15px 0 0;
                 width: 100%;
                 height: 100%;
@@ -63,7 +73,14 @@ $secondaryColor: #fff;
             cursor: pointer;
             width: 25px;
             height: 25px;
-            background-color: green;
+            button{
+                color: $secondaryTextColor;
+                font-weight: bold;
+                font-size: 25px;
+                background-color: transparent;
+                border-color: transparent;
+                cursor: pointer;
+            }
         }
         .slideNext{
             top: 50%;
@@ -72,7 +89,14 @@ $secondaryColor: #fff;
             cursor: pointer;
             width: 25px;
             height: 25px;
-            background-color: green;
+            button{
+                color: $secondaryTextColor;
+                font-weight: bold;
+                font-size: 25px;
+                background-color: transparent;
+                border-color: transparent;
+                cursor: pointer;
+            }
         }
     }
     .textPart{
@@ -84,16 +108,17 @@ $secondaryColor: #fff;
             text-align: center;
         }
         p{
-            line-height: 1.6;
+            line-height: 3;
+            font-size: 20px;
+            text-align: center;
         }
     }
 }
 .adoptSection{
     @include sectionBox();
-    background-color:$primaryColor;
+    background-color:$secondaryTextColor;
     .adoptionPicture{
-        @include picture($primaryColor);
-        left: -75px;
+        @include picture($secondaryTextColor);
     }
     .adoptionInformation{
         @include marginPaddingBox();
@@ -101,8 +126,7 @@ $secondaryColor: #fff;
             text-align: center;
         }
         .adoptionButton{
-            border: 2px solid $secondaryColor;
-            color: $secondaryColor;
+            border: 2px solid #424855;
             display: block;
             padding: 4px;
             width: 100%;
@@ -110,7 +134,7 @@ $secondaryColor: #fff;
             border-radius: 8px;
             cursor: pointer;
             &:hover{
-                background-color: $secondaryColor;
+                background-color: $secondaryTextColor;
                 color: $primaryColor;
                 border: 2px solid $primaryColor;
             }
@@ -122,11 +146,9 @@ $secondaryColor: #fff;
 }
 .shelterSection{
     @include sectionBox();
-    color: white;
-    background-color: red;
+    background-color: $secondaryTextColor;
     .shelterPicture{
-        @include picture(red);
-        right: -75px;
+        @include picture($secondaryTextColor);
     }
     .shelterInfo{
         @include marginPaddingBox();
@@ -147,45 +169,154 @@ $secondaryColor: #fff;
 }
 .infoSection{
     @include sectionBox();
-    background-color: $primaryColor;
-    color: white;
+    background-color: $secondaryTextColor;
     .infoPicture{
-        @include picture($primaryColor);
-        left: -75px;
+        @include picture($secondaryTextColor);
     }
     .infoBox{
         @include marginPaddingBox();
+        margin-bottom: 0;
+        color: $primaryTextColor;
+        .borderRight{
+            border-right: 2px solid $primaryTextColor;
+        } 
         .infoTitle{
             text-align: center;
         }
         .dynamicInfo{
             display: inline;
         }
-    }
-    .infoViewMore{
-        @include moreInformation();
+        .row{
+            border-bottom: 2px solid $primaryTextColor;
+            text-align: center;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            font-size: 14px;
+        }
     }
 }
 .rowTopSpacing{
-    margin-top: 2.5rem;
+    margin-top: 4.5rem;
 }
 .adoptionButtonSpacing{
     margin-top: .5rem;
 }
 
 .adoptionFormContainer{
+    display: none;
     overflow: hidden;
     position: fixed;
     z-index: 50;
     width: 100%;
     height: 100%;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     background-color: rgba(10,10,10,.86);
 }
 .adoptionForm{
+    display: none;
+    padding: 35px;
+    border-radius: 25px;
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%,-50%);
     width: 800px;
     height: 800px;
-    background-color: red;
+    background-color: white;
+    .formAdoption{
+        .formMessage{
+            height: 200px;
+        }
+        label, input{
+            display: block;
+            color: $primaryTextColor
+        }
+        input, select, textarea{
+            border: 1px solid $primaryTextColor;
+        }
+        textarea{
+            resize: none;
+            height: 125px;
+        }
+        label{
+            margin-top: 25px;
+        }
+        ul{
+            margin-top: 25px;
+            list-style: none;
+            text-align: center;
+            li{
+                display: inline-block;
+                button{
+                    cursor: pointer;
+                    border-radius: 5px;
+                    height: 30px;
+                    width: 60px;
+                }
+            }
+        }
+    }
+}
+.recommendedSection {
+    width: 60rem;
+    margin: 50px auto;
+    min-height: 200px;
+    position: relative;
+    .carousel-inner{
+        overflow: hidden;
+    }
+    .track{
+        display: inline-flex;
+        transition: transform 0.5s;
+    }
+    .card-container {
+        width: 15rem;
+        flex-shrink: 0;
+        height: 275px;
+        padding-right: 15px;
+        box-sizing: border-box;
+        .card {
+            .iconSmall{
+                width: 10rem !important;
+                height: 10rem !important;
+                margin: auto;
+            }
+            width: 100%;
+            height: 100%;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+.shelterPageContent{
+    @include sectionBox();
+    height: 100vh;
+    margin-top: 175px;
+    padding: 130px 50px 50px 50px;
+    h4, h5, ul{
+        margin: 0;
+        text-align: center;
+    }
+    p{
+        line-height: 2;
+        font-size: 16px;
+    }
+    ul{
+        list-style: none;
+        padding: 0;
+        li{
+            display: inline-block;
+        }
+    }
+    .shelterPageContentPicture{
+        @include picture($secondaryTextColor);
+        top: -125px;
+        width: 250px;
+        height: 250px;
+    }
 }
