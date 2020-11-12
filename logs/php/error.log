@@ -2835,3 +2835,113 @@ Stack trace:
 [20-Oct-2020 19:04:28 UTC] PHP   2. require() C:\Users\Kian\Local Sites\work\app\public\index.php:17
 [20-Oct-2020 19:04:28 UTC] PHP   3. require_once() C:\Users\Kian\Local Sites\work\app\public\wp-blog-header.php:19
 [20-Oct-2020 19:04:28 UTC] PHP   4. include() C:\Users\Kian\Local Sites\work\app\public\wp-includes\template-loader.php:106
+[04-Nov-2020 15:22:06 UTC] PHP Warning:  mysqli_query(): MySQL server has gone away in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php on line 2033
+[04-Nov-2020 15:22:06 UTC] PHP Warning:  mysqli_query(): MySQL server has gone away in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php on line 2033
+[04-Nov-2020 15:22:06 UTC] PHP Stack trace:
+[04-Nov-2020 15:22:06 UTC] PHP Stack trace:
+[04-Nov-2020 15:22:06 UTC] PHP   1. {main}() C:\Users\Darrell\AppData\Local\Programs\Local\resources\extraResources\bin\wp-cli\wp-cli.phar:0
+[04-Nov-2020 15:22:06 UTC] PHP   1. {main}() C:\Users\Darrell\AppData\Local\Programs\Local\resources\extraResources\bin\wp-cli\wp-cli.phar:0
+[04-Nov-2020 15:22:06 UTC] PHP   2. include() C:\Users\Darrell\AppData\Local\Programs\Local\resources\extraResources\bin\wp-cli\wp-cli.phar:4
+[04-Nov-2020 15:22:06 UTC] PHP   2. include() C:\Users\Darrell\AppData\Local\Programs\Local\resources\extraResources\bin\wp-cli\wp-cli.phar:4
+[04-Nov-2020 15:22:06 UTC] PHP   3. include() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/php/boot-phar.php:11
+[04-Nov-2020 15:22:06 UTC] PHP   3. include() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/php/boot-phar.php:11
+[04-Nov-2020 15:22:06 UTC] PHP   4. WP_CLI\bootstrap() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/wp-cli.php:27
+[04-Nov-2020 15:22:06 UTC] PHP   4. WP_CLI\bootstrap() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/wp-cli.php:27
+[04-Nov-2020 15:22:06 UTC] PHP   5. WP_CLI\Bootstrap\LaunchRunner->process() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/bootstrap.php:74
+[04-Nov-2020 15:22:06 UTC] PHP   5. WP_CLI\Bootstrap\LaunchRunner->process() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/bootstrap.php:74
+[04-Nov-2020 15:22:06 UTC] PHP   6. WP_CLI\Runner->start() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Bootstrap/LaunchRunner.php:23
+[04-Nov-2020 15:22:06 UTC] PHP   6. WP_CLI\Runner->start() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Bootstrap/LaunchRunner.php:23
+[04-Nov-2020 15:22:06 UTC] PHP   7. WP_CLI\Runner->load_wordpress() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php:1158
+[04-Nov-2020 15:22:06 UTC] PHP   7. WP_CLI\Runner->load_wordpress() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php:1158
+[04-Nov-2020 15:22:06 UTC] PHP   8. require() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php:1237
+[04-Nov-2020 15:22:06 UTC] PHP   8. require() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php:1237
+[04-Nov-2020 15:22:06 UTC] PHP   9. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:546
+[04-Nov-2020 15:22:06 UTC] PHP   9. load_default_textdomain() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:484
+[04-Nov-2020 15:22:06 UTC] PHP  10. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[04-Nov-2020 15:22:06 UTC] PHP  10. determine_locale() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\l10n.php:828
+[04-Nov-2020 15:22:06 UTC] PHP  11. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[04-Nov-2020 15:22:06 UTC] PHP  11. get_locale() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\l10n.php:137
+[04-Nov-2020 15:22:06 UTC] PHP  12. wp_widgets_init() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[04-Nov-2020 15:22:06 UTC] PHP  12. get_option() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\l10n.php:69
+[04-Nov-2020 15:22:06 UTC] PHP  13. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\widgets.php:1773
+[04-Nov-2020 15:22:06 UTC] PHP  13. wpdb->get_row() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\option.php:124
+[04-Nov-2020 15:22:06 UTC] PHP  14. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[04-Nov-2020 15:22:06 UTC] PHP  14. wpdb->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:2593
+[04-Nov-2020 15:22:06 UTC] PHP  15. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[04-Nov-2020 15:22:06 UTC] PHP  15. wpdb->_do_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:1922
+[04-Nov-2020 15:22:06 UTC] PHP  16. WP_Widget_Factory->_register_widgets() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[04-Nov-2020 15:22:06 UTC] PHP  16. mysqli_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:2033
+[04-Nov-2020 15:22:06 UTC] PHP  17. WP_Widget_Text->_register() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-widget-factory.php:102
+[04-Nov-2020 15:22:06 UTC] PHP Warning:  mysqli_query(): Error reading result set's header in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php on line 2033
+[04-Nov-2020 15:22:06 UTC] PHP  18. WP_Widget_Text->_register_one() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-widget.php:252
+[04-Nov-2020 15:22:06 UTC] PHP Stack trace:
+[04-Nov-2020 15:22:06 UTC] PHP  19. wp_add_inline_script() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\widgets\class-wp-widget-text.php:58
+[04-Nov-2020 15:22:06 UTC] PHP   1. {main}() C:\Users\Darrell\AppData\Local\Programs\Local\resources\extraResources\bin\wp-cli\wp-cli.phar:0
+[04-Nov-2020 15:22:06 UTC] PHP  20. wp_scripts() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\functions.wp-scripts.php:147
+[04-Nov-2020 15:22:06 UTC] PHP   2. include() C:\Users\Darrell\AppData\Local\Programs\Local\resources\extraResources\bin\wp-cli\wp-cli.phar:4
+[04-Nov-2020 15:22:06 UTC] PHP  21. WP_Scripts->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\functions.wp-scripts.php:24
+[04-Nov-2020 15:22:06 UTC] PHP   3. include() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/php/boot-phar.php:11
+[04-Nov-2020 15:22:06 UTC] PHP  22. WP_Scripts->init() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class.wp-scripts.php:142
+[04-Nov-2020 15:22:06 UTC] PHP   4. WP_CLI\bootstrap() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/wp-cli.php:27
+[04-Nov-2020 15:22:06 UTC] PHP  23. do_action_ref_array() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class.wp-scripts.php:167
+[04-Nov-2020 15:22:07 UTC] PHP   5. WP_CLI\Bootstrap\LaunchRunner->process() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/bootstrap.php:74
+[04-Nov-2020 15:22:07 UTC] PHP  24. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:544
+[04-Nov-2020 15:22:07 UTC] PHP   6. WP_CLI\Runner->start() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Bootstrap/LaunchRunner.php:23
+[04-Nov-2020 15:22:07 UTC] PHP  25. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[04-Nov-2020 15:22:07 UTC] PHP   7. WP_CLI\Runner->load_wordpress() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php:1158
+[04-Nov-2020 15:22:07 UTC] PHP  26. wp_default_packages() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[04-Nov-2020 15:22:07 UTC] PHP   8. require() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php:1237
+[04-Nov-2020 15:22:07 UTC] PHP  27. wp_register_tinymce_scripts() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\script-loader.php:527
+[04-Nov-2020 15:22:07 UTC] PHP   9. load_default_textdomain() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:484
+[04-Nov-2020 15:22:07 UTC] PHP  28. script_concat_settings() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\script-loader.php:50
+[04-Nov-2020 15:22:07 UTC] PHP  10. determine_locale() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\l10n.php:828
+[04-Nov-2020 15:22:07 UTC] PHP  29. get_site_option() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\script-loader.php:2141
+[04-Nov-2020 15:22:07 UTC] PHP  11. get_locale() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\l10n.php:137
+[04-Nov-2020 15:22:07 UTC] PHP  30. get_network_option() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\option.php:1245
+[04-Nov-2020 15:22:07 UTC] PHP  12. get_option() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\l10n.php:69
+[04-Nov-2020 15:22:07 UTC] PHP  31. get_option() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\option.php:1380
+[04-Nov-2020 15:22:07 UTC] PHP  13. wpdb->get_row() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\option.php:124
+[04-Nov-2020 15:22:07 UTC] PHP  32. wpdb->get_row() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\option.php:124
+[04-Nov-2020 15:22:07 UTC] PHP  14. wpdb->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:2593
+[04-Nov-2020 15:22:07 UTC] PHP  33. wpdb->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:2593
+[04-Nov-2020 15:22:07 UTC] PHP  15. wpdb->_do_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:1922
+[04-Nov-2020 15:22:07 UTC] PHP  34. wpdb->_do_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:1922
+[04-Nov-2020 15:22:07 UTC] PHP  16. mysqli_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:2033
+[04-Nov-2020 15:22:07 UTC] PHP  35. mysqli_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:2033
+[04-Nov-2020 15:22:07 UTC] PHP Warning:  mysqli_query(): Error reading result set's header in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php on line 2033
+[04-Nov-2020 15:22:07 UTC] PHP Stack trace:
+[04-Nov-2020 15:22:07 UTC] PHP   1. {main}() C:\Users\Darrell\AppData\Local\Programs\Local\resources\extraResources\bin\wp-cli\wp-cli.phar:0
+[04-Nov-2020 15:22:07 UTC] PHP   2. include() C:\Users\Darrell\AppData\Local\Programs\Local\resources\extraResources\bin\wp-cli\wp-cli.phar:4
+[04-Nov-2020 15:22:07 UTC] PHP   3. include() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/php/boot-phar.php:11
+[04-Nov-2020 15:22:07 UTC] PHP   4. WP_CLI\bootstrap() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/wp-cli.php:27
+[04-Nov-2020 15:22:07 UTC] PHP   5. WP_CLI\Bootstrap\LaunchRunner->process() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/bootstrap.php:74
+[04-Nov-2020 15:22:07 UTC] PHP   6. WP_CLI\Runner->start() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Bootstrap/LaunchRunner.php:23
+[04-Nov-2020 15:22:07 UTC] PHP   7. WP_CLI\Runner->load_wordpress() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php:1158
+[04-Nov-2020 15:22:07 UTC] PHP   8. require() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php:1237
+[04-Nov-2020 15:22:07 UTC] PHP   9. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:546
+[04-Nov-2020 15:22:07 UTC] PHP  10. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[04-Nov-2020 15:22:07 UTC] PHP  11. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[04-Nov-2020 15:22:07 UTC] PHP  12. wp_widgets_init() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[04-Nov-2020 15:22:07 UTC] PHP  13. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\widgets.php:1773
+[04-Nov-2020 15:22:07 UTC] PHP  14. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[04-Nov-2020 15:22:07 UTC] PHP  15. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[04-Nov-2020 15:22:07 UTC] PHP  16. WP_Widget_Factory->_register_widgets() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[04-Nov-2020 15:22:07 UTC] PHP  17. WP_Widget_Text->_register() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-widget-factory.php:102
+[04-Nov-2020 15:22:07 UTC] PHP  18. WP_Widget_Text->_register_one() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-widget.php:252
+[04-Nov-2020 15:22:07 UTC] PHP  19. wp_add_inline_script() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\widgets\class-wp-widget-text.php:58
+[04-Nov-2020 15:22:07 UTC] PHP  20. wp_scripts() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\functions.wp-scripts.php:147
+[04-Nov-2020 15:22:07 UTC] PHP  21. WP_Scripts->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\functions.wp-scripts.php:24
+[04-Nov-2020 15:22:07 UTC] PHP  22. WP_Scripts->init() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class.wp-scripts.php:142
+[04-Nov-2020 15:22:07 UTC] PHP  23. do_action_ref_array() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class.wp-scripts.php:167
+[04-Nov-2020 15:22:07 UTC] PHP  24. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:544
+[04-Nov-2020 15:22:07 UTC] PHP  25. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[04-Nov-2020 15:22:07 UTC] PHP  26. wp_default_packages() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[04-Nov-2020 15:22:07 UTC] PHP  27. wp_register_tinymce_scripts() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\script-loader.php:527
+[04-Nov-2020 15:22:07 UTC] PHP  28. script_concat_settings() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\script-loader.php:50
+[04-Nov-2020 15:22:07 UTC] PHP  29. get_site_option() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\script-loader.php:2141
+[04-Nov-2020 15:22:07 UTC] PHP  30. get_network_option() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\option.php:1245
+[04-Nov-2020 15:22:07 UTC] PHP  31. get_option() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\option.php:1380
+[04-Nov-2020 15:22:07 UTC] PHP  32. wpdb->get_row() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\option.php:124
+[04-Nov-2020 15:22:07 UTC] PHP  33. wpdb->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:2593
+[04-Nov-2020 15:22:07 UTC] PHP  34. wpdb->_do_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:1922
+[04-Nov-2020 15:22:07 UTC] PHP  35. mysqli_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:2033

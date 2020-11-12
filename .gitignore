@@ -1,4 +1,3 @@
 # Stop tracking these files
-*.sql
 wp-config.php
 error.log
