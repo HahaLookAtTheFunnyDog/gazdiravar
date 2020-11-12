@@ -85,10 +85,10 @@
 								?>
 							</div>
 							<div class="slidePrev">
-								<button><</button>
+								<button><i class="fas fa-caret-left"></i></button>
 							</div>
 							<div class="slideNext">
-							<button>></button>
+							<button><i class="fas fa-caret-right"></i></button>
 							</div>
 						</div>
 						<div class="textPart">
@@ -106,6 +106,13 @@
 					<div class="row no-gutters">
 						<section class="adoptSection">
 							<div class="adoptionPicture">
+							<div class="iconWrapper">
+									<div class="center">
+									<i class="fas fa-paw fa-4x"></i>
+
+
+									</div>
+								</div>
 							</div>
 							<div class="adoptionInformation">
 								<h4 class="adoptTitle">Ready to Help?</h4>
@@ -122,6 +129,11 @@
 					<div class="row no-gutters rowTopSpacing">
 						<section class="shelterSection">
 							<div class="shelterPicture">
+								<div class="iconWrapper">
+									<div class="center">
+										<i class="fas fa-home fa-4x"></i>
+									</div>
+								</div>
 							</div>
 							<div class="shelterInfo">
 								<h4 class="shelterName"><?php echo $shelter->name; ?></h4>
@@ -142,6 +154,11 @@
 					<div class="row no-gutters rowTopSpacing">
 						<section class="infoSection">
 							<div class="infoPicture">
+							<div class="iconWrapper">
+									<div class="center">
+									<i class="fas fa-dog fa-4x"></i>
+									</div>
+								</div>
 							</div>
 							<div class="infoBox container" style="width: 100%;">
 								<h4 class="infoTitle">Information</h4>

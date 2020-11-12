@@ -404,7 +404,6 @@
   border-radius: 15px;
   padding: 0;
   position: relative;
-  height: 100vh;
   margin-top: 175px;
   padding: 130px 50px 50px 50px;
 }
@@ -445,5 +444,24 @@
   top: -125px;
   width: 250px;
   height: 250px;
+}
+
+.iconWrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.iconWrapper .center {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.iconWrapper .center .fas {
+  color: white;
+  height: 40px;
 }
 /*# sourceMappingURL=style.css.map */

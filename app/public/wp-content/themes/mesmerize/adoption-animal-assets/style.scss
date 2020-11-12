@@ -295,7 +295,6 @@ $secondaryTextColor: #fff;
 }
 .shelterPageContent{
     @include sectionBox();
-    height: 100vh;
     margin-top: 175px;
     padding: 130px 50px 50px 50px;
     h4, h5, ul{
@@ -318,5 +317,20 @@ $secondaryTextColor: #fff;
         top: -125px;
         width: 250px;
         height: 250px;
+    }
+}
+.iconWrapper{
+    position:relative;
+    height:100%;
+    width:100%;
+    .center{
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translate(-50%);
+        .fas{
+            color:white;
+            height:40px;
+        }
     }
 }

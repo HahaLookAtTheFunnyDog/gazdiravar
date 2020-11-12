@@ -69,9 +69,6 @@
     </section>
     <section class="shelterPageContent">
         <div class="shelterPageContentPicture">
-		<h4>
-							LOGO
-		</h4>
         </div>
 		<div class="container">
 			<div class="row">
