@@ -2,7 +2,6 @@
   width: 100%;
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
-  border-radius: 15px;
   padding: 0;
   position: relative;
   background-color: #fff;
@@ -24,6 +23,8 @@
   background-repeat: no-repeat;
   background-position: center top;
   position: absolute;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
   background-size: 100% 100%;
   border-radius: 15px 15px 0 0;
   width: 100%;
@@ -93,7 +94,6 @@
   width: 100%;
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
-  border-radius: 15px;
   padding: 0;
   position: relative;
   background-color: #fff;
@@ -141,7 +141,6 @@
 }
 
 .adoptSection .adoptionMoreInformation {
-  border-radius: 0 0 15px 15px;
   border-top: 2px solid #3C424F;
   width: 100%;
   position: absolute;
@@ -160,7 +159,6 @@
   width: 100%;
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
-  border-radius: 15px;
   padding: 0;
   position: relative;
   background-color: #fff;
@@ -201,7 +199,6 @@
 }
 
 .shelterSection .shelterViewMore {
-  border-radius: 0 0 15px 15px;
   border-top: 2px solid #3C424F;
   width: 100%;
   position: absolute;
@@ -220,7 +217,6 @@
   width: 100%;
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
-  border-radius: 15px;
   padding: 0;
   position: relative;
   background-color: #fff;
@@ -401,14 +397,13 @@
   width: 100%;
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
-  border-radius: 15px;
   padding: 0;
   position: relative;
-  margin-top: 175px;
-  padding: 130px 50px 50px 50px;
+  margin-top: 25px;
+  padding: 50px 50px 50px 50px;
 }
 
-.shelterPageContent h4, .shelterPageContent h5, .shelterPageContent ul {
+.shelterPageContent h3, .shelterPageContent h5, .shelterPageContent ul {
   margin: 0;
   text-align: center;
 }
@@ -460,8 +455,15 @@
           transform: translate(-50%);
 }
 
-.iconWrapper .center .fas {
+.iconWrapper .centerBig {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.iconWrapper .fas {
   color: white;
-  height: 40px;
 }
 /*# sourceMappingURL=style.css.map */

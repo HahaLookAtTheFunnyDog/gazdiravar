@@ -5,12 +5,11 @@ $secondaryTextColor: #fff;
 @mixin sectionBox{
     width: 100%;
     box-shadow: 0 0 11px rgba(33,33,33,.2); 
-    border-radius: 15px;
+
     padding: 0;
     position: relative;
 }
 @mixin moreInformation{
-    border-radius: 0 0 15px 15px;
     border-top: 2px solid $primaryTextColor;
     width: 100%;
     position: absolute;
@@ -56,6 +55,7 @@ $secondaryTextColor: #fff;
                 background-repeat: no-repeat;
                 background-position: center top;
                 position: absolute;
+                transition: opacity 0.4s ease-in-out;
                 background-size: 100% 100%;
                 border-radius: 15px 15px 0 0;
                 width: 100%;
@@ -295,9 +295,9 @@ $secondaryTextColor: #fff;
 }
 .shelterPageContent{
     @include sectionBox();
-    margin-top: 175px;
-    padding: 130px 50px 50px 50px;
-    h4, h5, ul{
+    margin-top: 25px;
+    padding: 50px 50px 50px 50px;
+    h3, h5, ul{
         margin: 0;
         text-align: center;
     }
@@ -328,9 +328,14 @@ $secondaryTextColor: #fff;
         top: 10px;
         left: 50%;
         transform: translate(-50%);
-        .fas{
-            color:white;
-            height:40px;
-        }
+    }
+    .centerBig{
+        position: absolute;
+        top: 35px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .fas{
+        color:white;
     }
 }
