@@ -126,7 +126,7 @@ class FontAwesome {
 	 *
 	 * @since 4.0.0
 	 */
-	const PLUGIN_VERSION = '4.0.0-rc20';
+	const PLUGIN_VERSION = '4.0.0-rc21';
 	/**
 	 * The namespace for this plugin's REST API.
 	 *
@@ -178,7 +178,7 @@ class FontAwesome {
 	 * @ignore
 	 * @internal
 	 */
-	const CONFLICT_DETECTOR_SOURCE = 'https://use.fontawesome.com/releases/v5.12.1/js/conflict-detection.js';
+	const CONFLICT_DETECTOR_SOURCE = 'https://use.fontawesome.com/releases/v5.15.1/js/conflict-detection.js';
 
 	/**
 	 * The custom data attribute added to script, link, and style elements enqueued
@@ -296,7 +296,7 @@ class FontAwesome {
 	 * @internal
 	 * @ignore
 	 */
-	protected $_old_remove_unregistered_clients = false;
+	protected $old_remove_unregistered_clients = false;
 
 	/**
 	 * Returns the singleton instance of the FontAwesome plugin.
@@ -367,7 +367,7 @@ class FontAwesome {
 
 			add_shortcode(
 				self::SHORTCODE_TAG,
-				[ $this, 'process_shortcode' ]
+				array( $this, 'process_shortcode' )
 			);
 
 			add_filter( 'widget_text', 'do_shortcode' );
@@ -435,7 +435,7 @@ class FontAwesome {
 		// Upgrade from v1 schema: 4.0.0-rc13 or earlier.
 		if ( isset( $options['lockedLoadSpec'] ) || isset( $options['adminClientLoadSpec'] ) ) {
 			if ( isset( $options['removeUnregisteredClients'] ) && $options['removeUnregisteredClients'] ) {
-				$this->_old_remove_unregistered_clients = true;
+				$this->old_remove_unregistered_clients = true;
 			}
 
 			$upgraded_options = $this->convert_options_from_v1( $options );
@@ -668,12 +668,12 @@ class FontAwesome {
 	 * @return string|null
 	 */
 	private function active_admin_tab() {
-		// phpcs:ignore WordPress.Security.NonceVerification.NoNonceVerification
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		if ( ! isset( $_REQUEST[ self::ADMIN_TAB_QUERY_VAR ] ) || empty( $_REQUEST[ self::ADMIN_TAB_QUERY_VAR ] ) ) {
 			return null;
 		}
 
-		// phpcs:ignore WordPress.Security.NonceVerification.NoNonceVerification, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		$value = $_REQUEST[ self::ADMIN_TAB_QUERY_VAR ];
 
 		// These values are defined in the Redux reducer module of the admin JS React app.
@@ -754,35 +754,27 @@ class FontAwesome {
 
 			add_action(
 				'admin_notices',
-				[ $v3_deprecation_command, 'run' ]
+				array( $v3_deprecation_command, 'run' )
 			);
 		}
 
-		$icon_data = 'data:image/svg+xml;base64,'
-			. base64_encode(
-				'<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 448 512"><path fill="'
-				. $this->get_admin_icon_color()
-				. '" d="M397.8 32H50.2C22.7 32 0 54.7 0 82.2v347.6C0 457.3 22.7 480 50.2 480h347.6c27.5 0 50.2-22.7 50.2-50.2V82.2c0-27.5-22.7-50.2-50.2-50.2zm-45.4 284.3c0 4.2-3.6 6-7.8 7.8-16.7 7.2-34.6 13.7-53.8 13.7-26.9 0-39.4-16.7-71.7-16.7-23.3 0-47.8 8.4-67.5 17.3-1.2.6-2.4.6-3.6 1.2V385c0 1.8 0 3.6-.6 4.8v1.2c-2.4 8.4-10.2 14.3-19.1 14.3-11.3 0-20.3-9-20.3-20.3V166.4c-7.8-6-13.1-15.5-13.1-26.3 0-18.5 14.9-33.5 33.5-33.5 18.5 0 33.5 14.9 33.5 33.5 0 10.8-4.8 20.3-13.1 26.3v18.5c1.8-.6 3.6-1.2 5.4-2.4 18.5-7.8 40.6-14.3 61.5-14.3 22.7 0 40.6 6 60.9 13.7 4.2 1.8 8.4 2.4 13.1 2.4 22.7 0 47.8-16.1 53.8-16.1 4.8 0 9 3.6 9 7.8v140.3z"/></svg>'
-			);
-
 		$admin_menu_command = new FontAwesome_Command(
-			function() use ( $icon_data ) {
-				fa()->screen_id = add_menu_page(
-					/* translators: add_menu_page page_title */
+			function() {
+				fa()->screen_id = add_options_page(
+					/* translators: add_options_page page_title */
 					esc_html__( 'Font Awesome Settings', 'font-awesome' ),
-					/* translators: add_menu_page menu_title */
+					/* translators: add_options_page menu_title */
 					esc_html__( 'Font Awesome', 'font-awesome' ),
 					'manage_options',
 					self::OPTIONS_PAGE,
-					array( fa(), 'create_admin_page' ),
-					$icon_data
+					array( fa(), 'create_admin_page' )
 				);
 			}
 		);
 
 		add_action(
 			'admin_menu',
-			[ $admin_menu_command, 'run' ]
+			array( $admin_menu_command, 'run' )
 		);
 
 		$plugin_action_links_command = new FontAwesome_Command(
@@ -797,7 +789,7 @@ class FontAwesome {
 
 		add_filter(
 			'plugin_action_links_' . FONTAWESOME_PLUGIN_FILE,
-			[ $plugin_action_links_command, 'run' ]
+			array( $plugin_action_links_command, 'run' )
 		);
 
 		$multi_version_warning_command = new FontAwesome_Command(
@@ -836,7 +828,7 @@ class FontAwesome {
 
 		add_action(
 			'after_plugin_row_' . FONTAWESOME_PLUGIN_FILE,
-			[ $multi_version_warning_command, 'run' ],
+			array( $multi_version_warning_command, 'run' ),
 			10,
 			3
 		);
@@ -922,7 +914,7 @@ class FontAwesome {
 		if (
 			! isset( $options['technology'] ) ||
 			! is_string( $options['technology'] ) ||
-			false === array_search( $options['technology'], [ 'svg', 'webfont' ], true )
+			false === array_search( $options['technology'], array( 'svg', 'webfont' ), true )
 		) {
 			throw new ConfigCorruptionException();
 		}
@@ -1387,7 +1379,7 @@ class FontAwesome {
 						wp_enqueue_script(
 							self::ADMIN_RESOURCE_HANDLE,
 							$this->get_webpack_asset_url( 'main.js' ),
-							[],
+							array(),
 							null,
 							true
 						);
@@ -1401,7 +1393,7 @@ class FontAwesome {
 							wp_enqueue_style(
 								self::ADMIN_RESOURCE_HANDLE . '-css',
 								$this->get_webpack_asset_url( 'main.css' ),
-								[],
+								array(),
 								null,
 								'all'
 							);
@@ -1442,7 +1434,7 @@ class FontAwesome {
 		);
 
 		if ( $this->detecting_conflicts() && current_user_can( 'manage_options' ) ) {
-			foreach ( [ 'wp_enqueue_scripts', 'login_enqueue_scripts' ] as $action ) {
+			foreach ( array( 'wp_enqueue_scripts', 'login_enqueue_scripts' ) as $action ) {
 				add_action(
 					$action,
 					function () {
@@ -1518,7 +1510,7 @@ class FontAwesome {
 			throw new ConfigCorruptionException();
 		}
 
-		foreach ( [ 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ] as $action ) {
+		foreach ( array( 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ) as $action ) {
 			$enqueue_command = new FontAwesome_Command(
 				function () use ( $kit_token ) {
 					try {
@@ -1526,7 +1518,7 @@ class FontAwesome {
 						wp_enqueue_script(
 							FontAwesome::RESOURCE_HANDLE,
 							trailingslashit( FONTAWESOME_KIT_LOADER_BASE_URL ) . $kit_token . '.js',
-							[],
+							array(),
 							null,
 							false
 						);
@@ -1574,7 +1566,7 @@ EOT;
 			);
 			add_action(
 				$action,
-				[ $enqueue_command, 'run' ]
+				array( $enqueue_command, 'run' )
 			);
 		}
 
@@ -1601,7 +1593,7 @@ EOT;
 
 		add_filter(
 			'script_loader_tag',
-			[ $script_loader_tag_command, 'run' ],
+			array( $script_loader_tag_command, 'run' ),
 			11,
 			2
 		);
@@ -1649,7 +1641,7 @@ EOT;
 				wp_enqueue_script(
 					FontAwesome::RESOURCE_HANDLE_CONFLICT_DETECTOR,
 					FontAwesome::CONFLICT_DETECTOR_SOURCE,
-					[ FontAwesome::ADMIN_RESOURCE_HANDLE ],
+					array( FontAwesome::ADMIN_RESOURCE_HANDLE ),
 					null,
 					true
 				);
@@ -1658,10 +1650,10 @@ EOT;
 
 		if ( $this->detecting_conflicts() && current_user_can( 'manage_options' ) ) {
 			// Enqueue the conflict detector.
-			foreach ( [ 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ] as $action ) {
+			foreach ( array( 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ) as $action ) {
 				add_action(
 					$action,
-					[ $conflict_detection_enqueue_command, 'run' ],
+					array( $conflict_detection_enqueue_command, 'run' ),
 					PHP_INT_MAX
 				);
 			}
@@ -1670,7 +1662,7 @@ EOT;
 		}
 
 		if ( 'webfont' === $options['technology'] ) {
-			foreach ( [ 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ] as $action ) {
+			foreach ( array( 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ) as $action ) {
 				add_action(
 					$action,
 					function () use ( $resources ) {
@@ -1684,7 +1676,7 @@ EOT;
 			add_filter(
 				'style_loader_tag',
 				function( $html, $handle ) use ( $resources ) {
-					if ( in_array( $handle, [ self::RESOURCE_HANDLE ], true ) ) {
+					if ( in_array( $handle, array( self::RESOURCE_HANDLE ), true ) ) {
 								return preg_replace(
 									'/\/>$/',
 									'integrity="' . $resources[0]->integrity_key() .
@@ -1712,7 +1704,7 @@ EOT;
 				 * We need the @font-face override, especially to appear after any unregistered loads of Font Awesome
 				 * that may try to declare a @font-face with a font-family of "FontAwesome".
 				 */
-				foreach ( [ 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ] as $action ) {
+				foreach ( array( 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ) as $action ) {
 					add_action(
 						$action,
 						function () use ( $resources, $options, $version ) {
@@ -1771,7 +1763,7 @@ EOT;
 					add_filter(
 						'style_loader_tag',
 						function ( $html, $handle ) use ( $resources ) {
-							if ( in_array( $handle, [ self::RESOURCE_HANDLE_V4SHIM ], true ) ) {
+							if ( in_array( $handle, array( self::RESOURCE_HANDLE_V4SHIM ), true ) ) {
 								return preg_replace(
 									'/\/>$/',
 									'integrity="' . $resources[1]->integrity_key() .
@@ -1789,7 +1781,7 @@ EOT;
 				}
 			}
 		} else {
-			foreach ( [ 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ] as $action ) {
+			foreach ( array( 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ) as $action ) {
 				add_action(
 					$action,
 					function () use ( $resources, $options ) {
@@ -1807,7 +1799,7 @@ EOT;
 			add_filter(
 				'script_loader_tag',
 				function ( $tag, $handle ) use ( $resources ) {
-					if ( in_array( $handle, [ self::RESOURCE_HANDLE ], true ) ) {
+					if ( in_array( $handle, array( self::RESOURCE_HANDLE ), true ) ) {
 						$extra_tag_attributes = 'defer crossorigin="anonymous"';
 
 						if ( ! is_null( $resources[0]->integrity_key() ) ) {
@@ -1830,7 +1822,7 @@ EOT;
 			);
 
 			if ( $options['v4Compat'] ) {
-				foreach ( [ 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ] as $action ) {
+				foreach ( array( 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ) as $action ) {
 					add_action(
 						$action,
 						function () use ( $resources ) {
@@ -1843,7 +1835,7 @@ EOT;
 				add_filter(
 					'script_loader_tag',
 					function ( $tag, $handle ) use ( $resources ) {
-						if ( in_array( $handle, [ self::RESOURCE_HANDLE_V4SHIM ], true ) ) {
+						if ( in_array( $handle, array( self::RESOURCE_HANDLE_V4SHIM ), true ) ) {
 							$extra_tag_attributes = 'defer crossorigin="anonymous"';
 							if ( ! is_null( $resources[1]->integrity_key() ) ) {
 								$extra_tag_attributes .= ' integrity="' . $resources[1]->integrity_key() . '"';
@@ -1885,7 +1877,7 @@ EOT;
 					in_array(
 						$handle,
 						array_merge(
-							[ self::RESOURCE_HANDLE, self::RESOURCE_HANDLE_V4SHIM ],
+							array( self::RESOURCE_HANDLE, self::RESOURCE_HANDLE_V4SHIM ),
 							handles_ignored_for_conflict_detection()
 						),
 						true
@@ -1912,12 +1904,12 @@ EOT;
 					in_array(
 						$handle,
 						array_merge(
-							[
+							array(
 								self::RESOURCE_HANDLE,
 								self::RESOURCE_HANDLE_V4SHIM,
 								self::RESOURCE_HANDLE_CONFLICT_DETECTOR,
 								self::ADMIN_RESOURCE_HANDLE,
-							],
+							),
 							handles_ignored_for_conflict_detection()
 						),
 						true
@@ -1952,8 +1944,8 @@ EOT;
 		 * run some server-side detection like that old feature worked and
 		 * add what we find to the new-style blocklist.
 		 */
-		if ( $this->_old_remove_unregistered_clients ) {
-			foreach ( [ 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ] as $action ) {
+		if ( $this->old_remove_unregistered_clients ) {
+			foreach ( array( 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ) as $action ) {
 				add_action(
 					$action,
 					function() {
@@ -1978,7 +1970,7 @@ EOT;
 		 * hopefully allowing any unregistered client to have already enqueued
 		 * itself so that our attempt to dequeue it will be successful.
 		 */
-		foreach ( [ 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ] as $action ) {
+		foreach ( array( 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ) as $action ) {
 			add_action(
 				$action,
 				function() {
@@ -2021,7 +2013,7 @@ EOT;
 			'script' => $wp_scripts,
 		);
 
-		$inferred_unregistered_clients = [];
+		$inferred_unregistered_clients = array();
 
 		foreach ( $collections as $key => $collection ) {
 			foreach ( $collection->registered as $handle => $details ) {
@@ -2150,7 +2142,7 @@ EOT;
 
 		foreach ( $collections as $type => $collection ) {
 			foreach ( $collection->registered as $handle => $details ) {
-				foreach ( [ 'before', 'after' ] as $position ) {
+				foreach ( array( 'before', 'after' ) as $position ) {
 					$data = $collection->get_data( $handle, $position );
 					if ( $this->is_inline_data_blocked( $data ) ) {
 						unset( $collection->registered[ $handle ]->extra[ $position ] );
@@ -2515,7 +2507,7 @@ EOT;
 			$prefix_and_name_classes = $atts['prefix'] . ' fa-' . $atts['name'];
 		}
 
-		$classes = rtrim( implode( ' ', [ $prefix_and_name_classes, $atts['class'] ] ) );
+		$classes = rtrim( implode( ' ', array( $prefix_and_name_classes, $atts['class'] ) ) );
 		return '<i class="' . $classes . '"></i>';
 	}
 
@@ -2654,38 +2646,6 @@ EOT;
 		}
 
 		return $asset_url_base . $asset_manifest[ $asset ];
-	}
-
-	/**
-	 * Internal use only, not part of this plugin's public API.
-	 *
-	 * @internal
-	 * @ignore
-	 */
-	private function get_admin_icon_color() {
-		// Adapted from wp_color_scheme_settings in WP Core.
-		global $_wp_admin_css_colors;
-
-		$color_scheme = get_user_option( 'admin_color' );
-
-		if ( empty( $_wp_admin_css_colors[ $color_scheme ] ) ) {
-			$color_scheme = 'fresh';
-		}
-
-		if ( ! empty( $_wp_admin_css_colors[ $color_scheme ]->icon_colors ) ) {
-			$icon_colors = $_wp_admin_css_colors[ $color_scheme ]->icon_colors;
-		} elseif ( ! empty( $_wp_admin_css_colors['fresh']->icon_colors ) ) {
-			$icon_colors = $_wp_admin_css_colors['fresh']->icon_colors;
-		} else {
-			// Fall back to the default set of icon colors if the default scheme is missing.
-			$icon_colors = array(
-				'base'    => '#a0a5aa',
-				'focus'   => '#00a0d2',
-				'current' => '#fff',
-			);
-		}
-
-		return $icon_colors['base'];
 	}
 }
 
