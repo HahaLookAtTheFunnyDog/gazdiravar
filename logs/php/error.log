@@ -3007,3 +3007,33 @@ Stack trace:
 #8 {main}
 [17-Nov-2020 22:44:26 UTC] [CTRL DUP ARCIVE]  Caught exception DETAIL:Runtime error in DUP_Database::Build. Shell mysql dump error. Change SQL Script to the "PHP Code" in the Duplicator > Settings > Packages.
 [17-Nov-2020 22:44:26 UTC] Build failed so sending back error DETAIL:Error building DupArchive package&lt;br/&gt;
+[24-Nov-2020 18:58:48 UTC] PHP Warning:  Use of undefined constant Gazdiravar - assumed 'Gazdiravar' (this will throw an Error in a future version of PHP) in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\themes\mesmerize\template-parts\footer\footer.php on line 6
+[24-Nov-2020 18:58:48 UTC] PHP Stack trace:
+[24-Nov-2020 18:58:48 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\index.php:0
+[24-Nov-2020 18:58:48 UTC] PHP   2. require() C:\Users\Darrell\Local Sites\gazdiravar\app\public\index.php:17
+[24-Nov-2020 18:58:48 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-blog-header.php:19
+[24-Nov-2020 18:58:48 UTC] PHP   4. include() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\template-loader.php:106
+[24-Nov-2020 18:58:48 UTC] PHP   5. get_footer() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\themes\mesmerize\page-templates\homepage.php:18
+[24-Nov-2020 18:58:48 UTC] PHP   6. locate_template() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\general-template.php:92
+[24-Nov-2020 18:58:48 UTC] PHP   7. load_template() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\template.php:676
+[24-Nov-2020 18:58:48 UTC] PHP   8. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\template.php:730
+[24-Nov-2020 18:58:48 UTC] PHP   9. mesmerize_get_footer_content() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\themes\mesmerize\footer.php:1
+[24-Nov-2020 18:58:48 UTC] PHP  10. get_template_part() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\themes\mesmerize\inc\templates-functions.php:353
+[24-Nov-2020 18:58:48 UTC] PHP  11. locate_template() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\general-template.php:204
+[24-Nov-2020 18:58:48 UTC] PHP  12. load_template() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\template.php:676
+[24-Nov-2020 18:58:48 UTC] PHP  13. require() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\template.php:732
+[24-Nov-2020 18:58:48 UTC] PHP Warning:  Use of undefined constant Gazdiravar - assumed 'Gazdiravar' (this will throw an Error in a future version of PHP) in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\themes\mesmerize\template-parts\footer\footer.php on line 6
+[24-Nov-2020 18:58:48 UTC] PHP Stack trace:
+[24-Nov-2020 18:58:48 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\index.php:0
+[24-Nov-2020 18:58:48 UTC] PHP   2. require() C:\Users\Darrell\Local Sites\gazdiravar\app\public\index.php:17
+[24-Nov-2020 18:58:48 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-blog-header.php:19
+[24-Nov-2020 18:58:48 UTC] PHP   4. include() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\template-loader.php:106
+[24-Nov-2020 18:58:48 UTC] PHP   5. get_footer() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\themes\mesmerize\page-templates\homepage.php:18
+[24-Nov-2020 18:58:48 UTC] PHP   6. locate_template() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\general-template.php:92
+[24-Nov-2020 18:58:48 UTC] PHP   7. load_template() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\template.php:676
+[24-Nov-2020 18:58:48 UTC] PHP   8. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\template.php:730
+[24-Nov-2020 18:58:48 UTC] PHP   9. mesmerize_get_footer_content() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\themes\mesmerize\footer.php:1
+[24-Nov-2020 18:58:48 UTC] PHP  10. get_template_part() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\themes\mesmerize\inc\templates-functions.php:353
+[24-Nov-2020 18:58:48 UTC] PHP  11. locate_template() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\general-template.php:204
+[24-Nov-2020 18:58:48 UTC] PHP  12. load_template() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\template.php:676
+[24-Nov-2020 18:58:48 UTC] PHP  13. require() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\template.php:732
