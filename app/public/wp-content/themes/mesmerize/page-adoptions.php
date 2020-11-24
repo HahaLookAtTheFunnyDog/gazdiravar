@@ -79,7 +79,15 @@ function finalQueryHelper($arguments,$finalQuery, $finalQueryAdjusted, $adoption
 global $wpdb;
 //Can retrieve the actual user ip once the website is live
 $user_ip = $_SERVER['REMOTE_ADDR'];
-$geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
+// $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
+$url = 'www.geoplugin.net/php.gp?ip=' . $user_ip;
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$output = curl_exec($ch);
+
+var_dump($output);
 global $userCountry;
 if($_GET["country"]){
 	$userCountry = $_GET["country"];
