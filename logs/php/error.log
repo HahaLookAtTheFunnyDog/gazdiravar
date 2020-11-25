@@ -3346,3 +3346,78 @@ Stack trace:
 [25-Nov-2020 09:55:34 UTC] PHP  21. W3TC\DbCache_WpdbNew->_do_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:1922
 [25-Nov-2020 09:55:34 UTC] PHP  22. mysqli_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:2033
 [25-Nov-2020 09:55:34 UTC] PHP  22. mysqli_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:2033
+[25-Nov-2020 18:50:45 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php on line 229
+[25-Nov-2020 18:50:45 UTC] PHP Stack trace:
+[25-Nov-2020 18:50:45 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[25-Nov-2020 18:50:45 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[25-Nov-2020 18:50:45 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[25-Nov-2020 18:50:45 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[25-Nov-2020 18:50:45 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[25-Nov-2020 18:50:45 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[25-Nov-2020 18:50:45 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[25-Nov-2020 18:50:45 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[25-Nov-2020 18:50:45 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[25-Nov-2020 18:50:45 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[25-Nov-2020 18:50:45 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[25-Nov-2020 18:50:45 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[25-Nov-2020 18:50:45 UTC] PHP  13. WC_Cart_Totals->get_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:651
+[25-Nov-2020 18:50:45 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php on line 87
+[25-Nov-2020 18:50:45 UTC] PHP Stack trace:
+[25-Nov-2020 18:50:45 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[25-Nov-2020 18:50:45 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[25-Nov-2020 18:50:45 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[25-Nov-2020 18:50:45 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[25-Nov-2020 18:50:45 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[25-Nov-2020 18:50:45 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[25-Nov-2020 18:50:45 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[25-Nov-2020 18:50:45 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[25-Nov-2020 18:50:45 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[25-Nov-2020 18:50:45 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[25-Nov-2020 18:50:45 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[25-Nov-2020 18:50:45 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[25-Nov-2020 18:50:45 UTC] PHP  13. WC_Cart_Totals->calculate_discounts() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:653
+[25-Nov-2020 18:50:45 UTC] PHP  14. WC_Discounts->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:769
+[25-Nov-2020 18:50:45 UTC] PHP  15. WC_Discounts->set_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:47
+[25-Nov-2020 19:10:35 UTC] PHP Warning:  chmod(): No such file or directory in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php on line 173
+[25-Nov-2020 19:10:35 UTC] PHP Stack trace:
+[25-Nov-2020 19:10:35 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\update.php:0
+[25-Nov-2020 19:10:35 UTC] PHP   2. Plugin_Upgrader->install() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\update.php:171
+[25-Nov-2020 19:10:35 UTC] PHP   3. Plugin_Upgrader->run() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-plugin-upgrader.php:137
+[25-Nov-2020 19:10:35 UTC] PHP   4. Plugin_Upgrader->unpack_package() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-upgrader.php:779
+[25-Nov-2020 19:10:35 UTC] PHP   5. unzip_file() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-upgrader.php:328
+[25-Nov-2020 19:10:35 UTC] PHP   6. _unzip_file_ziparchive() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\file.php:1466
+[25-Nov-2020 19:10:35 UTC] PHP   7. WP_Filesystem_Direct->put_contents() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\file.php:1601
+[25-Nov-2020 19:10:35 UTC] PHP   8. WP_Filesystem_Direct->chmod() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:86
+[25-Nov-2020 19:10:35 UTC] PHP   9. chmod() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:173
+[25-Nov-2020 19:10:36 UTC] PHP Warning:  dir(C:/Users/Darrell/Local Sites/gazdiravar/app/public/wp-content/upgrade/sitepress-multilingual-cms.4.4.3/sitepress-multilingual-cms/vendor/phpmyadmin/sql-parser/locale/he/LC_MESSAGES/,C:/Users/Darrell/Local Sites/gazdiravar/app/public/wp-content/upgrade/sitepress-multilingual-cms.4.4.3/sitepress-multilingual-cms/vendor/phpmyadmin/sql-parser/locale/he/LC_MESSAGES/): The system cannot find the path specified. (code: 3) in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php on line 613
+[25-Nov-2020 19:10:36 UTC] PHP Stack trace:
+[25-Nov-2020 19:10:36 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\update.php:0
+[25-Nov-2020 19:10:36 UTC] PHP   2. Plugin_Upgrader->install() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\update.php:171
+[25-Nov-2020 19:10:36 UTC] PHP   3. Plugin_Upgrader->run() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-plugin-upgrader.php:137
+[25-Nov-2020 19:10:36 UTC] PHP   4. Plugin_Upgrader->unpack_package() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-upgrader.php:779
+[25-Nov-2020 19:10:36 UTC] PHP   5. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-upgrader.php:336
+[25-Nov-2020 19:10:36 UTC] PHP   6. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:384
+[25-Nov-2020 19:10:36 UTC] PHP   7. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:384
+[25-Nov-2020 19:10:36 UTC] PHP   8. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:384
+[25-Nov-2020 19:10:36 UTC] PHP   9. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:384
+[25-Nov-2020 19:10:36 UTC] PHP  10. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:384
+[25-Nov-2020 19:10:36 UTC] PHP  11. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:384
+[25-Nov-2020 19:10:36 UTC] PHP  12. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:384
+[25-Nov-2020 19:10:36 UTC] PHP  13. WP_Filesystem_Direct->dirlist() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:378
+[25-Nov-2020 19:10:36 UTC] PHP  14. dir() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:613
+[25-Nov-2020 19:10:36 UTC] PHP Warning:  dir(C:/Users/Darrell/Local Sites/gazdiravar/app/public/wp-content/upgrade/sitepress-multilingual-cms.4.4.3/sitepress-multilingual-cms/vendor/phpmyadmin/sql-parser/locale/he/LC_MESSAGES/): failed to open dir: No error in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php on line 613
+[25-Nov-2020 19:10:36 UTC] PHP Stack trace:
+[25-Nov-2020 19:10:36 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\update.php:0
+[25-Nov-2020 19:10:36 UTC] PHP   2. Plugin_Upgrader->install() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\update.php:171
+[25-Nov-2020 19:10:36 UTC] PHP   3. Plugin_Upgrader->run() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-plugin-upgrader.php:137
+[25-Nov-2020 19:10:36 UTC] PHP   4. Plugin_Upgrader->unpack_package() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-upgrader.php:779
+[25-Nov-2020 19:10:36 UTC] PHP   5. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-upgrader.php:336
+[25-Nov-2020 19:10:36 UTC] PHP   6. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:384
+[25-Nov-2020 19:10:36 UTC] PHP   7. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:384
+[25-Nov-2020 19:10:36 UTC] PHP   8. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:384
+[25-Nov-2020 19:10:36 UTC] PHP   9. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:384
+[25-Nov-2020 19:10:36 UTC] PHP  10. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:384
+[25-Nov-2020 19:10:36 UTC] PHP  11. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:384
+[25-Nov-2020 19:10:36 UTC] PHP  12. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:384
+[25-Nov-2020 19:10:36 UTC] PHP  13. WP_Filesystem_Direct->dirlist() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:378
+[25-Nov-2020 19:10:36 UTC] PHP  14. dir() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:613
