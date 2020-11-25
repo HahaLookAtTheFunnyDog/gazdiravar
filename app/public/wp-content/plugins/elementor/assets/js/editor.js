@@ -1,4 +1,4 @@
-/*! elementor - v3.0.13 - 04-11-2020 */
+/*! elementor - v3.0.14 - 25-11-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -32730,6 +32730,21 @@ ControlMediaItemView = ControlMultipleBaseItemView.extend({
     }); // When a file is selected, run a callback.
 
     this.frame.on('insert select', this.select.bind(this));
+
+    if (elementor.config.filesUpload.unfilteredFiles) {
+      this.setUploadMimeType(this.frame, this.getMediaType());
+    }
+  },
+  setUploadMimeType: function setUploadMimeType(frame, ext) {
+    // Add unfiltered files to the allowed upload extensions
+    var oldExtensions = _wpPluploadSettings.defaults.filters.mime_types[0].extensions;
+    frame.on('ready', function () {
+      _wpPluploadSettings.defaults.filters.mime_types[0].extensions = 'application/json' === ext ? 'json' : oldExtensions + ',svg';
+    });
+    this.frame.on('close', function () {
+      // Restore allowed upload extensions
+      _wpPluploadSettings.defaults.filters.mime_types[0].extensions = oldExtensions;
+    });
   },
 
   /**

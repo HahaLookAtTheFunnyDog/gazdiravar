@@ -3,7 +3,7 @@
         <div class="gridContainer">
 	        <div class="row middle-xs footer-content-row">
 	            <div class="footer-content-col col-xs-12">
-	                    <?php echo 'Add Copyright Here'; ?>
+	                    <?php echo 'Copyright© Consultation SOS'; ?>
 	            </div>
 	        </div>
 	    </div>

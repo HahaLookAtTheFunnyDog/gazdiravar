@@ -3298,3 +3298,51 @@ Stack trace:
 [25-Nov-2020 08:48:22 UTC] PHP  13. wc_get_template() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\wc-template-functions.php:2259
 [25-Nov-2020 08:48:22 UTC] PHP  14. include() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\wc-core-functions.php:345
 [25-Nov-2020 08:48:22 UTC] PHP  15. WC_Cart->get_product_subtotal() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\templates\checkout\review-order.php:43
+[25-Nov-2020 09:55:33 UTC] PHP Warning:  Error while sending QUERY packet. PID=17576 in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php on line 2033
+[25-Nov-2020 09:55:33 UTC] PHP Warning:  Error while sending QUERY packet. PID=2476 in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php on line 2033
+[25-Nov-2020 09:55:33 UTC] PHP Stack trace:
+[25-Nov-2020 09:55:33 UTC] PHP Stack trace:
+[25-Nov-2020 09:55:33 UTC] PHP   1. {main}() C:\Users\Darrell\AppData\Local\Programs\Local\resources\extraResources\bin\wp-cli\wp-cli.phar:0
+[25-Nov-2020 09:55:33 UTC] PHP   1. {main}() C:\Users\Darrell\AppData\Local\Programs\Local\resources\extraResources\bin\wp-cli\wp-cli.phar:0
+[25-Nov-2020 09:55:33 UTC] PHP   2. include() C:\Users\Darrell\AppData\Local\Programs\Local\resources\extraResources\bin\wp-cli\wp-cli.phar:4
+[25-Nov-2020 09:55:33 UTC] PHP   2. include() C:\Users\Darrell\AppData\Local\Programs\Local\resources\extraResources\bin\wp-cli\wp-cli.phar:4
+[25-Nov-2020 09:55:33 UTC] PHP   3. include() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/php/boot-phar.php:11
+[25-Nov-2020 09:55:33 UTC] PHP   3. include() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/php/boot-phar.php:11
+[25-Nov-2020 09:55:33 UTC] PHP   4. WP_CLI\bootstrap() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/wp-cli.php:27
+[25-Nov-2020 09:55:33 UTC] PHP   4. WP_CLI\bootstrap() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/wp-cli.php:27
+[25-Nov-2020 09:55:33 UTC] PHP   5. WP_CLI\Bootstrap\LaunchRunner->process() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/bootstrap.php:74
+[25-Nov-2020 09:55:33 UTC] PHP   5. WP_CLI\Bootstrap\LaunchRunner->process() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/bootstrap.php:74
+[25-Nov-2020 09:55:33 UTC] PHP   6. WP_CLI\Runner->start() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Bootstrap/LaunchRunner.php:23
+[25-Nov-2020 09:55:33 UTC] PHP   6. WP_CLI\Runner->start() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Bootstrap/LaunchRunner.php:23
+[25-Nov-2020 09:55:33 UTC] PHP   7. WP_CLI\Runner->load_wordpress() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php:1158
+[25-Nov-2020 09:55:33 UTC] PHP   7. WP_CLI\Runner->load_wordpress() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php:1158
+[25-Nov-2020 09:55:33 UTC] PHP   8. require() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php:1237
+[25-Nov-2020 09:55:33 UTC] PHP   8. require() phar://C:/Users/Darrell/AppData/Local/Programs/Local/resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php:1237
+[25-Nov-2020 09:55:33 UTC] PHP   9. load_default_textdomain() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:484
+[25-Nov-2020 09:55:33 UTC] PHP   9. load_default_textdomain() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:484
+[25-Nov-2020 09:55:33 UTC] PHP  10. determine_locale() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\l10n.php:828
+[25-Nov-2020 09:55:33 UTC] PHP  10. determine_locale() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\l10n.php:828
+[25-Nov-2020 09:55:33 UTC] PHP  11. get_locale() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\l10n.php:137
+[25-Nov-2020 09:55:33 UTC] PHP  11. get_locale() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\l10n.php:137
+[25-Nov-2020 09:55:33 UTC] PHP  12. get_option() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\l10n.php:69
+[25-Nov-2020 09:55:33 UTC] PHP  12. get_option() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\l10n.php:69
+[25-Nov-2020 09:55:33 UTC] PHP  13. W3TC\DbCache_WpdbNew->get_row() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\option.php:124
+[25-Nov-2020 09:55:33 UTC] PHP  13. W3TC\DbCache_WpdbNew->get_row() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\option.php:124
+[25-Nov-2020 09:55:33 UTC] PHP  14. W3TC\DbCache_WpdbNew->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:2593
+[25-Nov-2020 09:55:33 UTC] PHP  14. W3TC\DbCache_WpdbNew->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:2593
+[25-Nov-2020 09:55:33 UTC] PHP  15. W3TC\DbCache_WpdbInjection_QueryCaching->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\w3-total-cache\DbCache_WpdbNew.php:119
+[25-Nov-2020 09:55:33 UTC] PHP  15. W3TC\DbCache_WpdbInjection_QueryCaching->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\w3-total-cache\DbCache_WpdbNew.php:119
+[25-Nov-2020 09:55:33 UTC] PHP  16. W3TC\_CallUnderlying->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\w3-total-cache\DbCache_WpdbInjection_QueryCaching.php:161
+[25-Nov-2020 09:55:33 UTC] PHP  16. W3TC\_CallUnderlying->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\w3-total-cache\DbCache_WpdbInjection_QueryCaching.php:161
+[25-Nov-2020 09:55:33 UTC] PHP  17. W3TC\DbCache_WpdbNew->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\w3-total-cache\DbCache_WpdbNew.php:393
+[25-Nov-2020 09:55:33 UTC] PHP  17. W3TC\DbCache_WpdbNew->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\w3-total-cache\DbCache_WpdbNew.php:393
+[25-Nov-2020 09:55:33 UTC] PHP  18. W3TC\DbCache_WpdbInjection->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\w3-total-cache\DbCache_WpdbNew.php:119
+[25-Nov-2020 09:55:33 UTC] PHP  18. W3TC\DbCache_WpdbInjection->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\w3-total-cache\DbCache_WpdbNew.php:119
+[25-Nov-2020 09:55:33 UTC] PHP  19. W3TC\DbCache_WpdbNew->default_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\w3-total-cache\DbCache_WpdbInjection.php:54
+[25-Nov-2020 09:55:33 UTC] PHP  19. W3TC\DbCache_WpdbNew->default_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\w3-total-cache\DbCache_WpdbInjection.php:54
+[25-Nov-2020 09:55:34 UTC] PHP  20. W3TC\DbCache_WpdbNew->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\w3-total-cache\DbCache_WpdbNew.php:232
+[25-Nov-2020 09:55:34 UTC] PHP  20. W3TC\DbCache_WpdbNew->query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\w3-total-cache\DbCache_WpdbNew.php:232
+[25-Nov-2020 09:55:34 UTC] PHP  21. W3TC\DbCache_WpdbNew->_do_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:1922
+[25-Nov-2020 09:55:34 UTC] PHP  21. W3TC\DbCache_WpdbNew->_do_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:1922
+[25-Nov-2020 09:55:34 UTC] PHP  22. mysqli_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:2033
+[25-Nov-2020 09:55:34 UTC] PHP  22. mysqli_query() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\wp-db.php:2033
