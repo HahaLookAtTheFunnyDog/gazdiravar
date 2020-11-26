@@ -3421,3 +3421,327 @@ Stack trace:
 [25-Nov-2020 19:10:36 UTC] PHP  12. WP_Filesystem_Direct->delete() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:384
 [25-Nov-2020 19:10:36 UTC] PHP  13. WP_Filesystem_Direct->dirlist() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:378
 [25-Nov-2020 19:10:36 UTC] PHP  14. dir() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\includes\class-wp-filesystem-direct.php:613
+[26-Nov-2020 17:52:50 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php on line 229
+[26-Nov-2020 17:52:50 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php on line 229
+[26-Nov-2020 17:52:50 UTC] PHP Stack trace:
+[26-Nov-2020 17:52:50 UTC] PHP Stack trace:
+[26-Nov-2020 17:52:50 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 17:52:50 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 17:52:50 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 17:52:50 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 17:52:50 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 17:52:50 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 17:52:50 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 17:52:50 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 17:52:50 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 17:52:50 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 17:52:50 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 17:52:50 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 17:52:50 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 17:52:50 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 17:52:50 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 17:52:50 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 17:52:50 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 17:52:50 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 17:52:50 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 17:52:50 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 17:52:50 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 17:52:50 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 17:52:50 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 17:52:50 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 17:52:50 UTC] PHP  13. WC_Cart_Totals->get_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:651
+[26-Nov-2020 17:52:50 UTC] PHP  13. WC_Cart_Totals->get_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:651
+[26-Nov-2020 17:52:50 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php on line 87
+[26-Nov-2020 17:52:50 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php on line 87
+[26-Nov-2020 17:52:50 UTC] PHP Stack trace:
+[26-Nov-2020 17:52:50 UTC] PHP Stack trace:
+[26-Nov-2020 17:52:50 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 17:52:50 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 17:52:50 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 17:52:50 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 17:52:50 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 17:52:50 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 17:52:50 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 17:52:50 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 17:52:50 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 17:52:50 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 17:52:50 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 17:52:50 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 17:52:50 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 17:52:50 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 17:52:50 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 17:52:50 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 17:52:50 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 17:52:50 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 17:52:50 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 17:52:50 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 17:52:50 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 17:52:50 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 17:52:50 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 17:52:50 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 17:52:50 UTC] PHP  13. WC_Cart_Totals->calculate_discounts() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:653
+[26-Nov-2020 17:52:50 UTC] PHP  13. WC_Cart_Totals->calculate_discounts() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:653
+[26-Nov-2020 17:52:50 UTC] PHP  14. WC_Discounts->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:769
+[26-Nov-2020 17:52:50 UTC] PHP  14. WC_Discounts->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:769
+[26-Nov-2020 17:52:50 UTC] PHP  15. WC_Discounts->set_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:47
+[26-Nov-2020 17:52:50 UTC] PHP  15. WC_Discounts->set_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:47
+[26-Nov-2020 18:22:20 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php on line 229
+[26-Nov-2020 18:22:20 UTC] PHP Stack trace:
+[26-Nov-2020 18:22:20 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\index.php:0
+[26-Nov-2020 18:22:20 UTC] PHP   2. require() C:\Users\Darrell\Local Sites\gazdiravar\app\public\index.php:17
+[26-Nov-2020 18:22:20 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-blog-header.php:13
+[26-Nov-2020 18:22:20 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:22:20 UTC] PHP   5. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:22:20 UTC] PHP   6. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:22:20 UTC] PHP   7. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:22:20 UTC] PHP   8. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:22:20 UTC] PHP   9. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:22:20 UTC] PHP  10. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:22:20 UTC] PHP  11. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:22:20 UTC] PHP  12. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:22:20 UTC] PHP  13. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:22:20 UTC] PHP  14. WC_Cart_Totals->get_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:651
+[26-Nov-2020 18:22:20 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php on line 87
+[26-Nov-2020 18:22:20 UTC] PHP Stack trace:
+[26-Nov-2020 18:22:20 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\index.php:0
+[26-Nov-2020 18:22:20 UTC] PHP   2. require() C:\Users\Darrell\Local Sites\gazdiravar\app\public\index.php:17
+[26-Nov-2020 18:22:20 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-blog-header.php:13
+[26-Nov-2020 18:22:20 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:22:20 UTC] PHP   5. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:22:20 UTC] PHP   6. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:22:20 UTC] PHP   7. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:22:20 UTC] PHP   8. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:22:20 UTC] PHP   9. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:22:20 UTC] PHP  10. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:22:20 UTC] PHP  11. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:22:20 UTC] PHP  12. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:22:20 UTC] PHP  13. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:22:20 UTC] PHP  14. WC_Cart_Totals->calculate_discounts() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:653
+[26-Nov-2020 18:22:20 UTC] PHP  15. WC_Discounts->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:769
+[26-Nov-2020 18:22:20 UTC] PHP  16. WC_Discounts->set_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:47
+[26-Nov-2020 18:24:40 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php on line 229
+[26-Nov-2020 18:24:40 UTC] PHP Stack trace:
+[26-Nov-2020 18:24:40 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\index.php:0
+[26-Nov-2020 18:24:40 UTC] PHP   2. require() C:\Users\Darrell\Local Sites\gazdiravar\app\public\index.php:17
+[26-Nov-2020 18:24:40 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-blog-header.php:13
+[26-Nov-2020 18:24:40 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:24:40 UTC] PHP   5. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:24:40 UTC] PHP   6. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:24:40 UTC] PHP   7. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:24:40 UTC] PHP   8. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:24:40 UTC] PHP   9. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:24:40 UTC] PHP  10. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:24:40 UTC] PHP  11. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:24:40 UTC] PHP  12. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:24:40 UTC] PHP  13. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:24:40 UTC] PHP  14. WC_Cart_Totals->get_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:651
+[26-Nov-2020 18:24:40 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php on line 87
+[26-Nov-2020 18:24:40 UTC] PHP Stack trace:
+[26-Nov-2020 18:24:40 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\index.php:0
+[26-Nov-2020 18:24:40 UTC] PHP   2. require() C:\Users\Darrell\Local Sites\gazdiravar\app\public\index.php:17
+[26-Nov-2020 18:24:40 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-blog-header.php:13
+[26-Nov-2020 18:24:40 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:24:40 UTC] PHP   5. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:24:40 UTC] PHP   6. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:24:40 UTC] PHP   7. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:24:40 UTC] PHP   8. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:24:40 UTC] PHP   9. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:24:40 UTC] PHP  10. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:24:40 UTC] PHP  11. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:24:40 UTC] PHP  12. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:24:40 UTC] PHP  13. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:24:40 UTC] PHP  14. WC_Cart_Totals->calculate_discounts() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:653
+[26-Nov-2020 18:24:40 UTC] PHP  15. WC_Discounts->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:769
+[26-Nov-2020 18:24:40 UTC] PHP  16. WC_Discounts->set_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:47
+[26-Nov-2020 18:27:26 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php on line 229
+[26-Nov-2020 18:27:26 UTC] PHP Stack trace:
+[26-Nov-2020 18:27:26 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 18:27:26 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 18:27:26 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:27:26 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:27:26 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:27:26 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:27:26 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:27:26 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:27:26 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:27:26 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:27:26 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:27:26 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:27:26 UTC] PHP  13. WC_Cart_Totals->get_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:651
+[26-Nov-2020 18:27:26 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php on line 87
+[26-Nov-2020 18:27:26 UTC] PHP Stack trace:
+[26-Nov-2020 18:27:26 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 18:27:26 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 18:27:26 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:27:27 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:27:27 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:27:27 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:27:27 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:27:27 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:27:27 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:27:27 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:27:27 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:27:27 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:27:27 UTC] PHP  13. WC_Cart_Totals->calculate_discounts() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:653
+[26-Nov-2020 18:27:27 UTC] PHP  14. WC_Discounts->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:769
+[26-Nov-2020 18:27:27 UTC] PHP  15. WC_Discounts->set_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:47
+[26-Nov-2020 18:27:27 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php on line 229
+[26-Nov-2020 18:27:27 UTC] PHP Stack trace:
+[26-Nov-2020 18:27:27 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 18:27:27 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 18:27:27 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:27:27 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:27:27 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:27:27 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:27:27 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:27:27 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:27:27 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:27:27 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:27:27 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:27:27 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:27:27 UTC] PHP  13. WC_Cart_Totals->get_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:651
+[26-Nov-2020 18:27:27 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php on line 87
+[26-Nov-2020 18:27:27 UTC] PHP Stack trace:
+[26-Nov-2020 18:27:27 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 18:27:27 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 18:27:27 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:27:27 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:27:27 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:27:27 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:27:27 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:27:27 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:27:27 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:27:27 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:27:27 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:27:27 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:27:27 UTC] PHP  13. WC_Cart_Totals->calculate_discounts() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:653
+[26-Nov-2020 18:27:27 UTC] PHP  14. WC_Discounts->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:769
+[26-Nov-2020 18:27:27 UTC] PHP  15. WC_Discounts->set_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:47
+[26-Nov-2020 18:31:51 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php on line 229
+[26-Nov-2020 18:31:51 UTC] PHP Stack trace:
+[26-Nov-2020 18:31:51 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php on line 229
+[26-Nov-2020 18:31:51 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 18:31:51 UTC] PHP Stack trace:
+[26-Nov-2020 18:31:51 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 18:31:51 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 18:31:51 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:31:51 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 18:31:51 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:31:51 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:31:51 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:31:51 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:31:51 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:31:51 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:31:51 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:31:51 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:31:51 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:31:51 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:31:51 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:31:51 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:31:51 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:31:51 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:31:51 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:31:51 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:31:51 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:31:51 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:31:51 UTC] PHP  13. WC_Cart_Totals->get_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:651
+[26-Nov-2020 18:31:51 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:31:51 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php on line 87
+[26-Nov-2020 18:31:51 UTC] PHP  13. WC_Cart_Totals->get_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:651
+[26-Nov-2020 18:31:51 UTC] PHP Stack trace:
+[26-Nov-2020 18:31:51 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php on line 87
+[26-Nov-2020 18:31:51 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 18:31:51 UTC] PHP Stack trace:
+[26-Nov-2020 18:31:51 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 18:31:51 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 18:31:51 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:31:51 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 18:31:51 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:31:51 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:31:51 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:31:51 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:31:51 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:31:51 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:31:51 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:31:51 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:31:51 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:31:51 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:31:51 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:31:51 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:31:51 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:31:51 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:31:51 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:31:51 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:31:51 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:31:51 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:31:51 UTC] PHP  13. WC_Cart_Totals->calculate_discounts() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:653
+[26-Nov-2020 18:31:51 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:31:51 UTC] PHP  14. WC_Discounts->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:769
+[26-Nov-2020 18:31:51 UTC] PHP  13. WC_Cart_Totals->calculate_discounts() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:653
+[26-Nov-2020 18:31:51 UTC] PHP  15. WC_Discounts->set_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:47
+[26-Nov-2020 18:31:51 UTC] PHP  14. WC_Discounts->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:769
+[26-Nov-2020 18:31:51 UTC] PHP  15. WC_Discounts->set_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:47
+[26-Nov-2020 18:33:04 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php on line 229
+[26-Nov-2020 18:33:04 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php on line 229
+[26-Nov-2020 18:33:04 UTC] PHP Stack trace:
+[26-Nov-2020 18:33:04 UTC] PHP Stack trace:
+[26-Nov-2020 18:33:04 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 18:33:04 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 18:33:04 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 18:33:04 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 18:33:04 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:33:04 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:33:04 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:33:04 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:33:04 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:33:04 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:33:04 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:33:04 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:33:04 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:33:04 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:33:04 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:33:04 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:33:04 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:33:04 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:33:04 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:33:04 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:33:04 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:33:04 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:33:04 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:33:04 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:33:04 UTC] PHP  13. WC_Cart_Totals->get_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:651
+[26-Nov-2020 18:33:04 UTC] PHP  13. WC_Cart_Totals->get_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:651
+[26-Nov-2020 18:33:04 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php on line 87
+[26-Nov-2020 18:33:04 UTC] PHP Warning:  A non-numeric value encountered in C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php on line 87
+[26-Nov-2020 18:33:04 UTC] PHP Stack trace:
+[26-Nov-2020 18:33:04 UTC] PHP Stack trace:
+[26-Nov-2020 18:33:04 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 18:33:04 UTC] PHP   1. {main}() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:0
+[26-Nov-2020 18:33:04 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 18:33:04 UTC] PHP   2. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-admin\admin-ajax.php:22
+[26-Nov-2020 18:33:04 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:33:04 UTC] PHP   3. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-load.php:37
+[26-Nov-2020 18:33:04 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:33:04 UTC] PHP   4. require_once() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-config.php:80
+[26-Nov-2020 18:33:04 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:33:04 UTC] PHP   5. do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-settings.php:568
+[26-Nov-2020 18:33:04 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:33:04 UTC] PHP   6. WP_Hook->do_action() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\plugin.php:478
+[26-Nov-2020 18:33:04 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:33:04 UTC] PHP   7. WP_Hook->apply_filters() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:311
+[26-Nov-2020 18:33:04 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:33:04 UTC] PHP   8. WC_Cart_Session->get_cart_from_session() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-includes\class-wp-hook.php:287
+[26-Nov-2020 18:33:04 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:33:04 UTC] PHP   9. WC_Cart->calculate_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-session.php:177
+[26-Nov-2020 18:33:04 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:33:04 UTC] PHP  10. WC_Cart_Totals->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart.php:1369
+[26-Nov-2020 18:33:04 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:33:04 UTC] PHP  11. WC_Cart_Totals->calculate() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:134
+[26-Nov-2020 18:33:04 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:33:04 UTC] PHP  12. WC_Cart_Totals->calculate_item_totals() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:143
+[26-Nov-2020 18:33:04 UTC] PHP  13. WC_Cart_Totals->calculate_discounts() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:653
+[26-Nov-2020 18:33:04 UTC] PHP  13. WC_Cart_Totals->calculate_discounts() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:653
+[26-Nov-2020 18:33:04 UTC] PHP  14. WC_Discounts->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:769
+[26-Nov-2020 18:33:04 UTC] PHP  14. WC_Discounts->__construct() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:769
+[26-Nov-2020 18:33:04 UTC] PHP  15. WC_Discounts->set_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:47
+[26-Nov-2020 18:33:04 UTC] PHP  15. WC_Discounts->set_items_from_cart() C:\Users\Darrell\Local Sites\gazdiravar\app\public\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:47
